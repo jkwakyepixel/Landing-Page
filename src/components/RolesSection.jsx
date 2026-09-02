@@ -5,6 +5,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
+import useInView from '../hooks/useInView';
 
 // Pixel-perfect SVG icons matching the high-fidelity mockup
 function CommunityIcon(props) {
@@ -160,6 +161,9 @@ const roleItems = [
 ];
 
 export default function RolesSection() {
+  const [headerRef, headerInView] = useInView({ threshold: 0.2, once: true });
+  const [gridRef, gridInView] = useInView({ threshold: 0.12, once: true });
+
   return (
     <Box
       component="section"
@@ -169,6 +173,7 @@ export default function RolesSection() {
         pt: { xs: 6, sm: 8, md: 9 },
         pb: { xs: 10, sm: 12, md: 15 },
         backgroundColor: '#ffffff',
+        position: 'relative',
       }}
     >
       <Container
@@ -179,8 +184,10 @@ export default function RolesSection() {
           px: { xs: 2.5, sm: 3 },
         }}
       >
-        {/* Section Header Container */}
+        {/* Section Header Container with Scroll Entrance */}
         <Box
+          ref={headerRef}
+          className={`reveal-init ${headerInView ? 'is-visible' : ''}`}
           sx={{
             textAlign: 'center',
             maxWidth: 620,
@@ -259,8 +266,9 @@ export default function RolesSection() {
           </Typography>
         </Box>
 
-        {/* Responsive 5-Column Grid Layout */}
+        {/* Responsive 5-Column Grid Layout with Staggered Entrance */}
         <Box
+          ref={gridRef}
           sx={{
             display: 'grid',
             gap: '16px',
@@ -273,11 +281,12 @@ export default function RolesSection() {
             alignItems: 'stretch',
           }}
         >
-          {roleItems.map((role) => {
+          {roleItems.map((role, index) => {
             const IconComponent = role.icon;
             return (
               <Box
                 key={role.id}
+                className={`reveal-init stagger-${index + 1} ${gridInView ? 'is-visible' : ''}`}
                 sx={{
                   backgroundColor: '#fdfbf9', // Exact sampled off-white
                   border: '1px solid #efece7', // Exact sampled warm border
@@ -289,9 +298,9 @@ export default function RolesSection() {
                   flexDirection: 'column',
                   alignItems: 'flex-start',
                   transition:
-                    'transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease',
+                    'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1)',
                   '&:hover': {
-                    transform: 'translateY(-3px)',
+                    transform: 'translateY(-4px)',
                     borderColor: '#ded8cf',
                     boxShadow: '0 8px 18px -4px rgba(27, 21, 11, 0.06)',
                   },

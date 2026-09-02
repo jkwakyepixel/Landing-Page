@@ -259,6 +259,12 @@ export default function HeroSection() {
             <Button
               variant="outlined"
               size="large"
+              component="a"
+              href="#roles"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('roles')?.scrollIntoView({ behavior: 'smooth' });
+              }}
               endIcon={<NorthEastRoundedIcon sx={{ fontSize: '19px !important' }} />}
               sx={{
                 py: { xs: 1.5, sm: 1.6 },
@@ -271,6 +277,7 @@ export default function HeroSection() {
                 color: '#1e293b',
                 backgroundColor: '#ffffff',
                 boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)',
+                textDecoration: 'none',
                 '&:hover': {
                   borderColor: '#cbd5e1',
                   backgroundColor: '#f8fafc',

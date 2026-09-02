@@ -36,6 +36,14 @@ export default function NavigationBar() {
     setMobileOpen((prev) => !prev);
   };
 
+  const handleNavClick = (label) => {
+    if (label === 'Home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (label === 'About' || label === 'Solutions' || label === 'Modules' || label === 'Gallery' || label === 'Contact') {
+      document.getElementById('roles')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <AppBar
       position="fixed"
@@ -124,6 +132,7 @@ export default function NavigationBar() {
               <Button
                 key={item.label}
                 variant="text"
+                onClick={() => handleNavClick(item.label)}
                 endIcon={
                   item.hasDropdown ? (
                     <KeyboardArrowDownRoundedIcon
@@ -268,7 +277,10 @@ export default function NavigationBar() {
           {navItems.map((item) => (
             <ListItem key={item.label} disablePadding sx={{ mb: 0.5 }}>
               <ListItemButton
-                onClick={handleDrawerToggle}
+                onClick={() => {
+                  handleDrawerToggle();
+                  handleNavClick(item.label);
+                }}
                 sx={{
                   borderRadius: 1.5,
                   py: 1,
