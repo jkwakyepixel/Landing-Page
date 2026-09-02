@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 import theme from './theme/theme';
 import NavigationBar from './components/NavigationBar';
 import HeroSection from './components/HeroSection';
+import RolesSection from './components/RolesSection';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       >
         <NavigationBar />
         <HeroSection />
+        <RolesSection />
       </Box>
     </ThemeProvider>
   );
