@@ -260,8 +260,10 @@ export default function SupportSection() {
 
               {/* Button */}
               <Box
-                component="button"
+                component="a"
+                href="#contact"
                 sx={{
+                  textDecoration: 'none',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -355,8 +357,10 @@ export default function SupportSection() {
 
               {/* Button */}
               <Box
-                component="button"
+                component="a"
+                href="#help-centre"
                 sx={{
+                  textDecoration: 'none',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
