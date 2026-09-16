@@ -46,6 +46,7 @@ export default function NavigationBar() {
   const [activeDropdownLabel, setActiveDropdownLabel] = useState(null);
   const [mobileExpandedMenu, setMobileExpandedMenu] = useState(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeHash, setActiveHash] = useState(window.location.hash || '#');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,9 +54,17 @@ export default function NavigationBar() {
       setIsScrolled(scrollPosition > 20);
     };
 
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash || '#');
+    };
+
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('hashchange', handleHashChange);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('hashchange', handleHashChange);
+    };
   }, []);
 
   const handleDrawerToggle = () => {
@@ -225,6 +234,9 @@ export default function NavigationBar() {
           >
             {navItems.map((item) => {
               const isOpen = item.hasDropdown && activeDropdownLabel === item.label && Boolean(dropdownAnchorEl);
+              const isActive = (item.label === 'Home' && (activeHash === '' || activeHash === '#')) || 
+                               (item.hash && activeHash === item.hash) || 
+                               (item.hasDropdown && item.dropdownItems.some(di => di.hash === activeHash));
 
               return (
                 <Box key={item.label}>
@@ -250,8 +262,8 @@ export default function NavigationBar() {
                       ) : null
                     }
                     sx={{
-                      color: isOpen ? '#0f172a' : '#475569',
-                      fontWeight: isOpen ? 650 : 500,
+                      color: isActive ? 'primary.main' : isOpen ? '#0f172a' : '#475569',
+                      fontWeight: (isActive || isOpen) ? 650 : 500,
                       fontSize: { md: '0.88rem', lg: '0.94rem' },
                       letterSpacing: '-0.01em',
                       px: { md: 1, lg: 1.4 },
@@ -260,10 +272,10 @@ export default function NavigationBar() {
                       whiteSpace: 'nowrap',
                       borderRadius: '8px',
                       textTransform: 'none',
-                      backgroundColor: isOpen ? '#F4F3F0' : 'transparent',
+                      backgroundColor: isActive ? 'rgba(30, 86, 160, 0.08)' : isOpen ? '#F4F3F0' : 'transparent',
                       '&:hover': {
-                        color: isOpen ? '#0f172a' : 'primary.main',
-                        backgroundColor: isOpen ? '#F4F3F0' : 'rgba(30, 86, 160, 0.05)',
+                        color: (isActive || isOpen) ? 'primary.main' : 'primary.main',
+                        backgroundColor: isActive ? 'rgba(30, 86, 160, 0.12)' : isOpen ? '#F4F3F0' : 'rgba(30, 86, 160, 0.05)',
                         '& .MuiSvgIcon-root': {
                           transform: item.hasDropdown && !isOpen ? 'translateY(1px)' : isOpen ? 'rotate(180deg) translateY(-1px)' : 'none',
                         },
@@ -299,34 +311,38 @@ export default function NavigationBar() {
                         },
                       }}
                     >
-                      {item.dropdownItems?.map((dropItem, idx) => (
-                        <MenuItem
-                          key={idx}
-                          onClick={() => handleNavClick(dropItem.label, dropItem.hash)}
-                          sx={{
-                            borderRadius: '8px',
-                            py: 1.1,
-                            px: 1.8,
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            fontSize: '14px',
-                            color: '#334155',
-                            fontWeight: 500,
-                            fontFamily: "'Inter', sans-serif",
-                            transition: 'all 0.15s ease',
-                            '&:hover': {
-                              backgroundColor: '#F8FAFC',
-                              color: 'primary.main',
-                              '& .arrow-icon': {
-                                opacity: 1,
-                                transform: 'translateX(0)',
+                      {item.dropdownItems?.map((dropItem, idx) => {
+                        const isDropItemActive = dropItem.hash === activeHash;
+                        
+                        return (
+                          <MenuItem
+                            key={idx}
+                            onClick={() => handleNavClick(dropItem.label, dropItem.hash)}
+                            sx={{
+                              borderRadius: '8px',
+                              py: 1.1,
+                              px: 1.8,
+                              display: 'flex',
+                              justifyContent: 'space-between',
+                              alignItems: 'center',
+                              fontSize: '14px',
+                              color: isDropItemActive ? 'primary.main' : '#334155',
+                              fontWeight: isDropItemActive ? 600 : 500,
+                              backgroundColor: isDropItemActive ? 'rgba(30, 86, 160, 0.05)' : 'transparent',
+                              fontFamily: "'Inter', sans-serif",
+                              transition: 'all 0.15s ease',
+                              '&:hover': {
+                                backgroundColor: isDropItemActive ? 'rgba(30, 86, 160, 0.08)' : '#F8FAFC',
                                 color: 'primary.main',
+                                '& .arrow-icon': {
+                                  opacity: 1,
+                                  transform: 'translateX(0)',
+                                  color: 'primary.main',
+                                },
                               },
-                            },
-                          }}
-                        >
-                          {dropItem.label}
+                            }}
+                          >
+                            {dropItem.label}
                           <ArrowForwardRoundedIcon 
                             className="arrow-icon"
                             sx={{ 
@@ -338,7 +354,8 @@ export default function NavigationBar() {
                             }} 
                           />
                         </MenuItem>
-                      ))}
+                        );
+                      })}
                     </Menu>
                   )}
                 </Box>
@@ -505,6 +522,9 @@ export default function NavigationBar() {
         <List disablePadding>
           {navItems.map((item) => {
             const isMenuExpanded = item.hasDropdown && mobileExpandedMenu === item.label;
+            const isActive = (item.label === 'Home' && (activeHash === '' || activeHash === '#')) || 
+                             (item.hash && activeHash === item.hash) || 
+                             (item.hasDropdown && item.dropdownItems.some(di => di.hash === activeHash));
 
             return (
               <React.Fragment key={item.label}>
@@ -521,9 +541,9 @@ export default function NavigationBar() {
                     sx={{
                       borderRadius: 1.5,
                       py: 1,
-                      backgroundColor: isMenuExpanded ? 'rgba(30, 86, 160, 0.06)' : 'transparent',
+                      backgroundColor: isActive ? 'rgba(30, 86, 160, 0.08)' : isMenuExpanded ? 'rgba(30, 86, 160, 0.04)' : 'transparent',
                       '&:hover': {
-                        backgroundColor: 'rgba(30, 86, 160, 0.08)',
+                        backgroundColor: isActive ? 'rgba(30, 86, 160, 0.12)' : 'rgba(30, 86, 160, 0.08)',
                         color: 'primary.main',
                       },
                     }}
@@ -531,9 +551,9 @@ export default function NavigationBar() {
                     <ListItemText
                       primary={item.label}
                       primaryTypographyProps={{
-                        fontWeight: 600,
+                        fontWeight: (isActive || isMenuExpanded) ? 650 : 600,
                         fontSize: '1rem',
-                        color: isMenuExpanded ? 'primary.main' : 'inherit',
+                        color: (isActive || isMenuExpanded) ? 'primary.main' : 'inherit',
                       }}
                     />
                     {item.hasDropdown && (
@@ -552,35 +572,39 @@ export default function NavigationBar() {
                 {/* Mobile Dropdown Items */}
                 {item.hasDropdown && isMenuExpanded && item.dropdownItems && (
                   <List component="div" disablePadding sx={{ pl: 1, mb: 1 }}>
-                    {item.dropdownItems.map((dropItem, idx) => (
-                      <ListItemButton 
-                        key={idx}
-                        sx={{ 
-                          pl: 3, 
-                          py: 0.9, 
-                          borderRadius: 1.5, 
-                          mb: 0.3,
-                          display: 'flex',
-                          justifyContent: 'space-between',
-                          alignItems: 'center',
-                          '&:hover': {
-                            backgroundColor: '#F8FAFC',
-                            color: 'primary.main',
-                          }
-                        }}
-                        onClick={() => {
-                          handleDrawerToggle();
-                          handleNavClick(dropItem.label, dropItem.hash);
-                        }}
-                      >
-                        <ListItemText 
-                          primary={dropItem.label} 
-                          primaryTypographyProps={{ 
-                            fontSize: '0.92rem', 
-                            color: '#475569',
-                            fontWeight: 500,
-                          }} 
-                        />
+                    {item.dropdownItems.map((dropItem, idx) => {
+                      const isDropItemActive = dropItem.hash === activeHash;
+                      
+                      return (
+                        <ListItemButton 
+                          key={idx}
+                          sx={{ 
+                            pl: 3, 
+                            py: 0.9, 
+                            borderRadius: 1.5, 
+                            mb: 0.3,
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            backgroundColor: isDropItemActive ? 'rgba(30, 86, 160, 0.05)' : 'transparent',
+                            '&:hover': {
+                              backgroundColor: isDropItemActive ? 'rgba(30, 86, 160, 0.08)' : '#F8FAFC',
+                              color: 'primary.main',
+                            }
+                          }}
+                          onClick={() => {
+                            handleDrawerToggle();
+                            handleNavClick(dropItem.label, dropItem.hash);
+                          }}
+                        >
+                          <ListItemText 
+                            primary={dropItem.label} 
+                            primaryTypographyProps={{ 
+                              fontSize: '0.92rem', 
+                              color: isDropItemActive ? 'primary.main' : '#475569',
+                              fontWeight: isDropItemActive ? 600 : 500,
+                            }} 
+                          />
                         <ArrowForwardRoundedIcon 
                           sx={{ 
                             fontSize: 13, 
@@ -588,8 +612,9 @@ export default function NavigationBar() {
                             opacity: 0.6,
                           }} 
                         />
-                      </ListItemButton>
-                    ))}
+                        </ListItemButton>
+                      );
+                    })}
                   </List>
                 )}
               </React.Fragment>
