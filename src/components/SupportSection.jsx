@@ -357,10 +357,8 @@ export default function SupportSection() {
 
               {/* Button */}
               <Box
-                component="a"
-                href="#help-centre"
+                component="button"
                 sx={{
-                  textDecoration: 'none',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',

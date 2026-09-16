@@ -21,7 +21,6 @@ import MissionVision from './pages/MissionVision';
 import Solution from './pages/Solution';
 import WhyThisSystem from './pages/WhyThisSystem';
 import Pricing from './pages/Pricing';
-import HelpCentre from './pages/HelpCentre';
 
 const getRouteFromHash = (hash) => {
   if (!hash || hash === '#' || hash === '') return 'home';
@@ -44,7 +43,6 @@ const getRouteFromHash = (hash) => {
     hash === '#our-story'
   ) return 'history';
   if (hash === '#why-this-system' || hash === '#why-we-built-this' || hash === '#why-this') return 'why-this-system';
-  if (hash === '#help-centre' || hash === '#help-center' || hash === '#help') return 'help-centre';
   return 'home';
 };
 
@@ -90,8 +88,6 @@ function App() {
         <History />
       ) : currentRoute === 'why-this-system' ? (
         <WhyThisSystem />
-      ) : currentRoute === 'help-centre' ? (
-        <HelpCentre />
       ) : (
         <Box
           sx={{
