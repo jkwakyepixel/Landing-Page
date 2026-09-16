@@ -5,7 +5,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import useInView from '../hooks/useInView';
+import RevealOnScroll from './RevealOnScroll';
 
 // Pixel-perfect SVG icons matching the high-fidelity mockup
 function CommunityIcon(props) {
@@ -161,9 +161,6 @@ const roleItems = [
 ];
 
 export default function RolesSection() {
-  const [headerRef, headerInView] = useInView({ threshold: 0.2, once: true });
-  const [gridRef, gridInView] = useInView({ threshold: 0.12, once: true });
-
   return (
     <Box
       component="section"
@@ -185,90 +182,89 @@ export default function RolesSection() {
         }}
       >
         {/* Section Header Container with Scroll Entrance */}
-        <Box
-          ref={headerRef}
-          className={`reveal-init ${headerInView ? 'is-visible' : ''}`}
-          sx={{
-            textAlign: 'center',
-            maxWidth: 620,
-            mx: 'auto',
-            mb: { xs: 4.5, sm: 5.5, md: 6.5 },
-          }}
-        >
-          {/* Pill Tag (Exact sampled dimensions: ~188px x 22px, compact & centered) */}
+        <RevealOnScroll variant="init">
           <Box
             sx={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '6px',
-              backgroundColor: '#eaf2ff',
-              border: '1px solid #d4e4fc',
-              borderRadius: '9999px',
-              px: '12px',
-              py: '4px',
-              color: '#1d63d2',
-              userSelect: 'none',
-              width: 'fit-content',
+              textAlign: 'center',
+              maxWidth: 620,
               mx: 'auto',
-              mb: 2,
+              mb: { xs: 4.5, sm: 5.5, md: 6.5 },
             }}
           >
-            <CommunityIcon sx={{ color: '#1d63d2', flexShrink: 0 }} />
-            <Typography
-              component="span"
+            {/* Pill Tag (Exact sampled dimensions: ~188px x 22px, compact & centered) */}
+            <Box
               sx={{
-                fontSize: '0.69rem',
-                fontWeight: 700,
-                letterSpacing: '0.06em',
-                lineHeight: 1,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+                backgroundColor: '#eaf2ff',
+                border: '1px solid #d4e4fc',
+                borderRadius: '9999px',
+                px: '12px',
+                py: '4px',
                 color: '#1d63d2',
-                whiteSpace: 'nowrap',
+                userSelect: 'none',
+                width: 'fit-content',
+                mx: 'auto',
+                mb: 2,
               }}
             >
-              FOR THE WHOLE COMMUNITY
+              <CommunityIcon sx={{ color: '#1d63d2', flexShrink: 0 }} />
+              <Typography
+                component="span"
+                sx={{
+                  fontSize: '0.69rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.06em',
+                  lineHeight: 1,
+                  color: '#1d63d2',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                FOR THE WHOLE COMMUNITY
+              </Typography>
+            </Box>
+
+            {/* Heading (Exact sampled typography: #0B0702, tight line height) */}
+            <Typography
+              variant="h2"
+              component="h2"
+              sx={{
+                fontWeight: 800,
+                fontSize: { xs: '1.75rem', sm: '2.15rem', md: '2.4rem' },
+                lineHeight: 1.15,
+                letterSpacing: '-0.03em',
+                color: '#0b0702',
+                mb: 1.8,
+              }}
+            >
+              Built for everyone who makes a
+              <Box component="span" sx={{ display: { xs: 'inline', sm: 'block' }, ml: { xs: 0.5, sm: 0 } }}>
+                school work.
+              </Box>
+            </Typography>
+
+            {/* Subheading (Exact sampled typography: #888279) */}
+            <Typography
+              variant="body1"
+              sx={{
+                color: '#888279',
+                fontSize: { xs: '0.92rem', sm: '0.98rem' },
+                lineHeight: 1.55,
+                maxWidth: 560,
+                mx: 'auto',
+                fontWeight: 450,
+              }}
+            >
+              Five connected experiences, one shared source of truth — tailored to
+              every role in your school community.
             </Typography>
           </Box>
-
-          {/* Heading (Exact sampled typography: #0B0702, tight line height) */}
-          <Typography
-            variant="h2"
-            component="h2"
-            sx={{
-              fontWeight: 800,
-              fontSize: { xs: '1.85rem', sm: '2.15rem', md: '2.4rem' },
-              lineHeight: 1.15,
-              letterSpacing: '-0.03em',
-              color: '#0b0702',
-              mb: 1.8,
-            }}
-          >
-            Built for everyone who makes a
-            <Box component="span" sx={{ display: 'block' }}>
-              school work.
-            </Box>
-          </Typography>
-
-          {/* Subheading (Exact sampled typography: #888279) */}
-          <Typography
-            variant="body1"
-            sx={{
-              color: '#888279',
-              fontSize: { xs: '0.92rem', sm: '0.98rem' },
-              lineHeight: 1.55,
-              maxWidth: 560,
-              mx: 'auto',
-              fontWeight: 450,
-            }}
-          >
-            Five connected experiences, one shared source of truth — tailored to
-            every role in your school community.
-          </Typography>
-        </Box>
+        </RevealOnScroll>
 
         {/* Responsive 5-Column Grid Layout with Staggered Entrance */}
         <Box
-          ref={gridRef}
           sx={{
             display: 'grid',
             gap: '16px',
@@ -284,28 +280,32 @@ export default function RolesSection() {
           {roleItems.map((role, index) => {
             const IconComponent = role.icon;
             return (
-              <Box
+              <RevealOnScroll
                 key={role.id}
-                className={`reveal-init stagger-${index + 1} ${gridInView ? 'is-visible' : ''}`}
-                sx={{
-                  backgroundColor: '#fdfbf9', // Exact sampled off-white
-                  border: '1px solid #efece7', // Exact sampled warm border
-                  borderRadius: '13px',
-                  p: '18px 16px 20px 16px',
-                  height: '100%',
-                  minHeight: '175px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  transition:
-                    'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1)',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    borderColor: '#ded8cf',
-                    boxShadow: '0 8px 18px -4px rgba(27, 21, 11, 0.06)',
-                  },
-                }}
+                delay={index * 0.08}
+                threshold={0.08}
+                rootMargin="0px 0px -30px 0px"
               >
+                <Box
+                  sx={{
+                    backgroundColor: '#fdfbf9', // Exact sampled off-white
+                    border: '1px solid #efece7', // Exact sampled warm border
+                    borderRadius: '13px',
+                    p: '18px 16px 20px 16px',
+                    height: '100%',
+                    minHeight: '175px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    transition:
+                      'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease',
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                      borderColor: '#ded8cf',
+                      boxShadow: '0 8px 18px -4px rgba(27, 21, 11, 0.06)',
+                    },
+                  }}
+                >
                 {/* Icon Box in Top-Left (Exact sampled: #DAEDFF, 38px x 38px) */}
                 <Box
                   sx={{
@@ -352,6 +352,7 @@ export default function RolesSection() {
                   {role.description}
                 </Typography>
               </Box>
+            </RevealOnScroll>
             );
           })}
         </Box>

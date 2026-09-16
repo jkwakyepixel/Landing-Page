@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
@@ -15,6 +15,8 @@ import DonutLargeRoundedIcon from '@mui/icons-material/DonutLargeRounded';
 import PersonOutlineRoundedIcon from '@mui/icons-material/PersonOutlineRounded';
 import NotificationsNoneRoundedIcon from '@mui/icons-material/NotificationsNoneRounded';
 import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
+import RevealOnScroll from './RevealOnScroll';
+import allDevicesMockup from '../assets/all-devices-white.png';
 
 // Reusable Floating Metric Badge Component
 function FloatingBadge({
@@ -104,6 +106,26 @@ function FloatingBadge({
 }
 
 export default function HeroSection() {
+  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    // Max rotation is 4 degrees for subtle premium feel
+    const rotateX = ((y - centerY) / centerY) * -4; 
+    const rotateY = ((x - centerX) / centerX) * 4; 
+    
+    setTilt({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setTilt({ x: 0, y: 0 });
+  };
+
   return (
     <Box
       component="section"
@@ -111,9 +133,9 @@ export default function HeroSection() {
       sx={{
         position: 'relative',
         width: '100%',
-        minHeight: '100vh',
-        pt: { xs: 15, sm: 17, md: 20 },
-        pb: { xs: 10, sm: 12, md: 16 },
+        minHeight: { xs: 'auto', md: '100vh' },
+        pt: { xs: 13, sm: 16, md: 19 },
+        pb: { xs: 8, sm: 11, md: 15 },
         overflow: 'hidden',
         // Ambient background with warm yellow and light blue radial glows
         backgroundColor: '#fbfcfd',
@@ -142,18 +164,19 @@ export default function HeroSection() {
         }}
       />
 
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, px: { xs: 2.5, sm: 3, md: 4 } }}>
         {/* Hero Header & Typography */}
-        <Box
-          sx={{
-            textAlign: 'center',
-            maxWidth: 820,
-            mx: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
+        <RevealOnScroll variant="init">
+          <Box
+            sx={{
+              textAlign: 'center',
+              maxWidth: 820,
+              mx: 'auto',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
           {/* Overline Tag Pill */}
           <Chip
             icon={<AutoAwesomeRoundedIcon sx={{ fontSize: '15px !important', color: '#2563eb' }} />}
@@ -163,7 +186,7 @@ export default function HeroSection() {
               color: '#1d4ed8',
               border: '1px solid #bfdbfe',
               fontWeight: 700,
-              fontSize: '0.75rem',
+              fontSize: { xs: '0.70rem', sm: '0.75rem' },
               letterSpacing: '0.06em',
               py: 2.2,
               px: 1.5,
@@ -181,19 +204,21 @@ export default function HeroSection() {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '2.5rem', sm: '3.6rem', md: '4.4rem', lg: '4.85rem' },
+              fontSize: { xs: '1.95rem', sm: '3rem', md: '4.2rem', lg: '4.85rem' },
               fontWeight: 800,
-              lineHeight: { xs: 1.15, md: 1.1 },
-              letterSpacing: { xs: '-0.03em', md: '-0.04em' },
+              lineHeight: { xs: 1.18, md: 1.1 },
+              letterSpacing: { xs: '-0.02em', md: '-0.04em' },
               color: '#0f172a',
-              mb: { xs: 2.5, md: 3 },
+              mb: { xs: 2, md: 3 },
+              px: { xs: 0.5, sm: 0 },
+              wordBreak: 'break-word',
             }}
           >
             One platform for your{' '}
             <Box
               component="span"
               sx={{
-                display: 'inline-block',
+                display: 'inline',
                 background:
                   'linear-gradient(90deg, #2d65aa 0%, #436ea2 12%, #55759b 22%, #6b7d90 34%, #7d8386 45%, #89877f 52%, #998c74 61%, #a79069 70%, #b6945b 79%, #c89846 89%, #da9c24 100%)',
                 WebkitBackgroundClip: 'text',
@@ -211,13 +236,14 @@ export default function HeroSection() {
           <Typography
             variant="body1"
             sx={{
-              fontSize: { xs: '1.05rem', sm: '1.18rem', md: '1.25rem' },
+              fontSize: { xs: '0.98rem', sm: '1.12rem', md: '1.25rem' },
               lineHeight: 1.65,
               color: '#475569',
               maxWidth: 710,
               mx: 'auto',
-              mb: { xs: 4, md: 5 },
+              mb: { xs: 3.5, md: 5 },
               fontWeight: 450,
+              px: { xs: 0.5, sm: 0 },
             }}
           >
             Bring administrators, teachers, staff, students and parents together with one
@@ -230,12 +256,16 @@ export default function HeroSection() {
             spacing={2}
             justifyContent="center"
             alignItems="center"
-            sx={{ width: { xs: '100%', sm: 'auto' }, mb: { xs: 6, sm: 8, md: 10 } }}
+            sx={{ width: { xs: '100%', sm: 'auto' }, mb: { xs: 5, sm: 7, md: 9 } }}
           >
             <Button
               variant="contained"
               color="primary"
               size="large"
+              onClick={() => {
+                window.location.hash = '#book-demo';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               endIcon={<ArrowForwardRoundedIcon />}
               sx={{
                 py: { xs: 1.5, sm: 1.6 },
@@ -260,10 +290,11 @@ export default function HeroSection() {
               variant="outlined"
               size="large"
               component="a"
-              href="#roles"
+              href="#solution"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById('roles')?.scrollIntoView({ behavior: 'smooth' });
+                window.location.hash = '#solution';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               endIcon={<NorthEastRoundedIcon sx={{ fontSize: '19px !important' }} />}
               sx={{
@@ -289,17 +320,19 @@ export default function HeroSection() {
             </Button>
           </Stack>
         </Box>
+        </RevealOnScroll>
 
         {/* Dashboard Mockup Graphic Container & Floating Badges */}
-        <Box
-          sx={{
-            position: 'relative',
-            width: '100%',
-            maxWidth: { xs: '100%', lg: '1040px' },
-            mx: 'auto',
-            mt: { xs: 2, md: 3 },
-          }}
-        >
+        <RevealOnScroll variant="mockup-pop">
+          <Box
+            sx={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: { xs: '100%', lg: '1120px' },
+              mx: 'auto',
+              mt: { xs: 2, md: 3 },
+            }}
+          >
           {/* Floating Metric Badges (Positions matching high-fidelity mockup) */}
           
           {/* 1. Top-Left Badge: 98% Attendance */}
@@ -309,9 +342,9 @@ export default function HeroSection() {
             label="Attendance"
             className="float-badge-1"
             sx={{
-              top: { xs: -25, md: '12%' },
-              left: { xs: 12, md: -45, lg: -55 },
-              display: { xs: 'none', sm: 'flex' },
+              top: '12%',
+              left: { md: -45, lg: -55 },
+              display: { xs: 'none', md: 'flex' },
             }}
           />
 
@@ -322,9 +355,9 @@ export default function HeroSection() {
             label="Students"
             className="float-badge-2"
             sx={{
-              bottom: { xs: -20, md: '18%' },
-              left: { xs: 12, md: -45, lg: -60 },
-              display: { xs: 'none', sm: 'flex' },
+              bottom: '18%',
+              left: { md: -45, lg: -60 },
+              display: { xs: 'none', md: 'flex' },
             }}
           />
 
@@ -335,9 +368,9 @@ export default function HeroSection() {
             label="New Notifications"
             className="float-badge-3"
             sx={{
-              top: { xs: -25, md: '8%' },
-              right: { xs: 12, md: -45, lg: -55 },
-              display: { xs: 'none', sm: 'flex' },
+              top: '8%',
+              right: { md: -45, lg: -55 },
+              display: { xs: 'none', md: 'flex' },
             }}
           />
 
@@ -348,63 +381,46 @@ export default function HeroSection() {
             label="Bills collected"
             className="float-badge-4"
             sx={{
-              bottom: { xs: -20, md: '22%' },
-              right: { xs: 12, md: -50, lg: -75 },
-              display: { xs: 'none', sm: 'flex' },
+              bottom: '22%',
+              right: { md: -50, lg: -75 },
+              display: { xs: 'none', md: 'flex' },
             }}
           />
 
           {/* Main Dashboard Placeholder Container */}
           <Box
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
             sx={{
               position: 'relative',
               width: '100%',
-              backgroundColor: '#ffffff',
-              borderRadius: { xs: '14px', sm: '18px', md: '22px' },
-              p: { xs: 1, sm: 1.5, md: 1.8 },
-              border: '1px solid rgba(226, 232, 240, 0.85)',
-              boxShadow: `
-                0 30px 60px -12px rgba(50, 50, 93, 0.12),
-                0 18px 36px -18px rgba(0, 0, 0, 0.16),
-                0 0 0 1px rgba(0, 0, 0, 0.03)
-              `,
-              overflow: 'hidden',
-              transition: 'box-shadow 0.3s ease, transform 0.3s ease',
-              '&:hover': {
-                boxShadow: `
-                  0 40px 80px -15px rgba(50, 50, 93, 0.18),
-                  0 24px 48px -18px rgba(0, 0, 0, 0.2),
-                  0 0 0 1px rgba(30, 86, 160, 0.08)
-                `,
-              },
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transform: `perspective(1200px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+              transition: tilt.x === 0 && tilt.y === 0 ? 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)' : 'none',
+              willChange: 'transform',
             }}
           >
-            {/* Inner frame containing the dashboard mockup graphic */}
             <Box
+              component="img"
+              src={allDevicesMockup}
+              alt="Urion SMS Multi-Device Ecosystem - Desktop, Laptop, Tablet & Smartphone"
               sx={{
                 width: '100%',
-                borderRadius: { xs: '10px', sm: '14px', md: '16px' },
-                overflow: 'hidden',
-                backgroundColor: '#f8fafc',
+                height: 'auto',
                 display: 'block',
+                filter: 'drop-shadow(0 20px 45px rgba(15, 23, 42, 0.12)) drop-shadow(0 6px 16px rgba(15, 23, 42, 0.08))',
+                imageRendering: '-webkit-optimize-contrast',
+                transition: 'filter 0.3s ease',
+                '&:hover': {
+                  filter: 'drop-shadow(0 30px 60px rgba(15, 23, 42, 0.16)) drop-shadow(0 10px 22px rgba(15, 23, 42, 0.10))',
+                },
               }}
-            >
-              <Box
-                component="img"
-                src="/dashboard-mockup.png"
-                alt="School Management Dashboard Preview"
-                sx={{
-                  width: '100%',
-                  height: 'auto',
-                  display: 'block',
-                  borderRadius: { xs: '10px', sm: '14px', md: '16px' },
-                  imageRendering: '-webkit-optimize-contrast',
-                }}
-              />
-            </Box>
+            />
           </Box>
 
-          {/* Mobile badges row (visible only on xs mobile screens) */}
+          {/* Mobile & Tablet badges row (visible only on screens below md) */}
           <Stack
             direction="row"
             spacing={1.5}
@@ -412,8 +428,8 @@ export default function HeroSection() {
             flexWrap="wrap"
             useFlexGap
             sx={{
-              display: { xs: 'flex', sm: 'none' },
-              mt: 3,
+              display: { xs: 'flex', md: 'none' },
+              mt: { xs: 2.5, sm: 3.5 },
             }}
           >
             <Paper
@@ -493,6 +509,7 @@ export default function HeroSection() {
             </Paper>
           </Stack>
         </Box>
+        </RevealOnScroll>
       </Container>
     </Box>
   );

@@ -2,9 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-html {
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
@@ -16,7 +20,6 @@ body {
   color: #0f172a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
 /* Subtle floating badge keyframe animations */
@@ -63,11 +66,13 @@ body {
   animation: floatSlow2 6.5s ease-in-out infinite 1s;
 }
 
-/* Section-to-Section Scroll Reveal Animations */
+/* State-of-the-Art Scroll Reveal & Pop-Up Animations */
+
+/* Base Section / Heading Float-In */
 .reveal-init {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -76,26 +81,202 @@ body {
   transform: translateY(0);
 }
 
-.reveal-scale-init {
+/* Card / Component Scale Float-In */
+.reveal-pop-up {
   opacity: 0;
   transform: translateY(32px) scale(0.97);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
-.reveal-scale-init.is-visible {
+.reveal-pop-up.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
 
-/* Staggered transition delays for cards */
+/* Dramatic Mockup 3D Floating Pop-Up */
+.reveal-mockup-pop {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-mockup-pop.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Slide From Left / Right Float-In */
+.reveal-slide-left {
+  opacity: 0;
+  transform: translateX(-36px) translateY(20px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+.reveal-slide-right {
+  opacity: 0;
+  transform: translateX(36px) translateY(20px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .reveal-slide-left,
+  .reveal-slide-right {
+    transform: translateY(24px);
+  }
+}
+
+/* Staggered transition delays for grid cards & items */
 .stagger-1 { transition-delay: 0.06s; }
-.stagger-2 { transition-delay: 0.14s; }
-.stagger-3 { transition-delay: 0.22s; }
-.stagger-4 { transition-delay: 0.30s; }
-.stagger-5 { transition-delay: 0.38s; }
+.stagger-2 { transition-delay: 0.12s; }
+.stagger-3 { transition-delay: 0.18s; }
+.stagger-4 { transition-delay: 0.24s; }
+.stagger-5 { transition-delay: 0.30s; }
+.stagger-6 { transition-delay: 0.36s; }
+.stagger-7 { transition-delay: 0.42s; }
+.stagger-8 { transition-delay: 0.48s; }
+.stagger-9 { transition-delay: 0.54s; }
+.stagger-10 { transition-delay: 0.60s; }
+.stagger-11 { transition-delay: 0.66s; }
+.stagger-12 { transition-delay: 0.72s; }
+.stagger-13 { transition-delay: 0.78s; }
+.stagger-14 { transition-delay: 0.84s; }
 
 /* Scroll margin so fixed navbar doesn't obscure section titles */
 section {
   scroll-margin-top: 80px;
 }
+
+/* ==========================================================================
+   INTERACTIVE TOGGLE & TAB SWITCHING ANIMATIONS
+   ========================================================================== */
+
+/* Fluid content transition on tab/role switch */
+@keyframes toggleFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.toggle-content-anim {
+  animation: toggleFadeSlide 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+/* Smooth zoom/cross-fade for mockup image swap */
+@keyframes mockupSwapFade {
+  0% {
+    opacity: 0.15;
+    transform: scale(0.965);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.mockup-swap-anim {
+  animation: mockupSwapFade 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+/* Multi-step wizard slide transitions */
+@keyframes stepSlideNext {
+  0% {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes stepSlidePrev {
+  0% {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.step-slide-next {
+  animation: stepSlideNext 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+.step-slide-prev {
+  animation: stepSlidePrev 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
+
+/* Success celebration checkmark bounce */
+@keyframes checkmarkPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-15deg);
+  }
+  70% {
+    transform: scale(1.15) rotate(3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.checkmark-pop {
+  animation: checkmarkPop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Active Toggle Pulse for Chips & Cards */
+@keyframes pulseSubtle {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(30, 86, 160, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(30, 86, 160, 0);
+  }
+}
+
+.pulse-active {
+  animation: pulseSubtle 1.8s infinite;
+}
+
+/* Smooth fade in for filtered matrix cards */
+@keyframes matrixFilterIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.matrix-card-enter {
+  animation: matrixFilterIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
