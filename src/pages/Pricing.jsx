@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
   Box,
   Container,
@@ -6,7 +6,6 @@ import {
   Card,
   Button,
   Stack,
-  Slider,
   Grid,
   Chip,
   Table,
@@ -21,7 +20,6 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
-import CalculateRoundedIcon from '@mui/icons-material/CalculateRounded';
 import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
@@ -169,20 +167,9 @@ const onboardingSteps = [
 ];
 
 export default function Pricing() {
-  const [studentCount, setStudentCount] = useState(350);
-  const [isFirstTermView, setIsFirstTermView] = useState(false);
-
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
-
-  const standardRate = isFirstTermView ? 17 : 35;
-  const premiumRate = isFirstTermView ? 35 : 45;
-
-  const standardTermTotal = studentCount * standardRate;
-  const premiumTermTotal = studentCount * premiumRate;
-  const standardAnnualTotal = studentCount * 35 * 3;
-  const premiumAnnualTotal = studentCount * 45 * 3;
 
   return (
     <Box
@@ -344,43 +331,6 @@ export default function Pricing() {
               </Box>
             </Card>
 
-            {/* Term Rate Toggle */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mt: 4, p: 0.5, bgcolor: '#F1F5F9', borderRadius: '10px' }}>
-              <Button
-                onClick={() => setIsFirstTermView(false)}
-                sx={{
-                  px: 2.5,
-                  py: 0.8,
-                  borderRadius: '8px',
-                  fontSize: '0.84rem',
-                  fontWeight: 700,
-                  textTransform: 'none',
-                  backgroundColor: !isFirstTermView ? '#FFFFFF' : 'transparent',
-                  color: !isFirstTermView ? '#0B0702' : '#64748B',
-                  boxShadow: !isFirstTermView ? '0 2px 6px rgba(0,0,0,0.06)' : 'none',
-                  '&:hover': { backgroundColor: !isFirstTermView ? '#FFFFFF' : 'rgba(0,0,0,0.04)' },
-                }}
-              >
-                Standard Term Rate
-              </Button>
-              <Button
-                onClick={() => setIsFirstTermView(true)}
-                sx={{
-                  px: 2.5,
-                  py: 0.8,
-                  borderRadius: '8px',
-                  fontSize: '0.84rem',
-                  fontWeight: 700,
-                  textTransform: 'none',
-                  backgroundColor: isFirstTermView ? '#FFFFFF' : 'transparent',
-                  color: isFirstTermView ? '#1E56A0' : '#64748B',
-                  boxShadow: isFirstTermView ? '0 2px 6px rgba(0,0,0,0.06)' : 'none',
-                  '&:hover': { backgroundColor: isFirstTermView ? '#FFFFFF' : 'rgba(0,0,0,0.04)' },
-                }}
-              >
-                🎁 Entry Rate (First Term Promo)
-              </Button>
-            </Box>
           </RevealOnScroll>
 
           {/* Pricing Cards Grid (Exact 2-Card layout matching Proposal Section 4.0) */}
@@ -472,39 +422,21 @@ export default function Pricing() {
                 </Typography>
 
                 {/* Price */}
-                <Box sx={{ mb: 0.5, display: 'flex', alignItems: 'baseline', gap: 1 }}>
+                <Box sx={{ mb: 3 }}>
                   <Typography
                     component="span"
                     sx={{
                       fontFamily: "'Sora', sans-serif",
                       fontWeight: 800,
-                      fontSize: { xs: '36px', sm: '42px' },
-                      lineHeight: '46px',
+                      fontSize: { xs: '28px', sm: '32px' },
+                      lineHeight: '38px',
                       color: '#0B0702',
                       letterSpacing: '-0.02em',
                     }}
                   >
-                    GH₵ {isFirstTermView ? '17.00' : '35.00'}
-                  </Typography>
-                  <Typography sx={{ fontSize: '13px', color: '#64748B', fontWeight: 600 }}>
-                    / student / term
+                    Custom Pricing
                   </Typography>
                 </Box>
-
-                {/* Price Subtext */}
-                <Typography
-                  sx={{
-                    fontSize: '12px',
-                    color: isFirstTermView ? '#1E56A0' : '#94A3B8',
-                    fontWeight: isFirstTermView ? 700 : 500,
-                    mb: 3,
-                    fontFamily: "'Inter', sans-serif",
-                  }}
-                >
-                  {isFirstTermView
-                    ? '★ Discounted entry rate for your first term (Regular: GH₵35)'
-                    : 'Entry / first term promo: GH₵ 17 / student · Billed termly'}
-                </Typography>
 
                 {/* Inclusions summary */}
                 <Box sx={{ p: 1.5, mb: 3, borderRadius: '8px', bgcolor: '#F8FAFC', border: '1px solid #E2E8F0' }}>
@@ -635,39 +567,21 @@ export default function Pricing() {
                 </Typography>
 
                 {/* Price */}
-                <Box sx={{ mb: 0.5, display: 'flex', alignItems: 'baseline', gap: 1 }}>
+                <Box sx={{ mb: 3 }}>
                   <Typography
                     component="span"
                     sx={{
                       fontFamily: "'Sora', sans-serif",
                       fontWeight: 800,
-                      fontSize: { xs: '36px', sm: '42px' },
-                      lineHeight: '46px',
+                      fontSize: { xs: '28px', sm: '32px' },
+                      lineHeight: '38px',
                       color: '#1E56A0',
                       letterSpacing: '-0.02em',
                     }}
                   >
-                    GH₵ {isFirstTermView ? '35.00' : '45.00'}
-                  </Typography>
-                  <Typography sx={{ fontSize: '13px', color: '#64748B', fontWeight: 600 }}>
-                    / student / term
+                    Custom Pricing
                   </Typography>
                 </Box>
-
-                {/* Price Subtext */}
-                <Typography
-                  sx={{
-                    fontSize: '12px',
-                    color: isFirstTermView ? '#1E56A0' : '#94A3B8',
-                    fontWeight: isFirstTermView ? 700 : 500,
-                    mb: 3,
-                    fontFamily: "'Inter', sans-serif",
-                  }}
-                >
-                  {isFirstTermView
-                    ? '★ Discounted entry rate for your first term (Regular: GH₵45)'
-                    : 'Entry / first term promo: GH₵ 35 / student · Billed termly'}
-                </Typography>
 
                 {/* Inclusions summary */}
                 <Box sx={{ p: 1.5, mb: 3, borderRadius: '8px', bgcolor: '#F0F6FF', border: '1px solid #DBEAFE' }}>
@@ -774,144 +688,7 @@ export default function Pricing() {
             </Button>
           </Box>
 
-          {/* SECTION 2: Interactive Termly Investment Calculator (from Proposal 4.1 & 7.0) */}
-          <RevealOnScroll delay={0.08}>
-            <Box
-              sx={{
-                maxWidth: '860px',
-                mx: 'auto',
-                mt: { xs: 8, md: 11 },
-                p: { xs: 3, sm: 4.5 },
-                borderRadius: '18px',
-                backgroundColor: '#FFFFFF',
-                border: '1px solid #E2E8F0',
-                boxShadow: '0 8px 30px rgba(0,0,0,0.04)',
-              }}
-            >
-              <Stack direction="row" alignItems="center" spacing={1.5} sx={{ mb: 1 }}>
-                <Box sx={{ color: '#1E56A0', display: 'flex' }}>
-                  <CalculateRoundedIcon sx={{ fontSize: 26 }} />
-                </Box>
-                <Typography variant="h2" sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: { xs: '1.25rem', sm: '1.45rem' }, color: '#0B0702' }}>
-                  Termly Investment Calculator
-                </Typography>
-              </Stack>
-              <Typography sx={{ color: '#64748B', fontSize: '0.9rem', mb: 3 }}>
-                Adjust student enrolment to calculate your school's exact investment per term and annually.
-              </Typography>
 
-              {/* Quick Select Buttons */}
-              <Box sx={{ mb: 3 }}>
-                <Typography sx={{ fontSize: '0.78rem', fontWeight: 700, color: '#475569', textTransform: 'uppercase', letterSpacing: '0.04em', mb: 1.2 }}>
-                  Quick select enrolment:
-                </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                  {[150, 200, 350, 500, 750, 1000].map((count) => (
-                    <Chip
-                      key={count}
-                      label={`${count} Students`}
-                      clickable
-                      color={studentCount === count ? 'primary' : 'default'}
-                      variant={studentCount === count ? 'filled' : 'outlined'}
-                      onClick={() => setStudentCount(count)}
-                      sx={{
-                        fontWeight: 600,
-                        fontSize: '0.82rem',
-                        bgcolor: studentCount === count ? '#1E56A0' : '#F8FAFC',
-                      }}
-                    />
-                  ))}
-                </Stack>
-              </Box>
-
-              {/* Slider */}
-              <Box sx={{ px: 1, mb: 4 }}>
-                <Slider
-                  value={studentCount}
-                  min={50}
-                  max={1500}
-                  step={25}
-                  onChange={(_, val) => setStudentCount(val)}
-                  valueLabelDisplay="auto"
-                  sx={{
-                    color: '#1E56A0',
-                    height: 8,
-                    '& .MuiSlider-thumb': {
-                      width: 22,
-                      height: 22,
-                      backgroundColor: '#FFFFFF',
-                      border: '3px solid #1E56A0',
-                    },
-                  }}
-                />
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', color: '#94A3B8', fontSize: '0.75rem' }}>
-                  <span>50 students</span>
-                  <span style={{ fontWeight: 700, color: '#0B0702' }}>Selected: {studentCount} students</span>
-                  <span>1,500+ students</span>
-                </Box>
-              </Box>
-
-              {/* Result Grid */}
-              <Grid container spacing={2.5}>
-                <Grid item xs={12} sm={6}>
-                  <Box
-                    sx={{
-                      p: 2.5,
-                      borderRadius: '12px',
-                      border: '1px solid #E2E8F0',
-                      bgcolor: '#F8FAFC',
-                    }}
-                  >
-                    <Typography sx={{ fontWeight: 700, color: '#475569', fontSize: '0.85rem' }}>
-                      STANDARD PLAN
-                    </Typography>
-                    <Typography sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: '1.65rem', color: '#0B0702', mt: 0.5 }}>
-                      GH₵ {standardTermTotal.toLocaleString()}
-                      <span style={{ fontSize: '0.8rem', fontWeight: 500, color: '#64748B' }}> / term</span>
-                    </Typography>
-                    <Typography sx={{ fontSize: '0.78rem', color: '#16A34A', fontWeight: 600, mt: 0.5 }}>
-                      First Term Promo: GH₵ {(studentCount * 17).toLocaleString()}
-                    </Typography>
-                    <Typography sx={{ fontSize: '0.8rem', color: '#64748B', mt: 1 }}>
-                      Annual (3 terms): GH₵ {standardAnnualTotal.toLocaleString()}
-                    </Typography>
-                  </Box>
-                </Grid>
-
-                <Grid item xs={12} sm={6}>
-                  <Box
-                    sx={{
-                      p: 2.5,
-                      borderRadius: '12px',
-                      border: '1.5px solid #BFDBFE',
-                      bgcolor: '#EFF6FF',
-                    }}
-                  >
-                    <Typography sx={{ fontWeight: 700, color: '#1E40AF', fontSize: '0.85rem' }}>
-                      PREMIUM PLAN (FULL SUITE)
-                    </Typography>
-                    <Typography sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: '1.65rem', color: '#1E56A0', mt: 0.5 }}>
-                      GH₵ {premiumTermTotal.toLocaleString()}
-                      <span style={{ fontSize: '0.8rem', fontWeight: 500, color: '#64748B' }}> / term</span>
-                    </Typography>
-                    <Typography sx={{ fontSize: '0.78rem', color: '#1E56A0', fontWeight: 600, mt: 0.5 }}>
-                      First Term Promo: GH₵ {(studentCount * 35).toLocaleString()}
-                    </Typography>
-                    <Typography sx={{ fontSize: '0.8rem', color: '#64748B', mt: 1 }}>
-                      Annual (3 terms): GH₵ {premiumAnnualTotal.toLocaleString()}
-                    </Typography>
-                  </Box>
-                </Grid>
-              </Grid>
-
-              {/* Context Worked Example Note from Proposal */}
-              <Box sx={{ mt: 3, p: 2, borderRadius: '10px', bgcolor: '#F1F5F9' }}>
-                <Typography sx={{ fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>
-                  💡 <strong>Worked Example from Proposal:</strong> A school with 350 enrolled students choosing Standard invests GH₵12,250 per term (GH₵36,750 annually) — covering attendance, gradebook, billing, and full communications. This is less than the annual salary of one administrative hire, and eliminates 3 to 5 separate software subscriptions.
-                </Typography>
-              </Box>
-            </Box>
-          </RevealOnScroll>
 
           {/* SECTION 3: At a Glance — Plan Comparison Matrix (from Proposal Page 9) */}
           <RevealOnScroll delay={0.1}>
