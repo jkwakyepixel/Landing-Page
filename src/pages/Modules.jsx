@@ -1646,38 +1646,22 @@ export default function Modules() {
                     Best suited for schools running core academic, admin, billing & communication operations.
                   </Typography>
 
-                  {/* Price in Ghana Cedis */}
-                  <Box sx={{ mb: 0.5, display: 'flex', alignItems: 'baseline', gap: 1 }}>
+                  {/* Price */}
+                  <Box sx={{ mb: 3 }}>
                     <Typography
                       component="span"
                       sx={{
                         fontFamily: "'Sora', sans-serif",
                         fontWeight: 800,
-                        fontSize: { xs: '34px', sm: '38px' },
-                        lineHeight: '42px',
+                        fontSize: { xs: '28px', sm: '32px' },
+                        lineHeight: '38px',
                         color: '#0B0702',
                         letterSpacing: '-0.02em',
                       }}
                     >
-                      GH₵ 35.00
-                    </Typography>
-                    <Typography sx={{ fontSize: '13px', color: '#64748B', fontWeight: 600 }}>
-                      / student / term
+                      Custom Pricing
                     </Typography>
                   </Box>
-
-                  {/* Price Subtext */}
-                  <Typography
-                    sx={{
-                      fontSize: '12px',
-                      color: '#1E56A0',
-                      fontWeight: 600,
-                      mb: 2.5,
-                      fontFamily: "'Inter', sans-serif",
-                    }}
-                  >
-                    Entry / First term rate: GH₵ 17 / student · 1st Month Free
-                  </Typography>
 
                   {/* Feature List */}
                   <Stack spacing={1.4} sx={{ mb: 4, flexGrow: 1 }}>
@@ -1800,38 +1784,22 @@ export default function Modules() {
                     Full platform — all 20 modules & 4 portals completely unlocked for schools running full operations.
                   </Typography>
 
-                  {/* Price in Ghana Cedis */}
-                  <Box sx={{ mb: 0.5, display: 'flex', alignItems: 'baseline', gap: 1 }}>
+                  {/* Price */}
+                  <Box sx={{ mb: 3 }}>
                     <Typography
                       component="span"
                       sx={{
                         fontFamily: "'Sora', sans-serif",
                         fontWeight: 800,
-                        fontSize: { xs: '34px', sm: '38px' },
-                        lineHeight: '42px',
+                        fontSize: { xs: '28px', sm: '32px' },
+                        lineHeight: '38px',
                         color: '#1E56A0',
                         letterSpacing: '-0.02em',
                       }}
                     >
-                      GH₵ 45.00
-                    </Typography>
-                    <Typography sx={{ fontSize: '13px', color: '#64748B', fontWeight: 600 }}>
-                      / student / term
+                      Custom Pricing
                     </Typography>
                   </Box>
-
-                  {/* Price Subtext */}
-                  <Typography
-                    sx={{
-                      fontSize: '12px',
-                      color: '#1E56A0',
-                      fontWeight: 600,
-                      mb: 2.5,
-                      fontFamily: "'Inter', sans-serif",
-                    }}
-                  >
-                    Entry / First term rate: GH₵ 35 / student · 1st Month Free
-                  </Typography>
 
                   {/* Feature List */}
                   <Stack spacing={1.4} sx={{ mb: 4, flexGrow: 1 }}>
