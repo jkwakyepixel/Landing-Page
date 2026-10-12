@@ -17,6 +17,7 @@
     "@mui/material": "^9.4.0",
     "@mui/x-date-pickers": "^9.13.0",
     "dayjs": "^1.11.23",
+    "heic-convert": "^2.1.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

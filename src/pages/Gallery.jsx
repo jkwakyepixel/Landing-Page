@@ -27,10 +27,14 @@ import dashboardMockup from '../assets/dashboard desktop mock ups.png';
 import teacherMockup from '../assets/teachers tablet mock up.png';
 import parentMockup from '../assets/parent mobile mock up.png';
 import adminLaptopMockup from '../assets/admin billing laptop mmockup.png';
+import presentationSchoolDemo1 from '../assets/presentation-school-demo-1.jpg';
+import presentationSchoolDemo2 from '../assets/presentation-school-demo-2.jpg';
+import presentationSchoolDemo3 from '../assets/presentation-school-demo-3.jpg';
 
 // Categories matching the user's mockup
 const filterCategories = [
   { id: 'all', label: 'All' },
+  { id: 'presentations', label: 'Presentations' },
   { id: 'product', label: 'Product' },
   { id: 'schools', label: 'Schools' },
   { id: 'events', label: 'Events' },
@@ -41,6 +45,36 @@ const filterCategories = [
 
 // Curated high-resolution photo gallery for presentations, workshops, onboarding & community
 const galleryPhotos = [
+  {
+    id: 101,
+    category: 'presentations',
+    categories: ['presentations', 'events', 'schools'],
+    tag: 'PRESENTATION',
+    title: 'Live System Demo — Transport Module',
+    subtitle: 'Demonstrating Urion SMS real-time transport attendance and route tracking live on projection to school leadership.',
+    image: presentationSchoolDemo1,
+    aspectRatio: '16/9',
+  },
+  {
+    id: 102,
+    category: 'presentations',
+    categories: ['presentations', 'events', 'training'],
+    tag: 'PRESENTATION',
+    title: 'Interactive Feature Walkthrough',
+    subtitle: 'Walking school management through automated student records, attendance registers, and administrator controls.',
+    image: presentationSchoolDemo2,
+    aspectRatio: '16/9',
+  },
+  {
+    id: 103,
+    category: 'presentations',
+    categories: ['presentations', 'schools', 'team'],
+    tag: 'CAMPUS VISIT',
+    title: 'Morten Early Childhood Centre',
+    subtitle: 'Urion Systems deployment and presentation team on campus following an executive system walkthrough.',
+    image: presentationSchoolDemo3,
+    aspectRatio: '3/4',
+  },
   {
     id: 1,
     category: 'product',
@@ -284,7 +318,11 @@ export default function Gallery() {
 
   const filteredPhotos = activeCategory === 'all'
     ? galleryPhotos
-    : galleryPhotos.filter((item) => item.category === activeCategory);
+    : galleryPhotos.filter(
+        (item) =>
+          item.category === activeCategory ||
+          (Array.isArray(item.categories) && item.categories.includes(activeCategory))
+      );
 
   const handleOpenLightbox = (photo) => {
     setSelectedImage(photo);
