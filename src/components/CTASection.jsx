@@ -107,7 +107,13 @@ export default function CTASection() {
               >
                 {/* Outlined White Pill ("Contact Sales") */}
                 <Box
-                  component="button"
+                  component="a"
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.hash = '#contact';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
                   sx={{
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -123,6 +129,7 @@ export default function CTASection() {
                     py: '11px',
                     borderRadius: '9999px',
                     cursor: 'pointer',
+                    textDecoration: 'none',
                     transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
                       backgroundColor: 'rgba(255, 255, 255, 0.2)',

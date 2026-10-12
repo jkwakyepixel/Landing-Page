@@ -74,10 +74,10 @@ const footerColumns = [
   {
     title: 'Product',
     links: [
-      { label: 'Platform', href: '#platform' },
-      { label: 'Modules', href: '#modules' },
-      { label: 'Pricing', href: '#pricing' },
-      { label: 'Product Showcase', href: '#showcase' },
+      { label: 'Platform Overview', href: '#solution' },
+      { label: 'System Modules', href: '#modules' },
+      { label: 'Pricing Plans', href: '#pricing' },
+      { label: 'Campus Gallery', href: '#gallery' },
     ],
   },
   {
@@ -85,7 +85,7 @@ const footerColumns = [
     links: [
       { label: 'Administrators', href: '#experiences' },
       { label: 'Teachers', href: '#experiences' },
-      { label: 'Staff', href: '#experiences' },
+      { label: 'Staff & HR', href: '#experiences' },
       { label: 'Students', href: '#experiences' },
       { label: 'Parents', href: '#experiences' },
     ],
@@ -93,19 +93,19 @@ const footerColumns = [
   {
     title: 'Company',
     links: [
-      { label: 'History', href: '#history' },
+      { label: 'Our Story & History', href: '#history' },
       { label: 'Mission & Vision', href: '#mission' },
       { label: 'Why This System', href: '#why-this-system' },
-      { label: 'Contact', href: '#contact' },
-      { label: 'Gallery', href: '#gallery' },
+      { label: 'Contact Us', href: '#contact' },
+      { label: 'School Gallery', href: '#gallery' },
     ],
   },
   {
     title: 'Resources',
     links: [
-      { label: 'Manuscript', href: '#manuscript' },
-      { label: 'Documentation', href: '#docs' },
-      { label: 'FAQs', href: '#faqs' },
+      { label: 'Core Architecture', href: '#solution' },
+      { label: 'Module Breakdown', href: '#modules' },
+      { label: 'Why Choose Urion', href: '#why-this-system' },
       { label: 'Book a Demo', href: '#book-demo' },
       { label: 'Make an Enquiry', href: '#contact' },
     ],
@@ -296,18 +296,20 @@ export default function Footer() {
           {/* Social Media Outlined Boxes */}
           <Stack direction="row" spacing={1} alignItems="center">
             {[
-              { id: 'facebook', icon: FacebookIcon, label: 'Facebook' },
-              { id: 'instagram', icon: InstagramIcon, label: 'Instagram' },
-              { id: 'linkedin', icon: LinkedInIcon, label: 'LinkedIn' },
-              { id: 'x', icon: XIcon, label: 'X (Twitter)' },
-              { id: 'youtube', icon: YouTubeIcon, label: 'YouTube' },
+              { id: 'linkedin', icon: LinkedInIcon, label: 'LinkedIn', url: 'https://linkedin.com' },
+              { id: 'facebook', icon: FacebookIcon, label: 'Facebook', url: 'https://facebook.com' },
+              { id: 'instagram', icon: InstagramIcon, label: 'Instagram', url: 'https://instagram.com' },
+              { id: 'x', icon: XIcon, label: 'X (Twitter)', url: 'https://x.com' },
+              { id: 'youtube', icon: YouTubeIcon, label: 'YouTube', url: 'https://youtube.com' },
             ].map((social) => {
               const SocialIcon = social.icon;
               return (
                 <Box
                   key={social.id}
                   component="a"
-                  href={`#${social.id}`}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.label}
                   sx={{
                     width: 32,

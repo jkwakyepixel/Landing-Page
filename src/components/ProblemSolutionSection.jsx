@@ -421,7 +421,13 @@ export default function ProblemSolutionSection() {
             }}
           >
             <Box
-              component="button"
+              component="a"
+              href="#why-this-system"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = '#why-this-system';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               sx={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -436,6 +442,7 @@ export default function ProblemSolutionSection() {
                 fontWeight: 600,
                 letterSpacing: '-0.01em',
                 cursor: 'pointer',
+                textDecoration: 'none',
                 boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
                 transition: 'all 0.2s ease',
                 '&:hover': {

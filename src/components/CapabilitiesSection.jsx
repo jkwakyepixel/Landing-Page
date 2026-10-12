@@ -351,7 +351,13 @@ export default function CapabilitiesSection() {
 
             {/* Right Side Button */}
             <Box
-              component="button"
+              component="a"
+              href="#modules"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.hash = '#modules';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
               sx={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -367,6 +373,7 @@ export default function CapabilitiesSection() {
                 fontWeight: 600,
                 letterSpacing: '-0.01em',
                 cursor: 'pointer',
+                textDecoration: 'none',
                 boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
                 transition: 'all 0.2s ease',
                 flexShrink: 0,

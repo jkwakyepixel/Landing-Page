@@ -21,6 +21,7 @@ import MissionVision from './pages/MissionVision';
 import Solution from './pages/Solution';
 import WhyThisSystem from './pages/WhyThisSystem';
 import Pricing from './pages/Pricing';
+import Legal from './pages/Legal';
 
 const getRouteFromHash = (hash) => {
   if (!hash || hash === '#' || hash === '') return 'home';
@@ -43,6 +44,13 @@ const getRouteFromHash = (hash) => {
     hash === '#our-story'
   ) return 'history';
   if (hash === '#why-this-system' || hash === '#why-we-built-this' || hash === '#why-this') return 'why-this-system';
+  if (
+    hash === '#privacy' ||
+    hash === '#terms' ||
+    hash === '#privacy-policy' ||
+    hash === '#terms-of-service' ||
+    hash === '#legal'
+  ) return 'legal';
   return 'home';
 };
 
@@ -54,11 +62,16 @@ function App() {
       const nextRoute = getRouteFromHash(window.location.hash);
       setCurrentRoute(nextRoute);
 
-      // Only scroll to top if not targeting a specific sub-element
+      // Handle in-page anchor scrolling or top scrolling
       const hash = window.location.hash;
       const isSubHash = (hash.startsWith('#solution-') && hash !== '#solution') ||
                         (hash.startsWith('#modules-') && hash !== '#modules');
-      if (!isSubHash) {
+      if (hash && (hash === '#experiences' || hash === '#problem' || hash === '#roles' || hash === '#hero' || hash === '#cta')) {
+        setTimeout(() => {
+          const el = document.getElementById(hash.slice(1));
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else if (!isSubHash) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     };
@@ -88,6 +101,8 @@ function App() {
         <History />
       ) : currentRoute === 'why-this-system' ? (
         <WhyThisSystem />
+      ) : currentRoute === 'legal' ? (
+        <Legal />
       ) : (
         <Box
           sx={{

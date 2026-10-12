@@ -357,7 +357,13 @@ export default function SupportSection() {
 
               {/* Button */}
               <Box
-                component="button"
+                component="a"
+                href="#modules"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.hash = '#modules';
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 sx={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -373,6 +379,7 @@ export default function SupportSection() {
                   borderRadius: '9999px',
                   border: 'none',
                   cursor: 'pointer',
+                  textDecoration: 'none',
                   width: '100%',
                   maxWidth: 220,
                   boxShadow: '0 4px 14px rgba(0, 0, 0, 0.25)',
