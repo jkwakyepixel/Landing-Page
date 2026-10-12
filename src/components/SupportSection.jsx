@@ -42,8 +42,8 @@ function EnvelopeBrandIcon() {
   );
 }
 
-// Speech bubbles with question mark icon with brand blue gradient
-function HelpCentreBrandIcon() {
+// Live demonstration / calendar icon with brand blue gradient
+function DemoBrandIcon() {
   return (
     <svg
       width="44"
@@ -55,9 +55,11 @@ function HelpCentreBrandIcon() {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-      <path d="M9.5 9a2.5 2.5 0 0 1 4.8 1c0 1.5-2.3 2-2.3 2" />
-      <line x1="12" y1="15" x2="12.01" y2="15" />
+      <rect x="3" y="4" width="18" height="18" rx="3" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+      <path d="M10 14l4 2-4 2v-4z" />
     </svg>
   );
 }
@@ -295,7 +297,7 @@ export default function SupportSection() {
             </Box>
           </RevealOnScroll>
 
-          {/* Card 2: Help Centre */}
+          {/* Card 2: Book a Demo */}
           <RevealOnScroll variant="pop-up" delay={0.16} sx={{ width: '100%', maxWidth: 340 }}>
             <Box
               sx={{
@@ -320,7 +322,7 @@ export default function SupportSection() {
             >
               {/* Brand Blue Gradient Icon */}
               <Box sx={{ mb: 2 }}>
-                <HelpCentreBrandIcon />
+                <DemoBrandIcon />
               </Box>
 
               {/* Title */}
@@ -337,7 +339,7 @@ export default function SupportSection() {
                   textAlign: 'center',
                 }}
               >
-                Help Centre
+                Book a Demo
               </Typography>
 
               {/* Subtitle */}
@@ -352,16 +354,16 @@ export default function SupportSection() {
                   textAlign: 'center',
                 }}
               >
-                Searchable resources, anytime
+                Guided 1-on-1 walkthrough
               </Typography>
 
               {/* Button */}
               <Box
                 component="a"
-                href="#modules"
+                href="#book-demo"
                 onClick={(e) => {
                   e.preventDefault();
-                  window.location.hash = '#modules';
+                  window.location.hash = '#book-demo';
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 sx={{
@@ -391,7 +393,7 @@ export default function SupportSection() {
                   },
                 }}
               >
-                Dive In
+                Schedule Demo
                 <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#ffffff' }} />
               </Box>
             </Box>
