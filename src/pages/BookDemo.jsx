@@ -211,9 +211,9 @@ export default function BookDemo() {
             demo_type: typeLabel,
             preferred_date: formattedDate,
             preferred_time: selectedTime || 'Not specified',
-            subject: `Urion SMS Demo Booking: ${formData.schoolName} (${formData.firstName} ${formData.lastName})`,
+            subject: `Edukra Demo Booking: ${formData.schoolName} (${formData.firstName} ${formData.lastName})`,
             message: `New Demo Booking Request Details:\n\nName: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone || 'N/A'}\nSchool/Organization: ${formData.schoolName}\nRole: ${formData.role || 'N/A'}\nDemo Type: ${typeLabel}\nDate: ${formattedDate}\nTime: ${selectedTime || 'Not specified'}`,
-            from_name: 'Urion SMS Booking Form',
+            from_name: 'Edukra Booking Form',
           }),
         });
 

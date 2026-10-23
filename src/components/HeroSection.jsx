@@ -405,7 +405,7 @@ export default function HeroSection() {
             <Box
               component="img"
               src={allDevicesMockup}
-              alt="Urion SMS Multi-Device Ecosystem - Desktop, Laptop, Tablet & Smartphone"
+              alt="Edukra Multi-Device Ecosystem - Desktop, Laptop, Tablet & Smartphone"
               sx={{
                 width: '100%',
                 height: 'auto',

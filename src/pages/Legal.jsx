@@ -25,6 +25,7 @@ import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
 import RevealOnScroll from '../components/RevealOnScroll';
+import edukraIcon from '../assets/edukra-icon.png';
 
 export default function Legal() {
   const [activeTab, setActiveTab] = useState(() => {
@@ -125,6 +126,21 @@ export default function Legal() {
           {/* Header */}
           <RevealOnScroll variant="init">
             <Box sx={{ textAlign: 'center', mb: 5 }}>
+              {/* Brand Logo Icon */}
+              <Box
+                component="img"
+                src={edukraIcon}
+                alt="Edukra Brand Mark"
+                sx={{
+                  width: { xs: 52, sm: 62 },
+                  height: { xs: 52, sm: 62 },
+                  objectFit: 'contain',
+                  mx: 'auto',
+                  mb: 2.2,
+                  filter: 'drop-shadow(0 4px 14px rgba(30, 86, 160, 0.22))',
+                }}
+              />
+
               {/* Badge Pill */}
               <Box
                 sx={{

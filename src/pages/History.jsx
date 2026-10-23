@@ -81,7 +81,7 @@ const chapters = [
     chapter: 'Chapter 04',
     title: 'The Complete Unified Platform',
     description:
-      'Urion SMS evolved into an all-in-one ecosystem unifying student records, fee collection, gradebooks, attendance, staff portals, and LMS integrations into a single intuitive interface—backed by contextual in-app tutorials for admins, teachers, and finance teams.',
+      'Edukra evolved into an all-in-one ecosystem unifying student records, fee collection, gradebooks, attendance, staff portals, and LMS integrations into a single intuitive interface—backed by contextual in-app tutorials for admins, teachers, and finance teams.',
     items: ['All-in-one unified school modules', 'Role-tailored in-app training tracks'],
   },
   {
@@ -90,7 +90,7 @@ const chapters = [
     chapter: 'Chapter 05',
     title: "Leading the Future of EdTech",
     description:
-      'Today, Urion SMS serves as the digital backbone for forward-thinking schools across Ghana. We are actively deploying predictive AI analytics for student performance and dropout risk prevention, establishing the gold standard for educational technology across West Africa.',
+      'Today, Edukra serves as the digital backbone for forward-thinking schools across Ghana. We are actively deploying predictive AI analytics for student performance and dropout risk prevention, establishing the gold standard for educational technology across West Africa.',
     items: ['Predictive AI performance analytics', 'Nationwide & West African expansion'],
   },
 ];

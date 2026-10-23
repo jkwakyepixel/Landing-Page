@@ -143,7 +143,7 @@ export default function ContactUs() {
           email: formData.email,
           subject: formData.subject || `New Contact Inquiry from ${formData.fullName}`,
           message: formData.message,
-          from_name: 'Urion SMS Contact Form',
+          from_name: 'Edukra Contact Form',
         }),
       });
 

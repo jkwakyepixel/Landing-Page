@@ -77,7 +77,7 @@ export default function CTASection() {
                   mb: '14px',
                 }}
               >
-                Ready to See Urion SMS
+                Ready to See Edukra
                 <br />
                 in Action?
               </Typography>

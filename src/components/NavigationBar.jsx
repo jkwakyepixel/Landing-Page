@@ -22,6 +22,7 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import edukraIcon from '../assets/edukra-icon.png';
 
 const navItems = [
   { label: 'Home', hasDropdown: false },
@@ -190,35 +191,32 @@ export default function NavigationBar() {
           >
             {/* Logo Icon Badge */}
             <Box
+              component="img"
+              src={edukraIcon}
+              alt="Edukra Logo"
               sx={{
                 width: 38,
                 height: 38,
-                borderRadius: '9px',
-                backgroundColor: 'primary.main',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#ffffff',
-                boxShadow: '0 3px 10px rgba(30, 86, 160, 0.3)',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 2px 8px rgba(30, 86, 160, 0.22))',
               }}
-            >
-              <SchoolRoundedIcon sx={{ fontSize: 22 }} />
-            </Box>
+            />
 
             {/* Logo Text */}
             <Typography
               variant="h6"
               component="span"
               sx={{
-                fontWeight: 800,
-                fontSize: { xs: '1.1rem', md: '1.25rem' },
-                letterSpacing: '-0.025em',
+                fontFamily: "'Sora', sans-serif",
+                fontWeight: 850,
+                fontSize: { xs: '1.2rem', md: '1.35rem' },
+                letterSpacing: '-0.03em',
                 color: '#0f172a',
                 display: 'flex',
                 alignItems: 'center',
               }}
             >
-              Urion SMS
+              Edukra
             </Typography>
           </Box>
 
@@ -485,22 +483,18 @@ export default function NavigationBar() {
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2.5, pt: 0.5 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.25 }}>
             <Box
+              component="img"
+              src={edukraIcon}
+              alt="Edukra Logo"
               sx={{
-                width: 36,
-                height: 36,
-                borderRadius: '9px',
-                backgroundColor: 'primary.main',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#ffffff',
-                boxShadow: '0 2px 8px rgba(30, 86, 160, 0.25)',
+                width: 34,
+                height: 34,
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 2px 6px rgba(30, 86, 160, 0.2))',
               }}
-            >
-              <SchoolRoundedIcon sx={{ fontSize: 20 }} />
-            </Box>
-            <Typography variant="h6" sx={{ fontWeight: 800, fontSize: '1.15rem', color: '#0f172a' }}>
-              Urion SMS
+            />
+            <Typography variant="h6" sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 850, fontSize: '1.2rem', color: '#0f172a' }}>
+              Edukra
             </Typography>
           </Box>
           <IconButton 

@@ -47,7 +47,7 @@ const galleryPhotos = [
     categories: ['presentations', 'schools'],
     tag: 'PRESENTATION',
     title: 'Live System Demo — Transport Module',
-    subtitle: 'Demonstrating Urion SMS real-time transport attendance and route tracking live on projection to school leadership.',
+    subtitle: 'Demonstrating Edukra real-time transport attendance and route tracking live on projection to school leadership.',
     image: presentationSchoolDemo1,
     aspectRatio: '16/9',
   },

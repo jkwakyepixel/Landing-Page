@@ -12,6 +12,7 @@ import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import RevealOnScroll from './RevealOnScroll';
+import edukraIcon from '../assets/edukra-icon.png';
 
 // Social media SVG icons matching mockup
 function FacebookIcon(props) {
@@ -105,7 +106,7 @@ const footerColumns = [
     links: [
       { label: 'Core Architecture', href: '#solution' },
       { label: 'Module Breakdown', href: '#modules' },
-      { label: 'Why Choose Urion', href: '#why-this-system' },
+      { label: 'Why Choose Edukra', href: '#why-this-system' },
       { label: 'Book a Demo', href: '#book-demo' },
       { label: 'Make an Enquiry', href: '#contact' },
     ],
@@ -148,32 +149,29 @@ export default function Footer() {
           {/* Left Brand Column */}
           <Box sx={{ gridColumn: { xs: '1 / -1', md: '1 / 2' } }}>
             {/* Logo + Product Name */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Box
+                component="img"
+                src={edukraIcon}
+                alt="Edukra Logo"
                 sx={{
-                  width: 26,
-                  height: 26,
-                  borderRadius: '6px',
-                  backgroundColor: '#1d68d8',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
+                  width: 28,
+                  height: 28,
+                  objectFit: 'contain',
                 }}
-              >
-                <SchoolRoundedIcon sx={{ fontSize: 15, color: '#ffffff' }} />
-              </Box>
+              />
               <Typography
                 variant="h6"
                 component="span"
                 sx={{
-                  fontWeight: 750,
-                  fontSize: '0.92rem',
+                  fontFamily: "'Sora', sans-serif",
+                  fontWeight: 800,
+                  fontSize: '1.05rem',
                   letterSpacing: '-0.02em',
                   color: '#ffffff',
                 }}
               >
-                Urion SMS
+                Edukra
               </Typography>
             </Box>
 

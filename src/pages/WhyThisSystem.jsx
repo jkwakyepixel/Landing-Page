@@ -848,7 +848,7 @@ export default function WhyThisSystem() {
               {[
                 {
                   quote:
-                    'We surveyed 127 Ghanaian institutions and uncovered a striking reality: 81% of schools were open to switching their software. Existing systems were either exorbitant foreign imports that ignored local payment systems or fragmented tools that broke under pressure. We built Urion SMS to deliver an intuitive, affordable platform made specifically for our schools.',
+                    'We surveyed 127 Ghanaian institutions and uncovered a striking reality: 81% of schools were open to switching their software. Existing systems were either exorbitant foreign imports that ignored local payment systems or fragmented tools that broke under pressure. We built Edukra to deliver an intuitive, affordable platform made specifically for our schools.',
                   chapter: 'CHAPTER 01 · THE FOUNDING IDEA',
                   desc: 'Why the platform was created, in the words of its founders.',
                 },
