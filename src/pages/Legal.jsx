@@ -575,7 +575,7 @@ export default function Legal() {
                     <br />
                     <strong>Email:</strong> <a href="mailto:admin@urionsystems.com" style={{ color: '#1e56a0', textDecoration: 'none' }}>admin@urionsystems.com</a>
                     <br />
-                    <strong>Direct Inquiries:</strong> +233 599 844 836 · +233 (0) 30 290 8800
+                    <strong>Direct Inquiries:</strong> +233 599 844 836
                     <br />
                     <strong>Physical Address:</strong> Accra, Greater Accra Region, Republic of Ghana
                   </Box>
@@ -647,7 +647,7 @@ export default function Legal() {
                     <br />
                     <strong>Support Email:</strong> <a href="mailto:admin@urionsystems.com" style={{ color: '#1e56a0', textDecoration: 'none' }}>admin@urionsystems.com</a>
                     <br />
-                    <strong>Telephone:</strong> +233 (0) 30 290 8800 · WhatsApp: +233 599 844 836
+                    <strong>Direct / WhatsApp:</strong> +233 599 844 836
                     <br />
                     <strong>Location:</strong> Accra, Greater Accra Region, Ghana
                   </Box>

@@ -832,7 +832,7 @@ export default function Pricing() {
                     There is no paperwork to sign before your trial begins — we start with the system, and formalise the agreement once you are ready.
                   </Typography>
                   <Typography sx={{ fontSize: '0.82rem', color: '#166534', mt: 1, fontWeight: 600 }}>
-                    Direct / WhatsApp: +233 599 844 836 · Landline: +233 (0) 30 290 8800 · Email: admin@urionsystems.com
+                    Direct / WhatsApp: +233 599 844 836 · Email: admin@urionsystems.com
                   </Typography>
                 </Box>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>

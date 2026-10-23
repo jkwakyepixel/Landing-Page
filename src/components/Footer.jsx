@@ -218,7 +218,7 @@ export default function Footer() {
                     fontWeight: 450,
                   }}
                 >
-                  +233 599 844 836 / +233 (0) 30 290 8800
+                  +233 599 844 836
                 </Typography>
               </Box>
 

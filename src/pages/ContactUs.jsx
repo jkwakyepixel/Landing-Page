@@ -165,7 +165,7 @@ export default function ContactUs() {
       icon: <PhoneRoundedIcon sx={{ fontSize: 18 }} />,
       label: 'PHONE & WHATSAPP',
       value: '+233 599 844 836',
-      subtext: 'Landline: +233 (0) 30 290 8800',
+      subtext: 'Mon – Fri, 8:00 AM – 5:00 PM GMT',
       href: 'tel:+233599844836',
     },
     {
