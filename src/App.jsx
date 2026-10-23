@@ -49,7 +49,9 @@ const getRouteFromHash = (hash) => {
     hash === '#terms' ||
     hash === '#privacy-policy' ||
     hash === '#terms-of-service' ||
-    hash === '#legal'
+    hash === '#legal' ||
+    hash.startsWith('#edukra') ||
+    hash.startsWith('#mobile')
   ) return 'legal';
   return 'home';
 };
@@ -65,7 +67,9 @@ function App() {
       // Handle in-page anchor scrolling or top scrolling
       const hash = window.location.hash;
       const isSubHash = (hash.startsWith('#solution-') && hash !== '#solution') ||
-                        (hash.startsWith('#modules-') && hash !== '#modules');
+                        (hash.startsWith('#modules-') && hash !== '#modules') ||
+                        hash.startsWith('#edukra') ||
+                        hash.startsWith('#mobile');
       if (hash && (hash === '#experiences' || hash === '#problem' || hash === '#roles' || hash === '#hero' || hash === '#cta')) {
         setTimeout(() => {
           const el = document.getElementById(hash.slice(1));
