@@ -290,16 +290,16 @@ export default function ContactUs() {
                 variant="h1"
                 sx={{
                   fontFamily: "'Sora', sans-serif",
-                  fontWeight: 800,
-                  fontSize: { xs: '32px', sm: '42px', md: '46px' },
-                  lineHeight: { xs: '38px', sm: '48px', md: '52px' },
-                  letterSpacing: '-0.02em',
+                  fontWeight: 850,
+                  fontSize: { xs: '32px', sm: '42px', md: '48px' },
+                  lineHeight: { xs: '38px', sm: '48px', md: '54px' },
+                  letterSpacing: '-0.025em',
                   color: '#0B0702',
                   maxWidth: '750px',
                   mb: 1.8,
                 }}
               >
-                Let’s talk about your school.
+                Contact Sales & Support.
               </Typography>
 
               {/* Subtitle */}
@@ -309,10 +309,10 @@ export default function ContactUs() {
                   fontSize: { xs: '15px', sm: '16px' },
                   lineHeight: '25px',
                   color: '#5B5449',
-                  maxWidth: '620px',
+                  maxWidth: '680px',
                 }}
               >
-                Have questions about the platform or want to discuss how it could work for your school? We’d love to hear from you.
+                Interested in bringing our platform to your school, or need help using the Edukra Parents app? We'd love to hear from you.
               </Typography>
             </Box>
           </RevealOnScroll>
@@ -382,7 +382,7 @@ export default function ContactUs() {
                     mb: 3,
                   }}
                 >
-                  Whether you’re exploring the platform, ready to see a demo, or just have a question, reach out through any of the channels below.
+                  Whether you're a school exploring the platform, ready for a demo, or a parent needing app support, reach out through any of the channels below.
                 </Typography>
 
                 {/* 4 Contact Cards */}
@@ -686,7 +686,7 @@ export default function ContactUs() {
                         name="email"
                         type="email"
                         required
-                        placeholder="you@school.com"
+                        placeholder="you@email.com"
                         value={formData.email}
                         onChange={handleChange}
                         sx={{
@@ -781,7 +781,7 @@ export default function ContactUs() {
                       required
                       maxLength={500}
                       rows={5}
-                      placeholder="Tell us a little about your school and how we can help."
+                      placeholder="Tell us about your school, or describe the issue you need help with."
                       value={formData.message}
                       onChange={handleChange}
                       sx={{
