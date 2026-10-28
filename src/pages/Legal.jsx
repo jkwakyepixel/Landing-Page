@@ -24,7 +24,6 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
-import RevealOnScroll from '../components/RevealOnScroll';
 import edukraIcon from '../assets/edukra-icon.png';
 
 export default function Legal() {
@@ -47,20 +46,20 @@ export default function Legal() {
 
       // Smooth scroll to Edukra mobile privacy or delete account anchor if requested
       if (isDeleteUrl) {
-        setTimeout(() => {
+        const scrollToEl = () => {
           const el = document.getElementById('delete-account');
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 150);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+        setTimeout(scrollToEl, 50);
+        setTimeout(scrollToEl, 250);
       } else if (hash.includes('edukra') || hash.includes('mobile')) {
-        setTimeout(() => {
+        const scrollToEl = () => {
           const el = document.getElementById('edukra-privacy');
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 150);
-      } else if (!hash.includes('terms') && !hash.includes('privacy')) {
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+        setTimeout(scrollToEl, 50);
+        setTimeout(scrollToEl, 250);
+      } else {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       }
     };
@@ -145,8 +144,7 @@ export default function Legal() {
 
         <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
           {/* Header */}
-          <RevealOnScroll variant="init">
-            <Box sx={{ textAlign: 'center', mb: 5 }}>
+          <Box sx={{ textAlign: 'center', mb: 5 }}>
               {/* Brand Logo Icon */}
               <Box
                 component="img"
@@ -380,12 +378,10 @@ export default function Legal() {
                 </Button>
               </Stack>
             </Box>
-          </RevealOnScroll>
 
           {/* Content Card */}
-          <RevealOnScroll variant="pop-up" delay={0.1}>
-            <Paper
-              elevation={0}
+          <Paper
+            elevation={0}
               sx={{
                 p: { xs: 3, sm: 5, md: 6 },
                 borderRadius: '24px',
@@ -860,7 +856,6 @@ export default function Legal() {
                 </Box>
               )}
             </Paper>
-          </RevealOnScroll>
         </Container>
       </Box>
 
