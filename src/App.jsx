@@ -24,6 +24,8 @@ import Pricing from './pages/Pricing';
 import Legal from './pages/Legal';
 
 const getRouteFromHash = (hash) => {
+  const path = typeof window !== 'undefined' ? (window.location.pathname || '').toLowerCase() : '';
+  if (path === '/delete-account' || path === '/account-deletion' || path.startsWith('/delete-account')) return 'legal';
   if (!hash || hash === '#' || hash === '') return 'home';
   if (hash === '#book-demo') return 'book-demo';
   if (hash === '#contact') return 'contact';
@@ -51,7 +53,9 @@ const getRouteFromHash = (hash) => {
     hash === '#terms-of-service' ||
     hash === '#legal' ||
     hash.startsWith('#edukra') ||
-    hash.startsWith('#mobile')
+    hash.startsWith('#mobile') ||
+    hash.startsWith('#delete') ||
+    hash.startsWith('#account-deletion')
   ) return 'legal';
   return 'home';
 };
@@ -69,7 +73,9 @@ function App() {
       const isSubHash = (hash.startsWith('#solution-') && hash !== '#solution') ||
                         (hash.startsWith('#modules-') && hash !== '#modules') ||
                         hash.startsWith('#edukra') ||
-                        hash.startsWith('#mobile');
+                        hash.startsWith('#mobile') ||
+                        hash.startsWith('#delete') ||
+                        hash.startsWith('#account-deletion');
       if (hash && (hash === '#experiences' || hash === '#problem' || hash === '#roles' || hash === '#hero' || hash === '#cta')) {
         setTimeout(() => {
           const el = document.getElementById(hash.slice(1));

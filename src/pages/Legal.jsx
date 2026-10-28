@@ -36,14 +36,24 @@ export default function Legal() {
   useEffect(() => {
     const handleHash = () => {
       const hash = window.location.hash.toLowerCase();
-      if (hash.includes('terms')) {
+      const path = (window.location.pathname || '').toLowerCase();
+      const isDeleteUrl = hash.includes('delete') || hash.includes('account-deletion') || path.includes('delete-account');
+
+      if (hash.includes('terms') && !isDeleteUrl) {
         setActiveTab('terms');
       } else {
         setActiveTab('privacy');
       }
 
-      // Smooth scroll to Edukra mobile privacy anchor if requested by App Store / Google Play review link
-      if (hash.includes('edukra') || hash.includes('mobile')) {
+      // Smooth scroll to Edukra mobile privacy or delete account anchor if requested
+      if (isDeleteUrl) {
+        setTimeout(() => {
+          const el = document.getElementById('delete-account');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 150);
+      } else if (hash.includes('edukra') || hash.includes('mobile')) {
         setTimeout(() => {
           const el = document.getElementById('edukra-privacy');
           if (el) {
@@ -65,6 +75,17 @@ export default function Legal() {
     window.location.hash = '#edukra-privacy';
     setTimeout(() => {
       const el = document.getElementById('edukra-privacy');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
+  const scrollToDeleteAccount = () => {
+    setActiveTab('privacy');
+    window.location.hash = '#delete-account';
+    setTimeout(() => {
+      const el = document.getElementById('delete-account');
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -250,29 +271,55 @@ export default function Legal() {
                 Apple App Store Guidelines, and Google Play Policy.
               </Typography>
 
-              {/* Direct Jump to Mobile App Privacy */}
-              <Box sx={{ mb: 4 }}>
+              {/* Direct Jumps to Mobile App Disclosures & Account Deletion */}
+              <Stack
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={1.2}
+                justifyContent="center"
+                alignItems="center"
+                sx={{ mb: 4 }}
+              >
                 <Button
                   onClick={scrollToMobilePrivacy}
                   endIcon={<ArrowDownwardRoundedIcon sx={{ fontSize: 18 }} />}
                   sx={{
                     textTransform: 'none',
                     fontWeight: 700,
-                    fontSize: '0.86rem',
+                    fontSize: '0.84rem',
                     color: '#1e56a0',
                     bgcolor: 'rgba(30, 86, 160, 0.06)',
                     border: '1px solid rgba(30, 86, 160, 0.2)',
                     borderRadius: '9999px',
-                    px: 2.4,
+                    px: 2.2,
                     py: 0.8,
                     '&:hover': {
                       bgcolor: 'rgba(30, 86, 160, 0.12)',
                     },
                   }}
                 >
-                  Direct Link: Edukra Parents Mobile App Privacy Policy & Disclosures
+                  Mobile Privacy & Permissions ↓
                 </Button>
-              </Box>
+                <Button
+                  onClick={scrollToDeleteAccount}
+                  endIcon={<ArrowDownwardRoundedIcon sx={{ fontSize: 18 }} />}
+                  sx={{
+                    textTransform: 'none',
+                    fontWeight: 700,
+                    fontSize: '0.84rem',
+                    color: '#b91c1c',
+                    bgcolor: 'rgba(239, 68, 68, 0.06)',
+                    border: '1px solid rgba(239, 68, 68, 0.25)',
+                    borderRadius: '9999px',
+                    px: 2.2,
+                    py: 0.8,
+                    '&:hover': {
+                      bgcolor: 'rgba(239, 68, 68, 0.12)',
+                    },
+                  }}
+                >
+                  Delete Account Steps & Data Retention ↓
+                </Button>
+              </Stack>
 
               {/* Tabs */}
               <Stack
@@ -374,9 +421,12 @@ export default function Legal() {
                           Notice for Apple App Store & Google Play App Review Teams
                         </Typography>
                         <Typography sx={{ fontSize: '0.88rem', color: '#475569', lineHeight: 1.6 }}>
-                          This document serves as the official, publicly accessible Privacy Policy for both the <strong>Edukra</strong> web portal and the <strong>"Edukra Parents"</strong> native mobile applications on iOS and Android. Mobile device permissions, real-time location disclosures for pickup, camera access for student QR dismissal, and child privacy protections are detailed in{' '}
+                          This document serves as the official, publicly accessible Privacy Policy and Account Deletion resource for both the <strong>Edukra</strong> web portal and the <strong>"Edukra Parents"</strong> native mobile applications on iOS and Android. Mobile device permissions, real-time location disclosures for pickup, camera access for student QR dismissal, and child privacy protections are detailed in{' '}
                           <a href="#edukra-privacy" onClick={(e) => { e.preventDefault(); scrollToMobilePrivacy(); }} style={{ color: '#1e56a0', fontWeight: 700, textDecoration: 'underline' }}>
                             Section 4: Edukra Parents Mobile App Disclosures
+                          </a>, and the exact in-app account deletion procedure, 14-day cancellation window, and data retention disclosures are detailed in{' '}
+                          <a href="#delete-account" onClick={(e) => { e.preventDefault(); scrollToDeleteAccount(); }} style={{ color: '#b91c1c', fontWeight: 700, textDecoration: 'underline' }}>
+                            Section 6: Account Deletion & Data Retention
                           </a>.
                         </Typography>
                       </Box>
@@ -543,25 +593,165 @@ export default function Legal() {
                   </Box>
 
                   {/* Section 6: Account Deletion (Apple & Google Play Mandate) */}
-                  <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: 3, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: '1.15rem' }}>
-                    6. Account Deletion & Data Subject Rights (Ghana Act 843 & App Store Mandates)
-                  </Typography>
-                  <Typography sx={{ mb: 2 }}>
-                    In compliance with Apple App Store Guideline 5.1.1(v), Google Play Account Deletion requirements, and the Data Protection Act of Ghana (Act 843):
-                  </Typography>
-                  <Box component="ul" sx={{ pl: 3, mb: 2 }}>
-                    <li>
-                      <strong>Self-Service In-App Account Deletion:</strong> Parents and guardians can delete their Edukra Parents account and mobile profile directly within the app by navigating to <code>Settings &rarr; Account & Privacy &rarr; Delete Account</code>.
-                    </li>
-                    <li>
-                      <strong>Direct Support Request:</strong> You can also submit an account and data erasure request at any time by emailing <strong>admin@urionsystems.com</strong> with the subject line <em>"Account Deletion Request"</em>. Requests are executed within 30 calendar days.
-                    </li>
-                    <li>
-                      <strong>Data Handling Upon Deletion:</strong> Upon receiving an account deletion request, your mobile credentials, profile image, phone number associations, and active push notification tokens are permanently purged from active systems. (Note: Statutory academic transcripts, attendance archives, and historical financial receipts belong to the subscribing school as Data Controller and remain archived in accordance with Ghana education regulations).
-                    </li>
-                    <li>
-                      <strong>Right to Access & Rectification:</strong> Under Section 24 of Act 843, you have the right to request a copy of the personal information we hold about you and to demand rectification of inaccurate records.
-                    </li>
+                  <Box
+                    component="section"
+                    id="delete-account"
+                    sx={{
+                      scrollMarginTop: '110px',
+                      my: 4,
+                      p: { xs: 2.5, sm: 3.5 },
+                      borderRadius: '20px',
+                      border: '2px solid #b91c1c',
+                      backgroundColor: '#fff8f8',
+                      position: 'relative',
+                    }}
+                  >
+                    {/* Anchor aliases for Google Play Console and direct URL queries */}
+                    <div id="account-deletion" style={{ position: 'absolute', top: '-110px' }} />
+
+                    {/* Section 6 Header */}
+                    <Stack direction="row" spacing={1.5} alignItems="center" sx={{ mb: 2 }}>
+                      <DeleteOutlineRoundedIcon sx={{ color: '#b91c1c', fontSize: 28 }} />
+                      <Box>
+                        <Typography
+                          variant="h5"
+                          sx={{
+                            fontWeight: 800,
+                            color: '#0f172a',
+                            fontFamily: "'Sora', sans-serif",
+                            fontSize: { xs: '1.15rem', sm: '1.35rem' },
+                          }}
+                        >
+                          6. How to Delete Your Parent Account & Data Retention Policy
+                        </Typography>
+                        <Typography sx={{ fontSize: '0.82rem', color: '#991b1b', fontWeight: 600 }}>
+                          App Name on Store Listings: <strong>Edukra Parents</strong> · Compliant with Apple Guideline 5.1.1(v) & Google Play Data Safety
+                        </Typography>
+                      </Box>
+                    </Stack>
+
+                    <Typography sx={{ mb: 2.5, color: '#334155' }}>
+                      Parents and guardians can delete their parent account in the <strong>Edukra Parents</strong> mobile app (iOS and Android) or through their subscribing school&apos;s web Parent Portal at any time.
+                    </Typography>
+
+                    {/* Step-by-Step Deletion Process (Exact Live App UI) */}
+                    <Box sx={{ mb: 3, p: 2.5, bgcolor: '#ffffff', borderRadius: '14px', border: '1px solid #fee2e2' }}>
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: '1rem', mb: 1.5, fontFamily: "'Sora', sans-serif" }}>
+                        How to Delete Your Account (Exact In-App Steps):
+                      </Typography>
+                      <Box component="ol" sx={{ pl: 3, mb: 1.5, color: '#334155', display: 'grid', gap: 1 }}>
+                        <li>
+                          <strong>Sign in:</strong> Sign in to the <strong>Edukra Parents</strong> app or your school&apos;s Parent Portal with your registered e-mail address and password.
+                        </li>
+                        <li>
+                          <strong>Open Account Settings:</strong> Tap your name or avatar at the top right of the screen and choose <strong>Account settings</strong>.
+                        </li>
+                        <li>
+                          <strong>Locate Deletion:</strong> On the <strong>Profile</strong> tab, scroll to the end of the dialog and choose <strong>Delete my account</strong>.
+                        </li>
+                        <li>
+                          <strong>Confirm:</strong> Type <code style={{ backgroundColor: '#fee2e2', color: '#991b1b', padding: '2px 7px', borderRadius: '4px', fontWeight: 700 }}>DELETE</code> into the confirmation field and tap confirm.
+                        </li>
+                      </Box>
+                    </Box>
+
+                    {/* 14-Day Cancellation Grace Period */}
+                    <Box sx={{ mb: 3, p: 2.5, bgcolor: '#ffffff', borderRadius: '14px', border: '1px solid #fee2e2' }}>
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: '1rem', mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                        14-Day Grace Period & How to Cancel Deletion:
+                      </Typography>
+                      <Typography sx={{ color: '#475569', mb: 1 }}>
+                        Your account is scheduled for deletion <strong>14 days after you request it</strong>. Until then, you can sign in to cancel:
+                      </Typography>
+                      <Box component="ul" sx={{ pl: 3, color: '#475569', display: 'grid', gap: 0.8 }}>
+                        <li>
+                          During the 14-day window, signing in to the app displays the message: <em>&quot;Account deletion scheduled&quot;</em> alongside the exact scheduled deletion date.
+                        </li>
+                        <li>
+                          Tap the <strong>Cancel deletion</strong> button on that screen to immediately stop the deletion process and restore full parent access.
+                        </li>
+                      </Box>
+                    </Box>
+
+                    {/* What is Deleted */}
+                    <Box sx={{ mb: 3, p: 2.5, bgcolor: '#ffffff', borderRadius: '14px', border: '1px solid #fee2e2' }}>
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: '1rem', mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                        What Data is Deleted:
+                      </Typography>
+                      <Typography sx={{ color: '#475569', mb: 1 }}>
+                        When the 14 days elapse, the system permanently removes your authentication login and your personal details held for that school:
+                      </Typography>
+                      <Box component="ul" sx={{ pl: 3, color: '#475569', display: 'grid', gap: 0.8 }}>
+                        <li>Your login authentication account and credentials (the Supabase login is permanently deleted/unlinked from the school).</li>
+                        <li>Your personal details: your e-mail address and home residential address.</li>
+                        <li>Your profile photo and uploaded government identity verification documents (<code>guardian_documents</code>).</li>
+                        <li>The details, photos, and authorization tokens of the secondary persons you approved to pick up your children.</li>
+                        <li>Stored payment card and Mobile Money authorization tokens (the external payment provider retains its own transaction logs under Bank of Ghana regulatory policy).</li>
+                      </Box>
+                    </Box>
+
+                    {/* What the School Keeps & Retention Period */}
+                    <Box sx={{ mb: 3, p: 2.5, bgcolor: '#ffffff', borderRadius: '14px', border: '1px solid #fee2e2' }}>
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: '1rem', mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                        What the School Keeps & Retention Duration (Google Play Data Safety Disclosure):
+                      </Typography>
+                      <Typography sx={{ color: '#475569', mb: 1 }}>
+                        Under the Data Protection Act of Ghana (Act 843) and institutional governance, the subscribing educational institution acts as the legal Data Controller and retains:
+                      </Typography>
+                      <Box component="ul" sx={{ pl: 3, color: '#475569', display: 'grid', gap: 0.8 }}>
+                        <li>
+                          <strong>Children&apos;s School Records:</strong> The children&apos;s academic assessments, examination marks, term reports, and class enrollment archives.
+                        </li>
+                        <li>
+                          <strong>Financial Accounting Records:</strong> Tuition fee invoices, transaction numbers, and official payment receipts.
+                        </li>
+                        <li>
+                          <strong>Campus Attendance & Pickup Logs:</strong> Historical attendance registers and student pickup timestamps, retained without your e-mail address or residential address.
+                        </li>
+                        <li>
+                          <strong>Contact Record Continuity:</strong> Your legal name, relationship to the child (e.g. Mother, Father, Guardian), and telephone number remain on your children&apos;s active records as the school&apos;s institutional contact record.
+                        </li>
+                        <li>
+                          <strong>Retention Period:</strong> These records are preserved for as long as the child remains enrolled at the institution, plus statutory academic archiving periods required by the Ghana Education Service (GES) and statutory financial limitation periods under Ghana tax law.
+                        </li>
+                      </Box>
+                    </Box>
+
+                    {/* Multi-School and Staff Roles */}
+                    <Box sx={{ mb: 3, p: 2.5, bgcolor: '#ffffff', borderRadius: '14px', border: '1px solid #fee2e2' }}>
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: '1rem', mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                        Multi-School Accounts & Staff-Parent Roles:
+                      </Typography>
+                      <Box component="ul" sx={{ pl: 3, color: '#475569', display: 'grid', gap: 0.8 }}>
+                        <li>
+                          <strong>School-Specific Deletion:</strong> The deletion applies specifically to the school where you submit the request. If you use the same e-mail address for children attending a different school, sign in to that school&apos;s portal to delete that profile separately.
+                        </li>
+                        <li>
+                          <strong>Staff Members Who Are Also Parents:</strong> If you are employed by the school as a teacher, administrator, or staff member, deleting your parent profile removes your guardian role while preserving your login credentials for your professional employee duties.
+                        </li>
+                      </Box>
+                    </Box>
+
+                    {/* Fallback Route: Can't Sign In? */}
+                    <Box sx={{ p: 2.5, bgcolor: '#ffffff', borderRadius: '14px', border: '1px solid #fee2e2' }}>
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: '1rem', mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                        Can&apos;t Sign In? Fallback Request Options:
+                      </Typography>
+                      <Typography sx={{ color: '#475569', mb: 1 }}>
+                        If you cannot access your account to initiate self-service deletion:
+                      </Typography>
+                      <Box component="ul" sx={{ pl: 3, color: '#475569', display: 'grid', gap: 0.8 }}>
+                        <li>
+                          <strong>Password Reset:</strong> Tap &quot;Forgot password&quot; on the Edukra Parents sign-in screen to recover your login.
+                        </li>
+                        <li>
+                          <strong>School Administration Office:</strong> Contact your school&apos;s administration office directly to request that your guardian account be queued for deletion.
+                        </li>
+                        <li>
+                          <strong>Support Email Fallback:</strong> Submit a manual request by emailing Urion Systems at <a href="mailto:admin@urionsystems.com" style={{ color: '#1e56a0', fontWeight: 600 }}>admin@urionsystems.com</a> with the subject line <em>&quot;Account Deletion Request — Edukra Parents&quot;</em>. Requests sent via email are verified and fulfilled within 30 calendar days.
+                        </li>
+                      </Box>
+                    </Box>
                   </Box>
 
                   {/* Section 7: Third-Party Service Providers */}

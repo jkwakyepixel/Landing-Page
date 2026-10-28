@@ -379,6 +379,20 @@ export default function Footer() {
             </Link>
             <span>·</span>
             <Link
+              href="#delete-account"
+              sx={{
+                color: 'rgba(255, 255, 255, 0.65)',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: '#ffffff',
+                },
+              }}
+            >
+              Delete Account
+            </Link>
+            <span>·</span>
+            <Link
               href="#terms"
               sx={{
                 color: 'rgba(255, 255, 255, 0.48)',
