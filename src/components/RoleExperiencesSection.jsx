@@ -129,6 +129,18 @@ function HeartIcon(props) {
   );
 }
 
+// Official Google Play Store Icon
+function GooglePlayIcon(props) {
+  return (
+    <svg width="18" height="20" viewBox="0 0 512 512" fill="none" {...props}>
+      <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1z" fill="#ea4335" />
+      <path d="M47 36.7v438.5L265.8 256 47 36.7z" fill="#4285f4" />
+      <path d="M325.3 277.7l60.1 60.1L104.6 499l220.7-221.3z" fill="#34a853" />
+      <path d="M449.8 238.1l-64.4-37-60.1 60.1 60.1 60.1 64.4-37c15.2-8.7 24.2-24.6 24.2-43.1s-9-34.4-24.2-43.1z" fill="#fbbc04" />
+    </svg>
+  );
+}
+
 // Dynamic content mapping for all 5 roles
 const roleExperiences = {
   Admin: {
@@ -491,38 +503,75 @@ export default function RoleExperiencesSection() {
                 ))}
               </Box>
 
-              {/* Black CTA Button */}
-              <Box
-                component="button"
-                onClick={() => { window.location.hash = '#book-demo'; }}
-                sx={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
-                  width: { xs: '100%', sm: 'auto' },
-                  backgroundColor: '#05070c', // Solid black/dark navy
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderRadius: '7px',
-                  px: '18px',
-                  py: '10px',
-                  color: '#ffffff',
-                  fontSize: '0.84rem',
-                  fontWeight: 600,
-                  letterSpacing: '-0.01em',
-                  cursor: 'pointer',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
-                  transition: 'all 0.2s ease',
-                  '&:hover': {
-                    backgroundColor: '#131926',
-                    transform: 'translateY(-2px)',
-                    boxShadow: '0 6px 16px rgba(0, 0, 0, 0.4)',
-                  },
-                }}
-              >
-                {currentRole.ctaText}
-                <ArrowForwardRoundedIcon sx={{ fontSize: 14, color: '#ffffff' }} />
-              </Box>
+              {/* Black CTA Button or Google Play for Parent role */}
+              {activeRole === 'Parent' ? (
+                <Box
+                  component="a"
+                  href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    width: { xs: '100%', sm: 'auto' },
+                    backgroundColor: '#05070c',
+                    border: '1px solid rgba(255, 255, 255, 0.16)',
+                    borderRadius: '8px',
+                    px: '20px',
+                    py: '11px',
+                    color: '#ffffff',
+                    fontSize: '0.86rem',
+                    fontWeight: 650,
+                    textDecoration: 'none',
+                    letterSpacing: '-0.01em',
+                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.35)',
+                    transition: 'all 0.2s ease',
+                    '&:hover': {
+                      backgroundColor: '#131926',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 6px 18px rgba(0, 0, 0, 0.45)',
+                    },
+                  }}
+                >
+                  <GooglePlayIcon />
+                  Get Edukra Parents on Google Play
+                  <ArrowForwardRoundedIcon sx={{ fontSize: 14, color: '#ffffff' }} />
+                </Box>
+              ) : (
+                <Box
+                  component="button"
+                  onClick={() => { window.location.hash = '#book-demo'; }}
+                  sx={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    width: { xs: '100%', sm: 'auto' },
+                    backgroundColor: '#05070c', // Solid black/dark navy
+                    border: '1px solid rgba(255, 255, 255, 0.12)',
+                    borderRadius: '7px',
+                    px: '18px',
+                    py: '10px',
+                    color: '#ffffff',
+                    fontSize: '0.84rem',
+                    fontWeight: 600,
+                    letterSpacing: '-0.01em',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+                    transition: 'all 0.2s ease',
+                    '&:hover': {
+                      backgroundColor: '#131926',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 6px 16px rgba(0, 0, 0, 0.4)',
+                    },
+                  }}
+                >
+                  {currentRole.ctaText}
+                  <ArrowForwardRoundedIcon sx={{ fontSize: 14, color: '#ffffff' }} />
+                </Box>
+              )}
             </Box>
           </RevealOnScroll>
 

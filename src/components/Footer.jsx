@@ -70,6 +70,18 @@ function YouTubeIcon(props) {
   );
 }
 
+// Official Google Play Store Icon
+function GooglePlayIcon(props) {
+  return (
+    <svg width="17" height="19" viewBox="0 0 512 512" fill="none" {...props}>
+      <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1z" fill="#ea4335" />
+      <path d="M47 36.7v438.5L265.8 256 47 36.7z" fill="#4285f4" />
+      <path d="M325.3 277.7l60.1 60.1L104.6 499l220.7-221.3z" fill="#34a853" />
+      <path d="M449.8 238.1l-64.4-37-60.1 60.1 60.1 60.1 64.4-37c15.2-8.7 24.2-24.6 24.2-43.1s-9-34.4-24.2-43.1z" fill="#fbbc04" />
+    </svg>
+  );
+}
+
 // Footer link data mapping
 const footerColumns = [
   {
@@ -234,6 +246,42 @@ export default function Footer() {
                 </Typography>
               </Box>
             </Stack>
+
+            {/* Google Play Store Badge */}
+            <Box
+              component="a"
+              href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1.1,
+                mt: 2,
+                px: 1.6,
+                py: 0.8,
+                borderRadius: '8px',
+                bgcolor: 'rgba(255, 255, 255, 0.06)',
+                border: '1px solid rgba(255, 255, 255, 0.14)',
+                color: '#ffffff',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
+                '&:hover': {
+                  bgcolor: 'rgba(255, 255, 255, 0.12)',
+                  borderColor: 'rgba(255, 255, 255, 0.28)',
+                },
+              }}
+            >
+              <GooglePlayIcon />
+              <Box sx={{ textAlign: 'left', lineHeight: 1.1 }}>
+                <Typography sx={{ fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 600 }}>
+                  Get Edukra Parents on
+                </Typography>
+                <Typography sx={{ fontSize: '0.80rem', fontWeight: 700, color: '#ffffff' }}>
+                  Google Play
+                </Typography>
+              </Box>
+            </Box>
           </Box>
 
           {/* Right 4 Link Columns */}
@@ -349,6 +397,24 @@ export default function Footer() {
             }}
           >
             <span>© 2026 Urion Systems Ltd. All rights reserved.</span>
+            <span>·</span>
+            <Link
+              href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: '#38bdf8',
+                textDecoration: 'none',
+                fontWeight: 600,
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: '#7dd3fc',
+                  textDecoration: 'underline',
+                },
+              }}
+            >
+              Google Play App
+            </Link>
             <span>·</span>
             <Link
               href="#privacy"

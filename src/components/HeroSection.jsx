@@ -18,6 +18,18 @@ import PaymentsOutlinedIcon from '@mui/icons-material/PaymentsOutlined';
 import RevealOnScroll from './RevealOnScroll';
 import allDevicesMockup from '../assets/all-devices-white.png';
 
+// Official Google Play Store Icon
+function GooglePlayIcon(props) {
+  return (
+    <svg width="20" height="22" viewBox="0 0 512 512" fill="none" {...props}>
+      <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1z" fill="#ea4335" />
+      <path d="M47 36.7v438.5L265.8 256 47 36.7z" fill="#4285f4" />
+      <path d="M325.3 277.7l60.1 60.1L104.6 499l220.7-221.3z" fill="#34a853" />
+      <path d="M449.8 238.1l-64.4-37-60.1 60.1 60.1 60.1 64.4-37c15.2-8.7 24.2-24.6 24.2-43.1s-9-34.4-24.2-43.1z" fill="#fbbc04" />
+    </svg>
+  );
+}
+
 // Reusable Floating Metric Badge Component
 function FloatingBadge({
   icon: IconComponent,
@@ -256,8 +268,7 @@ export default function HeroSection() {
             spacing={2}
             justifyContent="center"
             alignItems="center"
-            sx={{ width: { xs: '100%', sm: 'auto' }, mb: { xs: 5, sm: 7, md: 9 } }}
-          >
+            sx={{ width: { xs: '100%', sm: 'auto' }, mb: { xs: 2, sm: 2.5 } }}>
             <Button
               variant="contained"
               color="primary"
@@ -319,6 +330,53 @@ export default function HeroSection() {
               Explore the Platform
             </Button>
           </Stack>
+
+          {/* Google Play Store Badge for Edukra Parents */}
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              mb: { xs: 4, sm: 6, md: 8 },
+            }}
+          >
+            <Box
+              component="a"
+              href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1.25,
+                bgcolor: '#0a0d14',
+                color: '#ffffff',
+                px: { xs: 2.2, sm: 2.6 },
+                py: { xs: 0.9, sm: 1.05 },
+                borderRadius: '10px',
+                textDecoration: 'none',
+                border: '1px solid #1e293b',
+                boxShadow: '0 4px 16px rgba(15, 23, 42, 0.16)',
+                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                '&:hover': {
+                  bgcolor: '#131b2e',
+                  borderColor: '#334155',
+                  transform: 'translateY(-2px)',
+                  boxShadow: '0 8px 24px rgba(15, 23, 42, 0.26)',
+                },
+              }}
+            >
+              <GooglePlayIcon />
+              <Box sx={{ textAlign: 'left', lineHeight: 1.15 }}>
+                <Typography sx={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8', fontWeight: 650 }}>
+                  Get Edukra Parents on
+                </Typography>
+                <Typography sx={{ fontSize: '0.90rem', fontWeight: 700, color: '#ffffff', fontFamily: "'Sora', sans-serif" }}>
+                  Google Play
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
         </Box>
         </RevealOnScroll>
 
