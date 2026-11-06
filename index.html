@@ -31,20 +31,57 @@
 
     <!-- Google Structured Data (JSON-LD) -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Edukra",
-        "operatingSystem": "Web",
-        "applicationCategory": "EducationalApplication",
-        "url": "https://sms.urionsystems.com",
-        "description": "Enterprise school management system built for educational institutions in Ghana and across Africa.",
-        "publisher": {
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Edukra",
+          "alternateName": ["Edukra SMS", "Edukra Parents", "Urion SMS"],
+          "url": "https://sms.urionsystems.com"
+        },
+        {
+          "@context": "https://schema.org",
           "@type": "Organization",
           "name": "Urion Systems Ltd",
-          "url": "https://sms.urionsystems.com"
+          "brand": "Edukra",
+          "url": "https://sms.urionsystems.com",
+          "logo": "https://sms.urionsystems.com/edukra-icon.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+233-599-844-836",
+            "contactType": "customer service",
+            "areaServed": "GH",
+            "availableLanguage": "English"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Edukra",
+          "operatingSystem": "Web",
+          "applicationCategory": "EducationalApplication",
+          "url": "https://sms.urionsystems.com",
+          "description": "Enterprise school management system built for educational institutions in Ghana and across Africa.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Urion Systems Ltd",
+            "url": "https://sms.urionsystems.com"
+          }
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "MobileApplication",
+          "name": "Edukra Parents",
+          "operatingSystem": "Android, iOS",
+          "applicationCategory": "EducationalApplication",
+          "description": "Official mobile app for parents and guardians to track student attendance, academic reports, and school fees.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Urion Systems Ltd",
+            "url": "https://sms.urionsystems.com"
+          }
         }
-      }
+      ]
     </script>
 
     <!-- Google Fonts: Plus Jakarta Sans -->
