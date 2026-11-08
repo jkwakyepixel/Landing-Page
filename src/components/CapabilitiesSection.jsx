@@ -260,7 +260,7 @@ export default function CapabilitiesSection() {
       id="modules"
       sx={{
         width: '100%',
-        py: { xs: 8, sm: 9.5, md: 11 },
+        py: { xs: 8, sm: 10, md: 12 },
         backgroundColor: '#ffffff',
         position: 'relative',
         scrollMarginTop: '80px',
@@ -269,9 +269,9 @@ export default function CapabilitiesSection() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1060px',
+          maxWidth: '1120px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3 },
+          px: { xs: 2.5, sm: 3, md: 4 },
         }}
       >
         <Box>
@@ -282,7 +282,7 @@ export default function CapabilitiesSection() {
               justifyContent="space-between"
               alignItems={{ xs: 'flex-start', md: 'flex-end' }}
               spacing={{ xs: 2.5, md: 2 }}
-              sx={{ mb: { xs: 4, sm: 5, md: 5.5 } }}
+              sx={{ mb: { xs: 5, sm: 6, md: 6.5 } }}
             >
             {/* Left Side Header Text */}
             <Stack spacing={0.6} sx={{ maxWidth: 640 }}>
@@ -292,26 +292,26 @@ export default function CapabilitiesSection() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  backgroundColor: '#eaf2ff',
-                  border: '1px solid #d4e4fc',
+                  backgroundColor: 'rgba(0, 113, 227, 0.08)',
+                  border: '1px solid rgba(0, 113, 227, 0.18)',
                   borderRadius: '9999px',
-                  px: '12px',
-                  py: '4px',
-                  color: '#1d63d2',
+                  px: '14px',
+                  py: '5px',
+                  color: '#0071e3',
                   userSelect: 'none',
                   width: 'fit-content',
                   mb: 1.5,
                 }}
               >
-                <CapabilitiesPillIcon style={{ color: '#1d63d2', flexShrink: 0 }} />
+                <CapabilitiesPillIcon style={{ color: '#0071e3', flexShrink: 0 }} />
                 <Typography
                   component="span"
                   sx={{
-                    fontSize: '0.69rem',
+                    fontSize: '0.70rem',
                     fontWeight: 700,
                     letterSpacing: '0.06em',
                     lineHeight: 1,
-                    color: '#1d63d2',
+                    color: '#0071e3',
                     whiteSpace: 'nowrap',
                   }}
                 >
@@ -319,16 +319,16 @@ export default function CapabilitiesSection() {
                 </Typography>
               </Box>
 
-              {/* Bold Dark Heading - No space before period */}
+              {/* Bold Dark Heading */}
               <Typography
                 variant="h2"
                 component="h2"
                 sx={{
-                  fontWeight: 800,
-                  fontSize: { xs: '1.75rem', sm: '2.15rem', md: '2.35rem' },
-                  lineHeight: 1.15,
-                  letterSpacing: '-0.03em',
-                  color: '#0b0702',
+                  fontWeight: 750,
+                  fontSize: { xs: '1.9rem', sm: '2.35rem', md: '2.75rem' },
+                  lineHeight: 1.12,
+                  letterSpacing: '-0.035em',
+                  color: '#1d1d1f',
                 }}
               >
                 Everything your school needs.
@@ -338,8 +338,8 @@ export default function CapabilitiesSection() {
               <Typography
                 variant="body1"
                 sx={{
-                  color: '#888279',
-                  fontSize: { xs: '0.90rem', sm: '0.96rem' },
+                  color: '#6e6e73',
+                  fontSize: { xs: '0.96rem', sm: '1.04rem' },
                   lineHeight: 1.55,
                   fontWeight: 450,
                   pt: 0.3,
@@ -363,36 +363,39 @@ export default function CapabilitiesSection() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '8px',
-                backgroundColor: '#ffffff',
-                border: '1px solid #e3ded6',
-                borderRadius: '8px',
-                px: '18px',
-                py: '9px',
-                color: '#1b150b',
-                fontSize: '0.84rem',
+                backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                borderRadius: '9999px',
+                px: '20px',
+                py: '10px',
+                color: '#1d1d1f',
+                fontSize: '0.88rem',
                 fontWeight: 600,
                 letterSpacing: '-0.01em',
                 cursor: 'pointer',
                 textDecoration: 'none',
-                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
-                transition: 'all 0.2s ease',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.02)',
+                transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 flexShrink: 0,
                 alignSelf: { xs: 'stretch', sm: 'flex-start', md: 'flex-end' },
                 mt: { xs: 1, md: 0 },
                 '&:hover': {
-                  borderColor: '#c8c2b7',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)',
+                  borderColor: 'rgba(0, 0, 0, 0.12)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.08)',
                   transform: 'translateY(-1px)',
+                },
+                '&:active': {
+                  transform: 'scale(0.976)',
                 },
               }}
             >
               View All Modules
-              <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#1b150b' }} />
+              <ArrowForwardRoundedIcon sx={{ fontSize: 16, color: '#1d1d1f' }} />
             </Box>
           </Stack>
         </RevealOnScroll>
 
-        {/* Responsive 4x2 Grid Layout (xs=12, sm=6, md=3) */}
+        {/* Responsive 4x2 Bento Grid Layout (xs=12, sm=6, md=3) */}
         <Box
           sx={{
             display: 'grid',
@@ -411,7 +414,7 @@ export default function CapabilitiesSection() {
               <RevealOnScroll
                 key={cap.id}
                 variant="pop-up"
-                delay={(idx % 4) * 0.08}
+                delay={(idx % 4) * 0.06}
                 threshold={0.06}
                 sx={{ height: '100%' }}
               >
@@ -421,36 +424,40 @@ export default function CapabilitiesSection() {
                   }}
                   sx={{
                     cursor: 'pointer',
-                    backgroundColor: '#fdfbf9', // Exact sampled warm off-white
-                    border: '1px solid #efece7', // Exact sampled warm border
-                    borderRadius: '13px',
-                    p: '20px 18px 22px 18px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid rgba(0, 0, 0, 0.06)',
+                    borderRadius: '20px',
+                    p: '22px 20px 24px 20px',
                     height: '100%',
-                    minHeight: '168px',
+                    minHeight: '175px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'flex-start',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02), 0 8px 20px -4px rgba(0, 0, 0, 0.03)',
                     transition:
-                      'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease',
+                      'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
                       transform: 'translateY(-4px)',
-                      borderColor: '#ded8cf',
-                      boxShadow: '0 8px 18px -4px rgba(27, 21, 11, 0.06)',
+                      borderColor: 'rgba(0, 113, 227, 0.25)',
+                      boxShadow: '0 12px 28px -6px rgba(0, 113, 227, 0.12)',
+                    },
+                    '&:active': {
+                      transform: 'scale(0.98)',
                     },
                   }}
                 >
-                  {/* Icon Box in Top-Left (Exact: #DAEDFF, 36px x 36px) */}
+                  {/* Icon Box in Top-Left */}
                   <Box
                     sx={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: '8px',
-                      backgroundColor: '#daedff',
+                      width: 42,
+                      height: 42,
+                      borderRadius: '12px',
+                      backgroundColor: 'rgba(0, 113, 227, 0.08)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#1a6adb',
-                      mb: '14px',
+                      color: '#0071e3',
+                      mb: '16px',
                       flexShrink: 0,
                     }}
                   >
@@ -461,10 +468,10 @@ export default function CapabilitiesSection() {
                   <Typography
                     component="h3"
                     sx={{
-                      fontWeight: 700,
-                      fontSize: '0.96rem',
+                      fontWeight: 650,
+                      fontSize: '1.02rem',
                       letterSpacing: '-0.02em',
-                      color: '#1b150b',
+                      color: '#1d1d1f',
                       mb: '6px',
                       lineHeight: 1.25,
                     }}
@@ -476,9 +483,9 @@ export default function CapabilitiesSection() {
                   <Typography
                     component="p"
                     sx={{
-                      color: '#888279',
-                      fontSize: '0.80rem',
-                      lineHeight: 1.45,
+                      color: '#6e6e73',
+                      fontSize: '0.84rem',
+                      lineHeight: 1.5,
                       fontWeight: 450,
                     }}
                   >

@@ -80,8 +80,8 @@ export default function ProblemSolutionSection() {
       id="problem"
       sx={{
         width: '100%',
-        py: { xs: 7, sm: 8.5, md: 10 },
-        backgroundColor: '#f8f6f2', // Exact sampled warm cream tone matching Figma mockup
+        py: { xs: 8, sm: 10, md: 12 },
+        backgroundColor: '#f5f5f7', // Apple neutral light canvas
         position: 'relative',
         scrollMarginTop: '80px',
       }}
@@ -89,9 +89,9 @@ export default function ProblemSolutionSection() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1060px',
+          maxWidth: '1120px',
           mx: 'auto',
-          px: { xs: 2, sm: 2.5, md: 3 },
+          px: { xs: 2.5, sm: 3, md: 4 },
         }}
       >
         {/* Section Header */}
@@ -99,9 +99,9 @@ export default function ProblemSolutionSection() {
           <Box
             sx={{
               textAlign: 'center',
-              maxWidth: 700,
+              maxWidth: 720,
               mx: 'auto',
-              mb: { xs: 4, sm: 5, md: 5.5 },
+              mb: { xs: 5, sm: 6, md: 7 },
             }}
           >
             {/* "THE PROBLEM" Overline Pill Tag - Compact & centered */}
@@ -111,27 +111,27 @@ export default function ProblemSolutionSection() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '6px',
-                backgroundColor: '#eaf2ff',
-                border: '1px solid #d4e4fc',
+                backgroundColor: 'rgba(0, 113, 227, 0.08)',
+                border: '1px solid rgba(0, 113, 227, 0.18)',
                 borderRadius: '9999px',
-                px: '12px',
-                py: '4px',
-                color: '#1d63d2',
+                px: '14px',
+                py: '5px',
+                color: '#0071e3',
                 userSelect: 'none',
                 width: 'fit-content',
                 mx: 'auto',
-                mb: 1.8,
+                mb: 2,
               }}
             >
-              <LightbulbIcon style={{ color: '#1d63d2', flexShrink: 0 }} />
+              <LightbulbIcon style={{ color: '#0071e3', flexShrink: 0 }} />
               <Typography
                 component="span"
                 sx={{
-                  fontSize: '0.69rem',
+                  fontSize: '0.70rem',
                   fontWeight: 700,
                   letterSpacing: '0.06em',
                   lineHeight: 1,
-                  color: '#1d63d2',
+                  color: '#0071e3',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -139,23 +139,23 @@ export default function ProblemSolutionSection() {
               </Typography>
             </Box>
 
-            {/* Main Headline with exact 2-line break */}
+            {/* Main Headline */}
             <Typography
               variant="h2"
               component="h2"
               sx={{
-                fontSize: { xs: '1.75rem', sm: '2.05rem', md: '2.25rem' },
-                fontWeight: 800,
-                lineHeight: 1.18,
-                letterSpacing: '-0.03em',
-                color: '#0b0702',
+                fontSize: { xs: '1.9rem', sm: '2.35rem', md: '2.75rem' },
+                fontWeight: 750,
+                lineHeight: 1.12,
+                letterSpacing: '-0.035em',
+                color: '#1d1d1f',
                 textAlign: 'center',
-                maxWidth: 640,
+                maxWidth: 680,
                 mx: 'auto',
               }}
             >
-              Schools shouldn't have to run on
-              <Box component="span" sx={{ display: { xs: 'inline', sm: 'block' }, ml: { xs: 0.5, sm: 0 } }}>
+              Schools shouldn't have to run on{' '}
+              <Box component="span" sx={{ display: { xs: 'inline', sm: 'block' } }}>
                 disconnected systems.
               </Box>
             </Typography>
@@ -167,7 +167,7 @@ export default function ProblemSolutionSection() {
           sx={{
             display: 'grid',
             gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
-            gap: '20px',
+            gap: '24px',
             alignItems: 'stretch',
           }}
         >
@@ -176,46 +176,46 @@ export default function ProblemSolutionSection() {
             <Box
               sx={{
                 backgroundColor: '#ffffff',
-                border: '1px solid #ebe6df',
-                borderRadius: '16px',
-                p: { xs: '20px', sm: '24px 20px', md: '26px 22px' },
-                boxShadow: '0 4px 20px -4px rgba(0, 0, 0, 0.03)',
+                border: '1px solid rgba(0, 0, 0, 0.06)',
+                borderRadius: '24px',
+                p: { xs: '24px 20px', sm: '28px 24px', md: '32px 28px' },
+                boxShadow: '0 4px 20px -2px rgba(0, 0, 0, 0.02), 0 12px 32px -4px rgba(0, 0, 0, 0.04)',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 height: '100%',
-                transition: 'box-shadow 0.25s ease, transform 0.25s ease',
+                transition: 'box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  boxShadow: '0 8px 24px -4px rgba(0, 0, 0, 0.06)',
-                  transform: 'translateY(-2px)',
+                  boxShadow: '0 12px 36px -4px rgba(0, 0, 0, 0.08)',
+                  transform: 'translateY(-3px)',
                 },
               }}
             >
               <Box>
                 {/* Header with 'X' indicator */}
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px', mb: '18px' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px', mb: '22px' }}>
                   <Box
                     sx={{
-                      width: 26,
-                      height: 26,
-                      borderRadius: '6px',
-                      backgroundColor: '#f1ede7',
+                      width: 32,
+                      height: 32,
+                      borderRadius: '10px',
+                      backgroundColor: 'rgba(255, 59, 48, 0.1)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: '#6e675f',
+                      color: '#ff3b30',
                       flexShrink: 0,
                     }}
                   >
-                    <CloseRoundedIcon sx={{ fontSize: 15 }} />
+                    <CloseRoundedIcon sx={{ fontSize: 18 }} />
                   </Box>
                   <Typography
                     component="h3"
                     sx={{
-                      fontWeight: 800,
-                      fontSize: '1.08rem',
-                      letterSpacing: '-0.02em',
-                      color: '#1b150b',
+                      fontWeight: 700,
+                      fontSize: '1.2rem',
+                      letterSpacing: '-0.025em',
+                      color: '#1d1d1f',
                     }}
                   >
                     Today's reality
@@ -227,7 +227,7 @@ export default function ProblemSolutionSection() {
                   sx={{
                     display: 'grid',
                     gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, minmax(0, 1fr))' },
-                    gap: '8px',
+                    gap: '10px',
                   }}
                 >
                   {painPoints.map((item) => (
@@ -236,17 +236,18 @@ export default function ProblemSolutionSection() {
                       sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '7px',
-                        px: '9px',
-                        py: '8.5px',
-                        borderRadius: '8px',
-                        border: '1px solid #efeae2',
-                        backgroundColor: '#fdfbf9',
+                        gap: '8px',
+                        px: '12px',
+                        py: '10px',
+                        borderRadius: '12px',
+                        border: '1px solid rgba(0, 0, 0, 0.04)',
+                        backgroundColor: '#f5f5f7',
                         minWidth: 0,
                         transition: 'all 0.2s ease',
                         '&:hover': {
-                          borderColor: '#ded7cb',
+                          borderColor: 'rgba(0, 0, 0, 0.1)',
                           backgroundColor: '#ffffff',
+                          transform: 'translateY(-1px)',
                         },
                       }}
                     >
@@ -254,10 +255,10 @@ export default function ProblemSolutionSection() {
                       <Typography
                         component="span"
                         sx={{
-                          fontSize: '0.77rem',
+                          fontSize: '0.82rem',
                           fontWeight: 500,
-                          color: '#554f46',
-                          lineHeight: 1.25,
+                          color: '#424245',
+                          lineHeight: 1.3,
                           letterSpacing: '-0.01em',
                           whiteSpace: { xs: 'normal', sm: 'nowrap' },
                         }}
@@ -275,31 +276,31 @@ export default function ProblemSolutionSection() {
           <RevealOnScroll variant="slide-right" delay={0.15} sx={{ height: '100%' }}>
             <Box
               sx={{
-                backgroundColor: '#1a559e', // Exact sampled rich royal blue
-                borderRadius: '16px',
-                p: { xs: '20px', sm: '24px 20px', md: '26px 22px' },
-                boxShadow: '0 16px 36px -8px rgba(26, 85, 158, 0.35)',
+                background: 'linear-gradient(145deg, #0071e3 0%, #005bb5 100%)',
+                borderRadius: '24px',
+                p: { xs: '24px 20px', sm: '28px 24px', md: '32px 28px' },
+                boxShadow: '0 16px 40px -8px rgba(0, 113, 227, 0.38)',
                 color: '#ffffff',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 height: '100%',
-                transition: 'box-shadow 0.25s ease, transform 0.25s ease',
+                transition: 'box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  boxShadow: '0 20px 44px -8px rgba(26, 85, 158, 0.45)',
-                  transform: 'translateY(-2px)',
+                  boxShadow: '0 24px 48px -8px rgba(0, 113, 227, 0.48)',
+                  transform: 'translateY(-3px)',
                 },
               }}
             >
               <Box>
                 {/* Header with Checkmark indicator */}
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px', mb: '16px' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: '12px', mb: '18px' }}>
                   <Box
                     sx={{
-                      width: 26,
-                      height: 26,
-                      borderRadius: '6px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.18)',
+                      width: 32,
+                      height: 32,
+                      borderRadius: '10px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.22)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -307,14 +308,14 @@ export default function ProblemSolutionSection() {
                       flexShrink: 0,
                     }}
                   >
-                    <CheckRoundedIcon sx={{ fontSize: 16 }} />
+                    <CheckRoundedIcon sx={{ fontSize: 18 }} />
                   </Box>
                   <Typography
                     component="h3"
                     sx={{
-                      fontWeight: 800,
-                      fontSize: '1.08rem',
-                      letterSpacing: '-0.02em',
+                      fontWeight: 700,
+                      fontSize: '1.2rem',
+                      letterSpacing: '-0.025em',
                       color: '#ffffff',
                     }}
                   >
@@ -326,11 +327,12 @@ export default function ProblemSolutionSection() {
                 <Typography
                   component="p"
                   sx={{
-                    color: 'rgba(255, 255, 255, 0.82)',
-                    fontSize: '0.86rem',
-                    lineHeight: 1.55,
+                    color: 'rgba(255, 255, 255, 0.9)',
+                    fontSize: '0.92rem',
+                    lineHeight: 1.6,
                     letterSpacing: '-0.01em',
-                    mb: '22px',
+                    mb: '24px',
+                    fontWeight: 450,
                   }}
                 >
                   Everything your school runs on — records, communication, attendance, finance and reporting — unified in a single system that everyone shares.
@@ -340,12 +342,14 @@ export default function ProblemSolutionSection() {
               {/* Right Unified Visual (Nested Translucent Container) */}
               <Box
                 sx={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  borderRadius: '11px',
-                  pt: '16px',
-                  pb: '14px',
-                  px: '10px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
+                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  borderRadius: '16px',
+                  pt: '18px',
+                  pb: '16px',
+                  px: '14px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -361,7 +365,7 @@ export default function ProblemSolutionSection() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     flexWrap: 'wrap',
-                    gap: { xs: '6px', sm: '6px' },
+                    gap: { xs: '8px', sm: '8px' },
                     width: '100%',
                   }}
                 >
@@ -370,20 +374,23 @@ export default function ProblemSolutionSection() {
                       key={module}
                       sx={{
                         backgroundColor: '#ffffff',
-                        color: '#1a559e',
-                        fontWeight: 700,
-                        fontSize: '0.72rem',
+                        color: '#0071e3',
+                        fontWeight: 650,
+                        fontSize: '0.78rem',
                         letterSpacing: '-0.01em',
-                        px: '10px',
-                        py: '4.5px',
+                        px: '14px',
+                        py: '6px',
                         borderRadius: '9999px',
-                        boxShadow: '0 2px 5px rgba(0, 0, 0, 0.08)',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
                         userSelect: 'none',
                         whiteSpace: 'nowrap',
                         lineHeight: 1.2,
-                        transition: 'transform 0.2s ease',
+                        transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                         '&:hover': {
-                          transform: 'translateY(-1px)',
+                          transform: 'scale(1.04)',
+                        },
+                        '&:active': {
+                          transform: 'scale(0.97)',
                         },
                       }}
                     >
@@ -396,10 +403,10 @@ export default function ProblemSolutionSection() {
                 <Typography
                   component="span"
                   sx={{
-                    color: 'rgba(255, 255, 255, 0.62)',
-                    fontSize: '0.70rem',
+                    color: 'rgba(255, 255, 255, 0.72)',
+                    fontSize: '0.74rem',
                     fontWeight: 500,
-                    mt: '12px',
+                    mt: '14px',
                     letterSpacing: '-0.01em',
                     textAlign: 'center',
                   }}
@@ -417,7 +424,7 @@ export default function ProblemSolutionSection() {
             sx={{
               display: 'flex',
               justifyContent: 'center',
-              mt: '36px',
+              mt: '40px',
             }}
           >
             <Box
@@ -431,29 +438,32 @@ export default function ProblemSolutionSection() {
               sx={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '6px',
+                gap: '8px',
                 backgroundColor: '#ffffff',
-                border: '1px solid #e3ded6',
-                borderRadius: '8px',
-                px: '18px',
-                py: '8px',
-                color: '#1b150b',
-                fontSize: '0.84rem',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                borderRadius: '9999px',
+                px: '22px',
+                py: '10px',
+                color: '#1d1d1f',
+                fontSize: '0.88rem',
                 fontWeight: 600,
                 letterSpacing: '-0.01em',
                 cursor: 'pointer',
                 textDecoration: 'none',
-                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
-                transition: 'all 0.2s ease',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  borderColor: '#c8c2b7',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)',
+                  backgroundColor: '#f5f5f7',
+                  borderColor: 'rgba(0, 0, 0, 0.12)',
                   transform: 'translateY(-1px)',
+                },
+                '&:active': {
+                  transform: 'scale(0.976)',
                 },
               }}
             >
               Why We Built This
-              <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#1b150b' }} />
+              <ArrowForwardRoundedIcon sx={{ fontSize: 16, color: '#1d1d1f' }} />
             </Box>
           </Box>
         </RevealOnScroll>

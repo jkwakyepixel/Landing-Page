@@ -146,20 +146,20 @@ export default function NavigationBar() {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.90)' : 'transparent',
-          backdropFilter: isScrolled ? 'blur(12px)' : 'none',
-          WebkitBackdropFilter: isScrolled ? 'blur(12px)' : 'none',
-          borderBottom: isScrolled ? '1px solid rgba(226, 232, 240, 0.8)' : '1px solid transparent',
-          boxShadow: isScrolled ? '0 4px 20px -2px rgba(0, 0, 0, 0.05)' : 'none',
+          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.82)' : 'rgba(255, 255, 255, 0.65)',
+          backdropFilter: 'blur(20px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+          borderBottom: isScrolled ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(0, 0, 0, 0.04)',
+          boxShadow: isScrolled ? '0 4px 20px -2px rgba(0, 0, 0, 0.04)' : 'none',
           zIndex: 1100,
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
       <Container maxWidth="xl">
         <Toolbar
           disableGutters
           sx={{
-            minHeight: { xs: 68, md: 76 },
+            minHeight: { xs: 64, md: 72 },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -184,8 +184,12 @@ export default function NavigationBar() {
               textDecoration: 'none',
               color: 'inherit',
               userSelect: 'none',
+              transition: 'opacity 0.2s ease',
               '&:hover': {
-                opacity: 0.9,
+                opacity: 0.85,
+              },
+              '&:active': {
+                transform: 'scale(0.98)',
               },
             }}
           >
@@ -195,10 +199,10 @@ export default function NavigationBar() {
               src={edukraIcon}
               alt="Edukra Logo"
               sx={{
-                width: 38,
-                height: 38,
+                width: 36,
+                height: 36,
                 objectFit: 'contain',
-                filter: 'drop-shadow(0 2px 8px rgba(30, 86, 160, 0.22))',
+                filter: 'drop-shadow(0 2px 8px rgba(0, 113, 227, 0.22))',
               }}
             />
 
@@ -207,11 +211,11 @@ export default function NavigationBar() {
               variant="h6"
               component="span"
               sx={{
-                fontFamily: "'Sora', sans-serif",
-                fontWeight: 850,
+                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Plus Jakarta Sans", sans-serif',
+                fontWeight: 750,
                 fontSize: { xs: '1.2rem', md: '1.35rem' },
-                letterSpacing: '-0.03em',
-                color: '#0f172a',
+                letterSpacing: '-0.035em',
+                color: '#1d1d1f',
                 display: 'flex',
                 alignItems: 'center',
               }}
@@ -223,7 +227,7 @@ export default function NavigationBar() {
           {/* Center: Desktop Navigation Links (Hidden on mobile/tablet) */}
           <Stack
             direction="row"
-            spacing={{ md: 1, lg: 2, xl: 3 }}
+            spacing={{ md: 0.5, lg: 1 }}
             alignItems="center"
             sx={{
               display: { xs: 'none', md: 'flex' },
@@ -251,32 +255,33 @@ export default function NavigationBar() {
                       item.hasDropdown ? (
                         <KeyboardArrowDownRoundedIcon
                           sx={{
-                            fontSize: '18px !important',
+                            fontSize: '16px !important',
                             ml: -0.5,
-                            transition: 'transform 0.2s ease',
+                            transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                             transform: isOpen ? 'rotate(180deg)' : 'none',
                           }}
                         />
                       ) : null
                     }
                     sx={{
-                      color: isActive ? 'primary.main' : isOpen ? '#0f172a' : '#475569',
-                      fontWeight: (isActive || isOpen) ? 650 : 500,
-                      fontSize: { md: '0.88rem', lg: '0.94rem' },
-                      letterSpacing: '-0.01em',
-                      px: { md: 1, lg: 1.4 },
-                      py: 0.8,
+                      color: isActive ? '#0071e3' : isOpen ? '#1d1d1f' : '#1d1d1f',
+                      fontWeight: (isActive || isOpen) ? 600 : 500,
+                      fontSize: { md: '0.86rem', lg: '0.90rem' },
+                      letterSpacing: '-0.015em',
+                      px: { md: 1.4, lg: 1.75 },
+                      py: 0.65,
                       minWidth: 'auto',
                       whiteSpace: 'nowrap',
-                      borderRadius: '8px',
+                      borderRadius: '9999px',
                       textTransform: 'none',
-                      backgroundColor: isActive ? 'rgba(30, 86, 160, 0.08)' : isOpen ? '#F4F3F0' : 'transparent',
+                      backgroundColor: isActive ? 'rgba(0, 113, 227, 0.08)' : isOpen ? 'rgba(0, 0, 0, 0.05)' : 'transparent',
+                      transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                       '&:hover': {
-                        color: (isActive || isOpen) ? 'primary.main' : 'primary.main',
-                        backgroundColor: isActive ? 'rgba(30, 86, 160, 0.12)' : isOpen ? '#F4F3F0' : 'rgba(30, 86, 160, 0.05)',
-                        '& .MuiSvgIcon-root': {
-                          transform: item.hasDropdown && !isOpen ? 'translateY(1px)' : isOpen ? 'rotate(180deg) translateY(-1px)' : 'none',
-                        },
+                        color: '#0071e3',
+                        backgroundColor: isActive ? 'rgba(0, 113, 227, 0.12)' : 'rgba(0, 0, 0, 0.04)',
+                      },
+                      '&:active': {
+                        transform: 'scale(0.97)',
                       },
                     }}
                   >
@@ -302,9 +307,12 @@ export default function NavigationBar() {
                         sx: {
                           mt: 1.2,
                           minWidth: item.label === 'Modules' ? 240 : 220,
-                          borderRadius: '14px',
-                          border: '1px solid #EFEBE4',
-                          boxShadow: '0 12px 32px rgba(0, 0, 0, 0.07)',
+                          borderRadius: '16px',
+                          border: '1px solid rgba(0, 0, 0, 0.08)',
+                          backgroundColor: 'rgba(255, 255, 255, 0.90)',
+                          backdropFilter: 'blur(24px) saturate(190%)',
+                          WebkitBackdropFilter: 'blur(24px) saturate(190%)',
+                          boxShadow: '0 16px 40px -8px rgba(0, 0, 0, 0.12)',
                           p: 0.8,
                         },
                       }}
@@ -317,25 +325,24 @@ export default function NavigationBar() {
                             key={idx}
                             onClick={() => handleNavClick(dropItem.label, dropItem.hash)}
                             sx={{
-                              borderRadius: '8px',
-                              py: 1.1,
-                              px: 1.8,
+                              borderRadius: '10px',
+                              py: 1,
+                              px: 1.6,
                               display: 'flex',
                               justifyContent: 'space-between',
                               alignItems: 'center',
-                              fontSize: '14px',
-                              color: isDropItemActive ? 'primary.main' : '#334155',
+                              fontSize: '13.5px',
+                              color: isDropItemActive ? '#0071e3' : '#1d1d1f',
                               fontWeight: isDropItemActive ? 600 : 500,
-                              backgroundColor: isDropItemActive ? 'rgba(30, 86, 160, 0.05)' : 'transparent',
-                              fontFamily: "'Inter', sans-serif",
+                              backgroundColor: isDropItemActive ? 'rgba(0, 113, 227, 0.08)' : 'transparent',
                               transition: 'all 0.15s ease',
                               '&:hover': {
-                                backgroundColor: isDropItemActive ? 'rgba(30, 86, 160, 0.08)' : '#F8FAFC',
-                                color: 'primary.main',
+                                backgroundColor: isDropItemActive ? 'rgba(0, 113, 227, 0.12)' : 'rgba(0, 0, 0, 0.04)',
+                                color: '#0071e3',
                                 '& .arrow-icon': {
                                   opacity: 1,
                                   transform: 'translateX(0)',
-                                  color: 'primary.main',
+                                  color: '#0071e3',
                                 },
                               },
                             }}
@@ -344,9 +351,9 @@ export default function NavigationBar() {
                           <ArrowForwardRoundedIcon 
                             className="arrow-icon"
                             sx={{ 
-                              fontSize: 14, 
+                              fontSize: 13, 
                               opacity: 0.35,
-                              color: '#94A3B8',
+                              color: '#6e6e73',
                               transform: 'translateX(-4px)',
                               transition: 'all 0.2s ease',
                             }} 
@@ -364,7 +371,7 @@ export default function NavigationBar() {
           {/* Right: CTA Buttons (Desktop) */}
           <Stack
             direction="row"
-            spacing={1.5}
+            spacing={1.25}
             alignItems="center"
             sx={{
               display: { xs: 'none', sm: 'flex' },
@@ -374,24 +381,26 @@ export default function NavigationBar() {
             <Button
               variant="outlined"
               sx={{
-                borderColor: '#e2e8f0',
-                color: '#1e293b',
-                backgroundColor: '#ffffff',
-                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
+                borderColor: 'rgba(0, 0, 0, 0.08)',
+                color: '#1d1d1f',
+                backgroundColor: 'rgba(0, 0, 0, 0.04)',
                 fontWeight: 600,
-                fontSize: '0.9rem',
+                fontSize: '0.86rem',
+                letterSpacing: '-0.01em',
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
-                height: 40,
-                px: { sm: 2, md: 2.4 },
-                borderRadius: '8px',
+                height: 38,
+                px: { sm: 2, md: 2.2 },
+                borderRadius: '9999px',
                 textTransform: 'none',
-                transition: 'all 0.2s ease',
+                transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  borderColor: '#cbd5e1',
-                  backgroundColor: '#f8fafc',
+                  borderColor: 'rgba(0, 0, 0, 0.12)',
+                  backgroundColor: 'rgba(0, 0, 0, 0.07)',
                   transform: 'translateY(-1px)',
-                  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.06)',
+                },
+                '&:active': {
+                  transform: 'scale(0.976)',
                 },
               }}
               onClick={() => {
@@ -403,27 +412,31 @@ export default function NavigationBar() {
             </Button>
             <Button
               variant="contained"
-              color="primary"
               onClick={() => {
                 window.location.hash = '#book-demo';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               sx={{
                 fontWeight: 600,
-                fontSize: '0.9rem',
+                fontSize: '0.86rem',
+                letterSpacing: '-0.01em',
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
-                height: 40,
-                px: { sm: 2.2, md: 2.6 },
-                borderRadius: '8px',
+                height: 38,
+                px: { sm: 2.2, md: 2.5 },
+                borderRadius: '9999px',
                 textTransform: 'none',
-                backgroundColor: '#2863AB',
-                boxShadow: '0 3px 10px rgba(40, 99, 171, 0.25)',
-                transition: 'all 0.2s ease',
+                backgroundColor: '#0071e3',
+                color: '#ffffff',
+                boxShadow: '0 2px 8px rgba(0, 113, 227, 0.28)',
+                transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  backgroundColor: '#1D4D87',
-                  boxShadow: '0 6px 16px rgba(40, 99, 171, 0.35)',
+                  backgroundColor: '#0077ed',
+                  boxShadow: '0 4px 14px rgba(0, 113, 227, 0.38)',
                   transform: 'translateY(-1px)',
+                },
+                '&:active': {
+                  transform: 'scale(0.976)',
                 },
               }}
             >
@@ -461,17 +474,20 @@ export default function NavigationBar() {
         display: { xs: 'block', md: 'none' },
         zIndex: 1300,
         '& .MuiBackdrop-root': {
-          backgroundColor: 'rgba(15, 23, 42, 0.55)',
-          backdropFilter: 'blur(6px)',
-          WebkitBackdropFilter: 'blur(6px)',
+          backgroundColor: 'rgba(0, 0, 0, 0.4)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
         },
         '& .MuiDrawer-paper': {
           boxSizing: 'border-box',
           width: { xs: 'min(320px, 86vw)', sm: 340 },
           p: { xs: 2.5, sm: 3 },
-          backgroundColor: '#ffffff',
+          backgroundColor: 'rgba(255, 255, 255, 0.94)',
+          backdropFilter: 'blur(28px) saturate(190%)',
+          WebkitBackdropFilter: 'blur(28px) saturate(190%)',
+          borderRadius: { xs: '24px 0 0 24px', sm: '28px 0 0 28px' },
           overflowY: 'auto',
-          boxShadow: '-10px 0 35px rgba(0, 0, 0, 0.18)',
+          boxShadow: '-10px 0 40px rgba(0, 0, 0, 0.15)',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
@@ -490,10 +506,10 @@ export default function NavigationBar() {
                 width: 34,
                 height: 34,
                 objectFit: 'contain',
-                filter: 'drop-shadow(0 2px 6px rgba(30, 86, 160, 0.2))',
+                filter: 'drop-shadow(0 2px 6px rgba(0, 113, 227, 0.2))',
               }}
             />
-            <Typography variant="h6" sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 850, fontSize: '1.2rem', color: '#0f172a' }}>
+            <Typography variant="h6" sx={{ fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif', fontWeight: 750, fontSize: '1.2rem', color: '#1d1d1f', letterSpacing: '-0.03em' }}>
               Edukra
             </Typography>
           </Box>
@@ -501,17 +517,20 @@ export default function NavigationBar() {
             onClick={handleDrawerToggle} 
             size="small"
             sx={{
-              color: '#475569',
-              backgroundColor: '#f1f5f9',
+              color: '#6e6e73',
+              backgroundColor: 'rgba(0, 0, 0, 0.05)',
               p: 0.75,
-              '&:hover': { backgroundColor: '#e2e8f0', color: '#0f172a' },
+              borderRadius: '9999px',
+              transition: 'all 0.2s ease',
+              '&:hover': { backgroundColor: 'rgba(0, 0, 0, 0.1)', color: '#1d1d1f' },
+              '&:active': { transform: 'scale(0.95)' },
             }}
           >
-            <CloseRoundedIcon sx={{ fontSize: 20 }} />
+            <CloseRoundedIcon sx={{ fontSize: 18 }} />
           </IconButton>
         </Box>
 
-        <Divider sx={{ mb: 2, borderColor: '#f1f5f9' }} />
+        <Divider sx={{ mb: 2, borderColor: 'rgba(0, 0, 0, 0.06)' }} />
 
         <List disablePadding>
           {navItems.map((item) => {
@@ -533,30 +552,34 @@ export default function NavigationBar() {
                       }
                     }}
                     sx={{
-                      borderRadius: 1.5,
-                      py: 1,
-                      backgroundColor: isActive ? 'rgba(30, 86, 160, 0.08)' : isMenuExpanded ? 'rgba(30, 86, 160, 0.04)' : 'transparent',
+                      borderRadius: '12px',
+                      py: 1.1,
+                      px: 1.6,
+                      backgroundColor: isActive ? 'rgba(0, 113, 227, 0.08)' : isMenuExpanded ? 'rgba(0, 0, 0, 0.04)' : 'transparent',
+                      transition: 'all 0.2s ease',
                       '&:hover': {
-                        backgroundColor: isActive ? 'rgba(30, 86, 160, 0.12)' : 'rgba(30, 86, 160, 0.08)',
-                        color: 'primary.main',
+                        backgroundColor: isActive ? 'rgba(0, 113, 227, 0.12)' : 'rgba(0, 0, 0, 0.04)',
+                        color: '#0071e3',
                       },
+                      '&:active': { transform: 'scale(0.98)' },
                     }}
                   >
                     <ListItemText
                       primary={item.label}
                       primaryTypographyProps={{
-                        fontWeight: (isActive || isMenuExpanded) ? 650 : 600,
-                        fontSize: '1rem',
-                        color: (isActive || isMenuExpanded) ? 'primary.main' : 'inherit',
+                        fontWeight: (isActive || isMenuExpanded) ? 650 : 500,
+                        fontSize: '0.98rem',
+                        letterSpacing: '-0.015em',
+                        color: (isActive || isMenuExpanded) ? '#0071e3' : '#1d1d1f',
                       }}
                     />
                     {item.hasDropdown && (
                       <KeyboardArrowDownRoundedIcon 
                         sx={{ 
                           fontSize: 18, 
-                          color: isMenuExpanded ? 'primary.main' : 'text.secondary',
+                          color: isMenuExpanded ? '#0071e3' : '#86868b',
                           transform: isMenuExpanded ? 'rotate(180deg)' : 'none',
-                          transition: 'transform 0.2s',
+                          transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                         }} 
                       />
                     )}
@@ -575,16 +598,18 @@ export default function NavigationBar() {
                           sx={{ 
                             pl: 3, 
                             py: 0.9, 
-                            borderRadius: 1.5, 
+                            borderRadius: '10px', 
                             mb: 0.3,
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            backgroundColor: isDropItemActive ? 'rgba(30, 86, 160, 0.05)' : 'transparent',
+                            backgroundColor: isDropItemActive ? 'rgba(0, 113, 227, 0.08)' : 'transparent',
+                            transition: 'all 0.15s ease',
                             '&:hover': {
-                              backgroundColor: isDropItemActive ? 'rgba(30, 86, 160, 0.08)' : '#F8FAFC',
-                              color: 'primary.main',
-                            }
+                              backgroundColor: isDropItemActive ? 'rgba(0, 113, 227, 0.12)' : 'rgba(0, 0, 0, 0.04)',
+                              color: '#0071e3',
+                            },
+                            '&:active': { transform: 'scale(0.98)' },
                           }}
                           onClick={() => {
                             handleDrawerToggle();
@@ -594,15 +619,15 @@ export default function NavigationBar() {
                           <ListItemText 
                             primary={dropItem.label} 
                             primaryTypographyProps={{ 
-                              fontSize: '0.92rem', 
-                              color: isDropItemActive ? 'primary.main' : '#475569',
-                              fontWeight: isDropItemActive ? 600 : 500,
+                              fontSize: '0.90rem', 
+                              color: isDropItemActive ? '#0071e3' : '#424245',
+                              fontWeight: isDropItemActive ? 600 : 450,
                             }} 
                           />
                         <ArrowForwardRoundedIcon 
                           sx={{ 
                             fontSize: 13, 
-                            color: '#94A3B8',
+                            color: '#86868b',
                             opacity: 0.6,
                           }} 
                         />
@@ -618,7 +643,7 @@ export default function NavigationBar() {
       </Box>
 
       {/* Bottom CTA Buttons inside Drawer */}
-      <Box sx={{ mt: 3, pt: 2, pb: 1, borderTop: '1px solid #f1f5f9', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+      <Box sx={{ mt: 3, pt: 2, pb: 1, borderTop: '1px solid rgba(0, 0, 0, 0.06)', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
         <Button
           variant="outlined"
           fullWidth
@@ -628,20 +653,27 @@ export default function NavigationBar() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           sx={{
-            borderColor: '#cbd5e1',
-            color: '#1e293b',
+            borderColor: 'rgba(0, 0, 0, 0.1)',
+            backgroundColor: 'rgba(0, 0, 0, 0.04)',
+            color: '#1d1d1f',
             fontWeight: 600,
-            py: 1.1,
-            borderRadius: '9px',
+            py: 1.15,
+            borderRadius: '9999px',
             textTransform: 'none',
-            fontSize: '0.95rem',
+            fontSize: '0.92rem',
+            letterSpacing: '-0.01em',
+            transition: 'all 0.2s ease',
+            '&:hover': {
+              backgroundColor: 'rgba(0, 0, 0, 0.08)',
+              borderColor: 'rgba(0, 0, 0, 0.15)',
+            },
+            '&:active': { transform: 'scale(0.976)' },
           }}
         >
           Contact Us
         </Button>
         <Button
           variant="contained"
-          color="primary"
           fullWidth
           onClick={() => {
             handleDrawerToggle();
@@ -650,12 +682,20 @@ export default function NavigationBar() {
           }}
           sx={{
             fontWeight: 600,
-            py: 1.1,
-            borderRadius: '9px',
-            backgroundColor: '#1e56a0',
+            py: 1.15,
+            borderRadius: '9999px',
+            backgroundColor: '#0071e3',
+            color: '#ffffff',
             textTransform: 'none',
-            fontSize: '0.95rem',
-            boxShadow: '0 4px 12px rgba(30, 86, 160, 0.3)',
+            fontSize: '0.92rem',
+            letterSpacing: '-0.01em',
+            boxShadow: '0 3px 10px rgba(0, 113, 227, 0.25)',
+            transition: 'all 0.2s ease',
+            '&:hover': {
+              backgroundColor: '#0077ed',
+              boxShadow: '0 5px 16px rgba(0, 113, 227, 0.35)',
+            },
+            '&:active': { transform: 'scale(0.976)' },
           }}
         >
           Book a Demo

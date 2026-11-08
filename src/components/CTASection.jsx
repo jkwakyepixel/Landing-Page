@@ -17,10 +17,10 @@ export default function CTASection() {
       sx={{
         width: '100%',
         position: 'relative',
-        // Split background: top 65% is page off-white (#faf9f7), bottom 35% is dark footer (#0c0a07)
+        // Split background: top 65% is Apple light canvas (#f5f5f7), bottom 35% is dark footer (#121214)
         background:
-          'linear-gradient(to bottom, #faf9f7 0%, #faf9f7 65%, #0c0a07 65%, #0c0a07 100%)',
-        pt: { xs: 6, sm: 8, md: 9 },
+          'linear-gradient(to bottom, #f5f5f7 0%, #f5f5f7 65%, #121214 65%, #121214 100%)',
+        pt: { xs: 6, sm: 8, md: 10 },
         pb: { xs: 1, sm: 1.5, md: 2 },
       }}
     >
@@ -36,21 +36,18 @@ export default function CTASection() {
           {/* 
             MAIN CTA BANNER CARD
             overflow: hidden + borderRadius = THE CLIPPING MASK!
-            Fixed height on desktop ensures the absolutely positioned mockup 
-            overflows and gets clipped by the card's rounded bottom-right corner.
           */}
           <Box
             sx={{
-              borderRadius: { xs: '20px', sm: '26px', md: '28px' },
+              borderRadius: { xs: '24px', sm: '28px', md: '32px' },
               overflow: 'hidden', // THE CLIPPING MASK
               position: 'relative',
-              height: { xs: 'auto', md: '360px' }, // Fixed height for exact clipping match
+              height: { xs: 'auto', md: '360px' },
               display: 'flex',
               alignItems: 'center',
-              // Luxurious vibrant blue gradient with radial swoosh light rays matching site theme
               background:
-                'radial-gradient(circle at 45% 65%, rgba(255, 255, 255, 0.22) 0%, transparent 60%), linear-gradient(115deg, #0d3294 0%, #154bc4 30%, #1c6ad8 58%, #288de9 82%, #3dc1f7 100%)',
-              boxShadow: '0 25px 60px -10px rgba(21, 75, 196, 0.35)',
+                'radial-gradient(circle at 45% 65%, rgba(255, 255, 255, 0.2) 0%, transparent 65%), linear-gradient(135deg, #004fb0 0%, #0071e3 50%, #2997ff 100%)',
+              boxShadow: '0 24px 60px -12px rgba(0, 113, 227, 0.4)',
             }}
           >
             {/* Left Content Column */}
@@ -58,7 +55,7 @@ export default function CTASection() {
               sx={{
                 position: 'relative',
                 zIndex: 2,
-                width: { xs: '100%', md: '46%' },
+                width: { xs: '100%', md: '48%' },
                 pl: { xs: 3.5, sm: 5, md: 6.5 },
                 pr: { xs: 3.5, sm: 4, md: 2 },
                 py: { xs: 5, sm: 6, md: 0 },
@@ -69,10 +66,10 @@ export default function CTASection() {
                 variant="h3"
                 component="h2"
                 sx={{
-                  fontWeight: 800,
+                  fontWeight: 750,
                   color: '#ffffff',
-                  fontSize: { xs: '1.65rem', sm: '2.15rem', md: '2.5rem' },
-                  lineHeight: 1.14,
+                  fontSize: { xs: '1.8rem', sm: '2.3rem', md: '2.65rem' },
+                  lineHeight: 1.12,
                   letterSpacing: '-0.035em',
                   mb: '14px',
                 }}
@@ -86,11 +83,11 @@ export default function CTASection() {
               <Typography
                 variant="body1"
                 sx={{
-                  color: 'rgba(255, 255, 255, 0.88)',
-                  fontSize: { xs: '0.92rem', sm: '0.98rem' },
+                  color: 'rgba(255, 255, 255, 0.92)',
+                  fontSize: { xs: '0.94rem', sm: '1rem' },
                   lineHeight: 1.55,
                   maxWidth: 420,
-                  mb: { xs: '26px', sm: '30px' },
+                  mb: { xs: '28px', sm: '32px' },
                   fontWeight: 450,
                   letterSpacing: '-0.01em',
                 }}
@@ -105,7 +102,7 @@ export default function CTASection() {
                 alignItems={{ xs: 'stretch', sm: 'center' }}
                 sx={{ width: '100%', gap: 1.5 }}
               >
-                {/* Outlined White Pill ("Contact Sales") */}
+                {/* Frosted Glass Pill ("Contact Sales") */}
                 <Box
                   component="a"
                   href="#contact"
@@ -119,8 +116,10 @@ export default function CTASection() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     width: { xs: '100%', sm: 'auto' },
-                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                    border: '1.5px solid rgba(255, 255, 255, 0.65)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.16)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(255, 255, 255, 0.4)',
                     color: '#ffffff',
                     fontWeight: 650,
                     fontSize: '0.88rem',
@@ -132,16 +131,19 @@ export default function CTASection() {
                     textDecoration: 'none',
                     transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.26)',
                       borderColor: '#ffffff',
                       transform: 'translateY(-1px)',
+                    },
+                    '&:active': {
+                      transform: 'scale(0.976)',
                     },
                   }}
                 >
                   Contact Sales
                 </Box>
 
-                {/* Solid Dark Pill ("Get a Demo →") */}
+                {/* Apple Dark Obsidian Pill ("Get a Demo →") */}
                 <Box
                   component="button"
                   sx={{
@@ -150,9 +152,9 @@ export default function CTASection() {
                     justifyContent: 'center',
                     width: { xs: '100%', sm: 'auto' },
                     gap: '8px',
-                    backgroundColor: '#0c0a07',
+                    backgroundColor: '#121214',
                     color: '#ffffff',
-                    fontWeight: 700,
+                    fontWeight: 650,
                     fontSize: '0.88rem',
                     letterSpacing: '-0.01em',
                     px: '26px',
@@ -160,12 +162,15 @@ export default function CTASection() {
                     borderRadius: '9999px',
                     border: 'none',
                     cursor: 'pointer',
-                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.35)',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
                     transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
-                      backgroundColor: '#1b1814',
+                      backgroundColor: '#1d1d1f',
                       transform: 'translateY(-1px)',
-                      boxShadow: '0 6px 22px rgba(0, 0, 0, 0.5)',
+                      boxShadow: '0 6px 20px rgba(0, 0, 0, 0.45)',
+                    },
+                    '&:active': {
+                      transform: 'scale(0.976)',
                     },
                   }}
                   onClick={() => {

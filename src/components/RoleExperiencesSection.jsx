@@ -234,7 +234,7 @@ export default function RoleExperiencesSection() {
       sx={{
         width: '100%',
         py: { xs: 8, sm: 10, md: 12 },
-        backgroundColor: '#164d87', // Exact sampled rich royal blue from Figma mockup
+        background: 'linear-gradient(180deg, #0e2952 0%, #081a36 100%)',
         position: 'relative',
         scrollMarginTop: '80px',
         color: '#ffffff',
@@ -260,7 +260,7 @@ export default function RoleExperiencesSection() {
               mb: { xs: 5, sm: 6, md: 6 },
             }}
           >
-            {/* Pill Tag ("ROLE-BASED EXPERIENCES") - Perfectly Centered */}
+            {/* Pill Tag ("ROLE-BASED EXPERIENCES") */}
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center', mb: 1.8 }}>
               <Box
                 sx={{
@@ -269,9 +269,11 @@ export default function RoleExperiencesSection() {
                   gap: '6px',
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   border: '1px solid rgba(255, 255, 255, 0.18)',
+                  backdropFilter: 'blur(12px)',
+                  WebkitBackdropFilter: 'blur(12px)',
                   borderRadius: '9999px',
-                  px: '13px',
-                  py: '4.5px',
+                  px: '14px',
+                  py: '5px',
                   color: '#ffffff',
                   userSelect: 'none',
                 }}
@@ -280,7 +282,7 @@ export default function RoleExperiencesSection() {
                 <Typography
                   component="span"
                   sx={{
-                    fontSize: '0.68rem',
+                    fontSize: '0.70rem',
                     fontWeight: 700,
                     letterSpacing: '0.07em',
                     lineHeight: 1,
@@ -293,15 +295,15 @@ export default function RoleExperiencesSection() {
               </Box>
             </Box>
 
-            {/* Bold Headline - Exact 2 lines matching Figma */}
+            {/* Bold Headline */}
             <Typography
               variant="h2"
               component="h2"
               sx={{
-                fontWeight: 800,
-                fontSize: { xs: '1.85rem', sm: '2.3rem', md: '2.55rem' },
-                lineHeight: 1.15,
-                letterSpacing: '-0.03em',
+                fontWeight: 750,
+                fontSize: { xs: '1.9rem', sm: '2.4rem', md: '2.75rem' },
+                lineHeight: 1.12,
+                letterSpacing: '-0.035em',
                 color: '#ffffff',
                 textAlign: 'center',
                 maxWidth: 820,
@@ -315,7 +317,7 @@ export default function RoleExperiencesSection() {
               </Box>
             </Typography>
 
-            {/* Interactive Role Switcher Toggle Pill - Horizontally scrollable on mobile, Centered on desktop */}
+            {/* Interactive Apple Segmented Control Switcher Pill */}
             <Box
               sx={{
                 width: '100%',
@@ -337,9 +339,11 @@ export default function RoleExperiencesSection() {
                   gap: '4px',
                   p: '4px',
                   borderRadius: '9999px',
-                  backgroundColor: 'rgba(10, 28, 62, 0.45)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
-                  backdropFilter: 'blur(8px)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  backdropFilter: 'blur(20px) saturate(180%)',
+                  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.18)',
                   flexShrink: 0,
                   mx: { xs: 'auto', sm: 0 },
                 }}
@@ -357,27 +361,30 @@ export default function RoleExperiencesSection() {
                       sx={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '6px',
-                        px: { xs: '12px', sm: '16px' },
-                        py: '6.5px',
+                        gap: '7px',
+                        px: { xs: '14px', sm: '18px' },
+                        py: '7px',
                         borderRadius: '9999px',
                         border: 'none',
                         backgroundColor: isActive ? '#ffffff' : 'transparent',
-                        color: isActive ? '#0b0f19' : 'rgba(255, 255, 255, 0.72)',
-                        fontWeight: isActive ? 700 : 550,
-                        fontSize: '0.82rem',
+                        color: isActive ? '#1d1d1f' : 'rgba(255, 255, 255, 0.72)',
+                        fontWeight: isActive ? 650 : 500,
+                        fontSize: '0.84rem',
                         letterSpacing: '-0.01em',
                         cursor: 'pointer',
-                        boxShadow: isActive ? '0 2px 8px rgba(0, 0, 0, 0.16)' : 'none',
+                        boxShadow: isActive ? '0 2px 10px rgba(0, 0, 0, 0.15)' : 'none',
                         transform: isActive ? 'scale(1.02)' : 'scale(1)',
                         transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
                         outline: 'none',
                         whiteSpace: 'nowrap',
                         '&:hover': {
-                          color: isActive ? '#0b0f19' : '#ffffff',
+                          color: isActive ? '#1d1d1f' : '#ffffff',
                           backgroundColor: isActive
                             ? '#ffffff'
                             : 'rgba(255, 255, 255, 0.08)',
+                        },
+                        '&:active': {
+                          transform: 'scale(0.97)',
                         },
                       }}
                     >
@@ -503,7 +510,7 @@ export default function RoleExperiencesSection() {
                 ))}
               </Box>
 
-              {/* Black CTA Button or Google Play for Parent role */}
+              {/* Apple Glass Pill Button or Google Play for Parent role */}
               {activeRole === 'Parent' ? (
                 <Box
                   component="a"
@@ -516,28 +523,33 @@ export default function RoleExperiencesSection() {
                     justifyContent: 'center',
                     gap: '10px',
                     width: { xs: '100%', sm: 'auto' },
-                    backgroundColor: '#05070c',
-                    border: '1px solid rgba(255, 255, 255, 0.16)',
-                    borderRadius: '8px',
-                    px: '20px',
-                    py: '11px',
+                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                    backdropFilter: 'blur(16px)',
+                    WebkitBackdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(255, 255, 255, 0.25)',
+                    borderRadius: '9999px',
+                    px: '24px',
+                    py: '12px',
                     color: '#ffffff',
-                    fontSize: '0.86rem',
+                    fontSize: '0.88rem',
                     fontWeight: 650,
                     textDecoration: 'none',
                     letterSpacing: '-0.01em',
-                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.35)',
-                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
+                    transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
-                      backgroundColor: '#131926',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 6px 18px rgba(0, 0, 0, 0.45)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                      borderColor: 'rgba(255, 255, 255, 0.4)',
+                      transform: 'translateY(-1px)',
+                    },
+                    '&:active': {
+                      transform: 'scale(0.976)',
                     },
                   }}
                 >
                   <GooglePlayIcon />
                   Get Edukra Parents on Google Play
-                  <ArrowForwardRoundedIcon sx={{ fontSize: 14, color: '#ffffff' }} />
+                  <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#ffffff' }} />
                 </Box>
               ) : (
                 <Box
@@ -549,27 +561,30 @@ export default function RoleExperiencesSection() {
                     justifyContent: 'center',
                     gap: '8px',
                     width: { xs: '100%', sm: 'auto' },
-                    backgroundColor: '#05070c', // Solid black/dark navy
-                    border: '1px solid rgba(255, 255, 255, 0.12)',
-                    borderRadius: '7px',
-                    px: '18px',
-                    py: '10px',
-                    color: '#ffffff',
-                    fontSize: '0.84rem',
-                    fontWeight: 600,
+                    backgroundColor: '#ffffff',
+                    border: 'none',
+                    borderRadius: '9999px',
+                    px: '24px',
+                    py: '12px',
+                    color: '#0e2952',
+                    fontSize: '0.88rem',
+                    fontWeight: 650,
                     letterSpacing: '-0.01em',
                     cursor: 'pointer',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
-                    transition: 'all 0.2s ease',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
+                    transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
-                      backgroundColor: '#131926',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 6px 16px rgba(0, 0, 0, 0.4)',
+                      backgroundColor: '#f5f5f7',
+                      transform: 'translateY(-1px)',
+                      boxShadow: '0 6px 20px rgba(0, 0, 0, 0.25)',
+                    },
+                    '&:active': {
+                      transform: 'scale(0.976)',
                     },
                   }}
                 >
                   {currentRole.ctaText}
-                  <ArrowForwardRoundedIcon sx={{ fontSize: 14, color: '#ffffff' }} />
+                  <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#0e2952' }} />
                 </Box>
               )}
             </Box>

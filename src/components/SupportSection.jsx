@@ -72,8 +72,8 @@ export default function SupportSection() {
       id="support"
       sx={{
         width: '100%',
-        backgroundColor: '#faf9f7', // Exact off-white background matching the rest of the application
-        py: { xs: 8, sm: 10, md: 11 },
+        backgroundColor: '#f5f5f7', // Apple neutral light canvas
+        py: { xs: 8, sm: 10, md: 12 },
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -85,10 +85,10 @@ export default function SupportSection() {
         sx={{
           position: 'absolute',
           inset: 0,
-          opacity: 0.4,
+          opacity: 0.35,
           pointerEvents: 'none',
           background:
-            'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(29, 104, 216, 0.05) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(0, 113, 227, 0.06) 0%, transparent 70%)',
         }}
       />
 
@@ -102,7 +102,7 @@ export default function SupportSection() {
           zIndex: 2,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center', // Guarantees mathematical horizontal centering
+          alignItems: 'center',
         }}
       >
         <Box
@@ -114,7 +114,7 @@ export default function SupportSection() {
             justifyContent: 'center',
           }}
         >
-          {/* Header Block — Mathematically Centered */}
+          {/* Header Block */}
           <RevealOnScroll variant="init">
             <Box
               sx={{
@@ -128,22 +128,22 @@ export default function SupportSection() {
                 mb: { xs: 5, sm: 6, md: 6.5 },
               }}
             >
-              {/* Overline Badge Pill — Compact & Centered */}
+              {/* Overline Badge Pill */}
               <Box
                 sx={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  backgroundColor: '#e8f2ff',
-                  color: '#1d68d8',
+                  backgroundColor: 'rgba(0, 113, 227, 0.08)',
+                  color: '#0071e3',
                   fontWeight: 700,
-                  fontSize: '0.72rem',
+                  fontSize: '0.70rem',
                   letterSpacing: '0.06em',
                   borderRadius: '9999px',
                   px: '14px',
-                  py: '4px',
+                  py: '5px',
                   mb: '14px',
-                  border: '1px solid rgba(29, 104, 216, 0.15)',
+                  border: '1px solid rgba(0, 113, 227, 0.18)',
                   width: 'fit-content',
                   textTransform: 'uppercase',
                 }}
@@ -151,32 +151,32 @@ export default function SupportSection() {
                 OUR SUPPORT
               </Box>
 
-              {/* Main Headline — Centered */}
+              {/* Main Headline */}
               <Typography
                 variant="h3"
                 component="h2"
                 align="center"
                 sx={{
-                  fontWeight: 800,
-                  color: '#0f172a', // Deep slate navy matching app headings
-                  fontSize: { xs: '1.7rem', sm: '2.25rem', md: '2.65rem' },
-                  lineHeight: 1.15,
+                  fontWeight: 750,
+                  color: '#1d1d1f',
+                  fontSize: { xs: '1.9rem', sm: '2.35rem', md: '2.75rem' },
+                  lineHeight: 1.12,
                   letterSpacing: '-0.035em',
                   width: '100%',
                   textAlign: 'center',
-                  mb: '12px',
+                  mb: '14px',
                 }}
               >
                 Unrivalled Support. We’ve Got You Covered.
               </Typography>
 
-              {/* Subtitle — Centered */}
+              {/* Subtitle */}
               <Typography
                 variant="body1"
                 align="center"
                 sx={{
-                  color: '#64748b',
-                  fontSize: { xs: '0.92rem', sm: '0.98rem' },
+                  color: '#6e6e73',
+                  fontSize: { xs: '0.96rem', sm: '1.04rem' },
                   fontWeight: 450,
                   letterSpacing: '-0.01em',
                   width: '100%',
@@ -188,7 +188,7 @@ export default function SupportSection() {
             </Box>
           </RevealOnScroll>
 
-          {/* 2 Support Cards Row — Mathematically Centered */}
+          {/* 2 Support Cards Row */}
           <Box
             sx={{
               display: 'flex',
@@ -201,29 +201,30 @@ export default function SupportSection() {
             }}
           >
             {/* Card 1: Email Support */}
-            <RevealOnScroll variant="pop-up" delay={0.06} sx={{ width: '100%', maxWidth: 340 }}>
+            <RevealOnScroll variant="pop-up" delay={0.06} sx={{ width: '100%', maxWidth: 360 }}>
               <Box
                 sx={{
                   width: '100%',
                   backgroundColor: '#ffffff',
-                  borderRadius: '20px',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(0, 0, 0, 0.06)',
                   px: { xs: 3.5, sm: 4.5 },
                   py: { xs: 4, sm: 4.5 },
                   textAlign: 'center',
                   boxShadow:
-                    '0 12px 32px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03)',
+                    '0 4px 20px -2px rgba(0, 0, 0, 0.02), 0 12px 32px -4px rgba(0, 0, 0, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
-                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transition: 'all 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
                   '&:hover': {
-                    transform: 'translateY(-3px)',
-                  boxShadow:
-                    '0 18px 45px rgba(29, 104, 216, 0.1), 0 0 0 1px rgba(29, 104, 216, 0.08)',
-                },
-              }}
-            >
-              {/* Brand Blue Gradient Icon */}
+                    transform: 'translateY(-4px)',
+                    borderColor: 'rgba(0, 113, 227, 0.25)',
+                    boxShadow: '0 16px 36px -6px rgba(0, 113, 227, 0.12)',
+                  },
+                }}
+              >
+              {/* Brand Icon */}
               <Box sx={{ mb: 2 }}>
                 <EnvelopeBrandIcon />
               </Box>
@@ -234,9 +235,9 @@ export default function SupportSection() {
                 component="h3"
                 align="center"
                 sx={{
-                  fontWeight: 750,
-                  fontSize: '1.08rem',
-                  color: '#0f172a',
+                  fontWeight: 700,
+                  fontSize: '1.15rem',
+                  color: '#1d1d1f',
                   letterSpacing: '-0.02em',
                   mb: '6px',
                   textAlign: 'center',
@@ -250,8 +251,8 @@ export default function SupportSection() {
                 variant="body2"
                 align="center"
                 sx={{
-                  color: '#64748b',
-                  fontSize: '0.86rem',
+                  color: '#6e6e73',
+                  fontSize: '0.88rem',
                   fontWeight: 450,
                   mb: '24px',
                   textAlign: 'center',
@@ -270,57 +271,60 @@ export default function SupportSection() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '8px',
-                  backgroundColor: '#0c0a07',
-                  color: '#ffffff',
-                  fontWeight: 700,
-                  fontSize: '0.84rem',
+                  backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  color: '#1d1d1f',
+                  fontWeight: 650,
+                  fontSize: '0.86rem',
                   letterSpacing: '-0.01em',
                   px: '26px',
-                  py: '10.5px',
+                  py: '11px',
                   borderRadius: '9999px',
-                  border: 'none',
                   cursor: 'pointer',
                   width: '100%',
                   maxWidth: 220,
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.25)',
-                  transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   '&:hover': {
-                    backgroundColor: '#1b1814',
+                    backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                    borderColor: 'rgba(0, 0, 0, 0.12)',
                     transform: 'translateY(-1px)',
-                    boxShadow: '0 6px 18px rgba(0, 0, 0, 0.38)',
+                  },
+                  '&:active': {
+                    transform: 'scale(0.976)',
                   },
                 }}
               >
                 Submit Request
-                <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#ffffff' }} />
+                <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#1d1d1f' }} />
               </Box>
             </Box>
           </RevealOnScroll>
 
           {/* Card 2: Book a Demo */}
-          <RevealOnScroll variant="pop-up" delay={0.16} sx={{ width: '100%', maxWidth: 340 }}>
+          <RevealOnScroll variant="pop-up" delay={0.16} sx={{ width: '100%', maxWidth: 360 }}>
             <Box
               sx={{
                 width: '100%',
                 backgroundColor: '#ffffff',
-                borderRadius: '20px',
+                borderRadius: '24px',
+                border: '1px solid rgba(0, 0, 0, 0.06)',
                 px: { xs: 3.5, sm: 4.5 },
                 py: { xs: 4, sm: 4.5 },
                 textAlign: 'center',
                 boxShadow:
-                  '0 12px 32px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03)',
+                  '0 4px 20px -2px rgba(0, 0, 0, 0.02), 0 12px 32px -4px rgba(0, 0, 0, 0.04)',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                transition: 'all 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  transform: 'translateY(-3px)',
-                  boxShadow:
-                    '0 18px 45px rgba(29, 104, 216, 0.1), 0 0 0 1px rgba(29, 104, 216, 0.08)',
+                  transform: 'translateY(-4px)',
+                  borderColor: 'rgba(0, 113, 227, 0.25)',
+                  boxShadow: '0 16px 36px -6px rgba(0, 113, 227, 0.12)',
                 },
               }}
             >
-              {/* Brand Blue Gradient Icon */}
+              {/* Brand Icon */}
               <Box sx={{ mb: 2 }}>
                 <DemoBrandIcon />
               </Box>
@@ -331,9 +335,9 @@ export default function SupportSection() {
                 component="h3"
                 align="center"
                 sx={{
-                  fontWeight: 750,
-                  fontSize: '1.08rem',
-                  color: '#0f172a',
+                  fontWeight: 700,
+                  fontSize: '1.15rem',
+                  color: '#1d1d1f',
                   letterSpacing: '-0.02em',
                   mb: '6px',
                   textAlign: 'center',
@@ -347,8 +351,8 @@ export default function SupportSection() {
                 variant="body2"
                 align="center"
                 sx={{
-                  color: '#64748b',
-                  fontSize: '0.86rem',
+                  color: '#6e6e73',
+                  fontSize: '0.88rem',
                   fontWeight: 450,
                   mb: '24px',
                   textAlign: 'center',
@@ -371,25 +375,28 @@ export default function SupportSection() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '8px',
-                  backgroundColor: '#0c0a07',
+                  backgroundColor: '#0071e3',
                   color: '#ffffff',
-                  fontWeight: 700,
-                  fontSize: '0.84rem',
+                  fontWeight: 650,
+                  fontSize: '0.86rem',
                   letterSpacing: '-0.01em',
                   px: '26px',
-                  py: '10.5px',
+                  py: '11px',
                   borderRadius: '9999px',
                   border: 'none',
                   cursor: 'pointer',
                   textDecoration: 'none',
                   width: '100%',
                   maxWidth: 220,
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.25)',
-                  transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                  boxShadow: '0 2px 10px rgba(0, 113, 227, 0.28)',
+                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   '&:hover': {
-                    backgroundColor: '#1b1814',
+                    backgroundColor: '#0077ed',
+                    boxShadow: '0 4px 14px rgba(0, 113, 227, 0.38)',
                     transform: 'translateY(-1px)',
-                    boxShadow: '0 6px 18px rgba(0, 0, 0, 0.38)',
+                  },
+                  '&:active': {
+                    transform: 'scale(0.976)',
                   },
                 }}
               >

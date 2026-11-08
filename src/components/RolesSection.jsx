@@ -167,7 +167,7 @@ export default function RolesSection() {
       id="roles"
       sx={{
         width: '100%',
-        pt: { xs: 6, sm: 8, md: 9 },
+        pt: { xs: 8, sm: 10, md: 12 },
         pb: { xs: 10, sm: 12, md: 15 },
         backgroundColor: '#ffffff',
         position: 'relative',
@@ -176,9 +176,9 @@ export default function RolesSection() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '980px',
+          maxWidth: '1120px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3 },
+          px: { xs: 2.5, sm: 3, md: 4 },
         }}
       >
         {/* Section Header Container with Scroll Entrance */}
@@ -186,39 +186,39 @@ export default function RolesSection() {
           <Box
             sx={{
               textAlign: 'center',
-              maxWidth: 620,
+              maxWidth: 680,
               mx: 'auto',
-              mb: { xs: 4.5, sm: 5.5, md: 6.5 },
+              mb: { xs: 5, sm: 6, md: 7 },
             }}
           >
-            {/* Pill Tag (Exact sampled dimensions: ~188px x 22px, compact & centered) */}
+            {/* Apple Pill Tag */}
             <Box
               sx={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '6px',
-                backgroundColor: '#eaf2ff',
-                border: '1px solid #d4e4fc',
+                backgroundColor: 'rgba(0, 113, 227, 0.08)',
+                border: '1px solid rgba(0, 113, 227, 0.18)',
                 borderRadius: '9999px',
-                px: '12px',
-                py: '4px',
-                color: '#1d63d2',
+                px: '14px',
+                py: '5px',
+                color: '#0071e3',
                 userSelect: 'none',
                 width: 'fit-content',
                 mx: 'auto',
                 mb: 2,
               }}
             >
-              <CommunityIcon sx={{ color: '#1d63d2', flexShrink: 0 }} />
+              <CommunityIcon sx={{ color: '#0071e3', flexShrink: 0 }} />
               <Typography
                 component="span"
                 sx={{
-                  fontSize: '0.69rem',
+                  fontSize: '0.70rem',
                   fontWeight: 700,
                   letterSpacing: '0.06em',
                   lineHeight: 1,
-                  color: '#1d63d2',
+                  color: '#0071e3',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -226,33 +226,33 @@ export default function RolesSection() {
               </Typography>
             </Box>
 
-            {/* Heading (Exact sampled typography: #0B0702, tight line height) */}
+            {/* Heading */}
             <Typography
               variant="h2"
               component="h2"
               sx={{
-                fontWeight: 800,
-                fontSize: { xs: '1.75rem', sm: '2.15rem', md: '2.4rem' },
-                lineHeight: 1.15,
-                letterSpacing: '-0.03em',
-                color: '#0b0702',
-                mb: 1.8,
+                fontWeight: 750,
+                fontSize: { xs: '1.9rem', sm: '2.35rem', md: '2.75rem' },
+                lineHeight: 1.12,
+                letterSpacing: '-0.035em',
+                color: '#1d1d1f',
+                mb: 2,
               }}
             >
-              Built for everyone who makes a
-              <Box component="span" sx={{ display: { xs: 'inline', sm: 'block' }, ml: { xs: 0.5, sm: 0 } }}>
+              Built for everyone who makes a{' '}
+              <Box component="span" sx={{ display: { xs: 'inline', sm: 'block' } }}>
                 school work.
               </Box>
             </Typography>
 
-            {/* Subheading (Exact sampled typography: #888279) */}
+            {/* Subheading */}
             <Typography
               variant="body1"
               sx={{
-                color: '#888279',
-                fontSize: { xs: '0.92rem', sm: '0.98rem' },
+                color: '#6e6e73',
+                fontSize: { xs: '0.96rem', sm: '1.04rem' },
                 lineHeight: 1.55,
-                maxWidth: 560,
+                maxWidth: 600,
                 mx: 'auto',
                 fontWeight: 450,
               }}
@@ -263,7 +263,7 @@ export default function RolesSection() {
           </Box>
         </RevealOnScroll>
 
-        {/* Responsive 5-Column Grid Layout with Staggered Entrance */}
+        {/* Responsive 5-Column Bento Grid Layout with Staggered Entrance */}
         <Box
           sx={{
             display: 'grid',
@@ -282,56 +282,61 @@ export default function RolesSection() {
             return (
               <RevealOnScroll
                 key={role.id}
-                delay={index * 0.08}
+                delay={index * 0.06}
                 threshold={0.08}
                 rootMargin="0px 0px -30px 0px"
               >
                 <Box
                   sx={{
-                    backgroundColor: '#fdfbf9', // Exact sampled off-white
-                    border: '1px solid #efece7', // Exact sampled warm border
-                    borderRadius: '13px',
-                    p: '18px 16px 20px 16px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid rgba(0, 0, 0, 0.06)',
+                    borderRadius: '20px',
+                    p: '22px 18px 24px 18px',
                     height: '100%',
-                    minHeight: '175px',
+                    minHeight: '185px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'flex-start',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02), 0 8px 20px -4px rgba(0, 0, 0, 0.03)',
                     transition:
-                      'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease',
+                      'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
                       transform: 'translateY(-4px)',
-                      borderColor: '#ded8cf',
-                      boxShadow: '0 8px 18px -4px rgba(27, 21, 11, 0.06)',
+                      borderColor: 'rgba(0, 113, 227, 0.25)',
+                      boxShadow: '0 12px 28px -6px rgba(0, 113, 227, 0.12)',
+                    },
+                    '&:active': {
+                      transform: 'scale(0.98)',
                     },
                   }}
                 >
-                {/* Icon Box in Top-Left (Exact sampled: #DAEDFF, 38px x 38px) */}
+                {/* Icon Box */}
                 <Box
                   sx={{
-                    width: 38,
-                    height: 38,
-                    borderRadius: '8px',
-                    backgroundColor: '#daedff',
+                    width: 42,
+                    height: 42,
+                    borderRadius: '12px',
+                    backgroundColor: 'rgba(0, 113, 227, 0.08)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#1a6adb',
+                    color: '#0071e3',
                     mb: '16px',
                     flexShrink: 0,
+                    transition: 'background-color 0.2s ease, color 0.2s ease',
                   }}
                 >
                   <IconComponent />
                 </Box>
 
-                {/* Role Title (Exact sampled: #1B150B) */}
+                {/* Role Title */}
                 <Typography
                   component="h3"
                   sx={{
-                    fontWeight: 700,
-                    fontSize: '0.98rem',
+                    fontWeight: 650,
+                    fontSize: '1.02rem',
                     letterSpacing: '-0.02em',
-                    color: '#1b150b',
+                    color: '#1d1d1f',
                     mb: '6px',
                     lineHeight: 1.25,
                   }}
@@ -339,13 +344,13 @@ export default function RolesSection() {
                   {role.title}
                 </Typography>
 
-                {/* Description (Exact sampled: #888279) */}
+                {/* Description */}
                 <Typography
                   component="p"
                   sx={{
-                    color: '#888279',
-                    fontSize: '0.80rem',
-                    lineHeight: 1.45,
+                    color: '#6e6e73',
+                    fontSize: '0.84rem',
+                    lineHeight: 1.5,
                     fontWeight: 450,
                   }}
                 >

@@ -30,7 +30,7 @@ function GooglePlayIcon(props) {
   );
 }
 
-// Reusable Floating Metric Badge Component
+// Apple-Grade Floating Metric Badge with Frosted Depth
 function FloatingBadge({
   icon: IconComponent,
   value,
@@ -41,7 +41,7 @@ function FloatingBadge({
   return (
     <Paper
       elevation={0}
-      className={className}
+      className={`apple-metric-badge ${className || ''}`}
       sx={{
         position: 'absolute',
         zIndex: 3,
@@ -49,65 +49,53 @@ function FloatingBadge({
         alignItems: 'center',
         gap: 1.5,
         px: 2.2,
-        py: 1.6,
-        borderRadius: '16px',
-        backgroundColor: '#ffffff',
-        border: '1px solid rgba(226, 232, 240, 0.9)',
+        py: 1.5,
+        borderRadius: '18px',
+        backgroundColor: 'rgba(255, 255, 255, 0.88)',
+        backdropFilter: 'blur(20px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+        border: '1px solid rgba(255, 255, 255, 0.95)',
         boxShadow:
-          '0 20px 35px -8px rgba(15, 23, 42, 0.12), 0 8px 16px -6px rgba(15, 23, 42, 0.06)',
-        backdropFilter: 'blur(10px)',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+          '0 20px 40px -10px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 1)',
         cursor: 'default',
-        '&:hover': {
-          transform: 'translateY(-4px) scale(1.02)',
-          boxShadow:
-            '0 25px 45px -8px rgba(30, 86, 160, 0.18), 0 10px 20px -6px rgba(15, 23, 42, 0.08)',
-        },
+        userSelect: 'none',
         ...sx,
       }}
     >
-      {/* Icon Capsule */}
       <Box
         sx={{
-          width: 44,
-          height: 44,
-          borderRadius: '12px',
-          backgroundColor: '#eff6ff',
-          border: '1px solid #dbeafe',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#2563eb',
-          flexShrink: 0,
+          width: 40,
+          height: 40,
+          borderRadius: '12px',
+          backgroundColor: '#f5f5f7',
+          color: '#0071e3',
+          border: '1px solid rgba(0, 0, 0, 0.04)',
         }}
       >
         <IconComponent sx={{ fontSize: 22 }} />
       </Box>
-
-      {/* Texts */}
       <Box>
         <Typography
-          variant="body1"
-          component="div"
           sx={{
-            fontWeight: 800,
-            fontSize: '1.05rem',
-            lineHeight: 1.2,
-            color: '#0f172a',
-            letterSpacing: '-0.02em',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif',
+            fontSize: '1.18rem',
+            fontWeight: 750,
+            lineHeight: 1.15,
+            letterSpacing: '-0.025em',
+            color: '#1d1d1f',
           }}
         >
           {value}
         </Typography>
         <Typography
-          variant="caption"
-          component="div"
           sx={{
+            fontSize: '0.74rem',
+            color: '#86868b',
             fontWeight: 500,
-            fontSize: '0.78rem',
-            color: '#64748b',
-            lineHeight: 1.2,
-            mt: 0.2,
+            letterSpacing: '-0.005em',
           }}
         >
           {label}
@@ -127,9 +115,9 @@ export default function HeroSection() {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
     
-    // Max rotation is 4 degrees for subtle premium feel
-    const rotateX = ((y - centerY) / centerY) * -4; 
-    const rotateY = ((x - centerX) / centerX) * 4; 
+    // Max rotation is 3 degrees for gentle Apple-like subtle perspective
+    const rotateX = ((y - centerY) / centerY) * -3; 
+    const rotateY = ((x - centerX) / centerX) * 3; 
     
     setTilt({ x: rotateX, y: rotateY });
   };
@@ -146,15 +134,15 @@ export default function HeroSection() {
         position: 'relative',
         width: '100%',
         minHeight: { xs: 'auto', md: '100vh' },
-        pt: { xs: 13, sm: 16, md: 19 },
-        pb: { xs: 8, sm: 11, md: 15 },
+        pt: { xs: 14, sm: 17, md: 21 },
+        pb: { xs: 9, sm: 12, md: 16 },
         overflow: 'hidden',
-        // Ambient background with warm yellow and light blue radial glows
-        backgroundColor: '#fbfcfd',
+        // Apple signature clean canvas with luminous diffuse ambient radial glow
+        backgroundColor: '#fafafc',
         backgroundImage: `
-          radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-          radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
-          radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
+          radial-gradient(ellipse 90% 55% at 50% -15%, rgba(0, 113, 227, 0.12) 0%, transparent 65%),
+          radial-gradient(ellipse 70% 40% at 85% 15%, rgba(254, 240, 138, 0.22) 0%, transparent 55%),
+          radial-gradient(ellipse 60% 45% at 15% 25%, rgba(191, 219, 254, 0.28) 0%, transparent 60%)
         `,
       }}
     >
@@ -166,13 +154,13 @@ export default function HeroSection() {
           pointerEvents: 'none',
           zIndex: 0,
           backgroundImage: `
-            linear-gradient(to right, rgba(15, 23, 42, 0.052) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(15, 23, 42, 0.052) 1px, transparent 1px)
+            linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px)
           `,
           backgroundSize: '56px 56px',
           backgroundPosition: 'center top',
-          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 60%, rgba(0,0,0,0.15) 92%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.95) 60%, rgba(0,0,0,0.15) 92%, transparent 100%)',
+          maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 60%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 60%, transparent 100%)',
         }}
       />
 
@@ -182,202 +170,206 @@ export default function HeroSection() {
           <Box
             sx={{
               textAlign: 'center',
-              maxWidth: 820,
+              maxWidth: 860,
               mx: 'auto',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
             }}
           >
-          {/* Overline Tag Pill */}
-          <Chip
-            icon={<AutoAwesomeRoundedIcon sx={{ fontSize: '15px !important', color: '#2563eb' }} />}
-            label="SCHOOL MANAGEMENT PLATFORM"
-            sx={{
-              backgroundColor: '#eef4ff',
-              color: '#1d4ed8',
-              border: '1px solid #bfdbfe',
-              fontWeight: 700,
-              fontSize: { xs: '0.70rem', sm: '0.75rem' },
-              letterSpacing: '0.06em',
-              py: 2.2,
-              px: 1.5,
-              borderRadius: '9999px',
-              mb: { xs: 2.5, md: 3 },
-              boxShadow: '0 2px 8px rgba(37, 99, 235, 0.08)',
-              '& .MuiChip-label': {
-                px: 1,
-              },
-            }}
-          />
-
-          {/* Massive Headline */}
-          <Typography
-            variant="h1"
-            component="h1"
-            sx={{
-              fontSize: { xs: '1.95rem', sm: '3rem', md: '4.2rem', lg: '4.85rem' },
-              fontWeight: 800,
-              lineHeight: { xs: 1.18, md: 1.1 },
-              letterSpacing: { xs: '-0.02em', md: '-0.04em' },
-              color: '#0f172a',
-              mb: { xs: 2, md: 3 },
-              px: { xs: 0.5, sm: 0 },
-              wordBreak: 'break-word',
-            }}
-          >
-            One platform for your{' '}
-            <Box
-              component="span"
+            {/* Overline Tag Pill */}
+            <Chip
+              icon={<AutoAwesomeRoundedIcon sx={{ fontSize: '14px !important', color: '#0071e3' }} />}
+              label="INTELLIGENT SCHOOL MANAGEMENT"
               sx={{
-                display: 'inline',
-                background:
-                  'linear-gradient(90deg, #2d65aa 0%, #436ea2 12%, #55759b 22%, #6b7d90 34%, #7d8386 45%, #89877f 52%, #998c74 61%, #a79069 70%, #b6945b 79%, #c89846 89%, #da9c24 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
-              entire school
-            </Box>
-            <Box component="span" sx={{ color: '#0f172a' }}>
-              .
-            </Box>
-          </Typography>
-
-          {/* Subheadline */}
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: { xs: '0.98rem', sm: '1.12rem', md: '1.25rem' },
-              lineHeight: 1.65,
-              color: '#475569',
-              maxWidth: 710,
-              mx: 'auto',
-              mb: { xs: 3.5, md: 5 },
-              fontWeight: 450,
-              px: { xs: 0.5, sm: 0 },
-            }}
-          >
-            Bring administrators, teachers, staff, students and parents together with one
-            connected school management platform built to simplify everyday school operations.
-          </Typography>
-
-          {/* Action CTA Buttons */}
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={2}
-            justifyContent="center"
-            alignItems="center"
-            sx={{ width: { xs: '100%', sm: 'auto' }, mb: { xs: 2, sm: 2.5 } }}>
-            <Button
-              variant="contained"
-              color="primary"
-              size="large"
-              onClick={() => {
-                window.location.hash = '#book-demo';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              endIcon={<ArrowForwardRoundedIcon />}
-              sx={{
-                py: { xs: 1.5, sm: 1.6 },
-                px: { xs: 4, sm: 4.2 },
-                fontSize: '1.02rem',
-                fontWeight: 600,
-                borderRadius: '10px',
-                width: { xs: '100%', sm: 'auto' },
-                boxShadow: '0 8px 20px -3px rgba(30, 86, 160, 0.4)',
-                backgroundColor: '#1e56a0',
-                '&:hover': {
-                  backgroundColor: '#16427d',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 12px 26px -3px rgba(30, 86, 160, 0.5)',
+                backgroundColor: 'rgba(255, 255, 255, 0.82)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                color: '#0071e3',
+                border: '1px solid rgba(0, 113, 227, 0.18)',
+                fontWeight: 650,
+                fontSize: { xs: '0.72rem', sm: '0.76rem' },
+                letterSpacing: '0.07em',
+                py: 2.1,
+                px: 1.8,
+                borderRadius: '9999px',
+                mb: { xs: 2.5, md: 3 },
+                boxShadow: '0 2px 10px rgba(0, 113, 227, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1)',
+                '& .MuiChip-label': {
+                  px: 1,
                 },
               }}
-            >
-              Book a Demo
-            </Button>
+            />
 
-            <Button
-              variant="outlined"
-              size="large"
-              component="a"
-              href="#solution"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.hash = '#solution';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              endIcon={<NorthEastRoundedIcon sx={{ fontSize: '19px !important' }} />}
+            {/* Massive Display Headline */}
+            <Typography
+              variant="h1"
+              component="h1"
               sx={{
-                py: { xs: 1.5, sm: 1.6 },
-                px: { xs: 3.5, sm: 3.8 },
-                fontSize: '1.02rem',
-                fontWeight: 600,
-                borderRadius: '10px',
-                width: { xs: '100%', sm: 'auto' },
-                borderColor: '#e2e8f0',
-                color: '#1e293b',
-                backgroundColor: '#ffffff',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)',
-                textDecoration: 'none',
-                '&:hover': {
-                  borderColor: '#cbd5e1',
-                  backgroundColor: '#f8fafc',
-                  transform: 'translateY(-2px)',
-                },
+                fontSize: { xs: '2.15rem', sm: '3.4rem', md: '4.6rem', lg: '5.2rem' },
+                fontWeight: 800,
+                lineHeight: { xs: 1.14, sm: 1.08, md: 1.04 },
+                letterSpacing: { xs: '-0.028em', sm: '-0.038em' },
+                color: '#1d1d1f',
+                mb: { xs: 2.2, md: 3 },
+                px: { xs: 0.5, sm: 0 },
+                wordBreak: 'break-word',
               }}
             >
-              Explore the Platform
-            </Button>
-          </Stack>
+              One platform for your{' '}
+              <Box
+                component="span"
+                sx={{
+                  display: 'inline',
+                  background: 'linear-gradient(135deg, #0071e3 0%, #2997ff 45%, #1e56a0 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                entire school
+              </Box>
+              <Box component="span" sx={{ color: '#0071e3' }}>
+                .
+              </Box>
+            </Typography>
 
-          {/* Google Play Store Badge for Edukra Parents */}
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              mb: { xs: 4, sm: 6, md: 8 },
-            }}
-          >
+            {/* Subheadline with Apple Leading */}
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: { xs: '1.02rem', sm: '1.16rem', md: '1.24rem' },
+                lineHeight: 1.62,
+                color: '#6e6e73',
+                maxWidth: 720,
+                mx: 'auto',
+                mb: { xs: 3.5, md: 4.8 },
+                fontWeight: 450,
+                letterSpacing: '-0.012em',
+                px: { xs: 0.5, sm: 0 },
+              }}
+            >
+              Bring administrators, teachers, staff, students and parents together with one
+              seamlessly connected operating system built to simplify everyday institutional life.
+            </Typography>
+
+            {/* Action CTA Buttons */}
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={1.8}
+              justifyContent="center"
+              alignItems="center"
+              sx={{ width: { xs: '100%', sm: 'auto' }, mb: { xs: 2.5, sm: 3 } }}
+            >
+              <Button
+                variant="contained"
+                size="large"
+                onClick={() => {
+                  window.location.hash = '#book-demo';
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                endIcon={<ArrowForwardRoundedIcon sx={{ fontSize: 18 }} />}
+                sx={{
+                  py: { xs: 1.5, sm: 1.6 },
+                  px: { xs: 4, sm: 4.5 },
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  borderRadius: '9999px',
+                  width: { xs: '100%', sm: 'auto' },
+                  backgroundColor: '#0071e3',
+                  boxShadow: '0 4px 18px 0 rgba(0, 113, 227, 0.35)',
+                  '&:hover': {
+                    backgroundColor: '#0077ed',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 8px 24px 0 rgba(0, 113, 227, 0.45)',
+                  },
+                }}
+              >
+                Book a Demo
+              </Button>
+
+              <Button
+                variant="outlined"
+                size="large"
+                component="a"
+                href="#solution"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.hash = '#solution';
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                endIcon={<NorthEastRoundedIcon sx={{ fontSize: '18px !important' }} />}
+                sx={{
+                  py: { xs: 1.5, sm: 1.6 },
+                  px: { xs: 3.6, sm: 4 },
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  borderRadius: '9999px',
+                  width: { xs: '100%', sm: 'auto' },
+                  borderColor: 'rgba(0, 0, 0, 0.12)',
+                  color: '#1d1d1f',
+                  backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.03)',
+                  textDecoration: 'none',
+                  '&:hover': {
+                    borderColor: 'rgba(0, 0, 0, 0.22)',
+                    backgroundColor: '#ffffff',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 6px 16px rgba(0, 0, 0, 0.06)',
+                  },
+                }}
+              >
+                Explore the Platform
+              </Button>
+            </Stack>
+
+            {/* Google Play Store Badge for Edukra Parents */}
             <Box
-              component="a"
-              href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
-              target="_blank"
-              rel="noopener noreferrer"
               sx={{
-                display: 'inline-flex',
+                display: 'flex',
+                justifyContent: 'center',
                 alignItems: 'center',
-                gap: 1.25,
-                bgcolor: '#0a0d14',
-                color: '#ffffff',
-                px: { xs: 2.2, sm: 2.6 },
-                py: { xs: 0.9, sm: 1.05 },
-                borderRadius: '10px',
-                textDecoration: 'none',
-                border: '1px solid #1e293b',
-                boxShadow: '0 4px 16px rgba(15, 23, 42, 0.16)',
-                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                '&:hover': {
-                  bgcolor: '#131b2e',
-                  borderColor: '#334155',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 8px 24px rgba(15, 23, 42, 0.26)',
-                },
+                mb: { xs: 4, sm: 6, md: 8 },
               }}
             >
-              <GooglePlayIcon />
-              <Box sx={{ textAlign: 'left', lineHeight: 1.15 }}>
-                <Typography sx={{ fontSize: '0.62rem', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#94a3b8', fontWeight: 650 }}>
-                  Get Edukra Parents on
-                </Typography>
-                <Typography sx={{ fontSize: '0.90rem', fontWeight: 700, color: '#ffffff', fontFamily: "'Sora', sans-serif" }}>
-                  Google Play
-                </Typography>
+              <Box
+                component="a"
+                href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 1.25,
+                  bgcolor: '#121214',
+                  color: '#ffffff',
+                  px: { xs: 2.2, sm: 2.6 },
+                  py: { xs: 0.85, sm: 0.95 },
+                  borderRadius: '9999px',
+                  textDecoration: 'none',
+                  border: '1px solid rgba(255, 255, 255, 0.14)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.20)',
+                  transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                  '&:hover': {
+                    bgcolor: '#1d1d20',
+                    borderColor: 'rgba(255, 255, 255, 0.26)',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.28)',
+                  },
+                }}
+              >
+                <GooglePlayIcon />
+                <Box sx={{ textAlign: 'left', lineHeight: 1.15 }}>
+                  <Typography sx={{ fontSize: '0.60rem', textTransform: 'uppercase', letterSpacing: '0.07em', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 650 }}>
+                    Get Edukra Parents on
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.88rem', fontWeight: 700, color: '#ffffff', fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif' }}>
+                    Google Play
+                  </Typography>
+                </Box>
               </Box>
             </Box>
           </Box>
-        </Box>
         </RevealOnScroll>
 
         {/* Dashboard Mockup Graphic Container & Floating Badges */}
@@ -391,182 +383,95 @@ export default function HeroSection() {
               mt: { xs: 2, md: 3 },
             }}
           >
-          {/* Floating Metric Badges (Positions matching high-fidelity mockup) */}
-          
-          {/* 1. Top-Left Badge: 98% Attendance */}
-          <FloatingBadge
-            icon={DonutLargeRoundedIcon}
-            value="98%"
-            label="Attendance"
-            className="float-badge-1"
-            sx={{
-              top: '12%',
-              left: { md: -45, lg: -55 },
-              display: { xs: 'none', md: 'flex' },
-            }}
-          />
-
-          {/* 2. Bottom-Left Badge: 541 Students */}
-          <FloatingBadge
-            icon={PersonOutlineRoundedIcon}
-            value="541"
-            label="Students"
-            className="float-badge-2"
-            sx={{
-              bottom: '18%',
-              left: { md: -45, lg: -60 },
-              display: { xs: 'none', md: 'flex' },
-            }}
-          />
-
-          {/* 3. Top-Right Badge: 24 New Notifications */}
-          <FloatingBadge
-            icon={NotificationsNoneRoundedIcon}
-            value="24"
-            label="New Notifications"
-            className="float-badge-3"
-            sx={{
-              top: '8%',
-              right: { md: -45, lg: -55 },
-              display: { xs: 'none', md: 'flex' },
-            }}
-          />
-
-          {/* 4. Bottom-Right Badge: GH₵633,617 Bills collected */}
-          <FloatingBadge
-            icon={PaymentsOutlinedIcon}
-            value="GH₵633,617"
-            label="Bills collected"
-            className="float-badge-4"
-            sx={{
-              bottom: '22%',
-              right: { md: -50, lg: -75 },
-              display: { xs: 'none', md: 'flex' },
-            }}
-          />
-
-          {/* Main Dashboard Placeholder Container */}
-          <Box
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            sx={{
-              position: 'relative',
-              width: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transform: `perspective(1200px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
-              transition: tilt.x === 0 && tilt.y === 0 ? 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)' : 'none',
-              willChange: 'transform',
-            }}
-          >
-            <Box
-              component="img"
-              src={allDevicesMockup}
-              alt="Edukra Multi-Device Ecosystem - Desktop, Laptop, Tablet & Smartphone"
+            {/* 1. Top-Left Badge: 98% Attendance */}
+            <FloatingBadge
+              icon={DonutLargeRoundedIcon}
+              value="98%"
+              label="Campus Attendance"
+              className="float-badge-1"
               sx={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-                filter: 'drop-shadow(0 20px 45px rgba(15, 23, 42, 0.12)) drop-shadow(0 6px 16px rgba(15, 23, 42, 0.08))',
-                imageRendering: '-webkit-optimize-contrast',
-                transition: 'filter 0.3s ease',
-                '&:hover': {
-                  filter: 'drop-shadow(0 30px 60px rgba(15, 23, 42, 0.16)) drop-shadow(0 10px 22px rgba(15, 23, 42, 0.10))',
-                },
+                top: '12%',
+                left: { md: -45, lg: -55 },
+                display: { xs: 'none', md: 'flex' },
               }}
             />
+
+            {/* 2. Bottom-Left Badge: 541 Students */}
+            <FloatingBadge
+              icon={PersonOutlineRoundedIcon}
+              value="541"
+              label="Active Students"
+              className="float-badge-2"
+              sx={{
+                bottom: '18%',
+                left: { md: -45, lg: -60 },
+                display: { xs: 'none', md: 'flex' },
+              }}
+            />
+
+            {/* 3. Top-Right Badge: New Notice */}
+            <FloatingBadge
+              icon={NotificationsNoneRoundedIcon}
+              value="Term 1"
+              label="Reports Ready"
+              className="float-badge-3"
+              sx={{
+                top: '10%',
+                right: { md: -45, lg: -55 },
+                display: { xs: 'none', md: 'flex' },
+              }}
+            />
+
+            {/* 4. Bottom-Right Badge: Fee Settlement */}
+            <FloatingBadge
+              icon={PaymentsOutlinedIcon}
+              value="GH₵ 42.5k"
+              label="MoMo Reconciled"
+              className="float-badge-4"
+              sx={{
+                bottom: '20%',
+                right: { md: -45, lg: -60 },
+                display: { xs: 'none', md: 'flex' },
+              }}
+            />
+
+            {/* Central Hardware Mockup Frame */}
+            <Box
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              sx={{
+                position: 'relative',
+                zIndex: 2,
+                borderRadius: { xs: '20px', sm: '28px', md: '34px' },
+                padding: { xs: '8px', sm: '14px', md: '18px' },
+                backgroundColor: 'rgba(255, 255, 255, 0.75)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                boxShadow:
+                  '0 30px 80px -15px rgba(15, 23, 42, 0.12), 0 12px 30px -8px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1)',
+                transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+                transform: `perspective(1200px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
+                '&:hover': {
+                  boxShadow:
+                    '0 40px 100px -20px rgba(0, 113, 227, 0.16), 0 18px 40px -10px rgba(15, 23, 42, 0.08), inset 0 1px 0 rgba(255, 255, 255, 1)',
+                },
+              }}
+            >
+              <Box
+                component="img"
+                src={allDevicesMockup}
+                alt="Edukra Unified Platform Experience across Mac, Tablet and Phone"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  borderRadius: { xs: '14px', sm: '20px', md: '26px' },
+                  filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.06))',
+                }}
+              />
+            </Box>
           </Box>
-
-          {/* Mobile & Tablet badges row (visible only on screens below md) */}
-          <Stack
-            direction="row"
-            spacing={1.5}
-            justifyContent="center"
-            flexWrap="wrap"
-            useFlexGap
-            sx={{
-              display: { xs: 'flex', md: 'none' },
-              mt: { xs: 2.5, sm: 3.5 },
-            }}
-          >
-            <Paper
-              elevation={0}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                px: 1.5,
-                py: 1,
-                borderRadius: '12px',
-                border: '1px solid #e2e8f0',
-                backgroundColor: '#ffffff',
-              }}
-            >
-              <DonutLargeRoundedIcon sx={{ fontSize: 18, color: '#2563eb' }} />
-              <Typography variant="caption" sx={{ fontWeight: 700 }}>
-                98% Attendance
-              </Typography>
-            </Paper>
-
-            <Paper
-              elevation={0}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                px: 1.5,
-                py: 1,
-                borderRadius: '12px',
-                border: '1px solid #e2e8f0',
-                backgroundColor: '#ffffff',
-              }}
-            >
-              <PersonOutlineRoundedIcon sx={{ fontSize: 18, color: '#2563eb' }} />
-              <Typography variant="caption" sx={{ fontWeight: 700 }}>
-                541 Students
-              </Typography>
-            </Paper>
-
-            <Paper
-              elevation={0}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                px: 1.5,
-                py: 1,
-                borderRadius: '12px',
-                border: '1px solid #e2e8f0',
-                backgroundColor: '#ffffff',
-              }}
-            >
-              <NotificationsNoneRoundedIcon sx={{ fontSize: 18, color: '#2563eb' }} />
-              <Typography variant="caption" sx={{ fontWeight: 700 }}>
-                24 Notifications
-              </Typography>
-            </Paper>
-
-            <Paper
-              elevation={0}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 1,
-                px: 1.5,
-                py: 1,
-                borderRadius: '12px',
-                border: '1px solid #e2e8f0',
-                backgroundColor: '#ffffff',
-              }}
-            >
-              <PaymentsOutlinedIcon sx={{ fontSize: 18, color: '#2563eb' }} />
-              <Typography variant="caption" sx={{ fontWeight: 700 }}>
-                GH₵633,617 Collected
-              </Typography>
-            </Paper>
-          </Stack>
-        </Box>
         </RevealOnScroll>
       </Container>
     </Box>

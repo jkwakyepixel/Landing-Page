@@ -131,10 +131,11 @@ export default function Footer() {
       component="footer"
       sx={{
         width: '100%',
-        backgroundColor: '#0c0a07', // Deep warm obsidian black from mockup
+        backgroundColor: '#121214', // Apple dark obsidian
         color: '#ffffff',
-        pt: { xs: 2.5, sm: 3, md: 3.5 },
-        pb: { xs: 4, md: 5 },
+        pt: { xs: 4, sm: 5, md: 6 },
+        pb: { xs: 5, md: 6 },
+        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
       }}
     >
       <Container
@@ -154,7 +155,7 @@ export default function Footer() {
                 xs: 'repeat(2, 1fr)',
                 md: '3.5fr 2.1fr 2.1fr 2.1fr 2.1fr',
               },
-              gap: { xs: 3, sm: 3.5, md: '32px' },
+              gap: { xs: 3.5, sm: 4, md: '36px' },
               alignItems: 'flex-start',
             }}
         >
@@ -167,8 +168,8 @@ export default function Footer() {
                 src={edukraIcon}
                 alt="Edukra Logo"
                 sx={{
-                  width: 28,
-                  height: 28,
+                  width: 30,
+                  height: 30,
                   objectFit: 'contain',
                 }}
               />
@@ -176,10 +177,10 @@ export default function Footer() {
                 variant="h6"
                 component="span"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
-                  fontWeight: 800,
-                  fontSize: '1.05rem',
-                  letterSpacing: '-0.02em',
+                  fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif',
+                  fontWeight: 750,
+                  fontSize: '1.15rem',
+                  letterSpacing: '-0.03em',
                   color: '#ffffff',
                 }}
               >
@@ -191,11 +192,11 @@ export default function Footer() {
             <Typography
               variant="body2"
               sx={{
-                color: 'rgba(255, 255, 255, 0.52)',
-                fontSize: '0.74rem',
-                lineHeight: 1.55,
-                mt: '10px',
-                mb: '14px',
+                color: 'rgba(255, 255, 255, 0.58)',
+                fontSize: '0.78rem',
+                lineHeight: 1.6,
+                mt: '12px',
+                mb: '16px',
                 maxWidth: 260,
               }}
             >
@@ -203,14 +204,14 @@ export default function Footer() {
             </Typography>
 
             {/* Contact Details */}
-            <Stack spacing={0.8}>
+            <Stack spacing={1}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <MailOutlineRoundedIcon sx={{ fontSize: 14, color: 'rgba(255, 255, 255, 0.45)' }} />
                 <Typography
                   component="span"
                   sx={{
-                    color: 'rgba(255, 255, 255, 0.58)',
-                    fontSize: '0.72rem',
+                    color: 'rgba(255, 255, 255, 0.65)',
+                    fontSize: '0.76rem',
                     fontWeight: 450,
                   }}
                 >
@@ -223,8 +224,8 @@ export default function Footer() {
                 <Typography
                   component="span"
                   sx={{
-                    color: 'rgba(255, 255, 255, 0.58)',
-                    fontSize: '0.72rem',
+                    color: 'rgba(255, 255, 255, 0.65)',
+                    fontSize: '0.76rem',
                     fontWeight: 450,
                   }}
                 >
@@ -237,8 +238,8 @@ export default function Footer() {
                 <Typography
                   component="span"
                   sx={{
-                    color: 'rgba(255, 255, 255, 0.58)',
-                    fontSize: '0.72rem',
+                    color: 'rgba(255, 255, 255, 0.65)',
+                    fontSize: '0.76rem',
                     fontWeight: 450,
                   }}
                 >
@@ -256,28 +257,32 @@ export default function Footer() {
               sx={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: 1.1,
-                mt: 2,
-                px: 1.6,
-                py: 0.8,
-                borderRadius: '8px',
-                bgcolor: 'rgba(255, 255, 255, 0.06)',
-                border: '1px solid rgba(255, 255, 255, 0.14)',
+                gap: 1.25,
+                mt: 2.5,
+                px: 1.8,
+                py: 0.9,
+                borderRadius: '12px',
+                bgcolor: 'rgba(255, 255, 255, 0.08)',
+                border: '1px solid rgba(255, 255, 255, 0.16)',
                 color: '#ffffff',
                 textDecoration: 'none',
-                transition: 'all 0.2s ease',
+                transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  bgcolor: 'rgba(255, 255, 255, 0.12)',
-                  borderColor: 'rgba(255, 255, 255, 0.28)',
+                  bgcolor: 'rgba(255, 255, 255, 0.14)',
+                  borderColor: 'rgba(255, 255, 255, 0.3)',
+                  transform: 'translateY(-1px)',
+                },
+                '&:active': {
+                  transform: 'scale(0.976)',
                 },
               }}
             >
               <GooglePlayIcon />
-              <Box sx={{ textAlign: 'left', lineHeight: 1.1 }}>
-                <Typography sx={{ fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '0.04em', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 600 }}>
+              <Box sx={{ textAlign: 'left', lineHeight: 1.15 }}>
+                <Typography sx={{ fontSize: '0.60rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 600 }}>
                   Get Edukra Parents on
                 </Typography>
-                <Typography sx={{ fontSize: '0.80rem', fontWeight: 700, color: '#ffffff' }}>
+                <Typography sx={{ fontSize: '0.82rem', fontWeight: 700, color: '#ffffff' }}>
                   Google Play
                 </Typography>
               </Box>
@@ -291,10 +296,10 @@ export default function Footer() {
                 component="h4"
                 sx={{
                   color: '#ffffff',
-                  fontSize: '0.78rem',
-                  fontWeight: 700,
+                  fontSize: '0.82rem',
+                  fontWeight: 650,
                   letterSpacing: '-0.01em',
-                  mb: '12px',
+                  mb: '14px',
                 }}
               >
                 {col.title}
@@ -339,7 +344,7 @@ export default function Footer() {
           alignItems="center"
           spacing={2.5}
         >
-          {/* Social Media Outlined Boxes */}
+          {/* Social Media Outlined Apple Pills */}
           <Stack direction="row" spacing={1} alignItems="center">
             {[
               { id: 'linkedin', icon: LinkedInIcon, label: 'LinkedIn', url: 'https://linkedin.com' },
@@ -358,11 +363,11 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   aria-label={social.label}
                   sx={{
-                    width: 32,
-                    height: 32,
-                    borderRadius: '6px',
+                    width: 34,
+                    height: 34,
+                    borderRadius: '9999px',
                     border: '1px solid rgba(255, 255, 255, 0.12)',
-                    backgroundColor: 'rgba(255, 255, 255, 0.02)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.04)',
                     color: 'rgba(255, 255, 255, 0.65)',
                     display: 'flex',
                     alignItems: 'center',
@@ -371,9 +376,12 @@ export default function Footer() {
                     transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
                       borderColor: 'rgba(255, 255, 255, 0.32)',
-                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.12)',
                       color: '#ffffff',
                       transform: 'translateY(-1px)',
+                    },
+                    '&:active': {
+                      transform: 'scale(0.95)',
                     },
                   }}
                 >
@@ -386,12 +394,12 @@ export default function Footer() {
           {/* Copyright & Legal Links */}
           <Typography
             sx={{
-              color: 'rgba(255, 255, 255, 0.48)',
+              color: 'rgba(255, 255, 255, 0.52)',
               fontSize: '0.78rem',
               fontWeight: 450,
               display: 'flex',
               alignItems: 'center',
-              gap: '6px',
+              gap: '8px',
               flexWrap: 'wrap',
               justifyContent: { xs: 'center', sm: 'flex-end' },
             }}
@@ -403,12 +411,12 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               sx={{
-                color: '#38bdf8',
+                color: '#2997ff',
                 textDecoration: 'none',
                 fontWeight: 600,
                 transition: 'color 0.2s ease',
                 '&:hover': {
-                  color: '#7dd3fc',
+                  color: '#70baff',
                   textDecoration: 'underline',
                 },
               }}
@@ -419,11 +427,11 @@ export default function Footer() {
             <Link
               href="#privacy"
               sx={{
-                color: 'rgba(255, 255, 255, 0.48)',
+                color: 'rgba(255, 255, 255, 0.52)',
                 textDecoration: 'none',
                 transition: 'color 0.2s ease',
                 '&:hover': {
-                  color: 'rgba(255, 255, 255, 0.85)',
+                  color: 'rgba(255, 255, 255, 0.88)',
                 },
               }}
             >
@@ -433,7 +441,7 @@ export default function Footer() {
             <Link
               href="#edukra-privacy"
               sx={{
-                color: 'rgba(255, 255, 255, 0.65)',
+                color: 'rgba(255, 255, 255, 0.7)',
                 textDecoration: 'none',
                 transition: 'color 0.2s ease',
                 '&:hover': {
@@ -447,7 +455,7 @@ export default function Footer() {
             <Link
               href="#delete-account"
               sx={{
-                color: 'rgba(255, 255, 255, 0.65)',
+                color: 'rgba(255, 255, 255, 0.7)',
                 textDecoration: 'none',
                 transition: 'color 0.2s ease',
                 '&:hover': {
@@ -461,11 +469,11 @@ export default function Footer() {
             <Link
               href="#terms"
               sx={{
-                color: 'rgba(255, 255, 255, 0.48)',
+                color: 'rgba(255, 255, 255, 0.52)',
                 textDecoration: 'none',
                 transition: 'color 0.2s ease',
                 '&:hover': {
-                  color: 'rgba(255, 255, 255, 0.85)',
+                  color: 'rgba(255, 255, 255, 0.88)',
                 },
               }}
             >
