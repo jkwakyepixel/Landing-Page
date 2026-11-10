@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sms.urionsystems.com/sitemap.xml
+Sitemap: https://edukra.com/sitemap.xml
