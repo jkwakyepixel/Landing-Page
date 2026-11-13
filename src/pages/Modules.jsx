@@ -35,6 +35,7 @@ import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
 import RevealOnScroll from '../components/RevealOnScroll';
+import useInView from '../hooks/useInView';
 
 // 4-square grid icon matching the user's screenshot
 function ModulesGridIcon() {
