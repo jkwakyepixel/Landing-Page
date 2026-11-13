@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box } from '@mui/material';
+import { Box, CircularProgress } from '@mui/material';
 import theme from './theme/theme';
 import NavigationBar from './components/NavigationBar';
 import HeroSection from './components/HeroSection';
@@ -13,16 +13,33 @@ import RoleExperiencesSection from './components/RoleExperiencesSection';
 import SupportSection from './components/SupportSection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
-import BookDemo from './pages/BookDemo';
-import ContactUs from './pages/ContactUs';
-import Modules from './pages/Modules';
-import Gallery from './pages/Gallery';
-import History from './pages/History';
-import MissionVision from './pages/MissionVision';
-import Solution from './pages/Solution';
-import WhyThisSystem from './pages/WhyThisSystem';
-import Pricing from './pages/Pricing';
-import Legal from './pages/Legal';
+
+const BookDemo = lazy(() => import('./pages/BookDemo'));
+const ContactUs = lazy(() => import('./pages/ContactUs'));
+const Modules = lazy(() => import('./pages/Modules'));
+const Gallery = lazy(() => import('./pages/Gallery'));
+const History = lazy(() => import('./pages/History'));
+const MissionVision = lazy(() => import('./pages/MissionVision'));
+const Solution = lazy(() => import('./pages/Solution'));
+const WhyThisSystem = lazy(() => import('./pages/WhyThisSystem'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const Legal = lazy(() => import('./pages/Legal'));
+
+function PageLoader() {
+  return (
+    <Box
+      sx={{
+        minHeight: '100vh',
+        backgroundColor: '#f7f6f2',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <CircularProgress size={32} thickness={4} sx={{ color: '#0071e3' }} />
+    </Box>
+  );
+}
 
 const getRouteFromHash = (hash) => {
   const path = typeof window !== 'undefined' ? (window.location.pathname || '').toLowerCase() : '';
@@ -94,27 +111,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {currentRoute === 'book-demo' ? (
-        <BookDemo />
-      ) : currentRoute === 'contact' ? (
-        <ContactUs />
-      ) : currentRoute === 'modules' ? (
-        <Modules />
-      ) : currentRoute === 'pricing' ? (
-        <Pricing />
-      ) : currentRoute === 'solution' ? (
-        <Solution />
-      ) : currentRoute === 'gallery' ? (
-        <Gallery />
-      ) : currentRoute === 'mission' ? (
-        <MissionVision />
-      ) : currentRoute === 'history' ? (
-        <History />
-      ) : currentRoute === 'why-this-system' ? (
-        <WhyThisSystem />
-      ) : currentRoute === 'legal' ? (
-        <Legal />
-      ) : (
+      {currentRoute === 'home' ? (
         <Box
           sx={{
             minHeight: '100vh',
@@ -137,6 +134,30 @@ function App() {
           <CTASection />
           <Footer />
         </Box>
+      ) : (
+        <Suspense fallback={<PageLoader />}>
+          {currentRoute === 'book-demo' ? (
+            <BookDemo />
+          ) : currentRoute === 'contact' ? (
+            <ContactUs />
+          ) : currentRoute === 'modules' ? (
+            <Modules />
+          ) : currentRoute === 'pricing' ? (
+            <Pricing />
+          ) : currentRoute === 'solution' ? (
+            <Solution />
+          ) : currentRoute === 'gallery' ? (
+            <Gallery />
+          ) : currentRoute === 'mission' ? (
+            <MissionVision />
+          ) : currentRoute === 'history' ? (
+            <History />
+          ) : currentRoute === 'why-this-system' ? (
+            <WhyThisSystem />
+          ) : (
+            <Legal />
+          )}
+        </Suspense>
       )}
     </ThemeProvider>
   );

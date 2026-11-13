@@ -8,11 +8,11 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import RevealOnScroll from './RevealOnScroll';
 
 // Portal mockup assets
-import adminMockup from '../assets/admin billing laptop mmockup.png';
-import teacherMockup from '../assets/teachers tablet mock up.png';
-import staffMockup from '../assets/staff mockup.png';
-import studentMockup from '../assets/sruent mock up.png';
-import parentMockup from '../assets/parent mobile mock up.png';
+import adminMockup from '../assets/admin billing laptop mmockup.webp';
+import teacherMockup from '../assets/teachers tablet mock up.webp';
+import staffMockup from '../assets/staff mockup.webp';
+import studentMockup from '../assets/sruent mock up.webp';
+import parentMockup from '../assets/parent mobile mock up.webp';
 
 // Exact magic wand with sparks icon matching Figma pill tag
 function WandIcon(props) {
@@ -612,6 +612,8 @@ export default function RoleExperiencesSection() {
                 className="mockup-swap-anim"
                 src={currentRole.image}
                 alt={`${currentRole.label} Dashboard Experience`}
+                loading="lazy"
+                decoding="async"
                 sx={{
                   maxWidth: '100%',
                   maxHeight: { xs: '340px', sm: '430px', md: '500px' },

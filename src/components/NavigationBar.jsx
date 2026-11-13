@@ -22,7 +22,7 @@ import KeyboardArrowDownRoundedIcon from '@mui/icons-material/KeyboardArrowDownR
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
-import edukraIcon from '../assets/edukra-icon.png';
+import edukraIcon from '../assets/edukra-icon.webp';
 
 const navItems = [
   { label: 'Home', hasDropdown: false },

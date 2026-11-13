@@ -7,7 +7,7 @@ import {
 } from '@mui/material';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import RevealOnScroll from './RevealOnScroll';
-import dashboardMockup from '../assets/dashboard desktop mock ups.png';
+import dashboardMockup from '../assets/dashboard desktop mock ups.webp';
 
 export default function CTASection() {
   return (
@@ -221,6 +221,8 @@ export default function CTASection() {
                   component="img"
                   src={dashboardMockup}
                   alt="Platform Dashboard Preview"
+                  loading="lazy"
+                  decoding="async"
                   sx={{
                     width: '100%',
                     height: 'auto',

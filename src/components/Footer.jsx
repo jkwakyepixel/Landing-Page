@@ -12,7 +12,7 @@ import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import RevealOnScroll from './RevealOnScroll';
-import edukraIcon from '../assets/edukra-icon.png';
+import edukraIcon from '../assets/edukra-icon.webp';
 
 // Social media SVG icons matching mockup
 function FacebookIcon(props) {

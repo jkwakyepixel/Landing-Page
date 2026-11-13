@@ -11,7 +11,7 @@ import NorthEastRoundedIcon from '@mui/icons-material/NorthEastRounded';
 import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import RevealOnScroll from './RevealOnScroll';
-import allDevicesMockup from '../assets/all-devices-white.png';
+import allDevicesMockup from '../assets/all-devices-white.webp';
 
 // Official Google Play Store Icon
 function GooglePlayIcon(props) {
@@ -595,6 +595,8 @@ export default function HeroSection() {
                   component="img"
                   src={allDevicesMockup}
                   alt="Edukra Unified Platform Experience across Desktop, Tablet and Phone"
+                  fetchPriority="high"
+                  decoding="async"
                   sx={{
                     width: '100%',
                     height: 'auto',

@@ -24,7 +24,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
-import edukraIcon from '../assets/edukra-icon.png';
+import edukraIcon from '../assets/edukra-icon.webp';
 
 export default function Legal() {
   const [activeTab, setActiveTab] = useState(() => {

@@ -24,15 +24,15 @@ import FaceRoundedIcon from '@mui/icons-material/FaceRounded';
 import FamilyRestroomRoundedIcon from '@mui/icons-material/FamilyRestroomRounded';
 
 // Images
-import dashboardMockup from '../assets/dashboard desktop mock ups.png';
-import teacherMockup from '../assets/teachers tablet mock up.png';
-import studentMockup from '../assets/sruent mock up.png';
-import parentMockup from '../assets/parent mobile mock up.png';
-import staffMockup from '../assets/staff mockup.png';
-import academicsMockup from '../assets/academic management.png';
-import financeMockup from '../assets/admin billing laptop mmockup.png';
-import commsMockup from '../assets/communication.png';
-import transportMockup from '../assets/trasportation.png';
+import dashboardMockup from '../assets/dashboard desktop mock ups.webp';
+import teacherMockup from '../assets/teachers tablet mock up.webp';
+import studentMockup from '../assets/sruent mock up.webp';
+import parentMockup from '../assets/parent mobile mock up.webp';
+import staffMockup from '../assets/staff mockup.webp';
+import academicsMockup from '../assets/academic management.webp';
+import financeMockup from '../assets/admin billing laptop mmockup.webp';
+import commsMockup from '../assets/communication.webp';
+import transportMockup from '../assets/trasportation.webp';
 
 // Role data definitions matching Figma specs
 const roles = [
@@ -777,6 +777,8 @@ export default function Solution() {
                       component="img"
                       src={activeRole.image}
                       alt={activeRole.alt}
+                      loading="lazy"
+                      decoding="async"
                       sx={{
                         maxWidth: '100%',
                         maxHeight: { xs: '340px', sm: '430px', md: '480px' },
@@ -917,6 +919,8 @@ export default function Solution() {
                             component="img"
                             src={item.image}
                             alt={item.alt}
+                            loading="lazy"
+                            decoding="async"
                             sx={{
                               maxWidth: '100%',
                               maxHeight: { xs: '320px', sm: '400px', md: '440px' },
@@ -958,6 +962,8 @@ export default function Solution() {
                             component="img"
                             src={item.image}
                             alt={item.alt}
+                            loading="lazy"
+                            decoding="async"
                             sx={{
                               maxWidth: '100%',
                               maxHeight: { xs: '320px', sm: '400px', md: '440px' },

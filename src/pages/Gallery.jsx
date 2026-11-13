@@ -23,13 +23,13 @@ import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
 import RevealOnScroll from '../components/RevealOnScroll';
 
-import dashboardMockup from '../assets/dashboard desktop mock ups.png';
-import teacherMockup from '../assets/teachers tablet mock up.png';
-import parentMockup from '../assets/parent mobile mock up.png';
-import adminLaptopMockup from '../assets/admin billing laptop mmockup.png';
-import presentationSchoolDemo1 from '../assets/presentation-school-demo-1.jpg';
-import presentationSchoolDemo2 from '../assets/presentation-school-demo-2.jpg';
-import presentationSchoolDemo3 from '../assets/presentation-school-demo-3.jpg';
+import dashboardMockup from '../assets/dashboard desktop mock ups.webp';
+import teacherMockup from '../assets/teachers tablet mock up.webp';
+import parentMockup from '../assets/parent mobile mock up.webp';
+import adminLaptopMockup from '../assets/admin billing laptop mmockup.webp';
+import presentationSchoolDemo1 from '../assets/presentation-school-demo-1.webp';
+import presentationSchoolDemo2 from '../assets/presentation-school-demo-2.webp';
+import presentationSchoolDemo3 from '../assets/presentation-school-demo-3.webp';
 
 // Categories matching the user's mockup
 const filterCategories = [
@@ -222,6 +222,8 @@ function ShowcaseItem({ feature }) {
               component="img"
               src={feature.image}
               alt={feature.alt}
+              loading="lazy"
+              decoding="async"
               sx={{
                 maxWidth: '100%',
                 maxHeight: { xs: '320px', sm: '420px', md: '460px' },
