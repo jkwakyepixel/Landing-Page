@@ -129,7 +129,7 @@ const showcaseFeatures = [
     description:
       'Teachers can quickly input grades, attach feedback, and automatically generate comprehensive report cards with just a few clicks.',
     icon: <SchoolRoundedIcon fontSize="large" />,
-    color: '#8b5cf6',
+    color: '#0284c7',
     alignment: 'right',
     image: teacherMockup,
     alt: 'Teacher grading and student scorebook view',
@@ -139,7 +139,7 @@ const showcaseFeatures = [
     description:
       "Keep parents engaged with a responsive mobile experience, allowing them to track their child's progress, view timetables, and pay fees anywhere.",
     icon: <DevicesRoundedIcon fontSize="large" />,
-    color: '#10b981',
+    color: '#0071e3',
     alignment: 'left',
     image: parentMockup,
     alt: 'Parent portal showing student updates and pickup QR code',
@@ -186,7 +186,7 @@ function ShowcaseItem({ feature }) {
               color: '#0f172a',
               mb: 2,
               letterSpacing: '-0.02em',
-              fontFamily: "'Sora', sans-serif",
+              fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
             }}
           >
             {feature.title}
@@ -198,7 +198,7 @@ function ShowcaseItem({ feature }) {
               fontSize: '1.05rem',
               lineHeight: 1.7,
               mb: 4,
-              fontFamily: "'Inter', sans-serif",
+              fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
             }}
           >
             {feature.description}
@@ -289,7 +289,7 @@ export default function Gallery() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#faf9f8',
+        backgroundColor: '#f7f6f2',
         position: 'relative',
       }}
     >
@@ -303,10 +303,10 @@ export default function Gallery() {
           pb: { xs: 10, md: 14 },
           position: 'relative',
           overflow: 'hidden',
-          backgroundColor: '#fbfcfd',
+          backgroundColor: '#f7f6f2',
           backgroundImage: `
-            radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-            radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+            radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+            radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
             radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
           `,
         }}
@@ -360,10 +360,10 @@ export default function Gallery() {
                   fontWeight: 700,
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: '#1e56a0',
+                  color: '#0071e3',
                   mb: 1.8,
                   display: 'block',
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 }}
               >
                 FIELD WORKSHOPS & ONBOARDING
@@ -379,7 +379,7 @@ export default function Gallery() {
                   color: '#080604',
                   maxWidth: 820,
                   mb: 2,
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 }}
               >
                 In the field with Ghanaian schools.
@@ -393,7 +393,7 @@ export default function Gallery() {
                   maxWidth: 680,
                   fontWeight: 450,
                   mb: 3,
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 }}
               >
                 See our team in action conducting live presentations, teacher workshops, administrator onboarding, and classroom rollouts across Ghana.
@@ -426,7 +426,7 @@ export default function Gallery() {
                       fontSize: '0.88rem',
                       fontWeight: isActive ? 700 : 500,
                       textTransform: 'none',
-                      backgroundColor: isActive ? '#1E56A0' : '#F1F5F9',
+                      backgroundColor: isActive ? '#0071e3' : '#F1F5F9',
                       color: isActive ? '#FFFFFF' : '#475569',
                       boxShadow: isActive ? '0 4px 12px rgba(30, 86, 160, 0.28)' : 'none',
                       transition: 'all 0.2s ease',
@@ -567,7 +567,7 @@ export default function Gallery() {
                       {/* Photo Title (Bold White Text) */}
                       <Typography
                         sx={{
-                          fontFamily: "'Sora', sans-serif",
+                          fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                           fontWeight: 750,
                           fontSize: '1.02rem',
                           color: '#FFFFFF',
@@ -582,7 +582,7 @@ export default function Gallery() {
                       {photo.subtitle && (
                         <Typography
                           sx={{
-                            fontFamily: "'Inter', sans-serif",
+                            fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                             fontSize: '0.78rem',
                             color: 'rgba(255, 255, 255, 0.82)',
                             lineHeight: 1.35,
@@ -608,10 +608,10 @@ export default function Gallery() {
                 fontWeight: 700,
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: '#1e56a0',
+                color: '#0071e3',
                 mb: 1.5,
                 display: 'block',
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
               }}
             >
               PLATFORM INTERFACE SHOWCASE
@@ -622,7 +622,7 @@ export default function Gallery() {
                 fontWeight: 850,
                 fontSize: { xs: '1.8rem', sm: '2.4rem' },
                 color: '#080604',
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 letterSpacing: '-0.02em',
               }}
             >
@@ -749,7 +749,7 @@ export default function Gallery() {
               <Typography
                 variant="h5"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: '1.25rem',
                   color: '#FFFFFF',

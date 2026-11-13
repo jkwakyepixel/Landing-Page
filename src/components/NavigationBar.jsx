@@ -146,11 +146,11 @@ export default function NavigationBar() {
         position="fixed"
         elevation={0}
         sx={{
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.82)' : 'rgba(255, 255, 255, 0.65)',
+          backgroundColor: isScrolled ? 'rgba(247, 246, 242, 0.88)' : 'rgba(247, 246, 242, 0.72)',
           backdropFilter: 'blur(20px) saturate(180%)',
           WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-          borderBottom: isScrolled ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid rgba(0, 0, 0, 0.04)',
-          boxShadow: isScrolled ? '0 4px 20px -2px rgba(0, 0, 0, 0.04)' : 'none',
+          borderBottom: isScrolled ? '1px solid rgba(20, 20, 22, 0.09)' : '1px solid rgba(20, 20, 22, 0.05)',
+          boxShadow: isScrolled ? '0 4px 24px -4px rgba(20, 20, 22, 0.05)' : 'none',
           zIndex: 1100,
           transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
@@ -159,7 +159,7 @@ export default function NavigationBar() {
         <Toolbar
           disableGutters
           sx={{
-            minHeight: { xs: 64, md: 72 },
+            minHeight: { xs: 64, md: 74 },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -180,7 +180,7 @@ export default function NavigationBar() {
             sx={{
               display: 'flex',
               alignItems: 'center',
-              gap: 1.25,
+              gap: 1.15,
               textDecoration: 'none',
               color: 'inherit',
               userSelect: 'none',
@@ -199,35 +199,49 @@ export default function NavigationBar() {
               src={edukraIcon}
               alt="Edukra Logo"
               sx={{
-                width: 36,
-                height: 36,
+                width: 34,
+                height: 34,
                 objectFit: 'contain',
-                filter: 'drop-shadow(0 2px 8px rgba(0, 113, 227, 0.22))',
+                filter: 'drop-shadow(0 2px 8px rgba(0, 113, 227, 0.18))',
               }}
             />
 
-            {/* Logo Text */}
+            {/* Editorial Wordmark */}
             <Typography
               variant="h6"
               component="span"
               sx={{
-                fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Plus Jakarta Sans", sans-serif',
-                fontWeight: 750,
-                fontSize: { xs: '1.2rem', md: '1.35rem' },
-                letterSpacing: '-0.035em',
-                color: '#1d1d1f',
+                fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                fontWeight: 800,
+                fontSize: { xs: '1.25rem', md: '1.42rem' },
+                letterSpacing: '-0.04em',
+                color: '#141416',
                 display: 'flex',
                 alignItems: 'center',
+                gap: '4px',
               }}
             >
               Edukra
+              <Box
+                component="span"
+                aria-hidden="true"
+                sx={{
+                  width: 7,
+                  height: 7,
+                  borderRadius: '50%',
+                  backgroundColor: '#0071e3',
+                  border: '1.5px solid #141416',
+                  display: 'inline-block',
+                  mt: 0.35,
+                }}
+              />
             </Typography>
           </Box>
 
-          {/* Center: Desktop Navigation Links (Hidden on mobile/tablet) */}
+          {/* Center: Desktop Navigation Links (Clean Editorial) */}
           <Stack
             direction="row"
-            spacing={{ md: 0.5, lg: 1 }}
+            spacing={{ md: 0.5, lg: 1.25 }}
             alignItems="center"
             sx={{
               display: { xs: 'none', md: 'flex' },
@@ -264,21 +278,22 @@ export default function NavigationBar() {
                       ) : null
                     }
                     sx={{
-                      color: isActive ? '#0071e3' : isOpen ? '#1d1d1f' : '#1d1d1f',
-                      fontWeight: (isActive || isOpen) ? 600 : 500,
-                      fontSize: { md: '0.86rem', lg: '0.90rem' },
+                      color: isActive ? '#141416' : '#52525b',
+                      fontWeight: (isActive || isOpen) ? 700 : 500,
+                      fontSize: { md: '0.87rem', lg: '0.91rem' },
                       letterSpacing: '-0.015em',
-                      px: { md: 1.4, lg: 1.75 },
-                      py: 0.65,
+                      px: { md: 1.4, lg: 1.7 },
+                      py: 0.7,
                       minWidth: 'auto',
                       whiteSpace: 'nowrap',
                       borderRadius: '9999px',
                       textTransform: 'none',
-                      backgroundColor: isActive ? 'rgba(0, 113, 227, 0.08)' : isOpen ? 'rgba(0, 0, 0, 0.05)' : 'transparent',
+                      position: 'relative',
+                      backgroundColor: isActive ? 'rgba(20, 20, 22, 0.06)' : isOpen ? 'rgba(20, 20, 22, 0.05)' : 'transparent',
                       transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                       '&:hover': {
-                        color: '#0071e3',
-                        backgroundColor: isActive ? 'rgba(0, 113, 227, 0.12)' : 'rgba(0, 0, 0, 0.04)',
+                        color: '#141416',
+                        backgroundColor: 'rgba(20, 20, 22, 0.05)',
                       },
                       '&:active': {
                         transform: 'scale(0.97)',
@@ -371,7 +386,7 @@ export default function NavigationBar() {
           {/* Right: CTA Buttons (Desktop) */}
           <Stack
             direction="row"
-            spacing={1.25}
+            spacing={1}
             alignItems="center"
             sx={{
               display: { xs: 'none', sm: 'flex' },
@@ -379,25 +394,22 @@ export default function NavigationBar() {
             }}
           >
             <Button
-              variant="outlined"
+              variant="text"
               sx={{
-                borderColor: 'rgba(0, 0, 0, 0.08)',
-                color: '#1d1d1f',
-                backgroundColor: 'rgba(0, 0, 0, 0.04)',
+                color: '#141416',
+                backgroundColor: 'transparent',
                 fontWeight: 600,
-                fontSize: '0.86rem',
+                fontSize: '0.88rem',
                 letterSpacing: '-0.01em',
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
-                height: 38,
-                px: { sm: 2, md: 2.2 },
+                height: 40,
+                px: { sm: 1.8, md: 2.1 },
                 borderRadius: '9999px',
                 textTransform: 'none',
                 transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  borderColor: 'rgba(0, 0, 0, 0.12)',
-                  backgroundColor: 'rgba(0, 0, 0, 0.07)',
-                  transform: 'translateY(-1px)',
+                  backgroundColor: 'rgba(20, 20, 22, 0.05)',
                 },
                 '&:active': {
                   transform: 'scale(0.976)',
@@ -412,27 +424,28 @@ export default function NavigationBar() {
             </Button>
             <Button
               variant="contained"
+              endIcon={<ArrowForwardRoundedIcon sx={{ fontSize: '15px !important' }} />}
               onClick={() => {
                 window.location.hash = '#book-demo';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               sx={{
-                fontWeight: 600,
-                fontSize: '0.86rem',
-                letterSpacing: '-0.01em',
+                fontWeight: 650,
+                fontSize: '0.88rem',
+                letterSpacing: '-0.015em',
                 whiteSpace: 'nowrap',
                 flexShrink: 0,
-                height: 38,
-                px: { sm: 2.2, md: 2.5 },
+                height: 40,
+                px: { sm: 2.2, md: 2.6 },
                 borderRadius: '9999px',
                 textTransform: 'none',
-                backgroundColor: '#0071e3',
+                backgroundColor: '#141416',
                 color: '#ffffff',
-                boxShadow: '0 2px 8px rgba(0, 113, 227, 0.28)',
+                boxShadow: '0 2px 10px rgba(20, 20, 22, 0.16)',
                 transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  backgroundColor: '#0077ed',
-                  boxShadow: '0 4px 14px rgba(0, 113, 227, 0.38)',
+                  backgroundColor: '#0071e3',
+                  boxShadow: '0 6px 18px rgba(0, 113, 227, 0.32)',
                   transform: 'translateY(-1px)',
                 },
                 '&:active': {
@@ -675,25 +688,26 @@ export default function NavigationBar() {
         <Button
           variant="contained"
           fullWidth
+          endIcon={<ArrowForwardRoundedIcon sx={{ fontSize: '15px !important' }} />}
           onClick={() => {
             handleDrawerToggle();
             window.location.hash = '#book-demo';
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
           sx={{
-            fontWeight: 600,
-            py: 1.15,
+            fontWeight: 650,
+            py: 1.25,
             borderRadius: '9999px',
-            backgroundColor: '#0071e3',
+            backgroundColor: '#141416',
             color: '#ffffff',
             textTransform: 'none',
-            fontSize: '0.92rem',
+            fontSize: '0.94rem',
             letterSpacing: '-0.01em',
-            boxShadow: '0 3px 10px rgba(0, 113, 227, 0.25)',
+            boxShadow: '0 4px 14px rgba(20, 20, 22, 0.2)',
             transition: 'all 0.2s ease',
             '&:hover': {
-              backgroundColor: '#0077ed',
-              boxShadow: '0 5px 16px rgba(0, 113, 227, 0.35)',
+              backgroundColor: '#0071e3',
+              boxShadow: '0 6px 18px rgba(0, 113, 227, 0.3)',
             },
             '&:active': { transform: 'scale(0.976)' },
           }}

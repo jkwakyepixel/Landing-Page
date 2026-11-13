@@ -97,9 +97,9 @@ export default function Legal() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#FDFBF9',
-        color: '#0B0702',
-        fontFamily: "'Inter', sans-serif",
+        backgroundColor: '#f7f6f2',
+        color: '#141416',
+        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
         overflowX: 'hidden',
         position: 'relative',
         width: '100%',
@@ -116,10 +116,10 @@ export default function Legal() {
           overflow: 'hidden',
           pt: { xs: 11, sm: 14, md: 18 },
           pb: { xs: 7, sm: 10, md: 14 },
-          backgroundColor: '#fbfcfd',
+          backgroundColor: '#f7f6f2',
           backgroundImage: `
-            radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-            radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+            radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+            radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
             radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
           `,
         }}
@@ -173,7 +173,7 @@ export default function Legal() {
                 borderRadius: '9999px',
                 bgcolor: 'rgba(30, 86, 160, 0.08)',
                 border: '1px solid rgba(30, 86, 160, 0.16)',
-                color: '#1E56A0',
+                color: '#0071e3',
                 mb: 2,
                 maxWidth: '100%',
               }}
@@ -215,7 +215,7 @@ export default function Legal() {
                 }}
               />
               <Chip
-                icon={<AndroidIcon sx={{ '&&': { color: '#059669', fontSize: { xs: 16, sm: 18 } } }} />}
+                icon={<AndroidIcon sx={{ '&&': { color: '#0071e3', fontSize: { xs: 16, sm: 18 } } }} />}
                 component="a"
                 href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
                 target="_blank"
@@ -224,11 +224,11 @@ export default function Legal() {
                 label="Google Play: Edukra Parents"
                 size="small"
                 sx={{
-                  bgcolor: 'rgba(16, 185, 129, 0.08)',
+                  bgcolor: 'rgba(0, 113, 227, 0.08)',
                   fontWeight: 650,
                   fontSize: { xs: '0.72rem', sm: '0.78rem' },
-                  color: '#065f46',
-                  border: '1px solid rgba(16, 185, 129, 0.22)',
+                  color: '#1d4ed8',
+                  border: '1px solid rgba(0, 113, 227, 0.22)',
                   py: { xs: 0.5, sm: 0.8 },
                   height: 'auto',
                   maxWidth: '100%',
@@ -240,14 +240,14 @@ export default function Legal() {
                 }}
               />
               <Chip
-                icon={<PhoneIphoneRoundedIcon sx={{ '&&': { color: '#1e56a0', fontSize: { xs: 15, sm: 17 } } }} />}
+                icon={<PhoneIphoneRoundedIcon sx={{ '&&': { color: '#0071e3', fontSize: { xs: 15, sm: 17 } } }} />}
                 label="Edukra Parents App (iOS & Android)"
                 size="small"
                 sx={{
                   bgcolor: 'rgba(30, 86, 160, 0.08)',
                   fontWeight: 700,
                   fontSize: { xs: '0.72rem', sm: '0.78rem' },
-                  color: '#1e56a0',
+                  color: '#0071e3',
                   border: '1px solid rgba(30, 86, 160, 0.22)',
                   py: { xs: 0.5, sm: 0.8 },
                   height: 'auto',
@@ -264,7 +264,7 @@ export default function Legal() {
             <Typography
               variant="h1"
               sx={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 fontWeight: 850,
                 fontSize: { xs: '1.65rem', sm: '2.4rem', md: '3.2rem' },
                 lineHeight: { xs: 1.2, sm: 1.15 },
@@ -289,13 +289,13 @@ export default function Legal() {
                 mx: 'auto',
                 fontWeight: 450,
                 mb: { xs: 2.5, sm: 3 },
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 px: { xs: 0.5, sm: 0 },
               }}
             >
               Official legal agreements, privacy policies, and store disclosures governing the{' '}
               <strong style={{ color: '#0f172a' }}>Edukra</strong> platform and{' '}
-              <strong style={{ color: '#1e56a0' }}>Edukra Parents</strong> mobile applications (iOS &amp; Android),
+              <strong style={{ color: '#0071e3' }}>Edukra Parents</strong> mobile applications (iOS &amp; Android),
               maintained by Urion Systems Ltd in strict accordance with the Data Protection Act of Ghana (Act 843),
               Apple App Store Guidelines, and Google Play Policy.
             </Typography>
@@ -316,7 +316,7 @@ export default function Legal() {
                   textTransform: 'none',
                   fontWeight: 700,
                   fontSize: { xs: '0.82rem', sm: '0.84rem' },
-                  color: '#1e56a0',
+                  color: '#0071e3',
                   bgcolor: 'rgba(30, 86, 160, 0.06)',
                   border: '1px solid rgba(30, 86, 160, 0.2)',
                   borderRadius: '9999px',
@@ -392,7 +392,7 @@ export default function Legal() {
                   textTransform: 'none',
                   fontSize: { xs: '0.82rem', sm: '0.92rem' },
                   whiteSpace: 'nowrap',
-                  backgroundColor: activeTab === 'privacy' ? '#1e56a0' : 'transparent',
+                  backgroundColor: activeTab === 'privacy' ? '#0071e3' : 'transparent',
                   color: activeTab === 'privacy' ? '#ffffff' : '#475569',
                   boxShadow: activeTab === 'privacy' ? '0 4px 14px rgba(30, 86, 160, 0.22)' : 'none',
                   '&:hover': {
@@ -420,7 +420,7 @@ export default function Legal() {
                   textTransform: 'none',
                   fontSize: { xs: '0.82rem', sm: '0.92rem' },
                   whiteSpace: 'nowrap',
-                  backgroundColor: activeTab === 'terms' ? '#1e56a0' : 'transparent',
+                  backgroundColor: activeTab === 'terms' ? '#0071e3' : 'transparent',
                   color: activeTab === 'terms' ? '#ffffff' : '#475569',
                   boxShadow: activeTab === 'terms' ? '0 4px 14px rgba(30, 86, 160, 0.22)' : 'none',
                   '&:hover': {
@@ -471,7 +471,7 @@ export default function Legal() {
             {activeTab === 'privacy' ? (
               <Box sx={{ color: '#334155', lineHeight: { xs: 1.65, sm: 1.8 }, fontSize: { xs: '0.90rem', sm: '0.96rem' } }}>
                 {/* Title & Meta Info */}
-                <Typography variant="h5" sx={{ fontWeight: 800, color: '#0f172a', mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.25rem', sm: '1.45rem', md: '1.6rem' }, lineHeight: 1.3 }}>
+                <Typography variant="h5" sx={{ fontWeight: 800, color: '#0f172a', mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.25rem', sm: '1.45rem', md: '1.6rem' }, lineHeight: 1.3 }}>
                   Edukra &amp; Edukra Parents Privacy Policy
                 </Typography>
                 <Typography variant="caption" sx={{ color: '#64748b', display: 'block', mb: 3, fontSize: { xs: '0.75rem', sm: '0.82rem' }, lineHeight: 1.5 }}>
@@ -489,14 +489,14 @@ export default function Legal() {
                   }}
                 >
                   <Stack direction="row" spacing={1.5} alignItems="flex-start">
-                    <ShieldOutlinedIcon sx={{ color: '#1e56a0', mt: 0.3, fontSize: { xs: 20, sm: 22 }, flexShrink: 0 }} />
+                    <ShieldOutlinedIcon sx={{ color: '#0071e3', mt: 0.3, fontSize: { xs: 20, sm: 22 }, flexShrink: 0 }} />
                     <Box sx={{ minWidth: 0, flex: 1 }}>
                       <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.88rem', sm: '0.94rem' }, mb: 0.5, lineHeight: 1.35 }}>
                         Notice for Apple App Store &amp; Google Play App Review Teams
                       </Typography>
                       <Typography sx={{ fontSize: { xs: '0.82rem', sm: '0.88rem' }, color: '#475569', lineHeight: 1.6 }}>
                         This document serves as the official, publicly accessible Privacy Policy and Account Deletion resource for both the <strong>Edukra</strong> web portal and the <strong>&quot;Edukra Parents&quot;</strong> native mobile applications on iOS and Android. Mobile device permissions, real-time location disclosures for pickup, camera access for student QR dismissal, and child privacy protections are detailed in{' '}
-                        <a href="#edukra-privacy" onClick={(e) => { e.preventDefault(); scrollToMobilePrivacy(); }} style={{ color: '#1e56a0', fontWeight: 700, textDecoration: 'underline' }}>
+                        <a href="#edukra-privacy" onClick={(e) => { e.preventDefault(); scrollToMobilePrivacy(); }} style={{ color: '#0071e3', fontWeight: 700, textDecoration: 'underline' }}>
                           Section 4: Edukra Parents Mobile App Disclosures
                         </a>, and the exact in-app account deletion procedure, 14-day cancellation window, and data retention disclosures are detailed in{' '}
                         <a href="#delete-account" onClick={(e) => { e.preventDefault(); scrollToDeleteAccount(); }} style={{ color: '#b91c1c', fontWeight: 700, textDecoration: 'underline' }}>
@@ -508,7 +508,7 @@ export default function Legal() {
                 </Box>
 
                 {/* Section 1 */}
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   1. Identity, Scope &amp; Applicability
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
@@ -516,7 +516,7 @@ export default function Legal() {
                 </Typography>
                 <Box component="ul" sx={{ pl: { xs: 2.2, sm: 3 }, mb: 2 }}>
                   <li>The <strong>Edukra</strong> cloud-based School Management System (accessible via web browsers and institutional subdomains).</li>
-                  <li>The <strong>&quot;Edukra Parents&quot;</strong> mobile applications distributed through the Apple App Store for iOS and <a href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent" target="_blank" rel="noopener noreferrer" style={{ color: '#059669', fontWeight: 700 }}>Google Play Store</a> for Android.</li>
+                  <li>The <strong>&quot;Edukra Parents&quot;</strong> mobile applications distributed through the Apple App Store for iOS and <a href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent" target="_blank" rel="noopener noreferrer" style={{ color: '#0071e3', fontWeight: 700 }}>Google Play Store</a> for Android.</li>
                   <li>Integrated communication interfaces including automated SMS dispatches, Mobile Money payment callbacks, and WhatsApp parent notification relays.</li>
                 </Box>
                 <Typography sx={{ mb: 3 }}>
@@ -524,7 +524,7 @@ export default function Legal() {
                 </Typography>
 
                 {/* Section 2 */}
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   2. Institutional Data Ownership &amp; Role Definition
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
@@ -536,7 +536,7 @@ export default function Legal() {
                 </Box>
 
                 {/* Section 3 */}
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   3. General Information We Collect &amp; Purpose of Processing
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
@@ -558,7 +558,7 @@ export default function Legal() {
                     my: { xs: 3, sm: 4 },
                     p: { xs: 2, sm: 3.5 },
                     borderRadius: { xs: '16px', sm: '20px' },
-                    border: '2px solid #1e56a0',
+                    border: '2px solid #0071e3',
                     backgroundColor: '#f8fafc',
                     position: 'relative',
                     overflow: 'hidden',
@@ -569,14 +569,14 @@ export default function Legal() {
 
                   {/* Header of Section 4 */}
                   <Stack direction="row" spacing={1.5} alignItems="flex-start" sx={{ mb: 2 }}>
-                    <PhoneIphoneRoundedIcon sx={{ color: '#1e56a0', fontSize: { xs: 24, sm: 28 }, mt: 0.3, flexShrink: 0 }} />
+                    <PhoneIphoneRoundedIcon sx={{ color: '#0071e3', fontSize: { xs: 24, sm: 28 }, mt: 0.3, flexShrink: 0 }} />
                     <Box sx={{ minWidth: 0, flex: 1 }}>
                       <Typography
                         variant="h5"
                         sx={{
                           fontWeight: 800,
                           color: '#0f172a',
-                          fontFamily: "'Sora', sans-serif",
+                          fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                           fontSize: { xs: '1.15rem', sm: '1.35rem' },
                           lineHeight: 1.3,
                           wordBreak: 'break-word',
@@ -598,7 +598,7 @@ export default function Legal() {
                   <Box sx={{ mb: { xs: 2.5, sm: 3.5 }, p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #e2e8f0' }}>
                     <Stack direction="row" spacing={1.2} alignItems="flex-start" sx={{ mb: 1.5 }}>
                       <LocationOnOutlinedIcon sx={{ color: '#e11d48', fontSize: 22, mt: 0.3, flexShrink: 0 }} />
-                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.98rem', sm: '1.05rem' }, fontFamily: "'Sora', sans-serif", lineHeight: 1.35 }}>
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.98rem', sm: '1.05rem' }, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", lineHeight: 1.35 }}>
                         4.1 Location Data &amp; The &quot;On My Way&quot; School Pickup Feature
                       </Typography>
                     </Stack>
@@ -618,7 +618,7 @@ export default function Legal() {
                   <Box sx={{ mb: { xs: 2.5, sm: 3.5 }, p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #e2e8f0' }}>
                     <Stack direction="row" spacing={1.2} alignItems="flex-start" sx={{ mb: 1.5 }}>
                       <CameraAltOutlinedIcon sx={{ color: '#2563eb', fontSize: 22, mt: 0.3, flexShrink: 0 }} />
-                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.98rem', sm: '1.05rem' }, fontFamily: "'Sora', sans-serif", lineHeight: 1.35 }}>
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.98rem', sm: '1.05rem' }, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", lineHeight: 1.35 }}>
                         4.2 Device Permissions (Camera &amp; Photo Library)
                       </Typography>
                     </Stack>
@@ -638,8 +638,8 @@ export default function Legal() {
                   {/* Subsection 4.3: Child Privacy & Google Play Families */}
                   <Box sx={{ p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #e2e8f0' }}>
                     <Stack direction="row" spacing={1.2} alignItems="flex-start" sx={{ mb: 1.5 }}>
-                      <ChildCareRoundedIcon sx={{ color: '#059669', fontSize: 22, mt: 0.3, flexShrink: 0 }} />
-                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.98rem', sm: '1.05rem' }, fontFamily: "'Sora', sans-serif", lineHeight: 1.35 }}>
+                      <ChildCareRoundedIcon sx={{ color: '#0071e3', fontSize: 22, mt: 0.3, flexShrink: 0 }} />
+                      <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.98rem', sm: '1.05rem' }, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", lineHeight: 1.35 }}>
                         4.3 Child Privacy, COPPA &amp; Google Play Families Policy Compliance
                       </Typography>
                     </Stack>
@@ -656,7 +656,7 @@ export default function Legal() {
                 </Box>
 
                 {/* Section 5: Security & Infrastructure */}
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   5. Data Security, Encryption &amp; Cloud Infrastructure
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
@@ -696,7 +696,7 @@ export default function Legal() {
                         sx={{
                           fontWeight: 800,
                           color: '#0f172a',
-                          fontFamily: "'Sora', sans-serif",
+                          fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                           fontSize: { xs: '1.15rem', sm: '1.35rem' },
                           lineHeight: 1.3,
                           wordBreak: 'break-word',
@@ -716,7 +716,7 @@ export default function Legal() {
 
                   {/* Step-by-Step Deletion Process (Exact Live App UI) */}
                   <Box sx={{ mb: { xs: 2, sm: 3 }, p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #fee2e2' }}>
-                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1.5, fontFamily: "'Sora', sans-serif" }}>
+                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1.5, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" }}>
                       How to Delete Your Account (Exact In-App Steps):
                     </Typography>
                     <Box component="ol" sx={{ pl: { xs: 2.2, sm: 3 }, mb: 1.5, color: '#334155', display: 'grid', gap: 1 }}>
@@ -737,7 +737,7 @@ export default function Legal() {
 
                   {/* 14-Day Cancellation Grace Period */}
                   <Box sx={{ mb: { xs: 2, sm: 3 }, p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #fee2e2' }}>
-                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" }}>
                       14-Day Grace Period &amp; How to Cancel Deletion:
                     </Typography>
                     <Typography sx={{ color: '#475569', mb: 1 }}>
@@ -755,7 +755,7 @@ export default function Legal() {
 
                   {/* What is Deleted */}
                   <Box sx={{ mb: { xs: 2, sm: 3 }, p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #fee2e2' }}>
-                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" }}>
                       What Data is Deleted:
                     </Typography>
                     <Typography sx={{ color: '#475569', mb: 1 }}>
@@ -772,7 +772,7 @@ export default function Legal() {
 
                   {/* What the School Keeps & Retention Period */}
                   <Box sx={{ mb: { xs: 2, sm: 3 }, p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #fee2e2' }}>
-                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" }}>
                       What the School Keeps &amp; Retention Duration (Google Play Data Safety Disclosure):
                     </Typography>
                     <Typography sx={{ color: '#475569', mb: 1 }}>
@@ -799,7 +799,7 @@ export default function Legal() {
 
                   {/* Multi-School and Staff Roles */}
                   <Box sx={{ mb: { xs: 2, sm: 3 }, p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #fee2e2' }}>
-                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" }}>
                       Multi-School Accounts &amp; Staff-Parent Roles:
                     </Typography>
                     <Box component="ul" sx={{ pl: { xs: 2.2, sm: 3 }, color: '#475569', display: 'grid', gap: 0.8 }}>
@@ -814,7 +814,7 @@ export default function Legal() {
 
                   {/* Fallback Route: Can't Sign In? */}
                   <Box sx={{ p: { xs: 1.8, sm: 2.5 }, bgcolor: '#ffffff', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #fee2e2' }}>
-                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Sora', sans-serif" }}>
+                    <Typography sx={{ fontWeight: 750, color: '#0f172a', fontSize: { xs: '0.94rem', sm: '1rem' }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" }}>
                       Can&apos;t Sign In? Fallback Request Options:
                     </Typography>
                     <Typography sx={{ color: '#475569', mb: 1 }}>
@@ -828,14 +828,14 @@ export default function Legal() {
                         <strong>School Administration Office:</strong> Contact your school&apos;s administration office directly to request that your guardian account be queued for deletion.
                       </li>
                       <li>
-                        <strong>Support Email Fallback:</strong> Submit a manual request by emailing Urion Systems at <a href="mailto:admin@urionsystems.com" style={{ color: '#1e56a0', fontWeight: 600 }}>admin@urionsystems.com</a> with the subject line <em>&quot;Account Deletion Request — Edukra Parents&quot;</em>. Requests sent via email are verified and fulfilled within 30 calendar days.
+                        <strong>Support Email Fallback:</strong> Submit a manual request by emailing Urion Systems at <a href="mailto:admin@urionsystems.com" style={{ color: '#0071e3', fontWeight: 600 }}>admin@urionsystems.com</a> with the subject line <em>&quot;Account Deletion Request — Edukra Parents&quot;</em>. Requests sent via email are verified and fulfilled within 30 calendar days.
                       </li>
                     </Box>
                   </Box>
                 </Box>
 
                 {/* Section 7: Third-Party Service Providers */}
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   7. Third-Party Service Providers
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
@@ -848,7 +848,7 @@ export default function Legal() {
                 </Box>
 
                 {/* Section 8: Contact */}
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   8. Contact the Data Protection Officer
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
@@ -859,9 +859,9 @@ export default function Legal() {
                   <br />
                   <strong>Attn:</strong> Data Protection &amp; Compliance Officer
                   <br />
-                  <strong>Email:</strong> <a href="mailto:admin@urionsystems.com" style={{ color: '#1e56a0', textDecoration: 'none' }}>admin@urionsystems.com</a>
+                  <strong>Email:</strong> <a href="mailto:admin@urionsystems.com" style={{ color: '#0071e3', textDecoration: 'none' }}>admin@urionsystems.com</a>
                   <br />
-                  <strong>Direct Inquiries:</strong> <a href="tel:+233599844836" style={{ color: '#1e56a0', textDecoration: 'none' }}>+233 599 844 836</a>
+                  <strong>Direct Inquiries:</strong> <a href="tel:+233599844836" style={{ color: '#0071e3', textDecoration: 'none' }}>+233 599 844 836</a>
                   <br />
                   <strong>Physical Address:</strong> Accra, Greater Accra Region, Republic of Ghana
                 </Box>
@@ -869,21 +869,21 @@ export default function Legal() {
             ) : (
               /* Terms of Service Tab */
               <Box sx={{ color: '#334155', lineHeight: { xs: 1.65, sm: 1.8 }, fontSize: { xs: '0.90rem', sm: '0.96rem' } }}>
-                <Typography variant="h5" sx={{ fontWeight: 800, color: '#0f172a', mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.25rem', sm: '1.45rem', md: '1.6rem' }, lineHeight: 1.3 }}>
+                <Typography variant="h5" sx={{ fontWeight: 800, color: '#0f172a', mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.25rem', sm: '1.45rem', md: '1.6rem' }, lineHeight: 1.3 }}>
                   Edukra Platform &amp; Mobile Terms of Service
                 </Typography>
                 <Typography variant="caption" sx={{ color: '#64748b', display: 'block', mb: 3, fontSize: { xs: '0.75rem', sm: '0.82rem' }, lineHeight: 1.5 }}>
                   Covers: <strong>Edukra Web Platform</strong> &amp; <strong>Edukra Parents Mobile App (iOS &amp; Android)</strong> · Publisher: <strong>Urion Systems Ltd</strong> · Last Updated: October 2026
                 </Typography>
 
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   1. Agreement to Terms
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
                   By accessing or utilizing the <strong>Edukra</strong> school management system, or downloading and installing the <strong>Edukra Parents</strong> mobile application from the Apple App Store or Google Play Store, you and your educational institution agree to be legally bound by these Terms of Service and all applicable laws of the Republic of Ghana.
                 </Typography>
 
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   2. Mobile App End-User License &amp; Acceptable Use
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
@@ -895,35 +895,35 @@ export default function Legal() {
                   <li><strong>Prohibited Conduct:</strong> You may not reverse-engineer, decompile, attempt to extract source code from, or launch automated scrapers against the Edukra web portal or mobile applications.</li>
                 </Box>
 
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   3. Institutional Service Provision &amp; Free Pilot Period
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
                   Urion Systems Ltd delivers cloud access to school administrators, educators, pupils, and parents. Educational institutions subscribing to complimentary trial periods receive complete platform functionality, administrative onboarding, and historical data migration assistance with zero initial financial obligation.
                 </Typography>
 
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   4. Term-Based Invoicing &amp; Fair Billing
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
                   Edukra institutional subscriptions align directly with the Ghana academic term structure (3 terms per academic year). Licensing is calculated on active student enrollment, ensuring schools are never billed recurring monthly software fees during holiday intercessions.
                 </Typography>
 
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   5. Data Portability, Export &amp; Termination
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
                   Should an educational institution choose to discontinue its subscription, Urion Systems Ltd guarantees full data export capabilities. All pupil registers, grade archives, examination scores, and financial accounting reports will be provided in standardized formats (CSV, Excel, PDF) within 14 business days, free of proprietary vendor lock-in.
                 </Typography>
 
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   6. App Store Terms &amp; Platform Independence
                 </Typography>
                 <Typography sx={{ mb: 2 }}>
                   You acknowledge that these Terms are concluded solely between you and Urion Systems Ltd, and not with Apple Inc. or Google LLC. Apple and Google are not responsible for the Edukra Parents app, its content, or maintenance. However, Apple and Google are third-party beneficiaries of these Terms and have the right to enforce these terms against you upon your acceptance.
                 </Typography>
 
-                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Sora', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
+                <Typography variant="h6" sx={{ fontWeight: 700, color: '#0f172a', mt: { xs: 3, sm: 4 }, mb: 1, fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontSize: { xs: '1.05rem', sm: '1.15rem' }, lineHeight: 1.35 }}>
                   7. Inquiries &amp; Institutional Support
                 </Typography>
                 <Box sx={{ p: { xs: 1.8, sm: 2.5 }, bgcolor: '#f8fafc', borderRadius: { xs: '12px', sm: '14px' }, border: '1px solid #e2e8f0', lineHeight: 1.8, fontSize: { xs: '0.88rem', sm: '0.94rem' } }}>
@@ -931,9 +931,9 @@ export default function Legal() {
                   <br />
                   <strong>Publisher:</strong> Urion Systems Ltd (Edukra)
                   <br />
-                  <strong>Support Email:</strong> <a href="mailto:admin@urionsystems.com" style={{ color: '#1e56a0', textDecoration: 'none' }}>admin@urionsystems.com</a>
+                  <strong>Support Email:</strong> <a href="mailto:admin@urionsystems.com" style={{ color: '#0071e3', textDecoration: 'none' }}>admin@urionsystems.com</a>
                   <br />
-                  <strong>Direct / WhatsApp:</strong> <a href="tel:+233599844836" style={{ color: '#1e56a0', textDecoration: 'none' }}>+233 599 844 836</a>
+                  <strong>Direct / WhatsApp:</strong> <a href="tel:+233599844836" style={{ color: '#0071e3', textDecoration: 'none' }}>+233 599 844 836</a>
                   <br />
                   <strong>Location:</strong> Accra, Greater Accra Region, Ghana
                 </Box>

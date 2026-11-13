@@ -33,13 +33,13 @@ function PricingTagIcon() {
       height="13"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#1D4D87"
+      stroke="#1d4ed8"
       strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
-      <circle cx="7" cy="7" r="1.5" fill="#1D4D87" />
+      <circle cx="7" cy="7" r="1.5" fill="#1d4ed8" />
     </svg>
   );
 }
@@ -52,7 +52,7 @@ function PricingCheckIcon() {
         width: 18,
         height: 18,
         borderRadius: '50%',
-        backgroundColor: '#DAEDFF',
+        backgroundColor: '#dbeafe',
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -62,7 +62,7 @@ function PricingCheckIcon() {
       <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M1.5 4L3.75 6.25L8.5 1.5"
-          stroke="#1D4D87"
+          stroke="#1d4ed8"
           strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -175,11 +175,11 @@ export default function Pricing() {
     <Box
       sx={{
         minHeight: '100vh',
-        backgroundColor: '#FDFBF9',
-        color: '#191309',
+        backgroundColor: '#f7f6f2',
+        color: '#141416',
         display: 'flex',
         flexDirection: 'column',
-        fontFamily: "'Inter', sans-serif",
+        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
       }}
     >
       <NavigationBar />
@@ -192,10 +192,10 @@ export default function Pricing() {
           overflow: 'hidden',
           pt: { xs: 15, sm: 17, md: 20 },
           pb: { xs: 10, md: 15 },
-          backgroundColor: '#fbfcfd',
+          backgroundColor: '#f7f6f2',
           backgroundImage: `
-            radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-            radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+            radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+            radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
             radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
           `,
         }}
@@ -239,7 +239,7 @@ export default function Pricing() {
                 px: '14px',
                 py: '4px',
                 borderRadius: '9999px',
-                backgroundColor: '#DAEDFF',
+                backgroundColor: '#dbeafe',
                 mb: 2.5,
               }}
             >
@@ -249,10 +249,10 @@ export default function Pricing() {
                   fontSize: '11px',
                   fontWeight: 700,
                   letterSpacing: '0.08em',
-                  color: '#1D4D87',
+                  color: '#1d4ed8',
                   textTransform: 'uppercase',
                   lineHeight: 1,
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 }}
               >
                 RESEARCH-BACKED PRICING · GHANA
@@ -263,12 +263,12 @@ export default function Pricing() {
             <Typography
               variant="h1"
               sx={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 fontWeight: 800,
                 fontSize: { xs: '30px', sm: '38px', md: '44px' },
                 lineHeight: 1.15,
                 letterSpacing: '-0.9px',
-                color: '#0B0702',
+                color: '#141416',
                 mb: 2,
               }}
             >
@@ -278,10 +278,10 @@ export default function Pricing() {
             {/* Subtitle */}
             <Typography
               sx={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 fontSize: { xs: '15px', sm: '16.5px' },
                 lineHeight: '26px',
-                color: '#5B5449',
+                color: '#52525b',
                 maxWidth: '680px',
                 mb: 3,
               }}
@@ -296,14 +296,14 @@ export default function Pricing() {
                 maxWidth: '780px',
                 width: '100%',
                 p: { xs: 2, sm: 2.5 },
-                borderRadius: '12px',
-                border: '1.5px solid #FDE68A',
-                backgroundColor: '#FFFBEB',
+                borderRadius: '14px',
+                border: '1.5px solid #bfdbfe',
+                backgroundColor: '#eff6ff',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 2,
                 textAlign: 'left',
-                boxShadow: '0 2px 10px rgba(245, 158, 11, 0.08)',
+                boxShadow: '0 4px 16px rgba(0, 113, 227, 0.08)',
               }}
             >
               <Box
@@ -311,7 +311,7 @@ export default function Pricing() {
                   width: 44,
                   height: 44,
                   borderRadius: '10px',
-                  backgroundColor: '#F59E0B',
+                  backgroundColor: '#0071e3',
                   color: '#FFFFFF',
                   display: 'flex',
                   alignItems: 'center',
@@ -322,10 +322,10 @@ export default function Pricing() {
                 <AutoAwesomeRoundedIcon sx={{ fontSize: 24 }} />
               </Box>
               <Box>
-                <Typography sx={{ fontWeight: 800, fontSize: '0.96rem', color: '#92400E', fontFamily: "'Sora', sans-serif" }}>
+                <Typography sx={{ fontWeight: 800, fontSize: '0.96rem', color: '#1d4ed8', fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" }}>
                   YOUR FIRST MONTH IS COMPLETELY FREE
                 </Typography>
-                <Typography sx={{ fontSize: '0.84rem', color: '#78350F', lineHeight: 1.45, mt: 0.3 }}>
+                <Typography sx={{ fontSize: '0.84rem', color: '#1e3a8a', lineHeight: 1.45, mt: 0.3 }}>
                   Full platform access, full support, data migration included, and no card required. Train your staff and go live at your own pace with zero obligation.
                 </Typography>
               </Box>
@@ -385,7 +385,7 @@ export default function Pricing() {
                     whiteSpace: 'nowrap',
                     letterSpacing: '0.02em',
                     zIndex: 2,
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     boxShadow: '0 2px 6px rgba(71, 85, 105, 0.25)',
                   }}
                 >
@@ -396,7 +396,7 @@ export default function Pricing() {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                     fontWeight: 700,
                     fontSize: '22px',
                     lineHeight: '28px',
@@ -415,7 +415,7 @@ export default function Pricing() {
                     color: '#64748B',
                     minHeight: '40px',
                     mb: 2.5,
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   }}
                 >
                   Best suited for schools running core academic, admin, billing & communication operations.
@@ -426,11 +426,11 @@ export default function Pricing() {
                   <Typography
                     component="span"
                     sx={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                       fontWeight: 800,
                       fontSize: { xs: '28px', sm: '32px' },
                       lineHeight: '38px',
-                      color: '#0B0702',
+                      color: '#141416',
                       letterSpacing: '-0.02em',
                     }}
                   >
@@ -481,8 +481,8 @@ export default function Pricing() {
                     transition: 'all 0.2s ease',
                     '&:hover': {
                       backgroundColor: '#F8FAFC',
-                      borderColor: '#1E56A0',
-                      color: '#1E56A0',
+                      borderColor: '#0071e3',
+                      color: '#0071e3',
                     },
                   }}
                 >
@@ -500,7 +500,7 @@ export default function Pricing() {
                   overflow: 'visible !important',
                   p: { xs: '32px 24px', sm: '36px 30px' },
                   backgroundColor: '#FFFFFF',
-                  border: '2px solid #1E56A0',
+                  border: '2px solid #0071e3',
                   borderRadius: '16px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -520,7 +520,7 @@ export default function Pricing() {
                     top: -13,
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    backgroundColor: '#1E56A0',
+                    backgroundColor: '#0071e3',
                     color: '#FFFFFF',
                     fontSize: '11px',
                     fontWeight: 700,
@@ -530,7 +530,7 @@ export default function Pricing() {
                     whiteSpace: 'nowrap',
                     letterSpacing: '0.03em',
                     zIndex: 2,
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     boxShadow: '0 2px 8px rgba(30, 86, 160, 0.3)',
                   }}
                 >
@@ -541,7 +541,7 @@ export default function Pricing() {
                 <Typography
                   variant="h3"
                   sx={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                     fontWeight: 700,
                     fontSize: '22px',
                     lineHeight: '28px',
@@ -560,7 +560,7 @@ export default function Pricing() {
                     color: '#64748B',
                     minHeight: '40px',
                     mb: 2.5,
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   }}
                 >
                   Complete platform access for schools needing full payroll, library, transport, e-learning & advanced portals.
@@ -571,11 +571,11 @@ export default function Pricing() {
                   <Typography
                     component="span"
                     sx={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                       fontWeight: 800,
                       fontSize: { xs: '28px', sm: '32px' },
                       lineHeight: '38px',
-                      color: '#1E56A0',
+                      color: '#0071e3',
                       letterSpacing: '-0.02em',
                     }}
                   >
@@ -588,7 +588,7 @@ export default function Pricing() {
                   <Typography sx={{ fontSize: '0.78rem', fontWeight: 700, color: '#1E40AF', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     Modules Included:
                   </Typography>
-                  <Typography sx={{ fontSize: '0.82rem', color: '#1E56A0', mt: 0.4, fontWeight: 500 }}>
+                  <Typography sx={{ fontSize: '0.82rem', color: '#0071e3', mt: 0.4, fontWeight: 500 }}>
                     Full platform — all 20 modules, all 4 portals completely unlocked with no restrictions.
                   </Typography>
                 </Box>
@@ -601,7 +601,7 @@ export default function Pricing() {
                       <Typography
                         sx={{
                           fontSize: '13.2px',
-                          color: idx === 0 ? '#1E56A0' : '#334155',
+                          color: idx === 0 ? '#0071e3' : '#334155',
                           fontWeight: idx === 0 ? 700 : 450,
                           lineHeight: 1.45,
                         }}
@@ -627,7 +627,7 @@ export default function Pricing() {
                     fontWeight: 700,
                     fontSize: '14px',
                     textTransform: 'none',
-                    backgroundColor: '#1E56A0',
+                    backgroundColor: '#0071e3',
                     color: '#FFFFFF',
                     boxShadow: '0 4px 14px rgba(30, 86, 160, 0.3)',
                     transition: 'all 0.2s ease',
@@ -661,7 +661,7 @@ export default function Pricing() {
             }}
           >
             <Box>
-              <Typography sx={{ fontWeight: 700, fontSize: '0.98rem', color: '#0B0702', fontFamily: "'Sora', sans-serif" }}>
+              <Typography sx={{ fontWeight: 700, fontSize: '0.98rem', color: '#141416', fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif" }}>
                 Need a Custom Configuration?
               </Typography>
               <Typography sx={{ fontSize: '0.86rem', color: '#64748B', mt: 0.3 }}>
@@ -679,8 +679,8 @@ export default function Pricing() {
                 fontWeight: 600,
                 fontSize: '0.86rem',
                 textTransform: 'none',
-                borderColor: '#1E56A0',
-                color: '#1E56A0',
+                borderColor: '#0071e3',
+                color: '#0071e3',
                 px: 2.5,
               }}
             >
@@ -694,7 +694,7 @@ export default function Pricing() {
           <RevealOnScroll delay={0.1}>
             <Box sx={{ maxWidth: '860px', mx: 'auto', mt: { xs: 8, md: 11 } }}>
               <Box sx={{ textAlign: 'center', mb: 4 }}>
-                <Typography variant="h2" sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: { xs: '1.4rem', sm: '1.75rem' }, color: '#0B0702', mb: 1 }}>
+                <Typography variant="h2" sx={{ fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: { xs: '1.4rem', sm: '1.75rem' }, color: '#141416', mb: 1 }}>
                   At a Glance — Plan Comparison
                 </Typography>
                 <Typography sx={{ color: '#64748B', fontSize: '0.92rem' }}>
@@ -708,7 +708,7 @@ export default function Pricing() {
                     <TableRow>
                       <TableCell sx={{ fontWeight: 700, fontSize: '0.88rem', color: '#0F172A', py: 2 }}>Capability</TableCell>
                       <TableCell align="center" sx={{ fontWeight: 700, fontSize: '0.88rem', color: '#0F172A', width: '160px' }}>STANDARD</TableCell>
-                      <TableCell align="center" sx={{ fontWeight: 700, fontSize: '0.88rem', color: '#1E56A0', width: '160px', bgcolor: '#EFF6FF' }}>PREMIUM</TableCell>
+                      <TableCell align="center" sx={{ fontWeight: 700, fontSize: '0.88rem', color: '#0071e3', width: '160px', bgcolor: '#EFF6FF' }}>PREMIUM</TableCell>
                     </TableRow>
                   </TableHead>
                   <TableBody>
@@ -719,13 +719,13 @@ export default function Pricing() {
                         </TableCell>
                         <TableCell align="center">
                           {row.standard ? (
-                            <CheckRoundedIcon sx={{ color: '#16A34A', fontSize: 20 }} />
+                            <CheckRoundedIcon sx={{ color: '#0071e3', fontSize: 20 }} />
                           ) : (
                             <CloseRoundedIcon sx={{ color: '#CBD5E1', fontSize: 18 }} />
                           )}
                         </TableCell>
                         <TableCell align="center" sx={{ bgcolor: idx % 2 === 0 ? '#F6F9FE' : '#EFF6FF' }}>
-                          <CheckRoundedIcon sx={{ color: '#1E56A0', fontSize: 22 }} />
+                          <CheckRoundedIcon sx={{ color: '#0071e3', fontSize: 22 }} />
                         </TableCell>
                       </TableRow>
                     ))}
@@ -740,8 +740,8 @@ export default function Pricing() {
             <Box sx={{ maxWidth: '860px', mx: 'auto', mt: { xs: 8, md: 12 } }}>
               <Box sx={{ textAlign: 'center', mb: 5 }}>
                 <Stack direction="row" alignItems="center" justifyContent="center" spacing={1} sx={{ mb: 1 }}>
-                  <RocketLaunchRoundedIcon sx={{ color: '#1E56A0' }} />
-                  <Typography variant="h2" sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: { xs: '1.4rem', sm: '1.75rem' }, color: '#0B0702' }}>
+                  <RocketLaunchRoundedIcon sx={{ color: '#0071e3' }} />
+                  <Typography variant="h2" sx={{ fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: { xs: '1.4rem', sm: '1.75rem' }, color: '#141416' }}>
                     Onboarding & Next Steps
                   </Typography>
                 </Stack>
@@ -765,7 +765,7 @@ export default function Pricing() {
                         flexDirection: 'column',
                         transition: 'all 0.2s ease',
                         '&:hover': {
-                          borderColor: '#1E56A0',
+                          borderColor: '#0071e3',
                           boxShadow: '0 6px 18px rgba(30, 86, 160, 0.08)',
                         },
                       }}
@@ -776,7 +776,7 @@ export default function Pricing() {
                             width: 32,
                             height: 32,
                             borderRadius: '50%',
-                            backgroundColor: '#1E56A0',
+                            backgroundColor: '#0071e3',
                             color: '#FFFFFF',
                             fontWeight: 800,
                             fontSize: '0.88rem',
@@ -798,7 +798,7 @@ export default function Pricing() {
                           }}
                         />
                       </Box>
-                      <Typography sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 700, fontSize: '1rem', color: '#0F172A', mb: 0.8 }}>
+                      <Typography sx={{ fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: '1rem', color: '#0F172A', mb: 0.8 }}>
                         {item.title}
                       </Typography>
                       <Typography sx={{ fontSize: '0.84rem', color: '#64748B', lineHeight: 1.5 }}>
@@ -815,8 +815,8 @@ export default function Pricing() {
                   mt: 5,
                   p: 3.5,
                   borderRadius: '16px',
-                  backgroundColor: '#F0FDF4',
-                  border: '1.5px solid #BBF7D0',
+                  backgroundColor: '#eff6ff',
+                  border: '1.5px solid #bfdbfe',
                   display: 'flex',
                   flexDirection: { xs: 'column', md: 'row' },
                   alignItems: { md: 'center' },
@@ -825,13 +825,13 @@ export default function Pricing() {
                 }}
               >
                 <Box>
-                  <Typography sx={{ fontFamily: "'Sora', sans-serif", fontWeight: 800, fontSize: '1.05rem', color: '#166534' }}>
+                  <Typography sx={{ fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif", fontWeight: 800, fontSize: '1.08rem', color: '#141416' }}>
                     Ready to schedule your kick-off call?
                   </Typography>
-                  <Typography sx={{ fontSize: '0.86rem', color: '#15803D', mt: 0.4 }}>
+                  <Typography sx={{ fontSize: '0.86rem', color: '#52525b', mt: 0.4 }}>
                     There is no paperwork to sign before your trial begins — we start with the system, and formalise the agreement once you are ready.
                   </Typography>
-                  <Typography sx={{ fontSize: '0.82rem', color: '#166534', mt: 1, fontWeight: 600 }}>
+                  <Typography sx={{ fontSize: '0.82rem', color: '#1d4ed8', mt: 1, fontWeight: 600 }}>
                     Direct / WhatsApp: +233 599 844 836 · Email: admin@urionsystems.com
                   </Typography>
                 </Box>
@@ -843,16 +843,16 @@ export default function Pricing() {
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                     sx={{
-                      backgroundColor: '#15803D',
+                      backgroundColor: '#141416',
                       color: '#FFFFFF',
                       fontWeight: 700,
                       fontSize: '0.88rem',
                       textTransform: 'none',
                       px: 3,
                       py: 1.2,
-                      borderRadius: '8px',
+                      borderRadius: '9999px',
                       whiteSpace: 'nowrap',
-                      '&:hover': { backgroundColor: '#166534' },
+                      '&:hover': { backgroundColor: '#0071e3' },
                     }}
                   >
                     Book a Free Demo
@@ -864,16 +864,16 @@ export default function Pricing() {
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
-                      borderColor: '#16A34A',
-                      color: '#15803D',
+                      borderColor: '#0071e3',
+                      color: '#0071e3',
                       fontWeight: 700,
                       fontSize: '0.88rem',
                       textTransform: 'none',
                       px: 2.5,
                       py: 1.2,
-                      borderRadius: '8px',
+                      borderRadius: '9999px',
                       whiteSpace: 'nowrap',
-                      '&:hover': { backgroundColor: 'rgba(22, 163, 74, 0.08)', borderColor: '#15803D' },
+                      '&:hover': { backgroundColor: 'rgba(0, 113, 227, 0.08)', borderColor: '#1d4ed8' },
                     }}
                   >
                     WhatsApp Support

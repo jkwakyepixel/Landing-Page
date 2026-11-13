@@ -34,7 +34,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
-import useInView from '../hooks/useInView';
+import RevealOnScroll from '../components/RevealOnScroll';
 
 // 4-square grid icon matching the user's screenshot
 function ModulesGridIcon() {
@@ -44,7 +44,7 @@ function ModulesGridIcon() {
       height="13"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#1D4D87"
+      stroke="#1d4ed8"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -65,40 +65,13 @@ function BuildYourOwnIcon() {
       height="13"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#1D4D87"
+      stroke="#1d4ed8"
       strokeWidth="2.3"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
     </svg>
-  );
-}
-
-// Individual scroll-reveal component that flies in elements progressively as the user scrolls
-function RevealOnScroll({
-  children,
-  delay = 0,
-  variant = 'pop-up',
-  sx = {},
-  className = '',
-  threshold = 0.08,
-  rootMargin = '0px 0px -40px 0px',
-  ...props
-}) {
-  const [ref, inView] = useInView({ threshold, rootMargin, once: true });
-  return (
-    <Box
-      ref={ref}
-      className={`reveal-${variant} ${inView ? 'is-visible' : ''} ${className}`}
-      sx={{
-        transitionDelay: delay ? `${delay}s` : undefined,
-        ...sx,
-      }}
-      {...props}
-    >
-      {children}
-    </Box>
   );
 }
 
@@ -858,14 +831,14 @@ export default function Modules() {
   }, [searchQuery, activeCategory]);
 
   const renderStatusBadge = (status) => {
-    let bg = '#DAEDFF';
-    let color = '#1D4D87';
+    let bg = '#dbeafe';
+    let color = '#1d4ed8';
     if (status === 'Optional') {
-      bg = '#F5ECE3';
-      color = '#785336';
+      bg = '#f1f5f9';
+      color = '#334155';
     } else if (status === 'Add-on') {
-      bg = '#FEF3C7';
-      color = '#92400E';
+      bg = '#e0f2fe';
+      color = '#0369a1';
     }
 
     return (
@@ -883,7 +856,7 @@ export default function Modules() {
           lineHeight: '16px',
           whiteSpace: 'nowrap',
           flexShrink: 0,
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
         }}
       >
         {status}
@@ -897,9 +870,9 @@ export default function Modules() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#FDFBF9',
-        color: '#191309',
-        fontFamily: "'Inter', sans-serif",
+        backgroundColor: '#f7f6f2',
+        color: '#141416',
+        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
         overflowX: 'hidden',
       }}
     >
@@ -916,10 +889,10 @@ export default function Modules() {
             pb: { xs: 4, md: 5 },
             px: 2,
             textAlign: 'center',
-            backgroundColor: '#fbfcfd',
+            backgroundColor: '#f7f6f2',
             backgroundImage: `
-              radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-              radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+              radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+              radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
               radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
             `,
           }}
@@ -953,8 +926,8 @@ export default function Modules() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '7px',
-                backgroundColor: '#DAEDFF',
-                color: '#1D4D87',
+                backgroundColor: '#dbeafe',
+                color: '#1d4ed8',
                 px: '14px',
                 py: '4.5px',
                 borderRadius: '9999px',
@@ -968,7 +941,7 @@ export default function Modules() {
                   fontWeight: 700,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   lineHeight: 1,
                 }}
               >
@@ -980,12 +953,12 @@ export default function Modules() {
             <Typography
               variant="h1"
               sx={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 fontWeight: 800,
                 fontSize: { xs: '32px', sm: '44px', md: '52px' },
                 lineHeight: 1.15,
                 letterSpacing: '-1.1px',
-                color: '#0B0702',
+                color: '#141416',
                 mb: 2.2,
               }}
             >
@@ -997,10 +970,10 @@ export default function Modules() {
               sx={{
                 fontSize: { xs: '15px', sm: '16.5px' },
                 lineHeight: '26px',
-                color: '#5B5449',
+                color: '#52525b',
                 maxWidth: '610px',
                 mx: 'auto',
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
               }}
             >
               A modular platform — start with the essentials and expand as your school grows. Click any module card to explore its detailed sub-modules.
@@ -1013,7 +986,7 @@ export default function Modules() {
           sx={{
             pt: { xs: 3, md: 4 },
             pb: { xs: 9, md: 12 },
-            backgroundColor: '#FDFBF9',
+            backgroundColor: '#f7f6f2',
             borderTop: 'none',
             borderBottom: 'none',
           }}
@@ -1055,18 +1028,18 @@ export default function Modules() {
                         px: '14px',
                         py: '7px',
                         borderRadius: '9999px',
-                        border: isActive ? '1.5px solid #1D4D87' : '1px solid #E5E0D8',
-                        backgroundColor: isActive ? '#1D4D87' : '#FFFFFF',
+                        border: isActive ? '1.5px solid #1d4ed8' : '1px solid #E5E0D8',
+                        backgroundColor: isActive ? '#1d4ed8' : '#FFFFFF',
                         color: isActive ? '#FFFFFF' : '#4B5563',
                         fontSize: '13px',
                         fontWeight: isActive ? 600 : 500,
                         cursor: 'pointer',
                         whiteSpace: 'nowrap',
                         transition: 'all 0.2s ease',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         '&:hover': {
-                          borderColor: '#1D4D87',
-                          backgroundColor: isActive ? '#1D4D87' : '#F8FAFC',
+                          borderColor: '#1d4ed8',
+                          backgroundColor: isActive ? '#1d4ed8' : '#F8FAFC',
                         },
                       }}
                     >
@@ -1114,7 +1087,7 @@ export default function Modules() {
                     width: { xs: '100%', sm: '260px' },
                     transition: 'all 0.2s ease',
                     '&:focus-within': {
-                      borderColor: '#1D4D87',
+                      borderColor: '#1d4ed8',
                       boxShadow: '0 0 0 2px rgba(29, 77, 135, 0.1)',
                     },
                   }}
@@ -1126,7 +1099,7 @@ export default function Modules() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     sx={{
                       fontSize: '13px',
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                       width: '100%',
                     }}
                   />
@@ -1148,8 +1121,8 @@ export default function Modules() {
                       textTransform: 'none',
                       fontSize: '12.5px',
                       fontWeight: 600,
-                      fontFamily: "'Inter', sans-serif",
-                      color: '#1D4D87',
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
+                      color: '#1d4ed8',
                       borderColor: '#CBD5E1',
                       backgroundColor: '#FFFFFF',
                       borderRadius: '9px',
@@ -1157,7 +1130,7 @@ export default function Modules() {
                       py: 0.8,
                       whiteSpace: 'nowrap',
                       '&:hover': {
-                        borderColor: '#1D4D87',
+                        borderColor: '#1d4ed8',
                         backgroundColor: '#F0F7FF',
                       },
                     }}
@@ -1179,7 +1152,7 @@ export default function Modules() {
                   border: '1px dashed #CBD5E1',
                 }}
               >
-                <Typography sx={{ fontSize: '16px', fontWeight: 600, color: '#191309', mb: 1 }}>
+                <Typography sx={{ fontSize: '16px', fontWeight: 600, color: '#141416', mb: 1 }}>
                   No modules matching "{searchQuery}"
                 </Typography>
                 <Typography sx={{ fontSize: '14px', color: '#6B7280', mb: 2 }}>
@@ -1227,7 +1200,7 @@ export default function Modules() {
                       elevation={0}
                       sx={{
                         backgroundColor: '#FFFFFF',
-                        border: isExpanded ? '1.5px solid #2863AB' : '1px solid #EFEBE4',
+                        border: isExpanded ? '1.5px solid #0071e3' : '1px solid #e4e2dc',
                         borderRadius: '14px',
                         boxSizing: 'border-box',
                         transition: 'border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease',
@@ -1236,11 +1209,11 @@ export default function Modules() {
                           : '0 2px 8px rgba(0, 0, 0, 0.02)',
                         overflow: 'hidden',
                         '&:hover': {
-                          borderColor: '#2863AB',
+                          borderColor: '#0071e3',
                           boxShadow: '0 10px 24px rgba(40, 99, 171, 0.08)',
                           transform: isExpanded ? 'none' : 'translateY(-3px)',
                           '& .module-icon-box': {
-                            backgroundColor: '#1E56A0',
+                            backgroundColor: '#0071e3',
                             color: '#FFFFFF',
                           },
                         },
@@ -1263,8 +1236,8 @@ export default function Modules() {
                               width: '42px',
                               height: '42px',
                               borderRadius: '9px',
-                              backgroundColor: isExpanded ? '#1E56A0' : '#DAEDFF',
-                              color: isExpanded ? '#FFFFFF' : '#2863AB',
+                              backgroundColor: isExpanded ? '#0071e3' : '#dbeafe',
+                              color: isExpanded ? '#FFFFFF' : '#0071e3',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
@@ -1285,7 +1258,7 @@ export default function Modules() {
                                 px: '9px',
                                 py: '3px',
                                 borderRadius: '9999px',
-                                fontFamily: "'Inter', sans-serif",
+                                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                                 whiteSpace: 'nowrap',
                               }}
                             >
@@ -1299,12 +1272,12 @@ export default function Modules() {
                         <Typography
                           variant="h6"
                           sx={{
-                            fontFamily: "'Sora', sans-serif",
+                            fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                             fontWeight: 700,
                             fontSize: '16.5px',
                             lineHeight: '22px',
                             letterSpacing: '-0.2px',
-                            color: '#191309',
+                            color: '#141416',
                             mb: 0.8,
                           }}
                         >
@@ -1314,7 +1287,7 @@ export default function Modules() {
                         {/* Description */}
                         <Typography
                           sx={{
-                            fontFamily: "'Inter', sans-serif",
+                            fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                             fontSize: '13.5px',
                             lineHeight: '20px',
                             color: '#6B7280',
@@ -1333,10 +1306,10 @@ export default function Modules() {
                             justifyContent: 'space-between',
                             pt: 1.6,
                             borderTop: '1px solid #F1ECE4',
-                            color: isExpanded ? '#1D4D87' : '#2863AB',
+                            color: isExpanded ? '#1d4ed8' : '#0071e3',
                             fontSize: '13px',
                             fontWeight: 650,
-                            fontFamily: "'Inter', sans-serif",
+                            fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           }}
                         >
                           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.8 }}>
@@ -1354,8 +1327,8 @@ export default function Modules() {
                               width: 26,
                               height: 26,
                               borderRadius: '50%',
-                              backgroundColor: isExpanded ? '#DAEDFF' : '#F4EFEA',
-                              color: '#1D4D87',
+                              backgroundColor: isExpanded ? '#dbeafe' : '#F4EFEA',
+                              color: '#1d4ed8',
                               transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)',
                               transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease',
                             }}
@@ -1382,10 +1355,10 @@ export default function Modules() {
                               fontWeight: 700,
                               letterSpacing: '0.07em',
                               textTransform: 'uppercase',
-                              color: '#1D4D87',
+                              color: '#1d4ed8',
                               mb: 1.8,
                               pt: 2.2,
-                              fontFamily: "'Inter', sans-serif",
+                              fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                             }}
                           >
                             Included Sub-Modules & Capabilities
@@ -1406,7 +1379,7 @@ export default function Modules() {
                                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1.2 }}>
                                   <Typography
                                     sx={{
-                                      fontFamily: "'Sora', sans-serif",
+                                      fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                                       fontWeight: 650,
                                       fontSize: '13.5px',
                                       color: '#0F172A',
@@ -1418,12 +1391,12 @@ export default function Modules() {
                                     sx={{
                                       fontSize: '10.5px',
                                       fontWeight: 600,
-                                      color: '#1D4D87',
+                                      color: '#1d4ed8',
                                       backgroundColor: '#EBF4FF',
                                       px: '8px',
                                       py: '2px',
                                       borderRadius: '9999px',
-                                      fontFamily: "'Inter', sans-serif",
+                                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                                     }}
                                   >
                                     {group.items.length} {group.items.length === 1 ? 'item' : 'items'}
@@ -1445,14 +1418,14 @@ export default function Modules() {
                                           width: 5,
                                           height: 5,
                                           borderRadius: '50%',
-                                          backgroundColor: '#2863AB',
+                                          backgroundColor: '#0071e3',
                                           mt: '7px',
                                           flexShrink: 0,
                                         }}
                                       />
                                       <Typography
                                         sx={{
-                                          fontFamily: "'Inter', sans-serif",
+                                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                                           fontSize: '12.5px',
                                           lineHeight: '18px',
                                           color: '#475569',
@@ -1478,11 +1451,11 @@ export default function Modules() {
                               sx={{
                                 textTransform: 'none',
                                 fontSize: '12px',
-                                color: '#1D4D87',
+                                color: '#1d4ed8',
                                 fontWeight: 600,
                                 p: 0,
                                 minWidth: 0,
-                                fontFamily: "'Inter', sans-serif",
+                                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                                 '&:hover': {
                                   backgroundColor: 'transparent',
                                   textDecoration: 'underline',
@@ -1511,8 +1484,8 @@ export default function Modules() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 1,
-                  backgroundColor: '#DAEDFF',
-                  color: '#1D4D87',
+                  backgroundColor: '#dbeafe',
+                  color: '#1d4ed8',
                   px: '14px',
                   py: '4px',
                   borderRadius: '9999px',
@@ -1535,12 +1508,12 @@ export default function Modules() {
               <Typography
                 variant="h2"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: { xs: '28px', sm: '36px' },
                   lineHeight: '40px',
                   letterSpacing: '-0.72px',
-                  color: '#0B0702',
+                  color: '#141416',
                   mb: 1.5,
                 }}
               >
@@ -1551,7 +1524,7 @@ export default function Modules() {
                 sx={{
                   fontSize: '16px',
                   lineHeight: '24px',
-                  color: '#5B5449',
+                  color: '#52525b',
                 }}
               >
                 Transparent tiers designed to scale with your school. Reach out for a tailored quote.
@@ -1579,7 +1552,7 @@ export default function Modules() {
                     overflow: 'visible !important',
                     p: { xs: '32px 24px', sm: '36px 30px' },
                     backgroundColor: '#FFFFFF',
-                    border: '1.5px solid #2863AB',
+                    border: '1.5px solid #0071e3',
                     borderRadius: '12px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -1600,7 +1573,7 @@ export default function Modules() {
                       top: -12,
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      backgroundColor: '#1E56A0',
+                      backgroundColor: '#0071e3',
                       color: '#FFFFFF',
                       fontSize: '11px',
                       fontWeight: 600,
@@ -1610,7 +1583,7 @@ export default function Modules() {
                       whiteSpace: 'nowrap',
                       letterSpacing: '0.01em',
                       zIndex: 2,
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                       boxShadow: '0 2px 6px rgba(30, 86, 160, 0.25)',
                     }}
                   >
@@ -1621,7 +1594,7 @@ export default function Modules() {
                   <Typography
                     variant="h3"
                     sx={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                       fontWeight: 700,
                       fontSize: '19px',
                       lineHeight: '26px',
@@ -1640,7 +1613,7 @@ export default function Modules() {
                       color: '#6B7280',
                       minHeight: '40px',
                       mb: 2.5,
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     }}
                   >
                     Best suited for schools running core academic, admin, billing & communication operations.
@@ -1651,11 +1624,11 @@ export default function Modules() {
                     <Typography
                       component="span"
                       sx={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                         fontWeight: 800,
                         fontSize: { xs: '28px', sm: '32px' },
                         lineHeight: '38px',
-                        color: '#0B0702',
+                        color: '#141416',
                         letterSpacing: '-0.02em',
                       }}
                     >
@@ -1680,7 +1653,7 @@ export default function Modules() {
                             width: 18,
                             height: 18,
                             borderRadius: '50%',
-                            backgroundColor: '#DAEDFF',
+                            backgroundColor: '#dbeafe',
                             display: 'inline-flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -1690,14 +1663,14 @@ export default function Modules() {
                           <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                               d="M1.5 4L3.75 6.25L8.5 1.5"
-                              stroke="#1D4D87"
+                              stroke="#1d4ed8"
                               strokeWidth="1.8"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                             />
                           </svg>
                         </Box>
-                        <Typography sx={{ fontSize: '13.2px', color: '#4B5563', fontWeight: 450, fontFamily: "'Inter', sans-serif" }}>
+                        <Typography sx={{ fontSize: '13.2px', color: '#4B5563', fontWeight: 450, fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif" }}>
                           {item}
                         </Typography>
                       </Box>
@@ -1719,7 +1692,7 @@ export default function Modules() {
                       fontWeight: 600,
                       fontSize: '14px',
                       textTransform: 'none',
-                      backgroundColor: '#1E56A0',
+                      backgroundColor: '#0071e3',
                       color: '#FFFFFF',
                       boxShadow: 'none',
                       transition: 'all 0.2s ease',
@@ -1740,8 +1713,8 @@ export default function Modules() {
                   elevation={0}
                   sx={{
                     p: { xs: '32px 24px', sm: '36px 30px' },
-                    backgroundColor: '#FAF8F5',
-                    border: '1px solid #EFEBE4',
+                    backgroundColor: '#f2f0ea',
+                    border: '1px solid #e4e2dc',
                     borderRadius: '12px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -1759,7 +1732,7 @@ export default function Modules() {
                   <Typography
                     variant="h3"
                     sx={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                       fontWeight: 700,
                       fontSize: '19px',
                       lineHeight: '26px',
@@ -1778,7 +1751,7 @@ export default function Modules() {
                       color: '#6B7280',
                       minHeight: '40px',
                       mb: 2.5,
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     }}
                   >
                     Full platform — all 20 modules & 4 portals completely unlocked for schools running full operations.
@@ -1789,11 +1762,11 @@ export default function Modules() {
                     <Typography
                       component="span"
                       sx={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                         fontWeight: 800,
                         fontSize: { xs: '28px', sm: '32px' },
                         lineHeight: '38px',
-                        color: '#1E56A0',
+                        color: '#0071e3',
                         letterSpacing: '-0.02em',
                       }}
                     >
@@ -1818,7 +1791,7 @@ export default function Modules() {
                             width: 18,
                             height: 18,
                             borderRadius: '50%',
-                            backgroundColor: '#DAEDFF',
+                            backgroundColor: '#dbeafe',
                             display: 'inline-flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -1828,7 +1801,7 @@ export default function Modules() {
                           <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                               d="M1.5 4L3.75 6.25L8.5 1.5"
-                              stroke="#1D4D87"
+                              stroke="#1d4ed8"
                               strokeWidth="1.8"
                               strokeLinecap="round"
                               strokeLinejoin="round"
@@ -1838,9 +1811,9 @@ export default function Modules() {
                         <Typography
                           sx={{
                             fontSize: '13.2px',
-                            color: idx === 0 ? '#1E56A0' : '#4B5563',
+                            color: idx === 0 ? '#0071e3' : '#4B5563',
                             fontWeight: idx === 0 ? 700 : 450,
-                            fontFamily: "'Inter', sans-serif",
+                            fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           }}
                         >
                           {item}
@@ -1865,7 +1838,7 @@ export default function Modules() {
                       fontSize: '14px',
                       textTransform: 'none',
                       backgroundColor: '#FFFFFF',
-                      borderColor: '#EFEBE4',
+                      borderColor: '#e4e2dc',
                       color: '#111827',
                       transition: 'all 0.2s ease',
                       '&:hover': {
@@ -1883,7 +1856,7 @@ export default function Modules() {
         </Box>
 
         {/* SECTION 4: CAPABILITIES / BUILD YOUR OWN (PIXEL PERFECT MATCH TO MOCKUP) */}
-        <Box sx={{ py: { xs: 8, md: 11 }, backgroundColor: '#FDFBF9' }}>
+        <Box sx={{ py: { xs: 8, md: 11 }, backgroundColor: '#f7f6f2' }}>
           <Container maxWidth="lg">
             {/* Header: Badge + Heading + Subtitle + Legend */}
             <RevealOnScroll variant="init" sx={{ textAlign: 'center', mb: 5 }}>
@@ -1893,8 +1866,8 @@ export default function Modules() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 1,
-                  backgroundColor: '#DAEDFF',
-                  color: '#1D4D87',
+                  backgroundColor: '#dbeafe',
+                  color: '#1d4ed8',
                   px: '14px',
                   py: '4.5px',
                   borderRadius: '9999px',
@@ -1908,7 +1881,7 @@ export default function Modules() {
                     fontWeight: 700,
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     lineHeight: 1,
                   }}
                 >
@@ -1920,12 +1893,12 @@ export default function Modules() {
               <Typography
                 variant="h2"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 800,
                   fontSize: { xs: '30px', sm: '38px', md: '44px' },
                   lineHeight: { xs: '38px', sm: '46px', md: '52px' },
                   letterSpacing: '-0.02em',
-                  color: '#0B0702',
+                  color: '#141416',
                   mb: 2,
                   maxWidth: '720px',
                   mx: 'auto',
@@ -1937,10 +1910,10 @@ export default function Modules() {
               {/* Subtitle */}
               <Typography
                 sx={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   fontSize: '16px',
                   lineHeight: '26px',
-                  color: '#5B5449',
+                  color: '#52525b',
                   maxWidth: '620px',
                   mx: 'auto',
                   mb: 4.5,
@@ -1952,20 +1925,20 @@ export default function Modules() {
               {/* Legend matching screenshot */}
               <Stack direction="row" spacing={3.5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#2863AB' }} />
-                  <Typography sx={{ fontSize: '13.5px', color: '#5B5449', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
+                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#0071e3' }} />
+                  <Typography sx={{ fontSize: '13.5px', color: '#52525b', fontWeight: 500, fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif" }}>
                     Included
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#8B6F52' }} />
-                  <Typography sx={{ fontSize: '13.5px', color: '#5B5449', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
+                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#64748b' }} />
+                  <Typography sx={{ fontSize: '13.5px', color: '#52525b', fontWeight: 500, fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif" }}>
                     Optional
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#DE9D16' }} />
-                  <Typography sx={{ fontSize: '13.5px', color: '#5B5449', fontWeight: 500, fontFamily: "'Inter', sans-serif" }}>
+                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#0284c7' }} />
+                  <Typography sx={{ fontSize: '13.5px', color: '#52525b', fontWeight: 500, fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif" }}>
                     Add-on
                   </Typography>
                 </Box>
@@ -1999,7 +1972,7 @@ export default function Modules() {
                         px: '24px',
                         py: '18px',
                         backgroundColor: '#FFFFFF',
-                        border: '1px solid #EFEBE4',
+                        border: '1px solid #e4e2dc',
                         borderRadius: '12px',
                         display: 'flex',
                         alignItems: 'center',
@@ -2017,10 +1990,10 @@ export default function Modules() {
                     >
                       <Typography
                         sx={{
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           fontWeight: 600,
                           fontSize: '15px',
-                          color: '#191309',
+                          color: '#141416',
                           whiteSpace: 'nowrap',
                         }}
                       >
@@ -2045,18 +2018,18 @@ export default function Modules() {
                 sx={{
                   py: 1.25,
                   px: 3.8,
-                  borderRadius: '8px',
-                  fontWeight: 600,
+                  borderRadius: '9999px',
+                  fontWeight: 700,
                   fontSize: '14px',
                   textTransform: 'none',
-                  backgroundColor: '#2863AB',
+                  backgroundColor: '#141416',
                   color: '#FFFFFF',
-                  boxShadow: '0 2px 8px rgba(40, 99, 171, 0.2)',
+                  boxShadow: '0 4px 14px rgba(20, 20, 22, 0.14)',
                   transition: 'all 0.2s ease',
                   '&:hover': {
-                    backgroundColor: '#1E56A0',
+                    backgroundColor: '#0071e3',
                     transform: 'translateY(-1px)',
-                    boxShadow: '0 4px 12px rgba(40, 99, 171, 0.3)',
+                    boxShadow: '0 6px 18px rgba(0, 113, 227, 0.28)',
                   },
                 }}
               >
@@ -2072,17 +2045,17 @@ export default function Modules() {
             <Box
               sx={{
                 p: { xs: 4, md: 7 },
-                background: 'linear-gradient(102.61deg, #2863AB 0%, #3A7BCB 60%, #DE9D16 100%)',
+                background: 'linear-gradient(125deg, #0b1222 0%, #1d4ed8 46%, #0071e3 100%)',
                 borderRadius: '12px',
                 textAlign: 'center',
-                color: '#FDFBF9',
+                color: '#f7f6f2',
                 boxShadow: '0 12px 30px rgba(40, 99, 171, 0.18)',
               }}
             >
               <Typography
                 variant="h3"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: { xs: '24px', md: '30px' },
                   lineHeight: '36px',
@@ -2113,13 +2086,14 @@ export default function Modules() {
                 sx={{
                   py: 1.3,
                   px: 3.5,
-                  borderRadius: '8px',
-                  fontWeight: 600,
+                  borderRadius: '9999px',
+                  fontWeight: 700,
                   fontSize: '14px',
                   textTransform: 'none',
-                  backgroundColor: '#FDFBF9',
-                  color: '#1D4D87',
-                  '&:hover': { backgroundColor: '#ffffff' },
+                  backgroundColor: '#FFFFFF',
+                  color: '#141416',
+                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.14)',
+                  '&:hover': { backgroundColor: '#eff6ff' },
                 }}
               >
                 Book a Demo

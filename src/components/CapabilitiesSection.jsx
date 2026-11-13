@@ -261,7 +261,7 @@ export default function CapabilitiesSection() {
       sx={{
         width: '100%',
         py: { xs: 8, sm: 10, md: 12 },
-        backgroundColor: '#ffffff',
+        backgroundColor: '#f7f6f2',
         position: 'relative',
         scrollMarginTop: '80px',
       }}
@@ -269,9 +269,9 @@ export default function CapabilitiesSection() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1120px',
+          maxWidth: '1240px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3, md: 4 },
+          px: { xs: 2.5, sm: 3.5, md: 5 },
         }}
       >
         <Box>
@@ -285,19 +285,19 @@ export default function CapabilitiesSection() {
               sx={{ mb: { xs: 5, sm: 6, md: 6.5 } }}
             >
             {/* Left Side Header Text */}
-            <Stack spacing={0.6} sx={{ maxWidth: 640 }}>
+            <Stack spacing={0.6} sx={{ maxWidth: 660 }}>
               {/* Overline Tag Pill */}
               <Box
                 sx={{
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '6px',
-                  backgroundColor: 'rgba(0, 113, 227, 0.08)',
-                  border: '1px solid rgba(0, 113, 227, 0.18)',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid rgba(20, 20, 22, 0.12)',
                   borderRadius: '9999px',
                   px: '14px',
                   py: '5px',
-                  color: '#0071e3',
+                  color: '#141416',
                   userSelect: 'none',
                   width: 'fit-content',
                   mb: 1.5,
@@ -307,11 +307,12 @@ export default function CapabilitiesSection() {
                 <Typography
                   component="span"
                   sx={{
-                    fontSize: '0.70rem',
-                    fontWeight: 700,
+                    fontFamily: '"JetBrains Mono", monospace',
+                    fontSize: '0.68rem',
+                    fontWeight: 600,
                     letterSpacing: '0.06em',
                     lineHeight: 1,
-                    color: '#0071e3',
+                    color: '#141416',
                     whiteSpace: 'nowrap',
                   }}
                 >
@@ -319,30 +320,34 @@ export default function CapabilitiesSection() {
                 </Typography>
               </Box>
 
-              {/* Bold Dark Heading */}
+              {/* Bold Editorial Heading */}
               <Typography
                 variant="h2"
                 component="h2"
                 sx={{
-                  fontWeight: 750,
-                  fontSize: { xs: '1.9rem', sm: '2.35rem', md: '2.75rem' },
-                  lineHeight: 1.12,
-                  letterSpacing: '-0.035em',
-                  color: '#1d1d1f',
+                  fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                  fontWeight: 800,
+                  fontSize: { xs: '2rem', sm: '2.45rem', md: '2.9rem' },
+                  lineHeight: 1.08,
+                  letterSpacing: '-0.036em',
+                  color: '#141416',
                 }}
               >
-                Everything your school needs.
+                Everything your school{' '}
+                <Box component="span" className="edukra-highlight">
+                  needs.
+                </Box>
               </Typography>
 
               {/* Subtitle */}
               <Typography
                 variant="body1"
                 sx={{
-                  color: '#6e6e73',
-                  fontSize: { xs: '0.96rem', sm: '1.04rem' },
-                  lineHeight: 1.55,
+                  color: '#52525b',
+                  fontSize: { xs: '0.96rem', sm: '1.05rem' },
+                  lineHeight: 1.58,
                   fontWeight: 450,
-                  pt: 0.3,
+                  pt: 0.4,
                 }}
               >
                 A modular platform — start with the essentials and expand as your school grows.
@@ -363,26 +368,26 @@ export default function CapabilitiesSection() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '8px',
-                backgroundColor: 'rgba(0, 0, 0, 0.04)',
-                border: '1px solid rgba(0, 0, 0, 0.08)',
+                backgroundColor: '#141416',
+                border: '1px solid #141416',
                 borderRadius: '9999px',
-                px: '20px',
-                py: '10px',
-                color: '#1d1d1f',
+                px: '22px',
+                py: '11px',
+                color: '#ffffff',
                 fontSize: '0.88rem',
-                fontWeight: 600,
+                fontWeight: 650,
                 letterSpacing: '-0.01em',
                 cursor: 'pointer',
                 textDecoration: 'none',
-                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.02)',
+                boxShadow: '0 4px 14px rgba(20, 20, 22, 0.14)',
                 transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 flexShrink: 0,
                 alignSelf: { xs: 'stretch', sm: 'flex-start', md: 'flex-end' },
                 mt: { xs: 1, md: 0 },
                 '&:hover': {
-                  borderColor: 'rgba(0, 0, 0, 0.12)',
-                  backgroundColor: 'rgba(0, 0, 0, 0.08)',
-                  transform: 'translateY(-1px)',
+                  backgroundColor: '#0071e3',
+                  borderColor: '#0071e3',
+                  transform: 'translateY(-2px)',
                 },
                 '&:active': {
                   transform: 'scale(0.976)',
@@ -390,12 +395,12 @@ export default function CapabilitiesSection() {
               }}
             >
               View All Modules
-              <ArrowForwardRoundedIcon sx={{ fontSize: 16, color: '#1d1d1f' }} />
+              <ArrowForwardRoundedIcon sx={{ fontSize: 16, color: '#ffffff' }} />
             </Box>
           </Stack>
         </RevealOnScroll>
 
-        {/* Responsive 4x2 Bento Grid Layout (xs=12, sm=6, md=3) */}
+        {/* Responsive 4x2 Bento Grid Layout */}
         <Box
           sx={{
             display: 'grid',
@@ -414,64 +419,94 @@ export default function CapabilitiesSection() {
               <RevealOnScroll
                 key={cap.id}
                 variant="pop-up"
-                delay={(idx % 4) * 0.06}
+                delay={(idx % 4) * 0.05}
                 threshold={0.06}
                 sx={{ height: '100%' }}
               >
                 <Box
+                  component="button"
+                  type="button"
                   onClick={() => {
                     window.location.hash = `#modules-${cap.id}`;
                   }}
                   sx={{
+                    width: '100%',
+                    textAlign: 'left',
                     cursor: 'pointer',
                     backgroundColor: '#ffffff',
-                    border: '1px solid rgba(0, 0, 0, 0.06)',
-                    borderRadius: '20px',
-                    p: '22px 20px 24px 20px',
+                    border: '1px solid rgba(20, 20, 22, 0.09)',
+                    borderRadius: '22px',
+                    p: '22px 20px 22px 20px',
                     height: '100%',
-                    minHeight: '175px',
+                    minHeight: '190px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'flex-start',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02), 0 8px 20px -4px rgba(0, 0, 0, 0.03)',
+                    boxShadow: '0 2px 10px -2px rgba(20, 20, 22, 0.03)',
                     transition:
                       'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
                       transform: 'translateY(-4px)',
-                      borderColor: 'rgba(0, 113, 227, 0.25)',
-                      boxShadow: '0 12px 28px -6px rgba(0, 113, 227, 0.12)',
+                      borderColor: '#0071e3',
+                      boxShadow: '0 14px 30px -8px rgba(0, 113, 227, 0.14)',
+                      '& .cap-arrow': {
+                        opacity: 1,
+                        transform: 'translateX(2px)',
+                      },
                     },
                     '&:active': {
                       transform: 'scale(0.98)',
                     },
                   }}
                 >
-                  {/* Icon Box in Top-Left */}
+                  {/* Top Row: Icon Box + Index */}
                   <Box
                     sx={{
-                      width: 42,
-                      height: 42,
-                      borderRadius: '12px',
-                      backgroundColor: 'rgba(0, 113, 227, 0.08)',
+                      width: '100%',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#0071e3',
+                      justifyContent: 'space-between',
                       mb: '16px',
-                      flexShrink: 0,
                     }}
                   >
-                    <IconComponent />
+                    <Box
+                      sx={{
+                        width: 42,
+                        height: 42,
+                        borderRadius: '12px',
+                        backgroundColor: 'rgba(0, 113, 227, 0.09)',
+                        border: '1px solid rgba(0, 113, 227, 0.14)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#0071e3',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <IconComponent />
+                    </Box>
+                    <Typography
+                      component="span"
+                      sx={{
+                        fontFamily: '"JetBrains Mono", monospace',
+                        fontSize: '0.70rem',
+                        fontWeight: 600,
+                        color: '#71717a',
+                      }}
+                    >
+                      0{idx + 1}
+                    </Typography>
                   </Box>
 
                   {/* Module Title */}
                   <Typography
                     component="h3"
                     sx={{
-                      fontWeight: 650,
-                      fontSize: '1.02rem',
+                      fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                      fontWeight: 700,
+                      fontSize: '1.06rem',
                       letterSpacing: '-0.02em',
-                      color: '#1d1d1f',
+                      color: '#141416',
                       mb: '6px',
                       lineHeight: 1.25,
                     }}
@@ -483,14 +518,33 @@ export default function CapabilitiesSection() {
                   <Typography
                     component="p"
                     sx={{
-                      color: '#6e6e73',
+                      color: '#52525b',
                       fontSize: '0.84rem',
-                      lineHeight: 1.5,
+                      lineHeight: 1.52,
                       fontWeight: 450,
+                      mb: 1.5,
+                      flex: 1,
                     }}
                   >
                     {cap.description}
                   </Typography>
+
+                  <Box
+                    className="cap-arrow"
+                    sx={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 0.5,
+                      fontSize: '0.75rem',
+                      fontWeight: 650,
+                      color: '#0071e3',
+                      opacity: 0.72,
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    Explore module
+                    <ArrowForwardRoundedIcon sx={{ fontSize: 13 }} />
+                  </Box>
                 </Box>
               </RevealOnScroll>
             );

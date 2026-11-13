@@ -17,9 +17,9 @@ export default function CTASection() {
       sx={{
         width: '100%',
         position: 'relative',
-        // Split background: top 65% is Apple light canvas (#f5f5f7), bottom 35% is dark footer (#121214)
+        // Split background: top 65% warm alabaster canvas (#f7f6f2), bottom 35% dark footer (#121214)
         background:
-          'linear-gradient(to bottom, #f5f5f7 0%, #f5f5f7 65%, #121214 65%, #121214 100%)',
+          'linear-gradient(to bottom, #f7f6f2 0%, #f7f6f2 65%, #121214 65%, #121214 100%)',
         pt: { xs: 6, sm: 8, md: 10 },
         pb: { xs: 1, sm: 1.5, md: 2 },
       }}
@@ -27,9 +27,9 @@ export default function CTASection() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1120px',
+          maxWidth: '1240px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3, md: 4 },
+          px: { xs: 2.5, sm: 3.5, md: 5 },
         }}
       >
         <RevealOnScroll variant="pop-up">
@@ -66,17 +66,20 @@ export default function CTASection() {
                 variant="h3"
                 component="h2"
                 sx={{
-                  fontWeight: 750,
+                  fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                  fontWeight: 800,
                   color: '#ffffff',
-                  fontSize: { xs: '1.8rem', sm: '2.3rem', md: '2.65rem' },
-                  lineHeight: 1.12,
-                  letterSpacing: '-0.035em',
+                  fontSize: { xs: '1.9rem', sm: '2.4rem', md: '2.75rem' },
+                  lineHeight: 1.08,
+                  letterSpacing: '-0.036em',
                   mb: '14px',
                 }}
               >
                 Ready to See Edukra
                 <br />
-                in Action?
+                <Box component="span" sx={{ color: '#bae6fd' }}>
+                  in Action?
+                </Box>
               </Typography>
 
               {/* Subtitle */}

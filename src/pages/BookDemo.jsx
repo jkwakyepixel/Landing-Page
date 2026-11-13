@@ -251,7 +251,7 @@ export default function BookDemo() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#faf9f8', // Subtle warm off-white background matching mockup
+        backgroundColor: '#f7f6f2', // Subtle warm off-white background matching mockup
         position: 'relative',
       }}
     >
@@ -267,10 +267,10 @@ export default function BookDemo() {
           pb: { xs: 10, md: 14 },
           position: 'relative',
           overflow: 'hidden',
-          backgroundColor: '#fbfcfd',
+          backgroundColor: '#f7f6f2',
           backgroundImage: `
-            radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-            radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+            radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+            radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
             radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
           `,
         }}
@@ -329,7 +329,7 @@ export default function BookDemo() {
                   borderRadius: '9999px',
                   px: '13px',
                   py: '4.5px',
-                  color: '#1e56a0',
+                  color: '#0071e3',
                   userSelect: 'none',
                   width: 'fit-content',
                   alignSelf: 'center',
@@ -337,7 +337,7 @@ export default function BookDemo() {
                   mb: 1.5,
                 }}
               >
-                <CalendarIcon style={{ color: '#1e56a0', flexShrink: 0 }} />
+                <CalendarIcon style={{ color: '#0071e3', flexShrink: 0 }} />
                 <Typography
                   component="span"
                   sx={{
@@ -345,7 +345,7 @@ export default function BookDemo() {
                     fontWeight: 700,
                     letterSpacing: '0.07em',
                     lineHeight: 1,
-                    color: '#1e56a0',
+                    color: '#0071e3',
                     whiteSpace: 'nowrap',
                   }}
                 >
@@ -431,7 +431,7 @@ export default function BookDemo() {
                           justifyContent: 'center',
                           fontSize: '0.70rem',
                           fontWeight: 700,
-                          backgroundColor: isActive || isCompleted ? '#1e56a0' : '#ebedf1',
+                          backgroundColor: isActive || isCompleted ? '#0071e3' : '#ebedf1',
                           color: isActive || isCompleted ? '#ffffff' : '#94a3b8',
                           flexShrink: 0,
                         }}
@@ -444,7 +444,7 @@ export default function BookDemo() {
                         sx={{
                           fontSize: '0.82rem',
                           fontWeight: isActive || isCompleted ? 700 : 500,
-                          color: isActive || isCompleted ? '#1e56a0' : '#94a3b8',
+                          color: isActive || isCompleted ? '#0071e3' : '#94a3b8',
                           whiteSpace: 'nowrap',
                         }}
                       >
@@ -490,7 +490,7 @@ export default function BookDemo() {
                   left: 0,
                   width: `${(currentStep / 5) * 100}%`, transition: 'width 0.3s ease',
                   height: '100%',
-                  backgroundColor: '#1e56a0',
+                  backgroundColor: '#0071e3',
                   borderRadius: '3px',
                 }}
               />
@@ -534,7 +534,7 @@ export default function BookDemo() {
               >
                 {currentStep === 1 && (
                   <Box>
-                    <Typography variant="h6" component="h2" sx={{ fontWeight: 800, fontSize: { xs: '1.15rem', sm: '1.22rem' }, letterSpacing: '-0.02em', color: '#0b0702', mb: 2.8 }}>
+                    <Typography variant="h6" component="h2" sx={{ fontWeight: 800, fontSize: { xs: '1.15rem', sm: '1.22rem' }, letterSpacing: '-0.02em', color: '#141416', mb: 2.8 }}>
                       Choose your demo type
                     </Typography>
                     <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' }, gap: 2, alignItems: 'stretch', mb: { xs: 3.5, sm: 4.5 } }}>
@@ -546,8 +546,8 @@ export default function BookDemo() {
                           p: { xs: 2.2, sm: 2.5 },
                           borderRadius: '12px',
                           cursor: 'pointer',
-                          border: demoType === 'online' ? '2px solid #1e56a0' : '1px solid #efece7',
-                          backgroundColor: demoType === 'online' ? '#ffffff' : '#fdfbf9',
+                          border: demoType === 'online' ? '2px solid #0071e3' : '1px solid #efece7',
+                          backgroundColor: demoType === 'online' ? '#ffffff' : '#f7f6f2',
                           boxShadow: demoType === 'online' ? '0 8px 24px rgba(30, 86, 160, 0.12)' : 'none',
                           transform: demoType === 'online' ? 'scale(1.02)' : 'scale(1)',
                           transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -556,7 +556,7 @@ export default function BookDemo() {
                           flexDirection: 'column',
                           justifyContent: 'space-between',
                           '&:hover': {
-                            borderColor: demoType === 'online' ? '#1e56a0' : '#cbd5e1',
+                            borderColor: demoType === 'online' ? '#0071e3' : '#cbd5e1',
                             boxShadow: '0 6px 18px rgba(0, 0, 0, 0.05)',
                             transform: demoType === 'online' ? 'scale(1.02)' : 'translateY(-2px)'
                           }
@@ -564,7 +564,7 @@ export default function BookDemo() {
                       >
                         <Box>
                           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
-                            <Box sx={{ width: 38, height: 38, borderRadius: '8px', backgroundColor: '#eaf2ff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1e56a0', transition: 'transform 0.2s ease' }}>
+                            <Box sx={{ width: 38, height: 38, borderRadius: '8px', backgroundColor: '#eaf2ff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0071e3', transition: 'transform 0.2s ease' }}>
                               <OnlineDemoIcon />
                             </Box>
                             <Box
@@ -576,8 +576,8 @@ export default function BookDemo() {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                border: demoType === 'online' ? '2px solid #1e56a0' : '1.8px solid #cbd5e1',
-                                backgroundColor: demoType === 'online' ? '#1e56a0' : 'transparent',
+                                border: demoType === 'online' ? '2px solid #0071e3' : '1.8px solid #cbd5e1',
+                                backgroundColor: demoType === 'online' ? '#0071e3' : 'transparent',
                                 color: '#ffffff',
                                 transition: 'all 0.2s ease',
                                 mt: 0.5
@@ -586,7 +586,7 @@ export default function BookDemo() {
                               {demoType === 'online' && <CheckmarkIcon />}
                             </Box>
                           </Box>
-                          <Typography sx={{ fontWeight: 700, fontSize: '0.98rem', letterSpacing: '-0.02em', color: '#0b0702', mt: 1.8, mb: 0.5, lineHeight: 1.25 }}>Online Demo</Typography>
+                          <Typography sx={{ fontWeight: 700, fontSize: '0.98rem', letterSpacing: '-0.02em', color: '#141416', mt: 1.8, mb: 0.5, lineHeight: 1.25 }}>Online Demo</Typography>
                           <Typography sx={{ fontWeight: 500, fontSize: '0.80rem', color: '#64748b', lineHeight: 1.4 }}>Video meeting with a product specialist.</Typography>
                         </Box>
                         <Typography sx={{ fontSize: '0.76rem', color: '#8c857b', lineHeight: 1.5, fontWeight: 450, pt: 2.2 }}>A guided walkthrough over a video call — perfect for a quick, convenient introduction from anywhere.</Typography>
@@ -600,8 +600,8 @@ export default function BookDemo() {
                           p: { xs: 2.2, sm: 2.5 },
                           borderRadius: '12px',
                           cursor: 'pointer',
-                          border: demoType === 'in-person' ? '2px solid #1e56a0' : '1px solid #efece7',
-                          backgroundColor: demoType === 'in-person' ? '#ffffff' : '#fdfbf9',
+                          border: demoType === 'in-person' ? '2px solid #0071e3' : '1px solid #efece7',
+                          backgroundColor: demoType === 'in-person' ? '#ffffff' : '#f7f6f2',
                           boxShadow: demoType === 'in-person' ? '0 8px 24px rgba(30, 86, 160, 0.12)' : 'none',
                           transform: demoType === 'in-person' ? 'scale(1.02)' : 'scale(1)',
                           transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -610,7 +610,7 @@ export default function BookDemo() {
                           flexDirection: 'column',
                           justifyContent: 'space-between',
                           '&:hover': {
-                            borderColor: demoType === 'in-person' ? '#1e56a0' : '#cbd5e1',
+                            borderColor: demoType === 'in-person' ? '#0071e3' : '#cbd5e1',
                             boxShadow: '0 6px 18px rgba(0, 0, 0, 0.05)',
                             transform: demoType === 'in-person' ? 'scale(1.02)' : 'translateY(-2px)'
                           }
@@ -618,7 +618,7 @@ export default function BookDemo() {
                       >
                         <Box>
                           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%' }}>
-                            <Box sx={{ width: 38, height: 38, borderRadius: '8px', backgroundColor: '#eaf2ff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1e56a0', transition: 'transform 0.2s ease' }}>
+                            <Box sx={{ width: 38, height: 38, borderRadius: '8px', backgroundColor: '#eaf2ff', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0071e3', transition: 'transform 0.2s ease' }}>
                               <InPersonDemoIcon />
                             </Box>
                             <Box
@@ -630,8 +630,8 @@ export default function BookDemo() {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                border: demoType === 'in-person' ? '2px solid #1e56a0' : '1.8px solid #cbd5e1',
-                                backgroundColor: demoType === 'in-person' ? '#1e56a0' : 'transparent',
+                                border: demoType === 'in-person' ? '2px solid #0071e3' : '1.8px solid #cbd5e1',
+                                backgroundColor: demoType === 'in-person' ? '#0071e3' : 'transparent',
                                 color: '#ffffff',
                                 transition: 'all 0.2s ease',
                                 mt: 0.5
@@ -640,7 +640,7 @@ export default function BookDemo() {
                               {demoType === 'in-person' && <CheckmarkIcon />}
                             </Box>
                           </Box>
-                          <Typography sx={{ fontWeight: 700, fontSize: '0.98rem', letterSpacing: '-0.02em', color: '#0b0702', mt: 1.8, mb: 0.5, lineHeight: 1.25 }}>In-Person Demo</Typography>
+                          <Typography sx={{ fontWeight: 700, fontSize: '0.98rem', letterSpacing: '-0.02em', color: '#141416', mt: 1.8, mb: 0.5, lineHeight: 1.25 }}>In-Person Demo</Typography>
                           <Typography sx={{ fontWeight: 500, fontSize: '0.80rem', color: '#64748b', lineHeight: 1.4 }}>On-site product presentation at your school.</Typography>
                         </Box>
                         <Typography sx={{ fontSize: '0.76rem', color: '#8c857b', lineHeight: 1.5, fontWeight: 450, pt: 2.2 }}>We come to your school for a hands-on session tailored to your community's specific needs.</Typography>
@@ -650,7 +650,7 @@ export default function BookDemo() {
                 )}
                 {currentStep === 2 && (
                   <Box>
-                    <Typography variant="h6" component="h2" sx={{ fontWeight: 800, fontSize: { xs: '1.15rem', sm: '1.22rem' }, letterSpacing: '-0.02em', color: '#0b0702', mb: 2.8 }}>Select a date</Typography>
+                    <Typography variant="h6" component="h2" sx={{ fontWeight: 800, fontSize: { xs: '1.15rem', sm: '1.22rem' }, letterSpacing: '-0.02em', color: '#141416', mb: 2.8 }}>Select a date</Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
                       <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DateCalendar 
@@ -672,7 +672,7 @@ export default function BookDemo() {
                 )}
                 {currentStep === 3 && (
                   <Box>
-                    <Typography variant="h6" component="h2" sx={{ fontWeight: 800, fontSize: { xs: '1.15rem', sm: '1.22rem' }, letterSpacing: '-0.02em', color: '#0b0702', mb: 2.8 }}>Select a time for {selectedDate ? selectedDate.format('ddd, MMM D') : ''}</Typography>
+                    <Typography variant="h6" component="h2" sx={{ fontWeight: 800, fontSize: { xs: '1.15rem', sm: '1.22rem' }, letterSpacing: '-0.02em', color: '#141416', mb: 2.8 }}>Select a time for {selectedDate ? selectedDate.format('ddd, MMM D') : ''}</Typography>
                     <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', sm: '1fr 1fr 1fr' }, gap: 1.5, mb: 4 }}>
                       {availableTimes.map(time => (
                         <Card
@@ -684,15 +684,15 @@ export default function BookDemo() {
                             textAlign: 'center',
                             borderRadius: '10px',
                             cursor: 'pointer',
-                            border: selectedTime === time ? '2px solid #1e56a0' : '1px solid #efece7',
+                            border: selectedTime === time ? '2px solid #0071e3' : '1px solid #efece7',
                             backgroundColor: selectedTime === time ? '#f0f6ff' : '#ffffff',
                             transform: selectedTime === time ? 'scale(1.04)' : 'scale(1)',
                             boxShadow: selectedTime === time ? '0 4px 12px rgba(30, 86, 160, 0.14)' : 'none',
                             transition: 'all 0.18s cubic-bezier(0.16, 1, 0.3, 1)',
-                            '&:hover': { borderColor: '#1e56a0', transform: selectedTime === time ? 'scale(1.04)' : 'translateY(-1px)' }
+                            '&:hover': { borderColor: '#0071e3', transform: selectedTime === time ? 'scale(1.04)' : 'translateY(-1px)' }
                           }}
                         >
-                          <Typography sx={{ fontWeight: selectedTime === time ? 700 : 500, color: selectedTime === time ? '#1e56a0' : '#475569', fontSize: '0.85rem' }}>{time}</Typography>
+                          <Typography sx={{ fontWeight: selectedTime === time ? 700 : 500, color: selectedTime === time ? '#0071e3' : '#475569', fontSize: '0.85rem' }}>{time}</Typography>
                         </Card>
                       ))}
                     </Box>
@@ -700,7 +700,7 @@ export default function BookDemo() {
                 )}
                 {currentStep === 4 && (
                   <Box>
-                    <Typography variant="h6" component="h2" sx={{ fontWeight: 800, fontSize: { xs: '1.15rem', sm: '1.22rem' }, letterSpacing: '-0.02em', color: '#0b0702', mb: 2.8 }}>Your details</Typography>
+                    <Typography variant="h6" component="h2" sx={{ fontWeight: 800, fontSize: { xs: '1.15rem', sm: '1.22rem' }, letterSpacing: '-0.02em', color: '#141416', mb: 2.8 }}>Your details</Typography>
                     {errorMessage && (
                       <Box sx={{ p: 1.5, mb: 2.5, borderRadius: '8px', bgcolor: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#dc2626', fontSize: '0.85rem', fontWeight: 500 }}>
                         {errorMessage}
@@ -726,9 +726,9 @@ export default function BookDemo() {
                 {currentStep === 5 && (
                   <Box sx={{ textAlign: 'center', py: 4 }}>
                     <Box className="checkmark-pop" sx={{ display: 'inline-flex', justifyContent: 'center', mb: 2 }}>
-                      <CheckCircleRoundedIcon sx={{ fontSize: 64, color: '#10b981' }} />
+                      <CheckCircleRoundedIcon sx={{ fontSize: 64, color: '#0071e3' }} />
                     </Box>
-                    <Typography variant="h5" sx={{ fontWeight: 800, mb: 1, color: '#0b0702' }}>Demo Confirmed!</Typography>
+                    <Typography variant="h5" sx={{ fontWeight: 800, mb: 1, color: '#141416' }}>Demo Confirmed!</Typography>
                     <Typography sx={{ color: '#475569', mb: 4, px: 2 }}>
                       Thank you, {formData.firstName}. Your {demoType === 'online' ? 'Online Demo' : demoType === 'in-person' ? 'In-Person Demo' : demoType} is booked for {selectedDate ? selectedDate.format('ddd, MMM D') : ''} at {selectedTime}. We've received your request and our team will be in touch shortly.
                     </Typography>
@@ -769,7 +769,7 @@ export default function BookDemo() {
                       endIcon={!isSubmitting && <ArrowForwardRoundedIcon sx={{ fontSize: '16px !important' }} />}
                       sx={{
                         py: 1, px: 3, borderRadius: '8px', fontWeight: 600, fontSize: '0.86rem', textTransform: 'none',
-                        backgroundColor: '#1e56a0', boxShadow: '0 2px 8px rgba(30, 86, 160, 0.25)',
+                        backgroundColor: '#0071e3', boxShadow: '0 2px 8px rgba(30, 86, 160, 0.25)',
                         transition: 'all 0.18s ease',
                         '&:hover': { backgroundColor: '#16427d', boxShadow: '0 4px 12px rgba(30, 86, 160, 0.35)' },
                         '&.Mui-disabled': { backgroundColor: 'rgba(30, 86, 160, 0.45)', color: 'rgba(255, 255, 255, 0.95)' }
@@ -784,7 +784,7 @@ export default function BookDemo() {
                     onClick={() => { window.location.hash = '#home'; }}
                     sx={{
                       mx: 'auto', py: 1, px: 3, borderRadius: '8px', fontWeight: 600, fontSize: '0.86rem', textTransform: 'none',
-                      color: '#1e56a0', borderColor: '#1e56a0'
+                      color: '#0071e3', borderColor: '#0071e3'
                     }}
                   >
                     Return to Home
@@ -825,7 +825,7 @@ export default function BookDemo() {
                 >
                   <Box
                     sx={{
-                      color: '#1e56a0',
+                      color: '#0071e3',
                       display: 'flex',
                       alignItems: 'center',
                     }}
@@ -837,7 +837,7 @@ export default function BookDemo() {
                       fontWeight: 700,
                       fontSize: '0.92rem',
                       letterSpacing: '-0.01em',
-                      color: '#0b0702',
+                      color: '#141416',
                     }}
                   >
                     Your demo
@@ -873,7 +873,7 @@ export default function BookDemo() {
                       sx={{
                         fontSize: '0.84rem',
                         fontWeight: demoType ? 700 : 500,
-                        color: demoType ? '#0b0702' : '#64748b',
+                        color: demoType ? '#141416' : '#64748b',
                       }}
                     >
                       {demoType === 'online'
@@ -899,7 +899,7 @@ export default function BookDemo() {
                     <Typography
                       key={selectedDate ? selectedDate.toString() : 'none'}
                       className="toggle-content-anim"
-                      sx={{ fontSize: '0.84rem', fontWeight: selectedDate ? 700 : 500, color: selectedDate ? '#0b0702' : '#64748b' }}
+                      sx={{ fontSize: '0.84rem', fontWeight: selectedDate ? 700 : 500, color: selectedDate ? '#141416' : '#64748b' }}
                     >
                       {selectedDate ? selectedDate.format('ddd, MMM D') : '—'}
                     </Typography>
@@ -919,7 +919,7 @@ export default function BookDemo() {
                     <Typography
                       key={selectedTime || 'none'}
                       className="toggle-content-anim"
-                      sx={{ fontSize: '0.84rem', fontWeight: selectedTime ? 700 : 500, color: selectedTime ? '#0b0702' : '#64748b' }}
+                      sx={{ fontSize: '0.84rem', fontWeight: selectedTime ? 700 : 500, color: selectedTime ? '#141416' : '#64748b' }}
                     >
                       {selectedTime || '—'}
                     </Typography>
@@ -943,7 +943,7 @@ export default function BookDemo() {
                   spacing={1}
                   sx={{ mb: 0.6 }}
                 >
-                  <Box sx={{ color: '#1e56a0', display: 'flex' }}>
+                  <Box sx={{ color: '#0071e3', display: 'flex' }}>
                     <HeadsetIcon />
                   </Box>
                   <Typography
@@ -951,7 +951,7 @@ export default function BookDemo() {
                       fontWeight: 700,
                       fontSize: '0.88rem',
                       letterSpacing: '-0.01em',
-                      color: '#0b0702',
+                      color: '#141416',
                     }}
                   >
                     Prefer to talk first?
@@ -966,11 +966,11 @@ export default function BookDemo() {
                   }}
                 >
                   Have questions before booking? Call / WhatsApp{' '}
-                  <Box component="a" href="tel:+233599844836" sx={{ color: '#1e56a0', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
+                  <Box component="a" href="tel:+233599844836" sx={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
                     +233 599 844 836
                   </Box>{' '}
                   or email{' '}
-                  <Box component="a" href="mailto:admin@urionsystems.com" sx={{ color: '#1e56a0', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
+                  <Box component="a" href="mailto:admin@urionsystems.com" sx={{ color: '#0071e3', textDecoration: 'none', fontWeight: 600, '&:hover': { textDecoration: 'underline' } }}>
                     admin@urionsystems.com
                   </Box>{' '}
                   and our team will assist you.

@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Box,
   Container,
-  Stack,
   Typography,
 } from '@mui/material';
 import RevealOnScroll from './RevealOnScroll';
@@ -167,18 +166,18 @@ export default function RolesSection() {
       id="roles"
       sx={{
         width: '100%',
-        pt: { xs: 8, sm: 10, md: 12 },
-        pb: { xs: 10, sm: 12, md: 15 },
-        backgroundColor: '#ffffff',
+        pt: { xs: 7, sm: 9, md: 11 },
+        pb: { xs: 8, sm: 10, md: 12 },
+        backgroundColor: '#f7f6f2',
         position: 'relative',
       }}
     >
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1120px',
+          maxWidth: '1240px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3, md: 4 },
+          px: { xs: 2.5, sm: 3.5, md: 5 },
         }}
       >
         {/* Section Header Container with Scroll Entrance */}
@@ -186,24 +185,24 @@ export default function RolesSection() {
           <Box
             sx={{
               textAlign: 'center',
-              maxWidth: 680,
+              maxWidth: 700,
               mx: 'auto',
               mb: { xs: 5, sm: 6, md: 7 },
             }}
           >
-            {/* Apple Pill Tag */}
+            {/* Editorial Pill Tag */}
             <Box
               sx={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '6px',
-                backgroundColor: 'rgba(0, 113, 227, 0.08)',
-                border: '1px solid rgba(0, 113, 227, 0.18)',
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(20, 20, 22, 0.12)',
                 borderRadius: '9999px',
                 px: '14px',
                 py: '5px',
-                color: '#0071e3',
+                color: '#141416',
                 userSelect: 'none',
                 width: 'fit-content',
                 mx: 'auto',
@@ -214,11 +213,12 @@ export default function RolesSection() {
               <Typography
                 component="span"
                 sx={{
-                  fontSize: '0.70rem',
-                  fontWeight: 700,
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: '0.68rem',
+                  fontWeight: 600,
                   letterSpacing: '0.06em',
                   lineHeight: 1,
-                  color: '#0071e3',
+                  color: '#141416',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -231,17 +231,21 @@ export default function RolesSection() {
               variant="h2"
               component="h2"
               sx={{
-                fontWeight: 750,
-                fontSize: { xs: '1.9rem', sm: '2.35rem', md: '2.75rem' },
-                lineHeight: 1.12,
-                letterSpacing: '-0.035em',
-                color: '#1d1d1f',
+                fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                fontWeight: 800,
+                fontSize: { xs: '2rem', sm: '2.45rem', md: '2.9rem' },
+                lineHeight: 1.08,
+                letterSpacing: '-0.036em',
+                color: '#141416',
                 mb: 2,
               }}
             >
               Built for everyone who makes a{' '}
               <Box component="span" sx={{ display: { xs: 'inline', sm: 'block' } }}>
-                school work.
+                school{' '}
+                <Box component="span" className="edukra-highlight">
+                  work.
+                </Box>
               </Box>
             </Typography>
 
@@ -249,9 +253,9 @@ export default function RolesSection() {
             <Typography
               variant="body1"
               sx={{
-                color: '#6e6e73',
-                fontSize: { xs: '0.96rem', sm: '1.04rem' },
-                lineHeight: 1.55,
+                color: '#52525b',
+                fontSize: { xs: '0.96rem', sm: '1.05rem' },
+                lineHeight: 1.58,
                 maxWidth: 600,
                 mx: 'auto',
                 fontWeight: 450,
@@ -282,82 +286,100 @@ export default function RolesSection() {
             return (
               <RevealOnScroll
                 key={role.id}
-                delay={index * 0.06}
+                delay={index * 0.05}
                 threshold={0.08}
                 rootMargin="0px 0px -30px 0px"
               >
                 <Box
                   sx={{
                     backgroundColor: '#ffffff',
-                    border: '1px solid rgba(0, 0, 0, 0.06)',
-                    borderRadius: '20px',
-                    p: '22px 18px 24px 18px',
+                    border: '1px solid rgba(20, 20, 22, 0.09)',
+                    borderRadius: '22px',
+                    p: '22px 20px 24px 20px',
                     height: '100%',
-                    minHeight: '185px',
+                    minHeight: '196px',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'flex-start',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02), 0 8px 20px -4px rgba(0, 0, 0, 0.03)',
+                    boxShadow: '0 2px 10px -2px rgba(20, 20, 22, 0.03)',
                     transition:
                       'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1)',
                     '&:hover': {
                       transform: 'translateY(-4px)',
-                      borderColor: 'rgba(0, 113, 227, 0.25)',
-                      boxShadow: '0 12px 28px -6px rgba(0, 113, 227, 0.12)',
-                    },
-                    '&:active': {
-                      transform: 'scale(0.98)',
+                      borderColor: '#141416',
+                      boxShadow: '0 14px 30px -8px rgba(20, 20, 22, 0.1)',
                     },
                   }}
                 >
-                {/* Icon Box */}
-                <Box
-                  sx={{
-                    width: 42,
-                    height: 42,
-                    borderRadius: '12px',
-                    backgroundColor: 'rgba(0, 113, 227, 0.08)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#0071e3',
-                    mb: '16px',
-                    flexShrink: 0,
-                    transition: 'background-color 0.2s ease, color 0.2s ease',
-                  }}
-                >
-                  <IconComponent />
+                  {/* Top Row: Icon Box & Step Index */}
+                  <Box
+                    sx={{
+                      width: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      mb: '18px',
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 42,
+                        height: 42,
+                        borderRadius: '12px',
+                        backgroundColor: 'rgba(0, 113, 227, 0.09)',
+                        border: '1px solid rgba(0, 113, 227, 0.14)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#0071e3',
+                        flexShrink: 0,
+                      }}
+                    >
+                      <IconComponent />
+                    </Box>
+                    <Typography
+                      component="span"
+                      sx={{
+                        fontFamily: '"JetBrains Mono", monospace',
+                        fontSize: '0.72rem',
+                        fontWeight: 600,
+                        color: '#71717a',
+                      }}
+                    >
+                      0{index + 1}
+                    </Typography>
+                  </Box>
+
+                  {/* Role Title */}
+                  <Typography
+                    component="h3"
+                    sx={{
+                      fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                      fontWeight: 700,
+                      fontSize: '1.08rem',
+                      letterSpacing: '-0.02em',
+                      color: '#141416',
+                      mb: '6px',
+                      lineHeight: 1.25,
+                    }}
+                  >
+                    {role.title}
+                  </Typography>
+
+                  {/* Description */}
+                  <Typography
+                    component="p"
+                    sx={{
+                      color: '#52525b',
+                      fontSize: '0.85rem',
+                      lineHeight: 1.52,
+                      fontWeight: 450,
+                    }}
+                  >
+                    {role.description}
+                  </Typography>
                 </Box>
-
-                {/* Role Title */}
-                <Typography
-                  component="h3"
-                  sx={{
-                    fontWeight: 650,
-                    fontSize: '1.02rem',
-                    letterSpacing: '-0.02em',
-                    color: '#1d1d1f',
-                    mb: '6px',
-                    lineHeight: 1.25,
-                  }}
-                >
-                  {role.title}
-                </Typography>
-
-                {/* Description */}
-                <Typography
-                  component="p"
-                  sx={{
-                    color: '#6e6e73',
-                    fontSize: '0.84rem',
-                    lineHeight: 1.5,
-                    fontWeight: 450,
-                  }}
-                >
-                  {role.description}
-                </Typography>
-              </Box>
-            </RevealOnScroll>
+              </RevealOnScroll>
             );
           })}
         </Box>

@@ -12,20 +12,23 @@ export default function RevealOnScroll({
   variant = 'pop-up', // 'pop-up' | 'init' | 'slide-left' | 'slide-right' | 'mockup-pop'
   sx = {},
   className = '',
-  threshold = 0.08,
-  rootMargin = '0px 0px -30px 0px',
+  threshold = 0.01,
+  rootMargin = '60px 0px 60px 0px',
+  immediate = false,
   as = 'div',
   ...props
 }) {
   const [ref, inView] = useInView({ threshold, rootMargin, once: true });
   const Component = as === 'div' ? Box : as;
+  const visible = immediate || inView;
+  const clampedDelay = !immediate && delay ? Math.min(delay, 0.18) : 0;
 
   return (
     <Component
       ref={ref}
-      className={`reveal-${variant} ${inView ? 'is-visible' : ''} ${className}`}
+      className={`reveal-${variant} ${visible ? 'is-visible' : ''} ${className}`}
       sx={{
-        ...(delay ? { transitionDelay: `${delay}s` } : {}),
+        ...(clampedDelay ? { transitionDelay: `${clampedDelay}s` } : {}),
         ...sx,
       }}
       {...props}

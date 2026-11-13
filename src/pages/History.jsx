@@ -16,12 +16,12 @@ function BlueCheckIcon() {
         width: 18,
         height: 18,
         borderRadius: '50%',
-        backgroundColor: '#DAEDFF',
+        backgroundColor: '#dbeafe',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         flexShrink: 0,
-        color: '#2863AB',
+        color: '#0071e3',
       }}
     >
       <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,9 +106,9 @@ export default function History() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#FDFBF9',
-        color: '#191309',
-        fontFamily: "'Inter', sans-serif",
+        backgroundColor: '#f7f6f2',
+        color: '#141416',
+        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
       }}
     >
       <NavigationBar />
@@ -121,10 +121,10 @@ export default function History() {
           overflow: 'hidden',
           pt: { xs: 15, sm: 17, md: 20 },
           pb: { xs: 10, md: 15 },
-          backgroundColor: '#fbfcfd',
+          backgroundColor: '#f7f6f2',
           backgroundImage: `
-            radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-            radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+            radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+            radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
             radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
           `,
         }}
@@ -158,8 +158,8 @@ export default function History() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 0.8,
-                backgroundColor: '#DAEDFF',
-                color: '#1D4D87',
+                backgroundColor: '#dbeafe',
+                color: '#1d4ed8',
                 px: '13px',
                 py: '4px',
                 borderRadius: '9999px',
@@ -173,7 +173,7 @@ export default function History() {
                   fontWeight: 700,
                   letterSpacing: '0.8px',
                   textTransform: 'uppercase',
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 }}
               >
                 ABOUT
@@ -184,12 +184,12 @@ export default function History() {
             <Typography
               variant="h1"
               sx={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 fontWeight: 800,
                 fontSize: { xs: '36px', sm: '46px', md: '52px' },
                 lineHeight: 1.15,
                 letterSpacing: '-1px',
-                color: '#0B0702',
+                color: '#141416',
                 mb: 2,
               }}
             >
@@ -201,10 +201,10 @@ export default function History() {
               sx={{
                 fontSize: { xs: '15px', sm: '17px' },
                 lineHeight: '26px',
-                color: '#5B5449',
+                color: '#52525b',
                 maxWidth: '620px',
                 mx: 'auto',
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
               }}
             >
               The journey behind the platform — where it started, the problem we set out to
@@ -278,15 +278,15 @@ export default function History() {
                         width: 40,
                         height: 40,
                         borderRadius: '50%',
-                        backgroundColor: '#1E56A0',
+                        backgroundColor: '#0071e3',
                         color: '#FFFFFF',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         fontWeight: 700,
                         fontSize: '14px',
-                        fontFamily: "'Inter', sans-serif",
-                        boxShadow: '0 0 0 6px #FDFBF9', // Masks connecting line cleanly behind circle
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
+                        boxShadow: '0 0 0 6px #f7f6f2', // Masks connecting line cleanly behind circle
                       }}
                     >
                       {chap.step}
@@ -298,7 +298,7 @@ export default function History() {
                     sx={{
                       flexGrow: 1,
                       backgroundColor: '#FFFFFF',
-                      border: '1px solid #EFEBE4',
+                      border: '1px solid #e4e2dc',
                       borderRadius: '10px',
                       p: { xs: 2.5, md: '22px 18px', lg: '24px 20px' },
                       display: 'flex',
@@ -321,12 +321,12 @@ export default function History() {
                     >
                       <Typography
                         sx={{
-                          color: '#2863AB',
+                          color: '#0071e3',
                           fontWeight: 700,
                           fontSize: '12px',
                           letterSpacing: '0.5px',
                           textTransform: 'uppercase',
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         }}
                       >
                         {chap.tag}
@@ -336,7 +336,7 @@ export default function History() {
                           color: '#94A3B8',
                           fontSize: '11px',
                           fontWeight: 500,
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         }}
                       >
                         {chap.chapter}
@@ -347,11 +347,11 @@ export default function History() {
                     <Typography
                       variant="h6"
                       sx={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                         fontWeight: 700,
                         fontSize: '17px',
                         lineHeight: 1.3,
-                        color: '#191309',
+                        color: '#141416',
                         mb: 1.5,
                         minHeight: { md: '44px' }, // Harmonizes height across cards
                       }}
@@ -362,7 +362,7 @@ export default function History() {
                     {/* Description */}
                     <Typography
                       sx={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         fontSize: '13px',
                         lineHeight: 1.55,
                         color: '#64748B',
@@ -390,7 +390,7 @@ export default function History() {
                               fontSize: '12.5px',
                               fontWeight: 500,
                               color: '#475569',
-                              fontFamily: "'Inter', sans-serif",
+                              fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                               lineHeight: 1.3,
                             }}
                           >

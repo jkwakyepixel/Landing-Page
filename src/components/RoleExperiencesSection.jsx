@@ -234,7 +234,7 @@ export default function RoleExperiencesSection() {
       sx={{
         width: '100%',
         py: { xs: 8, sm: 10, md: 12 },
-        background: 'linear-gradient(180deg, #0e2952 0%, #081a36 100%)',
+        background: 'linear-gradient(180deg, #0b1b36 0%, #071124 100%)',
         position: 'relative',
         scrollMarginTop: '80px',
         color: '#ffffff',
@@ -243,9 +243,9 @@ export default function RoleExperiencesSection() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1120px',
+          maxWidth: '1240px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3, md: 4 },
+          px: { xs: 2.5, sm: 3.5, md: 5 },
         }}
       >
         {/* Header & Role Switcher */}
@@ -300,24 +300,25 @@ export default function RoleExperiencesSection() {
               variant="h2"
               component="h2"
               sx={{
-                fontWeight: 750,
-                fontSize: { xs: '1.9rem', sm: '2.4rem', md: '2.75rem' },
-                lineHeight: 1.12,
-                letterSpacing: '-0.035em',
+                fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                fontWeight: 800,
+                fontSize: { xs: '2rem', sm: '2.45rem', md: '2.9rem' },
+                lineHeight: 1.08,
+                letterSpacing: '-0.036em',
                 color: '#ffffff',
                 textAlign: 'center',
-                maxWidth: 820,
+                maxWidth: 840,
                 mx: 'auto',
                 mb: 2.2,
               }}
             >
               One platform. Different experiences
-              <Box component="span" sx={{ display: { sm: 'block' } }}>
+              <Box component="span" sx={{ display: { sm: 'block' }, color: '#60a5fa' }}>
                 for every role.
               </Box>
             </Typography>
 
-            {/* Interactive Apple Segmented Control Switcher Pill */}
+            {/* Interactive Segmented Control Switcher Pill */}
             <Box
               sx={{
                 width: '100%',
@@ -333,6 +334,8 @@ export default function RoleExperiencesSection() {
               }}
             >
               <Box
+                role="tablist"
+                aria-label="Campus role experiences"
                 sx={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -340,7 +343,7 @@ export default function RoleExperiencesSection() {
                   p: '4px',
                   borderRadius: '9999px',
                   backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  border: '1px solid rgba(255, 255, 255, 0.16)',
                   backdropFilter: 'blur(20px) saturate(180%)',
                   WebkitBackdropFilter: 'blur(20px) saturate(180%)',
                   boxShadow: '0 4px 16px rgba(0, 0, 0, 0.18)',
@@ -357,31 +360,33 @@ export default function RoleExperiencesSection() {
                     <Box
                       key={roleKey}
                       component="button"
+                      type="button"
+                      role="tab"
+                      aria-selected={isActive}
                       onClick={() => setActiveRole(roleKey)}
                       sx={{
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '7px',
                         px: { xs: '14px', sm: '18px' },
-                        py: '7px',
+                        py: '8px',
                         borderRadius: '9999px',
                         border: 'none',
-                        backgroundColor: isActive ? '#ffffff' : 'transparent',
-                        color: isActive ? '#1d1d1f' : 'rgba(255, 255, 255, 0.72)',
-                        fontWeight: isActive ? 650 : 500,
-                        fontSize: '0.84rem',
+                        backgroundColor: isActive ? '#0071e3' : 'transparent',
+                        color: isActive ? '#ffffff' : 'rgba(255, 255, 255, 0.78)',
+                        fontWeight: isActive ? 700 : 500,
+                        fontSize: '0.85rem',
                         letterSpacing: '-0.01em',
                         cursor: 'pointer',
-                        boxShadow: isActive ? '0 2px 10px rgba(0, 0, 0, 0.15)' : 'none',
+                        boxShadow: isActive ? '0 4px 14px rgba(0, 113, 227, 0.38)' : 'none',
                         transform: isActive ? 'scale(1.02)' : 'scale(1)',
-                        transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                        outline: 'none',
+                        transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                         whiteSpace: 'nowrap',
                         '&:hover': {
-                          color: isActive ? '#1d1d1f' : '#ffffff',
+                          color: '#ffffff',
                           backgroundColor: isActive
-                            ? '#ffffff'
-                            : 'rgba(255, 255, 255, 0.08)',
+                            ? '#0071e3'
+                            : 'rgba(255, 255, 255, 0.1)',
                         },
                         '&:active': {
                           transform: 'scale(0.97)',

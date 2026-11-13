@@ -30,14 +30,14 @@ export function useInView(options = {}) {
       },
       {
         threshold: options.threshold ?? 0.01,
-        rootMargin: options.rootMargin ?? '0px',
+        rootMargin: options.rootMargin ?? '60px 0px 60px 0px',
       }
     );
 
     observer.observe(el);
 
     return () => {
-      if (el) observer.unobserve(el);
+      observer.disconnect();
     };
   }, [options.threshold, options.rootMargin, options.once]);
 

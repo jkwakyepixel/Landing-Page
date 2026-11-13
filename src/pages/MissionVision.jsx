@@ -112,7 +112,7 @@ const goals = [
         height="20"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#2863AB"
+        stroke="#0071e3"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -132,7 +132,7 @@ const goals = [
         height="20"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#2863AB"
+        stroke="#0071e3"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -152,7 +152,7 @@ const goals = [
         height="20"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#2863AB"
+        stroke="#0071e3"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -173,7 +173,7 @@ const goals = [
         height="20"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#2863AB"
+        stroke="#0071e3"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -194,7 +194,7 @@ const goals = [
         height="20"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#2863AB"
+        stroke="#0071e3"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -215,7 +215,7 @@ const goals = [
         height="20"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#2863AB"
+        stroke="#0071e3"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -238,9 +238,9 @@ export default function MissionVision() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#FDFBF9',
-        color: '#0B0702',
-        fontFamily: "'Inter', sans-serif",
+        backgroundColor: '#f7f6f2',
+        color: '#141416',
+        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
         overflowX: 'hidden',
         position: 'relative',
       }}
@@ -255,10 +255,10 @@ export default function MissionVision() {
           overflow: 'hidden',
           pt: { xs: 15, sm: 17, md: 20 },
           pb: { xs: 8, md: 12 },
-          backgroundColor: '#fbfcfd',
+          backgroundColor: '#f7f6f2',
           backgroundImage: `
-            radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-            radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+            radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+            radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
             radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
           `,
         }}
@@ -304,15 +304,15 @@ export default function MissionVision() {
                 px: '14px',
                 py: '4.5px',
                 borderRadius: '9999px',
-                backgroundColor: '#DAEDFF',
-                color: '#1D4D87',
+                backgroundColor: '#dbeafe',
+                color: '#1d4ed8',
                 mb: 2.5,
               }}
             >
               <PurposeBadgeIcon />
               <Typography
                 sx={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   fontSize: '11.5px',
                   fontWeight: 700,
                   letterSpacing: '0.8px',
@@ -328,12 +328,12 @@ export default function MissionVision() {
             <Typography
               variant="h1"
               sx={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 fontWeight: 800,
                 fontSize: { xs: '32px', sm: '42px', md: '48px', lg: '52px' },
                 lineHeight: { xs: '38px', sm: '48px', md: '56px', lg: '60px' },
                 letterSpacing: '-1.1px',
-                color: '#0B0702',
+                color: '#141416',
                 mb: 2,
                 textAlign: 'center',
               }}
@@ -344,11 +344,11 @@ export default function MissionVision() {
             {/* Subtitle */}
             <Typography
               sx={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 fontWeight: 400,
                 fontSize: { xs: '15px', sm: '16.5px', md: '17px' },
                 lineHeight: '26px',
-                color: '#5B5449',
+                color: '#52525b',
                 textAlign: 'center',
                 maxWidth: '640px',
                 mx: 'auto',
@@ -401,8 +401,8 @@ export default function MissionVision() {
                         width: 42,
                         height: 42,
                         borderRadius: '10px',
-                        backgroundColor: '#DAEDFF',
-                        color: '#1D4D87',
+                        backgroundColor: '#dbeafe',
+                        color: '#1d4ed8',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -414,12 +414,12 @@ export default function MissionVision() {
                     <Box>
                       <Typography
                         sx={{
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           fontSize: '11px',
                           fontWeight: 700,
                           letterSpacing: '0.06em',
                           textTransform: 'uppercase',
-                          color: '#1D4D87',
+                          color: '#1d4ed8',
                           lineHeight: 1.2,
                         }}
                       >
@@ -428,11 +428,11 @@ export default function MissionVision() {
                       <Typography
                         variant="h3"
                         sx={{
-                          fontFamily: "'Sora', sans-serif",
+                          fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                           fontWeight: 800,
                           fontSize: { xs: '19px', sm: '22px' },
                           lineHeight: 1.25,
-                          color: '#0B0702',
+                          color: '#141416',
                           mt: 0.3,
                         }}
                       >
@@ -452,7 +452,7 @@ export default function MissionVision() {
                   >
                     <Typography
                       sx={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         fontWeight: 450,
                         fontSize: '14.5px',
                         lineHeight: '23px',
@@ -492,8 +492,8 @@ export default function MissionVision() {
                         width: 42,
                         height: 42,
                         borderRadius: '10px',
-                        backgroundColor: '#DAEDFF',
-                        color: '#1D4D87',
+                        backgroundColor: '#dbeafe',
+                        color: '#1d4ed8',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -505,12 +505,12 @@ export default function MissionVision() {
                     <Box>
                       <Typography
                         sx={{
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           fontSize: '11px',
                           fontWeight: 700,
                           letterSpacing: '0.06em',
                           textTransform: 'uppercase',
-                          color: '#1D4D87',
+                          color: '#1d4ed8',
                           lineHeight: 1.2,
                         }}
                       >
@@ -519,11 +519,11 @@ export default function MissionVision() {
                       <Typography
                         variant="h3"
                         sx={{
-                          fontFamily: "'Sora', sans-serif",
+                          fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                           fontWeight: 800,
                           fontSize: { xs: '19px', sm: '22px' },
                           lineHeight: 1.25,
-                          color: '#0B0702',
+                          color: '#141416',
                           mt: 0.3,
                         }}
                       >
@@ -543,7 +543,7 @@ export default function MissionVision() {
                   >
                     <Typography
                       sx={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         fontWeight: 450,
                         fontSize: '14.5px',
                         lineHeight: '23px',
@@ -591,15 +591,15 @@ export default function MissionVision() {
                 px: '14px',
                 py: '4px',
                 borderRadius: '9999px',
-                backgroundColor: '#DAEDFF',
-                color: '#1D4D87',
+                backgroundColor: '#dbeafe',
+                color: '#1d4ed8',
                 mb: 2,
               }}
             >
               <GoalsBadgeIcon />
               <Typography
                 sx={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   fontSize: '11.5px',
                   fontWeight: 700,
                   letterSpacing: '0.8px',
@@ -615,12 +615,12 @@ export default function MissionVision() {
             <Typography
               variant="h2"
               sx={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: { xs: '26px', sm: '32px', md: '36px' },
                 lineHeight: { xs: '32px', sm: '38px', md: '42px' },
                 letterSpacing: '-0.7px',
-                color: '#0B0702',
+                color: '#141416',
                 mb: 1.5,
                 textAlign: 'center',
               }}
@@ -631,11 +631,11 @@ export default function MissionVision() {
             {/* Subtitle */}
             <Typography
               sx={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 fontWeight: 400,
                 fontSize: { xs: '15px', sm: '16px' },
                 lineHeight: '24px',
-                color: '#5B5449',
+                color: '#52525b',
                 textAlign: 'center',
                 maxWidth: '560px',
                 mx: 'auto',
@@ -702,11 +702,11 @@ export default function MissionVision() {
                   <Typography
                     variant="h4"
                     sx={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                       fontWeight: 700,
                       fontSize: '16.5px',
                       lineHeight: '22px',
-                      color: '#0B0702',
+                      color: '#141416',
                       mb: 1.2,
                     }}
                   >
@@ -716,11 +716,11 @@ export default function MissionVision() {
                   {/* Description */}
                   <Typography
                     sx={{
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                       fontWeight: 400,
                       fontSize: '13.5px',
                       lineHeight: '21px',
-                      color: '#5B5449',
+                      color: '#52525b',
                     }}
                   >
                     {goal.description}
@@ -756,14 +756,14 @@ export default function MissionVision() {
                 position: 'relative',
                 overflow: 'hidden',
                 background:
-                  'linear-gradient(108deg, #1A4E8C 0%, #2563EB 38%, #3A83CE 62%, #D97706 100%)',
+                  'linear-gradient(125deg, #0b1222 0%, #1d4ed8 46%, #0071e3 100%)',
                 boxShadow: '0 20px 48px -10px rgba(30, 86, 160, 0.28)',
               }}
             >
               <Typography
                 variant="h2"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: { xs: '24px', sm: '30px', md: '34px' },
                   lineHeight: 1.25,
@@ -802,7 +802,7 @@ export default function MissionVision() {
                     height: '44px',
                     px: 3,
                     borderRadius: '9999px',
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     fontWeight: 600,
                     fontSize: '14px',
                     textTransform: 'none',
@@ -826,7 +826,7 @@ export default function MissionVision() {
                   }}
                   sx={{
                     color: '#FFFFFF',
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     fontWeight: 500,
                     fontSize: '14.5px',
                     textTransform: 'none',

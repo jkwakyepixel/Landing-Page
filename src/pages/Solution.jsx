@@ -314,13 +314,13 @@ export default function Solution() {
       {/* Category Label */}
       <Typography
         sx={{
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
           fontWeight: 600,
           fontSize: '12px',
           lineHeight: '16px',
           letterSpacing: '0.6px',
           textTransform: 'uppercase',
-          color: '#2863AB',
+          color: '#0071e3',
           mb: 1.2,
         }}
       >
@@ -331,12 +331,12 @@ export default function Solution() {
       <Typography
         variant="h3"
         sx={{
-          fontFamily: "'Sora', sans-serif",
+          fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
           fontWeight: 700,
           fontSize: { xs: '24px', sm: '28px', md: '30px' },
           lineHeight: { xs: '30px', sm: '34px', md: '36px' },
           letterSpacing: '-0.6px',
-          color: '#0B0702',
+          color: '#141416',
           mb: 2,
         }}
       >
@@ -346,11 +346,11 @@ export default function Solution() {
       {/* Description */}
       <Typography
         sx={{
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
           fontWeight: 400,
           fontSize: '16px',
           lineHeight: '26px',
-          color: '#5B5449',
+          color: '#52525b',
           mb: 3.5,
         }}
       >
@@ -373,18 +373,18 @@ export default function Solution() {
                 width: 24,
                 height: 24,
                 borderRadius: '9999px',
-                backgroundColor: '#DAEDFF',
+                backgroundColor: '#dbeafe',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexShrink: 0,
               }}
             >
-              <CheckRoundedIcon sx={{ fontSize: 13, color: '#1D4D87' }} />
+              <CheckRoundedIcon sx={{ fontSize: 13, color: '#1d4ed8' }} />
             </Box>
             <Typography
               sx={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 fontWeight: 400,
                 fontSize: '14px',
                 lineHeight: '20px',
@@ -408,10 +408,10 @@ export default function Solution() {
         sx={{
           height: '42px',
           px: '20px',
-          backgroundColor: '#FDFBF9',
+          backgroundColor: '#f7f6f2',
           border: '1px solid #E0DAD0',
           borderRadius: '6px',
-          fontFamily: "'Inter', sans-serif",
+          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
           fontWeight: 600,
           fontSize: '14px',
           lineHeight: '20px',
@@ -419,7 +419,7 @@ export default function Solution() {
           textTransform: 'none',
           transition: 'all 0.2s ease',
           '&:hover': {
-            backgroundColor: '#F7F5F1',
+            backgroundColor: '#f2f0ea',
             borderColor: '#C5BDB0',
             transform: 'translateY(-1px)',
           },
@@ -435,8 +435,8 @@ export default function Solution() {
       sx={{
         width: '100%',
         minHeight: '100vh',
-        backgroundColor: '#FDFBF9',
-        color: '#0B0702',
+        backgroundColor: '#f7f6f2',
+        color: '#141416',
         overflowX: 'hidden',
         position: 'relative',
       }}
@@ -451,10 +451,10 @@ export default function Solution() {
           overflow: 'hidden',
           pt: { xs: 16, sm: 18, md: 20 },
           pb: { xs: 8, md: 12 },
-          backgroundColor: '#fbfcfd',
+          backgroundColor: '#f7f6f2',
           backgroundImage: `
-            radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-            radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+            radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+            radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
             radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
           `,
         }}
@@ -497,18 +497,18 @@ export default function Solution() {
                 px: '14px',
                 py: '4px',
                 borderRadius: '9999px',
-                backgroundColor: '#DAEDFF',
+                backgroundColor: '#dbeafe',
                 mb: 2.8,
               }}
             >
-              <VisibilityRoundedIcon sx={{ fontSize: 13, color: '#1D4D87' }} />
+              <VisibilityRoundedIcon sx={{ fontSize: 13, color: '#1d4ed8' }} />
               <Typography
                 sx={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   fontSize: '12px',
                   fontWeight: 600,
                   letterSpacing: '0.6px',
-                  color: '#1D4D87',
+                  color: '#1d4ed8',
                   textTransform: 'uppercase',
                   lineHeight: '16px',
                 }}
@@ -521,12 +521,12 @@ export default function Solution() {
             <Typography
               variant="h1"
               sx={{
-                fontFamily: "'Sora', sans-serif",
+                fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                 fontWeight: 800,
                 fontSize: { xs: '34px', sm: '42px', md: '48px' },
                 lineHeight: { xs: '40px', sm: '48px', md: '52px' },
                 letterSpacing: '-0.96px',
-                color: '#0B0702',
+                color: '#141416',
                 mb: 2.5,
               }}
             >
@@ -536,11 +536,11 @@ export default function Solution() {
             {/* Subtitle */}
             <Typography
               sx={{
-                fontFamily: "'Inter', sans-serif",
+                fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 fontWeight: 400,
                 fontSize: { xs: '16px', sm: '18px' },
                 lineHeight: '28px',
-                color: '#5B5449',
+                color: '#52525b',
                 maxWidth: '680px',
                 mx: 'auto',
               }}
@@ -577,18 +577,18 @@ export default function Solution() {
                   px: '14px',
                   py: '4px',
                   borderRadius: '9999px',
-                  backgroundColor: '#DAEDFF',
+                  backgroundColor: '#dbeafe',
                   mb: 2.2,
                 }}
               >
-                <DashboardRoundedIcon sx={{ fontSize: 13, color: '#1D4D87' }} />
+                <DashboardRoundedIcon sx={{ fontSize: 13, color: '#1d4ed8' }} />
                 <Typography
                   sx={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     fontSize: '12px',
                     fontWeight: 600,
                     letterSpacing: '0.6px',
-                    color: '#1D4D87',
+                    color: '#1d4ed8',
                     textTransform: 'uppercase',
                     lineHeight: '16px',
                   }}
@@ -601,12 +601,12 @@ export default function Solution() {
               <Typography
                 variant="h2"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: { xs: '26px', sm: '32px', md: '36px' },
                   lineHeight: { xs: '34px', sm: '38px', md: '42px' },
                   letterSpacing: '-0.72px',
-                  color: '#0B0702',
+                  color: '#141416',
                   maxWidth: '650px',
                   mb: 4,
                 }}
@@ -617,7 +617,7 @@ export default function Solution() {
               {/* Interactive Role Switcher Tabs */}
               <Box
                 sx={{
-                  backgroundColor: '#F7F5F1',
+                  backgroundColor: '#f2f0ea',
                   borderRadius: '9999px',
                   p: '4px',
                   display: 'inline-flex',
@@ -639,7 +639,7 @@ export default function Solution() {
                         <RoleIcon
                           sx={{
                             fontSize: '16px !important',
-                            color: isActive ? '#FDFBF9' : '#5B5449',
+                            color: isActive ? '#f7f6f2' : '#52525b',
                           }}
                         />
                       }
@@ -648,9 +648,9 @@ export default function Solution() {
                         px: { xs: '14px', sm: '20px' },
                         py: '7px',
                         height: '36px',
-                        backgroundColor: isActive ? '#2863AB' : 'transparent',
-                        color: isActive ? '#FDFBF9' : '#5B5449',
-                        fontFamily: "'Inter', sans-serif",
+                        backgroundColor: isActive ? '#0071e3' : 'transparent',
+                        color: isActive ? '#f7f6f2' : '#52525b',
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         fontWeight: 500,
                         fontSize: '14px',
                         lineHeight: '20px',
@@ -691,12 +691,12 @@ export default function Solution() {
                     <Typography
                       variant="h3"
                       sx={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                         fontWeight: 700,
                         fontSize: { xs: '26px', sm: '30px', md: '32px' },
                         lineHeight: { xs: '32px', sm: '36px', md: '38px' },
                         letterSpacing: '-0.6px',
-                        color: '#0B0702',
+                        color: '#141416',
                         mb: 2,
                         mt: { xs: 0, md: '2px' },
                       }}
@@ -706,11 +706,11 @@ export default function Solution() {
 
                     <Typography
                       sx={{
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         fontWeight: 400,
                         fontSize: '16px',
                         lineHeight: '26px',
-                        color: '#5B5449',
+                        color: '#52525b',
                         mb: 3.5,
                         maxWidth: '460px',
                       }}
@@ -734,7 +734,7 @@ export default function Solution() {
                               width: 24,
                               height: 24,
                               borderRadius: '9999px',
-                              backgroundColor: '#DAEDFF',
+                              backgroundColor: '#dbeafe',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
@@ -742,12 +742,12 @@ export default function Solution() {
                             }}
                           >
                             <CheckRoundedIcon
-                              sx={{ fontSize: 14, color: '#1D4D87' }}
+                              sx={{ fontSize: 14, color: '#1d4ed8' }}
                             />
                           </Box>
                           <Typography
                             sx={{
-                              fontFamily: "'Inter', sans-serif",
+                              fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                               fontWeight: 400,
                               fontSize: '14px',
                               lineHeight: '20px',
@@ -808,7 +808,7 @@ export default function Solution() {
           py: { xs: 10, md: 15 },
           backgroundColor: '#FFFFFF',
           position: 'relative',
-          borderTop: '1px solid #EFEBE4',
+          borderTop: '1px solid #e4e2dc',
         }}
       >
         <Container
@@ -835,18 +835,18 @@ export default function Solution() {
                   px: '14px',
                   py: '4px',
                   borderRadius: '9999px',
-                  backgroundColor: '#DAEDFF',
+                  backgroundColor: '#dbeafe',
                   mb: 2.2,
                 }}
               >
-                <LayersRoundedIcon sx={{ fontSize: 13, color: '#1D4D87' }} />
+                <LayersRoundedIcon sx={{ fontSize: 13, color: '#1d4ed8' }} />
                 <Typography
                   sx={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                     fontSize: '12px',
                     fontWeight: 600,
                     letterSpacing: '0.6px',
-                    color: '#1D4D87',
+                    color: '#1d4ed8',
                     textTransform: 'uppercase',
                     lineHeight: '16px',
                   }}
@@ -859,12 +859,12 @@ export default function Solution() {
               <Typography
                 variant="h2"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: { xs: '28px', sm: '34px', md: '36px' },
                   lineHeight: { xs: '34px', sm: '38px', md: '40px' },
                   letterSpacing: '-0.72px',
-                  color: '#0B0702',
+                  color: '#141416',
                   mb: 2,
                 }}
               >
@@ -873,11 +873,11 @@ export default function Solution() {
 
               <Typography
                 sx={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   fontWeight: 400,
                   fontSize: { xs: '15px', sm: '16px' },
                   lineHeight: '24px',
-                  color: '#5B5449',
+                  color: '#52525b',
                   maxWidth: '560px',
                 }}
               >

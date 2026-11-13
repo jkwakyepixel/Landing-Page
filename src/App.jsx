@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 import theme from './theme/theme';
 import NavigationBar from './components/NavigationBar';
 import HeroSection from './components/HeroSection';
+import ImpactProofBand from './components/ImpactProofBand';
 import RolesSection from './components/RolesSection';
 import ProblemSolutionSection from './components/ProblemSolutionSection';
 import CapabilitiesSection from './components/CapabilitiesSection';
@@ -117,7 +118,7 @@ function App() {
         <Box
           sx={{
             minHeight: '100vh',
-            backgroundColor: '#ffffff',
+            backgroundColor: '#f7f6f2',
             color: 'text.primary',
             display: 'flex',
             flexDirection: 'column',
@@ -127,6 +128,7 @@ function App() {
         >
           <NavigationBar />
           <HeroSection />
+          <ImpactProofBand />
           <RolesSection />
           <ProblemSolutionSection />
           <CapabilitiesSection />

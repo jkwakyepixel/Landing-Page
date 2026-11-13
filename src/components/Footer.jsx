@@ -141,9 +141,9 @@ export default function Footer() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1120px',
+          maxWidth: '1240px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3, md: 4 },
+          px: { xs: 2.5, sm: 3.5, md: 5 },
         }}
       >
         {/* Top Grid Area (Brand Info + 4 Link Columns) */}
@@ -177,14 +177,29 @@ export default function Footer() {
                 variant="h6"
                 component="span"
                 sx={{
-                  fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif',
-                  fontWeight: 750,
-                  fontSize: '1.15rem',
-                  letterSpacing: '-0.03em',
+                  fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                  fontWeight: 800,
+                  fontSize: '1.22rem',
+                  letterSpacing: '-0.035em',
                   color: '#ffffff',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
                 }}
               >
                 Edukra
+                <Box
+                  component="span"
+                  aria-hidden="true"
+                  sx={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: '50%',
+                    backgroundColor: '#38bdf8',
+                    display: 'inline-block',
+                    mt: 0.3,
+                  }}
+                />
               </Typography>
             </Box>
 
@@ -478,6 +493,26 @@ export default function Footer() {
               }}
             >
               Terms of Service
+            </Link>
+            <span>·</span>
+            <Link
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              sx={{
+                color: '#60a5fa',
+                textDecoration: 'none',
+                fontWeight: 600,
+                transition: 'opacity 0.2s ease',
+                '&:hover': {
+                  color: '#93c5fd',
+                  textDecoration: 'underline',
+                },
+              }}
+            >
+              Back to top ↑
             </Link>
           </Typography>
         </Stack>

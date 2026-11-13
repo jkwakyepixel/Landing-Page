@@ -21,18 +21,92 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
-  background-color: #ffffff;
-  color: #1d1d1f;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  background-color: #f7f6f2;
+  color: #141416;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Apple-style Custom Selection */
+/* Custom Selection */
 ::selection {
-  background-color: rgba(0, 113, 227, 0.2);
-  color: #1d1d1f;
+  background-color: rgba(147, 197, 253, 0.45);
+  color: #141416;
+}
+
+/* Accessible keyboard focus indicator & tactile press feedback (Apple Design §1) */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #0071e3;
+  outline-offset: 2px;
+}
+
+button:not(:disabled):active,
+[role="button"]:not([aria-disabled="true"]):active,
+[role="tab"]:active {
+  transform: scale(0.975);
+  transition: transform 100ms ease-out;
+}
+
+/* Editorial Highlight Mark */
+.edukra-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+  padding: 0 0.08em;
+}
+
+.edukra-highlight::before {
+  content: '';
+  position: absolute;
+  left: -0.04em;
+  right: -0.04em;
+  bottom: 0.06em;
+  height: 0.34em;
+  background: linear-gradient(120deg, #dbeafe 0%, #93c5fd 100%);
+  border-radius: 6px;
+  z-index: -1;
+  transform: rotate(-0.8deg);
+}
+
+/* Editorial Trust Marquee */
+@keyframes edukraMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.edukra-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: edukraMarquee 32s linear infinite;
+}
+
+.edukra-marquee-wrap:hover .edukra-marquee-track,
+.edukra-marquee-wrap:focus-within .edukra-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes edukraSpinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.edukra-seal-spin {
+  animation: edukraSpinSlow 24s linear infinite;
 }
 
 /* ==========================================================================
@@ -136,43 +210,82 @@ button:active,
 }
 
 /* ==========================================================================
-   SCROLL REVEAL (Fast, Fluid, Interruptible)
+   SCROLL REVEAL (Critically Damped, Compositor-Only, Zero Overshoot)
    ========================================================================== */
 
 .reveal-init {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(14px);
+  transition:
+    opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
 .reveal-init.is-visible {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
 }
 
 .reveal-pop-up {
   opacity: 0;
-  transform: translateY(24px) scale(0.985);
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(18px) scale(0.99);
+  transition:
+    opacity 0.46s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
 .reveal-pop-up.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+  will-change: auto;
+}
+
+.reveal-slide-left {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition:
+    opacity 0.46s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-slide-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  will-change: auto;
+}
+
+.reveal-slide-right {
+  opacity: 0;
+  transform: translateX(18px);
+  transition:
+    opacity 0.46s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-slide-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  will-change: auto;
 }
 
 .reveal-mockup-pop {
   opacity: 0;
-  transform: translateY(32px) scale(0.975);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px) scale(0.985);
+  transition:
+    opacity 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.52s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
 .reveal-mockup-pop.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+  will-change: auto;
 }
 
 /* Fluid tab switch transition */
@@ -218,27 +331,47 @@ section {
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  html, body {
     scroll-behavior: auto !important;
   }
-  
+
   .reveal-init,
   .reveal-pop-up,
+  .reveal-slide-left,
+  .reveal-slide-right,
   .reveal-mockup-pop {
-    opacity: 1 !important;
+    opacity: 0;
+    transform: none !important;
+    transition: opacity 200ms ease !important;
+  }
+
+  .reveal-init.is-visible,
+  .reveal-pop-up.is-visible,
+  .reveal-slide-left.is-visible,
+  .reveal-slide-right.is-visible,
+  .reveal-mockup-pop.is-visible {
+    opacity: 1;
     transform: none !important;
   }
-  
+
+  .toggle-content-anim,
+  .mockup-swap-anim {
+    animation: none !important;
+  }
+
   .float-badge-1,
   .float-badge-2,
   .float-badge-3,
-  .float-badge-4 {
+  .float-badge-4,
+  .edukra-marquee-track,
+  .edukra-seal-spin {
     animation: none !important;
+  }
+
+  button:not(:disabled):active,
+  [role="button"]:not([aria-disabled="true"]):active,
+  [role="tab"]:active {
+    transform: none !important;
   }
 }
 

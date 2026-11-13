@@ -9,87 +9,89 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#0071e3', // Apple signature vibrant blue
+      main: '#0071e3', // Edukra trust blue
       dark: '#0058b0',
       light: '#e8f2fc',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#f5f5f7', // Apple warm neutral gray
-      dark: '#e5e5ea',
+      main: '#f7f6f2', // Warm editorial alabaster canvas
+      dark: '#eceae3',
       light: '#ffffff',
-      contrastText: '#1d1d1f',
+      contrastText: '#141416',
     },
     text: {
-      primary: '#1d1d1f', // Apple deep near-black (softer than #000, high contrast)
-      secondary: '#6e6e73', // Apple classic secondary typography gray
+      primary: '#141416', // Warm obsidian ink (high contrast, softer than #000)
+      secondary: '#52525b', // High-contrast muted slate (>= 6:1 on alabaster/white)
     },
     background: {
-      default: '#ffffff',
+      default: '#f7f6f2',
       paper: '#ffffff',
     },
-    divider: 'rgba(0, 0, 0, 0.06)',
+    divider: 'rgba(20, 20, 22, 0.08)',
   },
   typography: {
     fontFamily: [
+      '"Plus Jakarta Sans"',
       '-apple-system',
       'BlinkMacSystemFont',
-      '"SF Pro Display"',
       '"SF Pro Text"',
-      '"Plus Jakarta Sans"',
-      '"Inter"',
       'system-ui',
       'sans-serif',
     ].join(','),
-    // Apple typography: negative tracking on large text, tight leading
+    // Editorial Display Headings: Bricolage Grotesque with tight negative tracking
     h1: {
+      fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif',
       fontWeight: 800,
-      letterSpacing: '-0.038em',
-      lineHeight: 1.06,
-      color: '#1d1d1f',
+      letterSpacing: '-0.04em',
+      lineHeight: 1.03,
+      color: '#141416',
     },
     h2: {
-      fontWeight: 750,
-      letterSpacing: '-0.030em',
-      lineHeight: 1.12,
-      color: '#1d1d1f',
+      fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif',
+      fontWeight: 800,
+      letterSpacing: '-0.032em',
+      lineHeight: 1.08,
+      color: '#141416',
     },
     h3: {
+      fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif',
       fontWeight: 700,
-      letterSpacing: '-0.025em',
-      lineHeight: 1.18,
-      color: '#1d1d1f',
+      letterSpacing: '-0.026em',
+      lineHeight: 1.15,
+      color: '#141416',
     },
     h4: {
+      fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", system-ui, sans-serif',
       fontWeight: 700,
       letterSpacing: '-0.020em',
-      lineHeight: 1.24,
-      color: '#1d1d1f',
+      lineHeight: 1.22,
+      color: '#141416',
     },
     h5: {
       fontWeight: 650,
       letterSpacing: '-0.015em',
       lineHeight: 1.3,
-      color: '#1d1d1f',
+      color: '#141416',
     },
     h6: {
       fontWeight: 650,
       letterSpacing: '-0.010em',
       lineHeight: 1.35,
-      color: '#1d1d1f',
+      color: '#141416',
     },
-    // Body typography: comfortable leading, optical kerning near 0
+    // Body typography: comfortable leading, crisp optical contrast
     body1: {
       fontSize: '1.0625rem',
       lineHeight: 1.625,
       letterSpacing: '-0.011em',
-      color: '#424245',
+      color: '#3f3f46',
     },
     body2: {
       fontSize: '0.9375rem',
       lineHeight: 1.55,
       letterSpacing: '-0.006em',
-      color: '#6e6e73',
+      color: '#52525b',
     },
     button: {
       textTransform: 'none',

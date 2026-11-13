@@ -73,6 +73,38 @@ const connectedModules = [
   'Communication',
 ];
 
+// 4-step workflow milestones inspired by editorial lifecycle timelines
+const workflowTimeline = [
+  {
+    step: '01',
+    stage: 'Enrolled',
+    time: 'DAY 1 · 08:15',
+    detail: 'Student profile created once; guardian linked automatically.',
+    highlight: false,
+  },
+  {
+    step: '02',
+    stage: 'Attended',
+    time: 'DAILY · 08:30',
+    detail: 'Teacher marks class roll in seconds; instant parent push.',
+    highlight: false,
+  },
+  {
+    step: '03',
+    stage: 'Settled',
+    time: 'FEE PAY · LIVE',
+    detail: 'MoMo & bank fee receipts match directly to student ledger.',
+    highlight: false,
+  },
+  {
+    step: '04',
+    stage: 'Reported',
+    time: 'TERM END · 1-CLICK',
+    detail: 'Continuous assessment and final report cards published.',
+    highlight: true,
+  },
+];
+
 export default function ProblemSolutionSection() {
   return (
     <Box
@@ -81,7 +113,9 @@ export default function ProblemSolutionSection() {
       sx={{
         width: '100%',
         py: { xs: 8, sm: 10, md: 12 },
-        backgroundColor: '#f5f5f7', // Apple neutral light canvas
+        backgroundColor: '#f2f0ea',
+        borderTop: '1px solid rgba(20, 20, 22, 0.07)',
+        borderBottom: '1px solid rgba(20, 20, 22, 0.07)',
         position: 'relative',
         scrollMarginTop: '80px',
       }}
@@ -89,9 +123,9 @@ export default function ProblemSolutionSection() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1120px',
+          maxWidth: '1240px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3, md: 4 },
+          px: { xs: 2.5, sm: 3.5, md: 5 },
         }}
       >
         {/* Section Header */}
@@ -104,19 +138,19 @@ export default function ProblemSolutionSection() {
               mb: { xs: 5, sm: 6, md: 7 },
             }}
           >
-            {/* "THE PROBLEM" Overline Pill Tag - Compact & centered */}
+            {/* "THE PROBLEM" Overline Pill Tag */}
             <Box
               sx={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '6px',
-                backgroundColor: 'rgba(0, 113, 227, 0.08)',
-                border: '1px solid rgba(0, 113, 227, 0.18)',
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(20, 20, 22, 0.12)',
                 borderRadius: '9999px',
                 px: '14px',
                 py: '5px',
-                color: '#0071e3',
+                color: '#141416',
                 userSelect: 'none',
                 width: 'fit-content',
                 mx: 'auto',
@@ -127,11 +161,12 @@ export default function ProblemSolutionSection() {
               <Typography
                 component="span"
                 sx={{
-                  fontSize: '0.70rem',
-                  fontWeight: 700,
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: '0.68rem',
+                  fontWeight: 600,
                   letterSpacing: '0.06em',
                   lineHeight: 1,
-                  color: '#0071e3',
+                  color: '#141416',
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -144,19 +179,23 @@ export default function ProblemSolutionSection() {
               variant="h2"
               component="h2"
               sx={{
-                fontSize: { xs: '1.9rem', sm: '2.35rem', md: '2.75rem' },
-                fontWeight: 750,
-                lineHeight: 1.12,
-                letterSpacing: '-0.035em',
-                color: '#1d1d1f',
+                fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                fontSize: { xs: '2rem', sm: '2.45rem', md: '2.9rem' },
+                fontWeight: 800,
+                lineHeight: 1.08,
+                letterSpacing: '-0.036em',
+                color: '#141416',
                 textAlign: 'center',
-                maxWidth: 680,
+                maxWidth: 700,
                 mx: 'auto',
               }}
             >
               Schools shouldn't have to run on{' '}
               <Box component="span" sx={{ display: { xs: 'inline', sm: 'block' } }}>
-                disconnected systems.
+                <Box component="span" className="edukra-highlight">
+                  disconnected
+                </Box>{' '}
+                systems.
               </Box>
             </Typography>
           </Box>
@@ -418,6 +457,139 @@ export default function ProblemSolutionSection() {
           </RevealOnScroll>
         </Box>
 
+        {/* Editorial 4-Step Connected Lifecycle Card (Inspired by Verso Timeline Card) */}
+        <RevealOnScroll variant="pop-up" delay={0.08}>
+          <Box
+            sx={{
+              mt: '24px',
+              backgroundColor: '#ffffff',
+              border: '1px solid rgba(20, 20, 22, 0.09)',
+              borderRadius: '24px',
+              p: { xs: '24px 20px', sm: '30px 28px', md: '34px 36px' },
+              boxShadow: '0 4px 20px -4px rgba(20, 20, 22, 0.04)',
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: { xs: 'flex-start', sm: 'center' },
+                flexDirection: { xs: 'column', sm: 'row' },
+                gap: 1.5,
+                mb: { xs: 3, md: 3.5 },
+              }}
+            >
+              <Box
+                component="span"
+                sx={{
+                  px: 1.3,
+                  py: 0.45,
+                  borderRadius: '8px',
+                  backgroundColor: 'rgba(0, 113, 227, 0.1)',
+                  color: '#0071e3',
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: '0.76rem',
+                  fontWeight: 700,
+                }}
+              >
+                #TERM-SYNC
+              </Box>
+              <Typography
+                component="h3"
+                sx={{
+                  fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                  fontWeight: 700,
+                  fontSize: { xs: '1.12rem', md: '1.25rem' },
+                  letterSpacing: '-0.02em',
+                  color: '#141416',
+                }}
+              >
+                From admission to closing day, without duplicate spreadsheets
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' },
+                gap: { xs: 3, md: 2.5 },
+              }}
+            >
+              {workflowTimeline.map((item, idx) => (
+                <Box key={item.step} sx={{ position: 'relative' }}>
+                  {/* Top Step Circle + Connector Line */}
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 1.5 }}>
+                    <Box
+                      sx={{
+                        width: 34,
+                        height: 34,
+                        borderRadius: '50%',
+                        backgroundColor: item.highlight ? '#0071e3' : '#ffffff',
+                        border: item.highlight ? '1.5px solid #0071e3' : '1.5px solid #141416',
+                        color: item.highlight ? '#ffffff' : '#141416',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontFamily: '"JetBrains Mono", monospace',
+                        fontSize: '0.74rem',
+                        fontWeight: 700,
+                        flexShrink: 0,
+                      }}
+                    >
+                      {item.highlight ? <CheckRoundedIcon sx={{ fontSize: 17 }} /> : item.step}
+                    </Box>
+                    {idx < workflowTimeline.length - 1 && (
+                      <Box
+                        aria-hidden="true"
+                        sx={{
+                          display: { xs: 'none', md: 'block' },
+                          flex: 1,
+                          height: '1.5px',
+                          backgroundColor: '#0071e3',
+                          opacity: 0.45,
+                        }}
+                      />
+                    )}
+                  </Box>
+
+                  <Typography
+                    sx={{
+                      fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                      fontWeight: 700,
+                      fontSize: '1.02rem',
+                      color: '#141416',
+                      letterSpacing: '-0.015em',
+                      mb: 0.3,
+                    }}
+                  >
+                    {item.stage}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: '"JetBrains Mono", monospace',
+                      fontSize: '0.68rem',
+                      fontWeight: 600,
+                      color: '#71717a',
+                      mb: 0.8,
+                    }}
+                  >
+                    {item.time}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: '0.83rem',
+                      color: '#52525b',
+                      lineHeight: 1.5,
+                      fontWeight: 450,
+                    }}
+                  >
+                    {item.detail}
+                  </Typography>
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </RevealOnScroll>
+
         {/* Bottom Action CTA Button */}
         <RevealOnScroll variant="pop-up" delay={0.1}>
           <Box
@@ -439,22 +611,22 @@ export default function ProblemSolutionSection() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                backgroundColor: '#ffffff',
-                border: '1px solid rgba(0, 0, 0, 0.08)',
+                backgroundColor: '#141416',
+                border: '1px solid #141416',
                 borderRadius: '9999px',
-                px: '22px',
-                py: '10px',
-                color: '#1d1d1f',
+                px: '24px',
+                py: '11px',
+                color: '#ffffff',
                 fontSize: '0.88rem',
-                fontWeight: 600,
+                fontWeight: 650,
                 letterSpacing: '-0.01em',
                 cursor: 'pointer',
                 textDecoration: 'none',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                boxShadow: '0 4px 14px rgba(20, 20, 22, 0.16)',
                 transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 '&:hover': {
-                  backgroundColor: '#f5f5f7',
-                  borderColor: 'rgba(0, 0, 0, 0.12)',
+                  backgroundColor: '#0071e3',
+                  borderColor: '#0071e3',
                   transform: 'translateY(-1px)',
                 },
                 '&:active': {
@@ -463,7 +635,7 @@ export default function ProblemSolutionSection() {
               }}
             >
               Why We Built This
-              <ArrowForwardRoundedIcon sx={{ fontSize: 16, color: '#1d1d1f' }} />
+              <ArrowForwardRoundedIcon sx={{ fontSize: 16, color: '#ffffff' }} />
             </Box>
           </Box>
         </RevealOnScroll>

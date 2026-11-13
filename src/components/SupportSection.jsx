@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
   Typography,
 } from '@mui/material';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import RevealOnScroll from './RevealOnScroll';
+
+const faqItems = [
+  {
+    q: 'How fast can our school get started with Edukra?',
+    a: 'Most schools go live within a few days. Our team imports your existing student lists, classes, and fee structures so staff do not start from scratch.',
+  },
+  {
+    q: 'Do parents need to download a separate app?',
+    a: 'Parents can use the dedicated Edukra Parents Android app on Google Play for live attendance alerts, report cards, and fee receipts — or receive updates directly from the school.',
+  },
+  {
+    q: 'How does fee billing and Mobile Money tracking work?',
+    a: 'Every student ledger links directly to fee invoices and payment receipts. Bursars see real-time paid balances, arrears, and daily settlement totals in one dashboard.',
+  },
+  {
+    q: 'Can we start with core modules and add more later?',
+    a: 'Yes. Start with Attendance, Records, and Fees — then enable Library, Hostel, Payroll, or Inventory whenever your school is ready.',
+  },
+];
 
 // Custom SVG Gradient definition matching app brand blue palette
 function GradientDefs() {
@@ -65,6 +86,7 @@ function DemoBrandIcon() {
 }
 
 export default function SupportSection() {
+  const [openFaq, setOpenFaq] = useState(0);
 
   return (
     <Box
@@ -72,7 +94,7 @@ export default function SupportSection() {
       id="support"
       sx={{
         width: '100%',
-        backgroundColor: '#f5f5f7', // Apple neutral light canvas
+        backgroundColor: '#f7f6f2',
         py: { xs: 8, sm: 10, md: 12 },
         position: 'relative',
         overflow: 'hidden',
@@ -85,7 +107,7 @@ export default function SupportSection() {
         sx={{
           position: 'absolute',
           inset: 0,
-          opacity: 0.35,
+          opacity: 0.3,
           pointerEvents: 'none',
           background:
             'radial-gradient(ellipse 60% 50% at 50% 30%, rgba(0, 113, 227, 0.06) 0%, transparent 70%)',
@@ -95,9 +117,9 @@ export default function SupportSection() {
       <Container
         maxWidth={false}
         sx={{
-          maxWidth: '1120px',
+          maxWidth: '1240px',
           mx: 'auto',
-          px: { xs: 2.5, sm: 3, md: 4 },
+          px: { xs: 2.5, sm: 3.5, md: 5 },
           position: 'relative',
           zIndex: 2,
           display: 'flex',
@@ -134,16 +156,17 @@ export default function SupportSection() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  backgroundColor: 'rgba(0, 113, 227, 0.08)',
-                  color: '#0071e3',
-                  fontWeight: 700,
-                  fontSize: '0.70rem',
+                  backgroundColor: '#ffffff',
+                  color: '#141416',
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontWeight: 600,
+                  fontSize: '0.68rem',
                   letterSpacing: '0.06em',
                   borderRadius: '9999px',
                   px: '14px',
                   py: '5px',
-                  mb: '14px',
-                  border: '1px solid rgba(0, 113, 227, 0.18)',
+                  mb: '16px',
+                  border: '1px solid rgba(20, 20, 22, 0.12)',
                   width: 'fit-content',
                   textTransform: 'uppercase',
                 }}
@@ -157,17 +180,22 @@ export default function SupportSection() {
                 component="h2"
                 align="center"
                 sx={{
-                  fontWeight: 750,
-                  color: '#1d1d1f',
-                  fontSize: { xs: '1.9rem', sm: '2.35rem', md: '2.75rem' },
-                  lineHeight: 1.12,
-                  letterSpacing: '-0.035em',
+                  fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                  fontWeight: 800,
+                  color: '#141416',
+                  fontSize: { xs: '2rem', sm: '2.45rem', md: '2.9rem' },
+                  lineHeight: 1.08,
+                  letterSpacing: '-0.036em',
                   width: '100%',
                   textAlign: 'center',
                   mb: '14px',
                 }}
               >
-                Unrivalled Support. We’ve Got You Covered.
+                Unrivalled Support.{' '}
+                <Box component="span" className="edukra-highlight">
+                  We’ve Got You
+                </Box>{' '}
+                Covered.
               </Typography>
 
               {/* Subtitle */}
@@ -175,8 +203,8 @@ export default function SupportSection() {
                 variant="body1"
                 align="center"
                 sx={{
-                  color: '#6e6e73',
-                  fontSize: { xs: '0.96rem', sm: '1.04rem' },
+                  color: '#52525b',
+                  fontSize: { xs: '0.96rem', sm: '1.05rem' },
                   fontWeight: 450,
                   letterSpacing: '-0.01em',
                   width: '100%',
@@ -406,6 +434,125 @@ export default function SupportSection() {
             </Box>
           </RevealOnScroll>
         </Box>
+
+        {/* Interactive Quick Answers / FAQ Accordion (Inspired by Verso #faq) */}
+        <RevealOnScroll variant="init" delay={0.12} sx={{ width: '100%', maxWidth: 780, mx: 'auto', mt: { xs: 7, md: 9 } }}>
+          <Box sx={{ width: '100%' }}>
+            <Typography
+              component="h3"
+              sx={{
+                fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                fontWeight: 800,
+                fontSize: { xs: '1.45rem', sm: '1.75rem' },
+                letterSpacing: '-0.03em',
+                color: '#141416',
+                textAlign: 'center',
+                mb: 3,
+              }}
+            >
+              Common questions, answered plainly.
+            </Typography>
+
+            <Box
+              sx={{
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(20, 20, 22, 0.09)',
+                borderRadius: '24px',
+                overflow: 'hidden',
+                boxShadow: '0 4px 20px -4px rgba(20, 20, 22, 0.04)',
+              }}
+            >
+              {faqItems.map((item, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <Box
+                    key={item.q}
+                    sx={{
+                      borderTop: idx > 0 ? '1px solid rgba(20, 20, 22, 0.08)' : 'none',
+                    }}
+                  >
+                    <Box
+                      component="button"
+                      type="button"
+                      aria-expanded={isOpen}
+                      onClick={() => setOpenFaq(isOpen ? -1 : idx)}
+                      sx={{
+                        width: '100%',
+                        backgroundColor: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: 2,
+                        textAlign: 'left',
+                        px: { xs: 2.5, sm: 3.5 },
+                        py: { xs: 2.2, sm: 2.5 },
+                        transition: 'background-color 0.2s ease',
+                        '&:hover': {
+                          backgroundColor: 'rgba(247, 246, 242, 0.7)',
+                        },
+                      }}
+                    >
+                      <Typography
+                        component="span"
+                        sx={{
+                          fontFamily: '"Bricolage Grotesque", "Plus Jakarta Sans", sans-serif',
+                          fontWeight: 700,
+                          fontSize: { xs: '0.98rem', sm: '1.06rem' },
+                          letterSpacing: '-0.015em',
+                          color: '#141416',
+                        }}
+                      >
+                        {item.q}
+                      </Typography>
+
+                      <Box
+                        aria-hidden="true"
+                        sx={{
+                          width: 32,
+                          height: 32,
+                          borderRadius: '50%',
+                          backgroundColor: isOpen ? '#0071e3' : '#f2f0ea',
+                          border: isOpen ? '1.5px solid #0071e3' : '1px solid rgba(20, 20, 22, 0.1)',
+                          color: isOpen ? '#ffffff' : '#141416',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          flexShrink: 0,
+                          transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                        }}
+                      >
+                        {isOpen ? <CloseRoundedIcon sx={{ fontSize: 16 }} /> : <AddRoundedIcon sx={{ fontSize: 17 }} />}
+                      </Box>
+                    </Box>
+
+                    {isOpen && (
+                      <Box
+                        sx={{
+                          px: { xs: 2.5, sm: 3.5 },
+                          pb: { xs: 2.4, sm: 2.8 },
+                          pt: 0,
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            color: '#52525b',
+                            fontSize: '0.92rem',
+                            lineHeight: 1.6,
+                            fontWeight: 450,
+                          }}
+                        >
+                          {item.a}
+                        </Typography>
+                      </Box>
+                    )}
+                  </Box>
+                );
+              })}
+            </Box>
+          </Box>
+        </RevealOnScroll>
         </Box>
       </Container>
     </Box>

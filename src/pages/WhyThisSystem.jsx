@@ -23,10 +23,10 @@ function DatabaseIcon() {
   );
 }
 
-// Circular 'X' cross icon in amber for Problem cards
+// Circular 'X' cross icon in slate-blue for Problem cards
 function AmberCrossIcon() {
   return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CB972E" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#64748b" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
       <circle cx="12" cy="12" r="10" />
       <line x1="15" y1="9" x2="9" y2="15" />
       <line x1="9" y1="9" x2="15" y2="15" />
@@ -56,7 +56,7 @@ function PenNibIcon() {
 // Result icons
 function EyeIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2863AB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0071e3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
       <circle cx="12" cy="12" r="3" />
     </svg>
@@ -65,7 +65,7 @@ function EyeIcon() {
 
 function ChatIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2863AB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0071e3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
     </svg>
   );
@@ -73,7 +73,7 @@ function ChatIcon() {
 
 function OrganisationIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2863AB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0071e3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="3" y="3" width="7" height="7" />
       <rect x="14" y="3" width="7" height="7" />
       <rect x="14" y="14" width="7" height="7" />
@@ -84,7 +84,7 @@ function OrganisationIcon() {
 
 function DecisionIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2863AB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0071e3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="18" y1="20" x2="18" y2="10" />
       <line x1="12" y1="20" x2="12" y2="4" />
       <line x1="6" y1="20" x2="6" y2="14" />
@@ -94,7 +94,7 @@ function DecisionIcon() {
 
 function ExperienceIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2863AB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0071e3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
       <polyline points="9 22 9 12 15 12 15 22" />
     </svg>
@@ -112,9 +112,9 @@ export default function WhyThisSystem() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: '#FDFBF9',
-        color: '#191309',
-        fontFamily: "'Inter', sans-serif",
+        backgroundColor: '#f7f6f2',
+        color: '#141416',
+        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
         overflowX: 'hidden',
       }}
     >
@@ -132,10 +132,10 @@ export default function WhyThisSystem() {
             pb: { xs: 8, md: 12 },
             px: 2,
             textAlign: 'center',
-            backgroundColor: '#fbfcfd',
+            backgroundColor: '#f7f6f2',
             backgroundImage: `
-              radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-              radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+              radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+              radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
               radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
             `,
           }}
@@ -166,8 +166,8 @@ export default function WhyThisSystem() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: 0.8,
-                  backgroundColor: '#DAEDFF',
-                  color: '#1D4D87',
+                  backgroundColor: '#dbeafe',
+                  color: '#1d4ed8',
                   px: '14px',
                   py: '4px',
                   borderRadius: '9999px',
@@ -181,7 +181,7 @@ export default function WhyThisSystem() {
                     fontWeight: 700,
                     letterSpacing: '0.8px',
                     textTransform: 'uppercase',
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   }}
                 >
                   WHY THIS SYSTEM
@@ -192,12 +192,12 @@ export default function WhyThisSystem() {
               <Typography
                 variant="h1"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 800,
                   fontSize: { xs: '34px', sm: '46px', md: '52px' },
                   lineHeight: 1.15,
                   letterSpacing: '-1px',
-                  color: '#0B0702',
+                  color: '#141416',
                   mb: 2.5,
                 }}
               >
@@ -209,10 +209,10 @@ export default function WhyThisSystem() {
                 sx={{
                   fontSize: { xs: '15px', sm: '17px' },
                   lineHeight: '26px',
-                  color: '#5B5449',
+                  color: '#52525b',
                   maxWidth: '620px',
                   mx: 'auto',
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                 }}
               >
                 Why we built it, the problem it solves, and what a connected platform makes possible for schools.
@@ -258,7 +258,7 @@ export default function WhyThisSystem() {
                         fontWeight: 700,
                         letterSpacing: '0.9px',
                         textTransform: 'uppercase',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         color: '#1D63D2',
                         lineHeight: 1,
                       }}
@@ -271,12 +271,12 @@ export default function WhyThisSystem() {
                   <Typography
                     variant="h2"
                     sx={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                       fontWeight: 800,
                       fontSize: { xs: '28px', sm: '36px', md: '42px' },
                       lineHeight: { xs: 1.22, md: 1.16 },
                       letterSpacing: '-0.8px',
-                      color: '#0B0702',
+                      color: '#141416',
                       mb: 2.2,
                     }}
                   >
@@ -291,8 +291,8 @@ export default function WhyThisSystem() {
                     sx={{
                       fontSize: { xs: '14.5px', sm: '15.5px' },
                       lineHeight: 1.65,
-                      color: '#5B5449',
-                      fontFamily: "'Inter', sans-serif",
+                      color: '#52525b',
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                       maxWidth: '470px',
                     }}
                   >
@@ -329,7 +329,7 @@ export default function WhyThisSystem() {
                         sx={{
                           py: { xs: 2.8, sm: 3.2 },
                           px: 2,
-                          backgroundColor: '#FDFBF9',
+                          backgroundColor: '#f7f6f2',
                           border: '1px solid #EFECE6',
                           borderRadius: '12px',
                           display: 'flex',
@@ -353,10 +353,10 @@ export default function WhyThisSystem() {
                         </Box>
                         <Typography
                           sx={{
-                            fontFamily: "'Inter', sans-serif",
+                            fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                             fontWeight: 600,
                             fontSize: '13.5px',
-                            color: '#0B0702',
+                            color: '#141416',
                             letterSpacing: '-0.1px',
                           }}
                         >
@@ -399,7 +399,7 @@ export default function WhyThisSystem() {
                       fontWeight: 700,
                       letterSpacing: '0.9px',
                       textTransform: 'uppercase',
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                       color: '#1D63D2',
                       lineHeight: 1,
                     }}
@@ -412,12 +412,12 @@ export default function WhyThisSystem() {
                 <Typography
                   variant="h2"
                   sx={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                     fontWeight: 800,
                     fontSize: { xs: '28px', sm: '36px', md: '42px' },
                     lineHeight: { xs: 1.22, md: 1.16 },
                     letterSpacing: '-0.8px',
-                    color: '#0B0702',
+                    color: '#141416',
                     mb: 2,
                   }}
                 >
@@ -432,9 +432,9 @@ export default function WhyThisSystem() {
                   sx={{
                     fontSize: { xs: '14.5px', sm: '15.5px' },
                     lineHeight: 1.65,
-                    color: '#5B5449',
+                    color: '#52525b',
                     maxWidth: '720px',
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   }}
                 >
                   Spread across paper, spreadsheets, messaging apps and disconnected software, it becomes hard to keep everything consistent and visible.
@@ -476,7 +476,7 @@ export default function WhyThisSystem() {
                       alignItems: 'center',
                       gap: 1.4,
                       p: '15px 18px',
-                      backgroundColor: '#FDFBF9',
+                      backgroundColor: '#f7f6f2',
                       border: '1px solid #EFECE6',
                       borderRadius: '12px',
                       minHeight: '52px',
@@ -496,7 +496,7 @@ export default function WhyThisSystem() {
                         fontSize: '13.5px',
                         fontWeight: 500,
                         color: '#334155',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         whiteSpace: { lg: 'nowrap', xs: 'normal' },
                         letterSpacing: '-0.1px',
                       }}
@@ -516,7 +516,7 @@ export default function WhyThisSystem() {
         <Box
           sx={{
             py: { xs: 8, md: 11 },
-            backgroundColor: '#0C0A07',
+            backgroundColor: '#0b1222',
             color: '#FFFFFF',
             textAlign: 'center',
           }}
@@ -548,7 +548,7 @@ export default function WhyThisSystem() {
               <Typography
                 variant="h2"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 800,
                   fontSize: { xs: '28px', sm: '36px', md: '42px' },
                   lineHeight: 1.2,
@@ -601,7 +601,7 @@ export default function WhyThisSystem() {
                       key={i}
                       sx={{
                         backgroundColor: '#FFFFFF',
-                        color: '#0C0A07',
+                        color: '#0b1222',
                         fontSize: '12px',
                         fontWeight: 600,
                         px: 2,
@@ -633,7 +633,7 @@ export default function WhyThisSystem() {
         {/* ========================================================= */}
         {/* SECTION 5: THE RESULT (5 CARDS) */}
         {/* ========================================================= */}
-        <Box sx={{ py: { xs: 8, md: 11 }, backgroundColor: '#F7F5F1', borderTop: '1px solid #EFEBE4', borderBottom: '1px solid #EFEBE4' }}>
+        <Box sx={{ py: { xs: 8, md: 11 }, backgroundColor: '#f2f0ea', borderTop: '1px solid #e4e2dc', borderBottom: '1px solid #e4e2dc' }}>
           <Container maxWidth={false} sx={{ maxWidth: '1240px !important', mx: 'auto', px: { xs: 2.5, sm: 3, md: 4 } }}>
             <RevealOnScroll variant="init">
               <Box sx={{ textAlign: 'center', mb: 6 }}>
@@ -642,8 +642,8 @@ export default function WhyThisSystem() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: 0.8,
-                    backgroundColor: '#DAEDFF',
-                    color: '#1D4D87',
+                    backgroundColor: '#dbeafe',
+                    color: '#1d4ed8',
                     px: '12px',
                     py: '3.5px',
                     borderRadius: '9999px',
@@ -659,12 +659,12 @@ export default function WhyThisSystem() {
                 <Typography
                   variant="h2"
                   sx={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                     fontWeight: 800,
                     fontSize: { xs: '28px', sm: '36px', md: '40px' },
                     lineHeight: 1.2,
                     letterSpacing: '-0.8px',
-                    color: '#0B0702',
+                    color: '#141416',
                   }}
                 >
                   A better experience for the whole school.
@@ -722,7 +722,7 @@ export default function WhyThisSystem() {
                     sx={{
                       p: '28px 20px',
                       backgroundColor: '#FFFFFF',
-                      border: '1px solid #EFEBE4',
+                      border: '1px solid #e4e2dc',
                       borderRadius: '10px',
                       textAlign: 'center',
                       display: 'flex',
@@ -742,7 +742,7 @@ export default function WhyThisSystem() {
                         width: 44,
                         height: 44,
                         borderRadius: '8px',
-                        backgroundColor: '#DAEDFF',
+                        backgroundColor: '#dbeafe',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -754,10 +754,10 @@ export default function WhyThisSystem() {
                     <Typography
                       variant="h6"
                       sx={{
-                        fontFamily: "'Sora', sans-serif",
+                        fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                         fontWeight: 700,
                         fontSize: '15px',
-                        color: '#191309',
+                        color: '#141416',
                         mb: 1.2,
                         minHeight: { md: '40px' },
                         display: 'flex',
@@ -772,7 +772,7 @@ export default function WhyThisSystem() {
                         fontSize: '13px',
                         lineHeight: '20px',
                         color: '#64748B',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                       }}
                     >
                       {res.description}
@@ -811,7 +811,7 @@ export default function WhyThisSystem() {
                       fontWeight: 700,
                       letterSpacing: '0.9px',
                       textTransform: 'uppercase',
-                      fontFamily: "'Inter', sans-serif",
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                       color: '#1D63D2',
                       lineHeight: 1,
                     }}
@@ -823,12 +823,12 @@ export default function WhyThisSystem() {
                 <Typography
                   variant="h2"
                   sx={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                     fontWeight: 800,
                     fontSize: { xs: '28px', sm: '36px', md: '40px' },
                     lineHeight: { xs: 1.22, md: 1.16 },
                     letterSpacing: '-0.8px',
-                    color: '#0B0702',
+                    color: '#141416',
                   }}
                 >
                   The ideas behind the platform.
@@ -897,7 +897,7 @@ export default function WhyThisSystem() {
                       {/* Soft pastel baby blue quotation mark */}
                       <Typography
                         sx={{
-                          fontFamily: "'Sora', sans-serif",
+                          fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                           fontWeight: 700,
                           fontSize: '20px',
                           lineHeight: 1,
@@ -910,7 +910,7 @@ export default function WhyThisSystem() {
                       </Typography>
                       <Typography
                         sx={{
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           fontSize: { xs: '13.5px', sm: '14.5px' },
                           lineHeight: '23px',
                           color: '#1E293B',
@@ -925,7 +925,7 @@ export default function WhyThisSystem() {
                     <Box sx={{ pt: 2.2, borderTop: '1px solid #EFECE6' }}>
                       <Typography
                         sx={{
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           fontSize: '11px',
                           fontWeight: 700,
                           letterSpacing: '0.8px',
@@ -939,9 +939,9 @@ export default function WhyThisSystem() {
                       </Typography>
                       <Typography
                         sx={{
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           fontSize: '12.5px',
-                          color: '#5B5449',
+                          color: '#52525b',
                           lineHeight: 1.45,
                         }}
                       >
@@ -964,7 +964,7 @@ export default function WhyThisSystem() {
             <Box
               sx={{
                 p: { xs: 4, sm: 6, md: 7 },
-                background: 'linear-gradient(102.61deg, #2863AB 0%, #3A7BCB 60%, #DE9D16 100%)',
+                background: 'linear-gradient(125deg, #0b1222 0%, #1d4ed8 46%, #0071e3 100%)',
                 borderRadius: '16px',
                 textAlign: 'center',
                 color: '#FFFFFF',
@@ -974,7 +974,7 @@ export default function WhyThisSystem() {
               <Typography
                 variant="h3"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 800,
                   fontSize: { xs: '26px', sm: '34px', md: '38px' },
                   lineHeight: 1.2,
@@ -1006,15 +1006,15 @@ export default function WhyThisSystem() {
                   sx={{
                     py: 1.3,
                     px: 3.5,
-                    borderRadius: '8px',
-                    fontWeight: 600,
+                    borderRadius: '9999px',
+                    fontWeight: 700,
                     fontSize: '14px',
                     textTransform: 'none',
                     backgroundColor: '#FFFFFF',
-                    color: '#1D4D87',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                    color: '#141416',
+                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.14)',
                     '&:hover': {
-                      backgroundColor: '#F8FAFC',
+                      backgroundColor: '#eff6ff',
                     },
                   }}
                 >

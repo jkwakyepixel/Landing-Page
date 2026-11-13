@@ -25,7 +25,7 @@ function ContactTagIcon() {
       height="13"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#1D4D87"
+      stroke="#1d4ed8"
       strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -43,7 +43,7 @@ function GetInTouchIcon() {
       height="12"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#1D4D87"
+      stroke="#1d4ed8"
       strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -192,8 +192,8 @@ export default function ContactUs() {
       sx={{
         width: '100%',
         minHeight: '100vh',
-        backgroundColor: '#FDFBF9',
-        color: '#0B0702',
+        backgroundColor: '#f7f6f2',
+        color: '#141416',
         overflowX: 'hidden',
         position: 'relative',
       }}
@@ -208,10 +208,10 @@ export default function ContactUs() {
           overflow: 'hidden',
           pt: { xs: 14, sm: 17, md: 19 },
           pb: { xs: 8, md: 12 },
-          backgroundColor: '#fbfcfd',
+          backgroundColor: '#f7f6f2',
           backgroundImage: `
-            radial-gradient(circle at 12% 16%, rgba(191, 219, 254, 0.42) 0%, rgba(219, 234, 254, 0.18) 35%, transparent 60%),
-            radial-gradient(circle at 88% 12%, rgba(254, 240, 138, 0.48) 0%, rgba(254, 243, 199, 0.22) 32%, transparent 58%),
+            radial-gradient(circle at 12% 16%, rgba(0, 113, 227, 0.08) 0%, rgba(219, 234, 254, 0.22) 35%, transparent 60%),
+            radial-gradient(circle at 88% 12%, rgba(56, 189, 248, 0.14) 0%, rgba(219, 234, 254, 0.24) 34%, transparent 58%),
             radial-gradient(circle at 50% 30%, rgba(243, 244, 246, 0.5) 0%, transparent 70%)
           `,
         }}
@@ -266,7 +266,7 @@ export default function ContactUs() {
                   px: '14px',
                   py: '5px',
                   borderRadius: '9999px',
-                  backgroundColor: '#DAEDFF',
+                  backgroundColor: '#dbeafe',
                   mb: 2.2,
                 }}
               >
@@ -276,7 +276,7 @@ export default function ContactUs() {
                     fontSize: '11px',
                     fontWeight: 700,
                     letterSpacing: '0.08em',
-                    color: '#1D4D87',
+                    color: '#1d4ed8',
                     textTransform: 'uppercase',
                     lineHeight: 1,
                   }}
@@ -289,12 +289,12 @@ export default function ContactUs() {
               <Typography
                 variant="h1"
                 sx={{
-                  fontFamily: "'Sora', sans-serif",
+                  fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                   fontWeight: 850,
                   fontSize: { xs: '32px', sm: '42px', md: '48px' },
                   lineHeight: { xs: '38px', sm: '48px', md: '54px' },
                   letterSpacing: '-0.025em',
-                  color: '#0B0702',
+                  color: '#141416',
                   maxWidth: '750px',
                   mb: 1.8,
                 }}
@@ -305,10 +305,10 @@ export default function ContactUs() {
               {/* Subtitle */}
               <Typography
                 sx={{
-                  fontFamily: "'Inter', sans-serif",
+                  fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                   fontSize: { xs: '15px', sm: '16px' },
                   lineHeight: '25px',
-                  color: '#5B5449',
+                  color: '#52525b',
                   maxWidth: '680px',
                 }}
               >
@@ -339,7 +339,7 @@ export default function ContactUs() {
                     px: '12px',
                     py: '4px',
                     borderRadius: '9999px',
-                    backgroundColor: '#DAEDFF',
+                    backgroundColor: '#dbeafe',
                     mb: 1.6,
                   }}
                 >
@@ -349,7 +349,7 @@ export default function ContactUs() {
                       fontSize: '11px',
                       fontWeight: 700,
                       letterSpacing: '0.08em',
-                      color: '#1D4D87',
+                      color: '#1d4ed8',
                       textTransform: 'uppercase',
                       lineHeight: 1,
                     }}
@@ -362,11 +362,11 @@ export default function ContactUs() {
                 <Typography
                   variant="h2"
                   sx={{
-                    fontFamily: "'Sora', sans-serif",
+                    fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                     fontWeight: 800,
                     fontSize: { xs: '24px', sm: '28px' },
                     lineHeight: '34px',
-                    color: '#0B0702',
+                    color: '#141416',
                     mb: 1.2,
                   }}
                 >
@@ -401,7 +401,7 @@ export default function ContactUs() {
                           p: '13px 18px',
                           borderRadius: '12px',
                           backgroundColor: '#FFFFFF',
-                          border: '1px solid #EFEBE4',
+                          border: '1px solid #e4e2dc',
                           textDecoration: 'none',
                           color: 'inherit',
                           boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
@@ -421,8 +421,8 @@ export default function ContactUs() {
                             width: 38,
                             height: 38,
                             borderRadius: '8px',
-                            backgroundColor: '#DAEDFF',
-                            color: '#2863AB',
+                            backgroundColor: '#dbeafe',
+                            color: '#0071e3',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -449,7 +449,7 @@ export default function ContactUs() {
                           </Typography>
                           <Typography
                             sx={{
-                              fontFamily: "'Inter', sans-serif",
+                              fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                               fontSize: '13.5px',
                               fontWeight: 700,
                               color: '#111827',
@@ -510,8 +510,8 @@ export default function ContactUs() {
                           textDecoration: 'none',
                           transition: 'all 0.2s ease',
                           '&:hover': {
-                            borderColor: '#2863AB',
-                            color: '#2863AB',
+                            borderColor: '#0071e3',
+                            color: '#0071e3',
                             backgroundColor: '#F0F6FF',
                             transform: 'translateY(-2px)',
                           },
@@ -531,7 +531,7 @@ export default function ContactUs() {
                 elevation={0}
                 sx={{
                   backgroundColor: '#FFFFFF',
-                  border: '1px solid #EFEBE4',
+                  border: '1px solid #e4e2dc',
                   borderRadius: '14px',
                   p: { xs: '26px 20px', sm: '32px 30px' },
                   boxShadow: '0 2px 10px rgba(0, 0, 0, 0.02)',
@@ -556,8 +556,8 @@ export default function ContactUs() {
                       width: 60,
                       height: 60,
                       borderRadius: '50%',
-                      backgroundColor: '#DAEDFF',
-                      color: '#2863AB',
+                      backgroundColor: '#dbeafe',
+                      color: '#0071e3',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -569,16 +569,16 @@ export default function ContactUs() {
                   <Typography
                     variant="h3"
                     sx={{
-                      fontFamily: "'Sora', sans-serif",
+                      fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
                       fontWeight: 700,
                       fontSize: '22px',
-                      color: '#0B0702',
+                      color: '#141416',
                       mb: 1,
                     }}
                   >
                     Message Sent Successfully!
                   </Typography>
-                  <Typography sx={{ fontSize: '14px', color: '#5B5449', maxWidth: '380px', mb: 3 }}>
+                  <Typography sx={{ fontSize: '14px', color: '#52525b', maxWidth: '380px', mb: 3 }}>
                     Thank you, {formData.fullName}. Our team has received your enquiry and will respond within 24 hours.
                   </Typography>
                   <Button
@@ -599,7 +599,7 @@ export default function ContactUs() {
                       py: 1,
                       '&:hover': {
                         borderColor: '#CBD5E1',
-                        backgroundColor: '#FAF8F5',
+                        backgroundColor: '#f2f0ea',
                       },
                     }}
                   >
@@ -647,9 +647,9 @@ export default function ContactUs() {
                           height: '42px',
                           px: '14px',
                           fontSize: '13.5px',
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           color: '#111827',
-                          backgroundColor: '#FAF8F5',
+                          backgroundColor: '#f2f0ea',
                           border: '1px solid #E5E7EB',
                           borderRadius: '8px',
                           outline: 'none',
@@ -657,7 +657,7 @@ export default function ContactUs() {
                           transition: 'border-color 0.2s, box-shadow 0.2s',
                           '&::placeholder': { color: '#9CA3AF' },
                           '&:focus': {
-                            borderColor: '#2863AB',
+                            borderColor: '#0071e3',
                             backgroundColor: '#FFFFFF',
                             boxShadow: '0 0 0 3px rgba(40, 99, 171, 0.12)',
                           },
@@ -694,9 +694,9 @@ export default function ContactUs() {
                           height: '42px',
                           px: '14px',
                           fontSize: '13.5px',
-                          fontFamily: "'Inter', sans-serif",
+                          fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                           color: '#111827',
-                          backgroundColor: '#FAF8F5',
+                          backgroundColor: '#f2f0ea',
                           border: '1px solid #E5E7EB',
                           borderRadius: '8px',
                           outline: 'none',
@@ -704,7 +704,7 @@ export default function ContactUs() {
                           transition: 'border-color 0.2s, box-shadow 0.2s',
                           '&::placeholder': { color: '#9CA3AF' },
                           '&:focus': {
-                            borderColor: '#2863AB',
+                            borderColor: '#0071e3',
                             backgroundColor: '#FFFFFF',
                             boxShadow: '0 0 0 3px rgba(40, 99, 171, 0.12)',
                           },
@@ -741,9 +741,9 @@ export default function ContactUs() {
                         height: '42px',
                         px: '14px',
                         fontSize: '13.5px',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         color: '#111827',
-                        backgroundColor: '#FAF8F5',
+                        backgroundColor: '#f2f0ea',
                         border: '1px solid #E5E7EB',
                         borderRadius: '8px',
                         outline: 'none',
@@ -751,7 +751,7 @@ export default function ContactUs() {
                         transition: 'border-color 0.2s, box-shadow 0.2s',
                         '&::placeholder': { color: '#9CA3AF' },
                         '&:focus': {
-                          borderColor: '#2863AB',
+                          borderColor: '#0071e3',
                           backgroundColor: '#FFFFFF',
                           boxShadow: '0 0 0 3px rgba(40, 99, 171, 0.12)',
                         },
@@ -789,9 +789,9 @@ export default function ContactUs() {
                         minHeight: '128px',
                         p: '12px 14px',
                         fontSize: '13.5px',
-                        fontFamily: "'Inter', sans-serif",
+                        fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
                         color: '#111827',
-                        backgroundColor: '#FAF8F5',
+                        backgroundColor: '#f2f0ea',
                         border: '1px solid #E5E7EB',
                         borderRadius: '8px',
                         outline: 'none',
@@ -800,7 +800,7 @@ export default function ContactUs() {
                         transition: 'border-color 0.2s, box-shadow 0.2s',
                         '&::placeholder': { color: '#9CA3AF' },
                         '&:focus': {
-                          borderColor: '#2863AB',
+                          borderColor: '#0071e3',
                           backgroundColor: '#FFFFFF',
                           boxShadow: '0 0 0 3px rgba(40, 99, 171, 0.12)',
                         },
@@ -841,7 +841,7 @@ export default function ContactUs() {
                       fontWeight: 600,
                       fontSize: '14px',
                       textTransform: 'none',
-                      backgroundColor: '#2863AB',
+                      backgroundColor: '#0071e3',
                       color: '#FFFFFF',
                       boxShadow: 'none',
                       display: 'flex',
@@ -850,7 +850,7 @@ export default function ContactUs() {
                       gap: '8px',
                       transition: 'all 0.2s ease',
                       '&:hover': {
-                        backgroundColor: '#1D4D87',
+                        backgroundColor: '#1d4ed8',
                         boxShadow: '0 4px 12px rgba(40, 99, 171, 0.25)',
                         transform: 'translateY(-1px)',
                       },
@@ -876,7 +876,7 @@ export default function ContactUs() {
             sx={{
               borderRadius: '12px',
               overflow: 'hidden',
-              border: '1px solid #EFEBE4',
+              border: '1px solid #e4e2dc',
               backgroundColor: '#FFFFFF',
               boxShadow: '0 4px 16px rgba(0,0,0,0.03)',
             }}
@@ -915,7 +915,7 @@ export default function ContactUs() {
                 px: { xs: 2.5, sm: 3 },
                 py: 2,
                 backgroundColor: '#FFFFFF',
-                borderTop: '1px solid #EFEBE4',
+                borderTop: '1px solid #e4e2dc',
                 display: 'flex',
                 flexDirection: { xs: 'column', sm: 'row' },
                 alignItems: { xs: 'flex-start', sm: 'center' },
@@ -924,7 +924,7 @@ export default function ContactUs() {
               }}
             >
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.2 }}>
-                <LocationOnOutlinedIcon sx={{ color: '#2863AB', fontSize: 20 }} />
+                <LocationOnOutlinedIcon sx={{ color: '#0071e3', fontSize: 20 }} />
                 <Typography sx={{ fontSize: '13.5px', color: '#374151', fontWeight: 500 }}>
                   Urion Systems · Greater Accra, Ghana
                 </Typography>
@@ -935,14 +935,14 @@ export default function ContactUs() {
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{
-                  color: '#2863AB',
+                  color: '#0071e3',
                   fontWeight: 600,
                   fontSize: '13px',
                   textTransform: 'none',
                   p: 0,
                   minWidth: 'auto',
                   '&:hover': {
-                    color: '#1D4D87',
+                    color: '#1d4ed8',
                     backgroundColor: 'transparent',
                     textDecoration: 'underline',
                   },
