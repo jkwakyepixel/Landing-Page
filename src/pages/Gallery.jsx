@@ -79,27 +79,7 @@ const galleryPhotos = [
     title: 'Executive School Command Center',
     subtitle: 'Comprehensive real-time analytics, student enrollment, and finance on desktop.',
     image: dashboardMockup,
-    aspectRatio: '16/11',
-  },
-  {
-    id: 4,
-    category: 'product',
-    categories: ['product'],
-    tag: 'PRODUCT',
-    title: 'Parent Mobile App Experience',
-    subtitle: 'Instant grades, fee receipts, and school notifications on smartphone.',
-    image: parentMockup,
-    aspectRatio: '1/1',
-  },
-  {
-    id: 13,
-    category: 'product',
-    categories: ['product'],
-    tag: 'PRODUCT',
-    title: 'Teacher Scorebook & Attendance',
-    subtitle: 'Intuitive touch-ready tablet interface for daily attendance and continuous grading.',
-    image: teacherMockup,
-    aspectRatio: '4/3',
+    aspectRatio: '16/10',
   },
   {
     id: 14,
@@ -109,9 +89,53 @@ const galleryPhotos = [
     title: 'School Billing & Invoicing Suite',
     subtitle: 'Traceable fee collection, billing summaries, and audit records on laptop.',
     image: adminLaptopMockup,
-    aspectRatio: '16/11',
+    aspectRatio: '16/10',
+  },
+  {
+    id: 13,
+    category: 'product',
+    categories: ['product'],
+    tag: 'PRODUCT',
+    title: 'Teacher Scorebook & Attendance',
+    subtitle: 'Intuitive touch-ready tablet interface for daily attendance and continuous grading.',
+    image: teacherMockup,
+    aspectRatio: '16/10',
+  },
+  {
+    id: 4,
+    category: 'product',
+    categories: ['product'],
+    tag: 'PRODUCT',
+    title: 'Parent Mobile App Experience',
+    subtitle: 'Instant grades, fee receipts, and school notifications on smartphone.',
+    image: parentMockup,
+    aspectRatio: '16/10',
   },
 ];
+
+function getBentoGridPlacement(photo) {
+  if (photo.id === 101) {
+    return {
+      gridColumn: { xs: 'auto', sm: 'auto', md: '1 / 8' },
+      gridRow: { md: '1 / 2' },
+    };
+  }
+  if (photo.id === 102) {
+    return {
+      gridColumn: { xs: 'auto', sm: 'auto', md: '1 / 8' },
+      gridRow: { md: '2 / 3' },
+    };
+  }
+  if (photo.id === 103) {
+    return {
+      gridColumn: { xs: 'auto', sm: 'span 2', md: '8 / 13' },
+      gridRow: { md: '1 / 3' },
+    };
+  }
+  return {
+    gridColumn: { xs: 'auto', sm: 'auto', md: 'span 6' },
+  };
+}
 
 const showcaseFeatures = [
   {
@@ -344,7 +368,7 @@ export default function Gallery() {
           }}
         >
           {/* Header */}
-          <RevealOnScroll variant="init">
+          <RevealOnScroll variant="init" immediate>
             <Box
               sx={{
                 display: 'flex',
@@ -403,8 +427,8 @@ export default function Gallery() {
             </Box>
           </RevealOnScroll>
 
-          {/* SECTION 1: FILTER TABS (Matching User's Uploaded Mockup) */}
-          <RevealOnScroll variant="init">
+          {/* SECTION 1: FILTER TABS */}
+          <RevealOnScroll variant="init" immediate>
             <Box
               sx={{
                 display: 'flex',
@@ -412,193 +436,260 @@ export default function Gallery() {
                 alignItems: 'center',
                 flexWrap: 'wrap',
                 gap: 1.2,
-                mb: { xs: 5, md: 7 },
+                mb: { xs: 4.5, md: 6 },
               }}
             >
               {filterCategories.map((cat) => {
                 const isActive = activeCategory === cat.id;
+                const count =
+                  cat.id === 'all'
+                    ? galleryPhotos.length
+                    : galleryPhotos.filter(
+                        (p) => p.category === cat.id || (p.categories && p.categories.includes(cat.id))
+                      ).length;
                 return (
                   <Button
                     key={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
                     sx={{
                       borderRadius: '9999px',
-                      px: { xs: 2.2, sm: 2.8 },
-                      py: 0.8,
+                      px: { xs: 2.2, sm: 2.6 },
+                      py: 0.85,
                       fontSize: '0.88rem',
-                      fontWeight: isActive ? 700 : 500,
+                      fontWeight: isActive ? 700 : 600,
                       textTransform: 'none',
-                      backgroundColor: isActive ? '#0071e3' : '#F1F5F9',
+                      fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
+                      backgroundColor: isActive ? '#0071e3' : '#FFFFFF',
                       color: isActive ? '#FFFFFF' : '#475569',
-                      boxShadow: isActive ? '0 4px 12px rgba(30, 86, 160, 0.28)' : 'none',
+                      border: isActive ? '1px solid #0071e3' : '1px solid #e4e2dc',
+                      boxShadow: isActive ? '0 6px 16px rgba(0, 113, 227, 0.24)' : '0 2px 6px rgba(15, 23, 42, 0.03)',
                       transition: 'all 0.2s ease',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 1,
                       '&:hover': {
-                        backgroundColor: isActive ? '#16437E' : '#E2E8F0',
-                        color: isActive ? '#FFFFFF' : '#1E293B',
+                        backgroundColor: isActive ? '#005bb5' : '#f8fafc',
+                        color: isActive ? '#FFFFFF' : '#141416',
+                        borderColor: isActive ? '#005bb5' : '#cbd5e1',
                       },
                     }}
                   >
-                    {cat.label}
+                    <span>{cat.label}</span>
+                    <Box
+                      component="span"
+                      sx={{
+                        px: 0.9,
+                        py: 0.15,
+                        borderRadius: '9999px',
+                        fontSize: '0.72rem',
+                        fontWeight: 700,
+                        fontFamily: "'JetBrains Mono', monospace",
+                        backgroundColor: isActive ? 'rgba(255, 255, 255, 0.22)' : '#f1f5f9',
+                        color: isActive ? '#FFFFFF' : '#64748b',
+                      }}
+                    >
+                      {count}
+                    </Box>
                   </Button>
                 );
               })}
             </Box>
           </RevealOnScroll>
 
-          {/* SECTION 2: PHOTO MASONRY / MOSAIC GRID (Matching Mockup) */}
+          {/* SECTION 2: BALANCED EDITORIAL BENTO GALLERY */}
           <Box
             sx={{
               display: 'grid',
-              gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
-              gap: '20px',
+              gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(12, 1fr)' },
+              gap: { xs: 2.5, md: 3 },
               mb: { xs: 12, md: 16 },
-              alignItems: 'start',
+              alignItems: 'stretch',
             }}
           >
-            {filteredPhotos.map((photo, idx) => (
-              <RevealOnScroll key={photo.id} delay={(idx % 3) * 0.1}>
-                <Card
-                  elevation={0}
-                  onClick={() => handleOpenLightbox(photo)}
+            {filteredPhotos.map((photo, idx) => {
+              const isPortrait = photo.id === 103;
+              const isProduct = photo.category === 'product';
+              const placement = getBentoGridPlacement(photo);
+
+              return (
+                <RevealOnScroll
+                  key={photo.id}
+                  delay={(idx % 3) * 0.06}
                   sx={{
-                    position: 'relative',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid #E2E8F0',
-                    cursor: 'pointer',
-                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.04)',
-                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                    '&:hover': {
-                      transform: 'translateY(-4px)',
-                      boxShadow: '0 14px 30px rgba(0, 0, 0, 0.12)',
-                      '& .photo-zoom-btn': {
-                        opacity: 1,
-                        transform: 'scale(1)',
-                      },
-                      '& .photo-img': {
-                        transform: 'scale(1.05)',
-                      },
-                    },
+                    height: '100%',
+                    display: 'flex',
+                    ...placement,
                   }}
                 >
-                  {/* Photo Container */}
-                  <Box
+                  <Card
+                    elevation={0}
+                    onClick={() => handleOpenLightbox(photo)}
                     sx={{
-                      position: 'relative',
                       width: '100%',
-                      aspectRatio: photo.aspectRatio || '16/11',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      borderRadius: '20px',
                       overflow: 'hidden',
-                      bgcolor: '#0F172A',
+                      backgroundColor: '#FFFFFF',
+                      border: '1px solid #e4e2dc',
+                      cursor: 'pointer',
+                      boxShadow: '0 6px 20px rgba(20, 20, 22, 0.04)',
+                      transition: 'transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease',
+                      '&:hover': {
+                        transform: 'translateY(-4px)',
+                        borderColor: '#cbd5e1',
+                        boxShadow: '0 18px 38px rgba(15, 23, 42, 0.1)',
+                        '& .photo-zoom-btn': {
+                          opacity: 1,
+                          transform: 'scale(1)',
+                          backgroundColor: '#0071e3',
+                          color: '#FFFFFF',
+                        },
+                        '& .photo-img': {
+                          transform: isProduct ? 'scale(1.03)' : 'scale(1.04)',
+                        },
+                      },
                     }}
                   >
+                    {/* Top Clean Media Viewport */}
                     <Box
-                      component="img"
-                      className="photo-img"
-                      src={photo.image}
-                      alt={photo.title}
-                      loading="lazy"
                       sx={{
+                        position: 'relative',
                         width: '100%',
-                        height: '100%',
-                        objectFit: photo.category === 'product' ? 'contain' : 'cover',
-                        p: photo.category === 'product' ? { xs: 2, sm: 3 } : 0,
-                        display: 'block',
-                        filter: photo.category === 'product' ? 'drop-shadow(0 10px 24px rgba(0, 0, 0, 0.4))' : 'none',
-                        transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-                      }}
-                    />
-
-                    {/* Top-Right Floating Zoom Icon (Matching Mockup) */}
-                    <Box
-                      className="photo-zoom-btn"
-                      sx={{
-                        position: 'absolute',
-                        top: 14,
-                        right: 14,
-                        width: 34,
-                        height: 34,
-                        borderRadius: '50%',
-                        backgroundColor: 'rgba(255, 255, 255, 0.92)',
-                        backdropFilter: 'blur(6px)',
-                        color: '#0F172A',
+                        aspectRatio: isPortrait
+                          ? { xs: '4/5', sm: '16/10', md: 'auto' }
+                          : (photo.aspectRatio || '16/10'),
+                        flex: isPortrait ? { md: '1 1 auto' } : '0 0 auto',
+                        minHeight: isPortrait ? { md: 0 } : undefined,
+                        overflow: 'hidden',
+                        background: isProduct
+                          ? 'linear-gradient(145deg, #f8fafc 0%, #eff6ff 100%)'
+                          : '#0f172a',
+                        borderBottom: '1px solid #f1f5f9',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-                        opacity: 0.85,
-                        transform: 'scale(0.95)',
-                        transition: 'all 0.2s ease',
-                        zIndex: 2,
+                        p: isProduct ? { xs: 2.5, sm: 3 } : 0,
                       }}
                     >
-                      <ZoomInRoundedIcon sx={{ fontSize: 19 }} />
+                      <Box
+                        component="img"
+                        className="photo-img"
+                        src={photo.image}
+                        alt={photo.title}
+                        loading="lazy"
+                        decoding="async"
+                        sx={{
+                          position: isPortrait ? { md: 'absolute' } : 'relative',
+                          inset: isPortrait ? { md: 0 } : undefined,
+                          width: isProduct ? 'auto' : '100%',
+                          height: isProduct ? 'auto' : '100%',
+                          maxWidth: '100%',
+                          maxHeight: '100%',
+                          objectFit: isProduct ? 'contain' : 'cover',
+                          objectPosition: isPortrait ? 'center 22%' : 'center center',
+                          display: 'block',
+                          filter: isProduct
+                            ? 'drop-shadow(0 12px 26px rgba(15, 23, 42, 0.14))'
+                            : 'none',
+                          transition: 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)',
+                        }}
+                      />
+
+                      {/* Top-Left Category Pill */}
+                      <Chip
+                        label={photo.tag}
+                        size="small"
+                        sx={{
+                          position: 'absolute',
+                          top: 14,
+                          left: 14,
+                          height: '24px',
+                          backgroundColor: isProduct
+                            ? 'rgba(219, 234, 254, 0.95)'
+                            : 'rgba(15, 23, 42, 0.72)',
+                          backdropFilter: 'blur(8px)',
+                          color: isProduct ? '#1d4ed8' : '#FFFFFF',
+                          fontFamily: "'JetBrains Mono', monospace",
+                          fontWeight: 700,
+                          fontSize: '0.68rem',
+                          letterSpacing: '0.06em',
+                          borderRadius: '8px',
+                          border: isProduct
+                            ? '1px solid rgba(59, 130, 246, 0.25)'
+                            : '1px solid rgba(255, 255, 255, 0.18)',
+                          zIndex: 2,
+                        }}
+                      />
+
+                      {/* Top-Right Frosted Zoom Button */}
+                      <Box
+                        className="photo-zoom-btn"
+                        sx={{
+                          position: 'absolute',
+                          top: 14,
+                          right: 14,
+                          width: 34,
+                          height: 34,
+                          borderRadius: '50%',
+                          backgroundColor: 'rgba(255, 255, 255, 0.92)',
+                          backdropFilter: 'blur(8px)',
+                          color: '#0F172A',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          boxShadow: '0 2px 10px rgba(15, 23, 42, 0.12)',
+                          opacity: 0.9,
+                          transform: 'scale(0.95)',
+                          transition: 'all 0.22s ease',
+                          zIndex: 2,
+                        }}
+                      >
+                        <ZoomInRoundedIcon sx={{ fontSize: 18 }} />
+                      </Box>
                     </Box>
 
-                    {/* Bottom Gradient Scrim Overlay */}
+                    {/* Clean Unobstructed Editorial Caption Footer */}
                     <Box
                       sx={{
-                        position: 'absolute',
-                        inset: 0,
-                        background:
-                          'linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.45) 45%, rgba(0, 0, 0, 0.05) 75%, transparent 100%)',
+                        p: { xs: 2.2, md: 2.6 },
+                        backgroundColor: '#FFFFFF',
                         display: 'flex',
                         flexDirection: 'column',
-                        justifyContent: 'flex-end',
-                        p: 2.4,
-                        zIndex: 1,
+                        justifyContent: 'center',
                       }}
                     >
-                      {/* Tag Pill (Matching Mockup 'TRAINING' in blue) */}
-                      <Box sx={{ mb: 0.8 }}>
-                        <Chip
-                          label={photo.tag}
-                          size="small"
-                          sx={{
-                            height: '22px',
-                            backgroundColor: '#2563EB',
-                            color: '#FFFFFF',
-                            fontWeight: 800,
-                            fontSize: '0.68rem',
-                            letterSpacing: '0.04em',
-                            borderRadius: '5px',
-                          }}
-                        />
-                      </Box>
-
-                      {/* Photo Title (Bold White Text) */}
                       <Typography
                         sx={{
                           fontFamily: "'Bricolage Grotesque', 'Plus Jakarta Sans', sans-serif",
-                          fontWeight: 750,
-                          fontSize: '1.02rem',
-                          color: '#FFFFFF',
+                          fontWeight: 800,
+                          fontSize: '1.08rem',
+                          color: '#141416',
                           lineHeight: 1.25,
-                          textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+                          letterSpacing: '-0.015em',
                         }}
                       >
                         {photo.title}
                       </Typography>
-
-                      {/* Subtitle */}
                       {photo.subtitle && (
                         <Typography
                           sx={{
                             fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
-                            fontSize: '0.78rem',
-                            color: 'rgba(255, 255, 255, 0.82)',
-                            lineHeight: 1.35,
-                            mt: 0.4,
+                            fontSize: '0.86rem',
+                            color: '#52525b',
+                            lineHeight: 1.5,
+                            mt: 0.6,
                           }}
                         >
                           {photo.subtitle}
                         </Typography>
                       )}
                     </Box>
-                  </Box>
-                </Card>
-              </RevealOnScroll>
-            ))}
+                  </Card>
+                </RevealOnScroll>
+              );
+            })}
           </Box>
 
           {/* SECTION 3: SYSTEM UI DEEP-DIVE (Existing Mockup Tours) */}
