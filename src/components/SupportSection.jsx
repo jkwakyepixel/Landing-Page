@@ -16,7 +16,7 @@ const faqItems = [
   },
   {
     q: 'Do parents need to download a separate app?',
-    a: 'Parents can use the dedicated Edukra Parents Android app on Google Play for live attendance alerts, report cards, and fee receipts — or receive updates directly from the school.',
+    a: 'Parents can use the dedicated Edukra Parents mobile app on the Apple App Store (iOS) and Google Play (Android) for live attendance alerts, report cards, and fee receipts — or receive updates directly from the school.',
   },
   {
     q: 'How does fee billing and Mobile Money tracking work?',

@@ -5,6 +5,7 @@ import {
   Typography,
 } from '@mui/material';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import AppleIcon from '@mui/icons-material/Apple';
 import RevealOnScroll from './RevealOnScroll';
 
 // Portal mockup assets
@@ -515,46 +516,95 @@ export default function RoleExperiencesSection() {
                 ))}
               </Box>
 
-              {/* Apple Glass Pill Button or Google Play for Parent role */}
+              {/* App Store & Google Play Buttons for Parent role, or Book Demo */}
               {activeRole === 'Parent' ? (
                 <Box
-                  component="a"
-                  href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   sx={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    width: { xs: '100%', sm: 'auto' },
-                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
-                    backdropFilter: 'blur(16px)',
-                    WebkitBackdropFilter: 'blur(16px)',
-                    border: '1px solid rgba(255, 255, 255, 0.25)',
-                    borderRadius: '9999px',
-                    px: '24px',
-                    py: '12px',
-                    color: '#ffffff',
-                    fontSize: '0.88rem',
-                    fontWeight: 650,
-                    textDecoration: 'none',
-                    letterSpacing: '-0.01em',
-                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
-                    transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                      borderColor: 'rgba(255, 255, 255, 0.4)',
-                      transform: 'translateY(-1px)',
-                    },
-                    '&:active': {
-                      transform: 'scale(0.976)',
-                    },
+                    display: 'flex',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    flexWrap: 'wrap',
+                    gap: 1.25,
                   }}
                 >
-                  <GooglePlayIcon />
-                  Get Edukra Parents on Google Play
-                  <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#ffffff' }} />
+                  <Box
+                    component="a"
+                    href="https://apps.apple.com/app/edukra-parents/id6830590270"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '9px',
+                      width: { xs: '100%', sm: 'auto' },
+                      backgroundColor: 'rgba(255, 255, 255, 0.14)',
+                      backdropFilter: 'blur(16px)',
+                      WebkitBackdropFilter: 'blur(16px)',
+                      border: '1px solid rgba(255, 255, 255, 0.28)',
+                      borderRadius: '9999px',
+                      px: '20px',
+                      py: '11px',
+                      color: '#ffffff',
+                      fontSize: '0.86rem',
+                      fontWeight: 650,
+                      textDecoration: 'none',
+                      letterSpacing: '-0.01em',
+                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
+                      transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                      '&:hover': {
+                        backgroundColor: 'rgba(255, 255, 255, 0.22)',
+                        borderColor: 'rgba(255, 255, 255, 0.45)',
+                        transform: 'translateY(-1px)',
+                      },
+                      '&:active': {
+                        transform: 'scale(0.976)',
+                      },
+                    }}
+                  >
+                    <AppleIcon sx={{ fontSize: 18, color: '#ffffff' }} />
+                    App Store (iOS)
+                    <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#ffffff' }} />
+                  </Box>
+
+                  <Box
+                    component="a"
+                    href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '9px',
+                      width: { xs: '100%', sm: 'auto' },
+                      backgroundColor: 'rgba(255, 255, 255, 0.12)',
+                      backdropFilter: 'blur(16px)',
+                      WebkitBackdropFilter: 'blur(16px)',
+                      border: '1px solid rgba(255, 255, 255, 0.25)',
+                      borderRadius: '9999px',
+                      px: '20px',
+                      py: '11px',
+                      color: '#ffffff',
+                      fontSize: '0.86rem',
+                      fontWeight: 650,
+                      textDecoration: 'none',
+                      letterSpacing: '-0.01em',
+                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
+                      transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                      '&:hover': {
+                        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                        borderColor: 'rgba(255, 255, 255, 0.4)',
+                        transform: 'translateY(-1px)',
+                      },
+                      '&:active': {
+                        transform: 'scale(0.976)',
+                      },
+                    }}
+                  >
+                    <GooglePlayIcon />
+                    Google Play
+                    <ArrowForwardRoundedIcon sx={{ fontSize: 15, color: '#ffffff' }} />
+                  </Box>
                 </Box>
               ) : (
                 <Box

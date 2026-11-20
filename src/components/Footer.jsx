@@ -11,6 +11,7 @@ import SchoolRoundedIcon from '@mui/icons-material/SchoolRounded';
 import MailOutlineRoundedIcon from '@mui/icons-material/MailOutlineRounded';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import AppleIcon from '@mui/icons-material/Apple';
 import RevealOnScroll from './RevealOnScroll';
 import edukraIcon from '../assets/edukra-icon.webp';
 
@@ -263,45 +264,84 @@ export default function Footer() {
               </Box>
             </Stack>
 
-            {/* Google Play Store Badge */}
-            <Box
-              component="a"
-              href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 1.25,
-                mt: 2.5,
-                px: 1.8,
-                py: 0.9,
-                borderRadius: '12px',
-                bgcolor: 'rgba(255, 255, 255, 0.08)',
-                border: '1px solid rgba(255, 255, 255, 0.16)',
-                color: '#ffffff',
-                textDecoration: 'none',
-                transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
-                '&:hover': {
-                  bgcolor: 'rgba(255, 255, 255, 0.14)',
-                  borderColor: 'rgba(255, 255, 255, 0.3)',
-                  transform: 'translateY(-1px)',
-                },
-                '&:active': {
-                  transform: 'scale(0.976)',
-                },
-              }}
-            >
-              <GooglePlayIcon />
-              <Box sx={{ textAlign: 'left', lineHeight: 1.15 }}>
-                <Typography sx={{ fontSize: '0.60rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 600 }}>
-                  Get Edukra Parents on
-                </Typography>
-                <Typography sx={{ fontSize: '0.82rem', fontWeight: 700, color: '#ffffff' }}>
-                  Google Play
-                </Typography>
+            {/* App Store & Google Play Store Badges */}
+            <Stack direction="row" spacing={1.25} flexWrap="wrap" useFlexGap sx={{ mt: 2.5 }}>
+              <Box
+                component="a"
+                href="https://apps.apple.com/app/edukra-parents/id6830590270"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 1.1,
+                  px: 1.7,
+                  py: 0.9,
+                  borderRadius: '12px',
+                  bgcolor: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.16)',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                  '&:hover': {
+                    bgcolor: 'rgba(255, 255, 255, 0.14)',
+                    borderColor: 'rgba(255, 255, 255, 0.3)',
+                    transform: 'translateY(-1px)',
+                  },
+                  '&:active': {
+                    transform: 'scale(0.976)',
+                  },
+                }}
+              >
+                <AppleIcon sx={{ fontSize: 22, color: '#ffffff' }} />
+                <Box sx={{ textAlign: 'left', lineHeight: 1.15 }}>
+                  <Typography sx={{ fontSize: '0.60rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 600 }}>
+                    Download on the
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.82rem', fontWeight: 700, color: '#ffffff' }}>
+                    App Store
+                  </Typography>
+                </Box>
               </Box>
-            </Box>
+
+              <Box
+                component="a"
+                href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 1.25,
+                  px: 1.7,
+                  py: 0.9,
+                  borderRadius: '12px',
+                  bgcolor: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.16)',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                  '&:hover': {
+                    bgcolor: 'rgba(255, 255, 255, 0.14)',
+                    borderColor: 'rgba(255, 255, 255, 0.3)',
+                    transform: 'translateY(-1px)',
+                  },
+                  '&:active': {
+                    transform: 'scale(0.976)',
+                  },
+                }}
+              >
+                <GooglePlayIcon />
+                <Box sx={{ textAlign: 'left', lineHeight: 1.15 }}>
+                  <Typography sx={{ fontSize: '0.60rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(255, 255, 255, 0.65)', fontWeight: 600 }}>
+                    Get Edukra Parents on
+                  </Typography>
+                  <Typography sx={{ fontSize: '0.82rem', fontWeight: 700, color: '#ffffff' }}>
+                    Google Play
+                  </Typography>
+                </Box>
+              </Box>
+            </Stack>
           </Box>
 
           {/* Right 4 Link Columns */}
@@ -420,6 +460,24 @@ export default function Footer() {
             }}
           >
             <span>© 2026 Urion Systems Ltd. All rights reserved.</span>
+            <span>·</span>
+            <Link
+              href="https://apps.apple.com/app/edukra-parents/id6830590270"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: '#2997ff',
+                textDecoration: 'none',
+                fontWeight: 600,
+                transition: 'color 0.2s ease',
+                '&:hover': {
+                  color: '#70baff',
+                  textDecoration: 'underline',
+                },
+              }}
+            >
+              App Store App
+            </Link>
             <span>·</span>
             <Link
               href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"

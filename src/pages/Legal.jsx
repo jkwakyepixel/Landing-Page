@@ -196,7 +196,12 @@ export default function Legal() {
             >
               <Chip
                 icon={<AppleIcon sx={{ '&&': { color: '#0f172a', fontSize: { xs: 16, sm: 18 } } }} />}
-                label="Apple App Store Compliant"
+                component="a"
+                href="https://apps.apple.com/app/edukra-parents/id6830590270"
+                target="_blank"
+                rel="noopener noreferrer"
+                clickable
+                label="App Store: Edukra Parents"
                 size="small"
                 sx={{
                   bgcolor: 'rgba(15, 23, 42, 0.05)',
@@ -516,7 +521,7 @@ export default function Legal() {
                 </Typography>
                 <Box component="ul" sx={{ pl: { xs: 2.2, sm: 3 }, mb: 2 }}>
                   <li>The <strong>Edukra</strong> cloud-based School Management System (accessible via web browsers and institutional subdomains).</li>
-                  <li>The <strong>&quot;Edukra Parents&quot;</strong> mobile applications distributed through the Apple App Store for iOS and <a href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent" target="_blank" rel="noopener noreferrer" style={{ color: '#0071e3', fontWeight: 700 }}>Google Play Store</a> for Android.</li>
+                  <li>The <strong>&quot;Edukra Parents&quot;</strong> mobile applications distributed through the <a href="https://apps.apple.com/app/edukra-parents/id6830590270" target="_blank" rel="noopener noreferrer" style={{ color: '#0071e3', fontWeight: 700 }}>Apple App Store</a> for iOS and <a href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent" target="_blank" rel="noopener noreferrer" style={{ color: '#0071e3', fontWeight: 700 }}>Google Play Store</a> for Android.</li>
                   <li>Integrated communication interfaces including automated SMS dispatches, Mobile Money payment callbacks, and WhatsApp parent notification relays.</li>
                 </Box>
                 <Typography sx={{ mb: 3 }}>

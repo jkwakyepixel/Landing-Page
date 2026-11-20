@@ -10,6 +10,7 @@ import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
 import NorthEastRoundedIcon from '@mui/icons-material/NorthEastRounded';
 import VerifiedUserOutlinedIcon from '@mui/icons-material/VerifiedUserOutlined';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+import AppleIcon from '@mui/icons-material/Apple';
 import RevealOnScroll from './RevealOnScroll';
 import allDevicesMockup from '../assets/all-devices-white.webp';
 
@@ -343,11 +344,11 @@ export default function HeroSection() {
                 </Button>
               </Stack>
 
-              {/* Micro Feature Assurances + Google Play Link */}
+              {/* Micro Feature Assurances + Mobile App Store Links */}
               <Stack
-                direction={{ xs: 'column', sm: 'row' }}
-                spacing={{ xs: 1.25, sm: 2 }}
-                alignItems={{ xs: 'flex-start', sm: 'center' }}
+                direction="column"
+                spacing={1.25}
+                alignItems={{ xs: 'flex-start', sm: 'center', lg: 'flex-start' }}
                 sx={{ mb: { xs: 3.5, md: 4.5 } }}
               >
                 <Typography
@@ -361,37 +362,71 @@ export default function HeroSection() {
                   Fast onboarding · Role-based access · Cloud backups
                 </Typography>
 
-                <Box
-                  component="a"
-                  href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    px: 1.6,
-                    py: 0.65,
-                    borderRadius: '9999px',
-                    backgroundColor: '#141416',
-                    color: '#ffffff',
-                    textDecoration: 'none',
-                    border: '1px solid rgba(255, 255, 255, 0.12)',
-                    transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-                    '&:hover': {
-                      backgroundColor: '#27272a',
-                      transform: 'translateY(-1px)',
-                    },
-                  }}
-                >
-                  <GooglePlayIcon style={{ width: 15, height: 17 }} />
-                  <Typography
-                    component="span"
-                    sx={{ fontSize: '0.76rem', fontWeight: 650, color: '#ffffff' }}
+                <Stack direction="row" spacing={1.1} flexWrap="wrap" useFlexGap>
+                  <Box
+                    component="a"
+                    href="https://apps.apple.com/app/edukra-parents/id6830590270"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 0.85,
+                      px: 1.55,
+                      py: 0.65,
+                      borderRadius: '9999px',
+                      backgroundColor: '#141416',
+                      color: '#ffffff',
+                      textDecoration: 'none',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                      '&:hover': {
+                        backgroundColor: '#27272a',
+                        transform: 'translateY(-1px)',
+                      },
+                    }}
                   >
-                    Edukra Parents on Google Play
-                  </Typography>
-                </Box>
+                    <AppleIcon sx={{ fontSize: 16, color: '#ffffff' }} />
+                    <Typography
+                      component="span"
+                      sx={{ fontSize: '0.76rem', fontWeight: 650, color: '#ffffff' }}
+                    >
+                      App Store
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    component="a"
+                    href="https://play.google.com/store/apps/details?id=com.urionsystems.edukraparent"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    sx={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 0.9,
+                      px: 1.55,
+                      py: 0.65,
+                      borderRadius: '9999px',
+                      backgroundColor: '#141416',
+                      color: '#ffffff',
+                      textDecoration: 'none',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                      '&:hover': {
+                        backgroundColor: '#27272a',
+                        transform: 'translateY(-1px)',
+                      },
+                    }}
+                  >
+                    <GooglePlayIcon style={{ width: 14, height: 16 }} />
+                    <Typography
+                      component="span"
+                      sx={{ fontSize: '0.76rem', fontWeight: 650, color: '#ffffff' }}
+                    >
+                      Google Play
+                    </Typography>
+                  </Box>
+                </Stack>
               </Stack>
 
               {/* Editorial Social/Credibility Strip matching Verso Hero bottom-left */}
