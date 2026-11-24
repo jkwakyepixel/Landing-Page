@@ -37,7 +37,6 @@ const navItems = [
   },
   { label: 'Solutions', hasDropdown: false, hash: '#solution' },
   { label: 'Modules', hasDropdown: false, hash: '#modules' },
-  { label: 'Gallery', hasDropdown: false, hash: '#gallery' },
   { label: 'Contact', hasDropdown: false, hash: '#contact' },
 ];
 
@@ -107,11 +106,6 @@ export default function NavigationBar() {
     }
     if (label === 'Modules') {
       window.location.hash = '#modules';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-    if (label === 'Gallery') {
-      window.location.hash = '#gallery';
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }

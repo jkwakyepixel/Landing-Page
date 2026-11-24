@@ -5,6 +5,7 @@ import { Box, CircularProgress } from '@mui/material';
 import theme from './theme/theme';
 import NavigationBar from './components/NavigationBar';
 import HeroSection from './components/HeroSection';
+import PartnerSchoolsSection from './components/PartnerSchoolsSection';
 import ImpactProofBand from './components/ImpactProofBand';
 import RolesSection from './components/RolesSection';
 import ProblemSolutionSection from './components/ProblemSolutionSection';
@@ -17,7 +18,6 @@ import Footer from './components/Footer';
 const BookDemo = lazy(() => import('./pages/BookDemo'));
 const ContactUs = lazy(() => import('./pages/ContactUs'));
 const Modules = lazy(() => import('./pages/Modules'));
-const Gallery = lazy(() => import('./pages/Gallery'));
 const History = lazy(() => import('./pages/History'));
 const MissionVision = lazy(() => import('./pages/MissionVision'));
 const Solution = lazy(() => import('./pages/Solution'));
@@ -50,7 +50,6 @@ const getRouteFromHash = (hash) => {
   if (hash.startsWith('#modules')) return 'modules';
   if (hash === '#pricing') return 'pricing';
   if (hash.startsWith('#solution') || hash === '#solutions' || hash === '#platform') return 'solution';
-  if (hash === '#gallery' || hash === '#showcase') return 'gallery';
   if (
     hash === '#mission' ||
     hash === '#mission-vision' ||
@@ -125,6 +124,7 @@ function App() {
         >
           <NavigationBar />
           <HeroSection />
+          <PartnerSchoolsSection />
           <ImpactProofBand />
           <RolesSection />
           <ProblemSolutionSection />
@@ -146,8 +146,6 @@ function App() {
             <Pricing />
           ) : currentRoute === 'solution' ? (
             <Solution />
-          ) : currentRoute === 'gallery' ? (
-            <Gallery />
           ) : currentRoute === 'mission' ? (
             <MissionVision />
           ) : currentRoute === 'history' ? (

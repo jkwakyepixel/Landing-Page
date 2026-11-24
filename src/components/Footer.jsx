@@ -91,7 +91,6 @@ const footerColumns = [
       { label: 'Platform Overview', href: '#solution' },
       { label: 'System Modules', href: '#modules' },
       { label: 'Pricing Plans', href: '#pricing' },
-      { label: 'Campus Gallery', href: '#gallery' },
     ],
   },
   {
@@ -111,7 +110,6 @@ const footerColumns = [
       { label: 'Mission & Vision', href: '#mission' },
       { label: 'Why This System', href: '#why-this-system' },
       { label: 'Contact Us', href: '#contact' },
-      { label: 'School Gallery', href: '#gallery' },
     ],
   },
   {
